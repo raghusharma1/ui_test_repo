@@ -1,0 +1,78 @@
+{
+  "test_name": "Verify Sorting of Products",
+  "description": "Check if products in the Men's category can be sorted by various criteria such as price, popularity, and rating.",
+  "type": "sort",
+  "pages": [
+    "https://atid.store/product-category/men/"
+  ],
+  "steps": [
+    "Navigate to the Men's category page using the main navigation menu.",
+    "Locate the sorting dropdown menu.",
+    "Select 'Sort by price: low to high' from the dropdown.",
+    "Verify that the product list updates accordingly.",
+    "Select 'Sort by price: high to low' from the dropdown.",
+    "Verify that the product list updates accordingly."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+      "text": "MEN",
+      "action": "click",
+      "url_on_page": "https://atid.store"
+    },
+    {
+      "element_type": "select",
+      "selector": "select[aria-label=\"Shop order\"]",
+      "text": "Default sorting\nSort by popularity\nSort by average rating\nSort by latest\nSort by price: low to high\nSort by price: high to low",
+      "action": "select",
+      "url_on_page": "https://atid.store/product-category/men/"
+    }
+  ],
+  "expected_results": [
+    "Products are sorted correctly based on the selected criteria."
+  ],
+  "edge_cases": [
+    "Sorting does not update the product list.",
+    "Incorrect sorting order is displayed.",
+    "Sorting dropdown options are missing."
+  ],
+  "data_requirements": [
+    "Products with varying prices and ratings in the Men's category.",
+    "Backend support for different sorting criteria."
+  ],
+  "dependencies": [
+    "Sorting functionality is implemented.",
+    "Products have sortable attributes (e.g., price, rating)."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Fetch sorted product data based on selected criteria."
+  ],
+  "performance_metrics": [
+    "Time taken to update the product list after selecting a sort option."
+  ],
+  "accessibility_requirements": [
+    "Ensure the sorting dropdown is accessible via keyboard.",
+    "Verify that the dropdown has ARIA labels for screen readers."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "d2055b92-7503-4508-bb6c-d0c62ca42d03",
+    "created_at": "2025-09-04T16:00:03.877917Z",
+    "complexity": "medium",
+    "risk_level": "medium",
+    "priority": "normal",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "drag-and-drop",
+      "performance",
+      "sort",
+      "ui-test"
+    ],
+    "estimated_execution_time": 30,
+    "flakiness_potential": "medium"
+  }
+}

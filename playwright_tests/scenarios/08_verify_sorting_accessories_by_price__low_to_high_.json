@@ -1,0 +1,84 @@
+{
+  "test_name": "Verify Sorting Accessories by Price (Low to High)",
+  "description": "This test validates that users can sort Accessories products by price from lowest to highest.",
+  "type": "search_and_sort",
+  "pages": [
+    "https://atid.store/product-category/accessories/"
+  ],
+  "steps": [
+    "Navigate to the Accessories category page.",
+    "Locate the sort dropdown menu.",
+    "Select 'Sort by price: low to high' from the dropdown options.",
+    "Verify that the page reloads or updates dynamically.",
+    "Scroll through the list of sorted products.",
+    "Verify that the products are displayed in ascending order of price.",
+    "Click on a product to view its details.",
+    "Verify that the product price matches the order."
+  ],
+  "selectors": [
+    {
+      "element_type": "select",
+      "selector": "select[aria-label=\"Shop order\"]",
+      "text": "Sort by price: low to high",
+      "action": "select",
+      "url_on_page": "https://atid.store/product-category/accessories/"
+    }
+  ],
+  "expected_results": [
+    "Products are displayed in ascending order of price.",
+    "Sorting selection is retained after sorting.",
+    "No products are out of order."
+  ],
+  "edge_cases": [
+    "No products exist in the Accessories category.",
+    "Dropdown menu fails to update the sorting.",
+    "Page fails to reload after sorting.",
+    "Sorting logic is incorrect or inconsistent.",
+    "Products with equal prices are displayed out of order."
+  ],
+  "data_requirements": [
+    "Product data with price attributes.",
+    "List of Accessories category products.",
+    "Sorting logic implemented on the backend.",
+    "Frontend display logic for sorted items."
+  ],
+  "dependencies": [
+    "Products must exist in the Accessories category.",
+    "Sorting functionality must be implemented.",
+    "Dropdown menu must be functional."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "API call to fetch sorted products based on price."
+  ],
+  "performance_metrics": [
+    "Response time of the sorting operation.",
+    "Page load time after sorting.",
+    "Memory usage during sorting."
+  ],
+  "accessibility_requirements": [
+    "Dropdown menu must have ARIA labels for screen readers.",
+    "Ensure keyboard navigation is supported for dropdown options.",
+    "Sorting options must be visible and selectable."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "8dd8cd15-d2d7-4a01-a6eb-aa7ea5022587",
+    "created_at": "2025-09-04T16:00:03.880356Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "data-validation",
+      "drag-and-drop",
+      "performance",
+      "search_and_sort",
+      "ui-test"
+    ],
+    "estimated_execution_time": 40,
+    "flakiness_potential": "medium"
+  }
+}

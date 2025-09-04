@@ -1,0 +1,96 @@
+{
+  "test_name": "Verify Filtering Products by Price Range",
+  "description": "Validate that the filtering functionality by price range works as expected on the Men's category page.",
+  "type": "filter",
+  "pages": [
+    "https://atid.store/product-category/men/"
+  ],
+  "steps": [
+    "Navigate to the Men's category page using the main navigation menu.",
+    "Scroll to the price filter section on the sidebar.",
+    "Enter a minimum price in the 'Min price' field.",
+    "Enter a maximum price in the 'Max price' field.",
+    "Click on the 'FILTER' button.",
+    "Verify that the product list updates to show only products within the specified price range."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+      "text": "MEN",
+      "action": "click",
+      "url_on_page": "https://atid.store"
+    },
+    {
+      "element_type": "label",
+      "selector": "//div[@id='woocommerce_price_filter-2']/form/div/div[2]/label[1]",
+      "text": "Min price",
+      "action": "type",
+      "url_on_page": "https://atid.store/product-category/men/"
+    },
+    {
+      "element_type": "label",
+      "selector": "//div[@id='woocommerce_price_filter-2']/form/div/div[2]/label[2]",
+      "text": "Max price",
+      "action": "type",
+      "url_on_page": "https://atid.store/product-category/men/"
+    },
+    {
+      "element_type": "button",
+      "selector": "//button[normalize-space()=\"FILTER\"]",
+      "text": "FILTER",
+      "action": "click",
+      "url_on_page": "https://atid.store/product-category/men/"
+    }
+  ],
+  "expected_results": [
+    "The product list updates to match the specified price range.",
+    "Only products within the range are displayed."
+  ],
+  "edge_cases": [
+    "No products available for the given price range.",
+    "Incorrect results displayed due to backend issues.",
+    "Filter button is unresponsive."
+  ],
+  "data_requirements": [
+    "Products with varying price ranges in the Men's category.",
+    "Backend support to filter products by price."
+  ],
+  "dependencies": [
+    "The price filter functionality is implemented.",
+    "Products have price data available.",
+    "The database supports price filtering."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "Fetch filtered product data based on price criteria."
+  ],
+  "performance_metrics": [
+    "Response time for applying the price filter.",
+    "Time taken to update the product list."
+  ],
+  "accessibility_requirements": [
+    "Ensure labels for 'Min price' and 'Max price' fields are accessible.",
+    "Verify keyboard navigation for the filter section."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "db20f45f-0e9c-401e-8313-6cbd839297a6",
+    "created_at": "2025-09-04T16:00:03.877548Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "data-validation",
+      "filter",
+      "mobile",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 30,
+    "flakiness_potential": "medium"
+  }
+}

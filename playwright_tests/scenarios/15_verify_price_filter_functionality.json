@@ -1,0 +1,93 @@
+{
+  "test_name": "Verify Price Filter Functionality",
+  "description": "This test ensures that the price filter works correctly, allowing users to filter products within a specified price range.",
+  "type": "filter",
+  "pages": [
+    "https://atid.store/store/"
+  ],
+  "steps": [
+    "Navigate to the Store page.",
+    "Locate the price filter section.",
+    "Enter '50' in the 'Min price' field.",
+    "Enter '150' in the 'Max price' field.",
+    "Click the 'FILTER' button.",
+    "Wait for the page to refresh with filtered results.",
+    "Verify that all displayed products have prices between 50 and 150.",
+    "Adjust the filter to a different range and repeat the verification."
+  ],
+  "selectors": [
+    {
+      "element_type": "label",
+      "selector": "//div[@id='woocommerce_price_filter-2']/form/div/div[2]/label[1]",
+      "text": "Min price",
+      "action": "type",
+      "url_on_page": "https://atid.store/store/"
+    },
+    {
+      "element_type": "label",
+      "selector": "//div[@id='woocommerce_price_filter-2']/form/div/div[2]/label[2]",
+      "text": "Max price",
+      "action": "type",
+      "url_on_page": "https://atid.store/store/"
+    },
+    {
+      "element_type": "button",
+      "selector": "//button[normalize-space()=\"FILTER\"]",
+      "text": "FILTER",
+      "action": "click",
+      "url_on_page": "https://atid.store/store/"
+    }
+  ],
+  "expected_results": [
+    "The product listing updates to show items within the specified price range."
+  ],
+  "edge_cases": [
+    "Entering invalid values in the price fields.",
+    "The 'FILTER' button is disabled or unresponsive.",
+    "Products outside the specified range appear in the results.",
+    "The price filter section is not visible.",
+    "Filtering takes too long."
+  ],
+  "data_requirements": [
+    "Test data for products with various price ranges.",
+    "Valid input validation for price fields.",
+    "Accurate price filter logic."
+  ],
+  "dependencies": [
+    "The price filter section is implemented correctly.",
+    "Product data includes accurate price information.",
+    "Price filter logic is functional."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "GET request to fetch products within the specified price range."
+  ],
+  "performance_metrics": [
+    "Filtering execution time.",
+    "Page refresh and rendering time."
+  ],
+  "accessibility_requirements": [
+    "Keyboard operability for price filter fields and button.",
+    "Accessible labels for the price fields and button."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "1eb38ef0-20ba-4065-bf23-567b10522c7d",
+    "created_at": "2025-09-04T16:00:03.883422Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "error-handling",
+      "filter",
+      "mobile",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 40,
+    "flakiness_potential": "medium"
+  }
+}

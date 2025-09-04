@@ -1,0 +1,96 @@
+{
+  "test_name": "Verify Product Browsing by Category",
+  "description": "This test verifies that users can browse products by selecting a category from the navigation menu and that the appropriate product listing page is displayed.",
+  "type": "navigation",
+  "pages": [
+    "https://atid.store/store/",
+    "https://atid.store/product-category/{category}/"
+  ],
+  "steps": [
+    "Navigate to the Store page.",
+    "Click on the 'Men' category link in the navigation menu.",
+    "Wait for the product listing page for the 'Men' category to load.",
+    "Verify that the URL matches the expected URL for the 'Men' category.",
+    "Assert that the product listing contains items exclusively from the 'Men' category.",
+    "Repeat the above steps for 'Women' and 'Accessories' categories.",
+    "Verify that each category displays the correct set of products."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+      "text": "MEN",
+      "action": "click",
+      "url_on_page": "https://atid.store/store/"
+    },
+    {
+      "element_type": "link",
+      "selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'menu-link')]",
+      "text": "WOMEN",
+      "action": "click",
+      "url_on_page": "https://atid.store/store/"
+    },
+    {
+      "element_type": "link",
+      "selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'menu-link')]",
+      "text": "ACCESSORIES",
+      "action": "click",
+      "url_on_page": "https://atid.store/store/"
+    }
+  ],
+  "expected_results": [
+    "The correct product listing page for the selected category is displayed.",
+    "The URL matches the expected URL for the selected category.",
+    "Only products belonging to the selected category are displayed."
+  ],
+  "edge_cases": [
+    "The category link is unclickable.",
+    "The product listing page fails to load.",
+    "The product listing displays items from other categories.",
+    "The URL does not change after clicking the category link.",
+    "Page navigation takes an unusually long time."
+  ],
+  "data_requirements": [
+    "Test data for products categorized under 'Men'.",
+    "Test data for products categorized under 'Women'.",
+    "Test data for products categorized under 'Accessories'.",
+    "The navigation menu must be visible and clickable.",
+    "Proper labels for all category links."
+  ],
+  "dependencies": [
+    "The Store page is functional and accessible.",
+    "Categories have products associated with them.",
+    "The navigation menu is implemented correctly."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "GET request to fetch products for the selected category."
+  ],
+  "performance_metrics": [
+    "Page load time for product category pages.",
+    "Navigation responsiveness after category selection."
+  ],
+  "accessibility_requirements": [
+    "Category links must be accessible via keyboard navigation.",
+    "Proper ARIA roles and labels for navigation menu links.",
+    "Sufficient color contrast for text in the navigation menu."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "0a041e62-70ec-4465-bdf6-5cc555907e51",
+    "created_at": "2025-09-04T16:00:03.882680Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "navigation",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "medium"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "test_name": "Verify Product Browsing in Men's Category",
+  "description": "Ensure the user can browse and navigate through products listed in the Men's category.",
+  "type": "navigation",
+  "pages": [
+    "https://atid.store/product-category/men/"
+  ],
+  "steps": [
+    "Navigate to the Men's category page using the main navigation menu.",
+    "Verify the page title contains 'Men'.",
+    "Scroll through the product listings to view available items.",
+    "Click on the 'ATID Blue Shoes' product link.",
+    "Verify that the product details page for 'ATID Blue Shoes' loads successfully."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+      "text": "MEN",
+      "action": "click",
+      "url_on_page": "https://atid.store"
+    },
+    {
+      "element_type": "link",
+      "selector": "//a[@href='https://atid.store/product/atid-blue-shoes/' and contains(@class, 'ast-loop-product__link')]",
+      "text": "ATID Blue Shoes",
+      "action": "click",
+      "url_on_page": "https://atid.store/product-category/men/"
+    }
+  ],
+  "expected_results": [
+    "The Men's category page is successfully loaded.",
+    "The user can view a list of products in the Men's category.",
+    "Navigating to a product details page displays the correct product information."
+  ],
+  "edge_cases": [
+    "No products are displayed on the Men's category page.",
+    "Broken links for product images or titles.",
+    "Incorrect product details loaded when clicking on a product."
+  ],
+  "data_requirements": [
+    "At least one product available in the Men's category.",
+    "Correct product details for 'ATID Blue Shoes' in the backend."
+  ],
+  "dependencies": [
+    "The Men's category page is accessible.",
+    "The product details pages are functional.",
+    "Products are loaded from the database successfully."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Fetch product details for the Men's category.",
+    "Fetch product details for 'ATID Blue Shoes'."
+  ],
+  "performance_metrics": [
+    "Page load time for the Men's category page.",
+    "Page load time for the product details page."
+  ],
+  "accessibility_requirements": [
+    "Ensure proper ARIA roles for navigation links.",
+    "Verify color contrast for text and background on the category page."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "23172401-bee9-4ef3-bb96-ea143d1ea1eb",
+    "created_at": "2025-09-04T16:00:03.877158Z",
+    "complexity": "medium",
+    "risk_level": "medium",
+    "priority": "normal",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "navigation",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 25,
+    "flakiness_potential": "medium"
+  }
+}

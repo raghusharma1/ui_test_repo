@@ -1,0 +1,92 @@
+{
+  "test_name": "Verify Accessibility Tools Functionality",
+  "description": "Tests the accessibility toolbar options 'Increase Text' and 'High Contrast' to ensure they adjust the page appropriately for users with visual impairments.",
+  "type": "accessibility",
+  "pages": [
+    "https://atid.store/cart-2/"
+  ],
+  "steps": [
+    "Navigate to https://atid.store/cart-2/.",
+    "Locate the 'Increase Text' button using its stable selector.",
+    "Click on the 'Increase Text' button.",
+    "Verify that the text size on the page increases.",
+    "Locate the 'High Contrast' button using its stable selector.",
+    "Click on the 'High Contrast' button.",
+    "Verify that the page background and text colors switch to high-contrast mode.",
+    "Check that the buttons remain functional after applying the changes.",
+    "Verify that the changes persist across page reloads."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='#' and contains(@class, 'pojo-a11y-toolbar-link')]",
+      "text": "Increase Text",
+      "action": "click",
+      "url_on_page": "https://atid.store/cart-2/"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='#' and contains(@class, 'pojo-a11y-toolbar-link')]",
+      "text": "High Contrast",
+      "action": "click",
+      "url_on_page": "https://atid.store/cart-2/"
+    }
+  ],
+  "expected_results": [
+    "Text size increases after clicking 'Increase Text'.",
+    "Page background and text colors change to high-contrast mode after clicking 'High Contrast'.",
+    "Accessibility changes persist across page reloads."
+  ],
+  "edge_cases": [
+    "Buttons are disabled or not visible.",
+    "Page content fails to react to accessibility settings.",
+    "Changes cause layout distortions or broken elements.",
+    "Accessibility settings do not persist across page reloads.",
+    "Buttons trigger errors or fail silently."
+  ],
+  "data_requirements": [
+    "Accessible 'Increase Text' and 'High Contrast' buttons.",
+    "Baseline text size and color scheme.",
+    "Browser compatibility for accessibility settings.",
+    "Stable internet connection.",
+    "No conflicting browser extensions affecting accessibility."
+  ],
+  "dependencies": [
+    "Accessibility toolbar must load successfully.",
+    "Buttons must be functional and clickable.",
+    "Browser must support CSS changes triggered by accessibility settings."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "None, as these are frontend UI changes."
+  ],
+  "performance_metrics": [
+    "Response time after clicking accessibility buttons.",
+    "Page render time after applying settings."
+  ],
+  "accessibility_requirements": [
+    "Ensure buttons are keyboard accessible.",
+    "Test screen reader compatibility with the buttons.",
+    "Verify ARIA roles and labels for the toolbar."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "abec79f9-b26a-474d-92ab-9023f61c54e7",
+    "created_at": "2025-09-04T16:00:03.881714Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "error-handling",
+      "keyboard-navigation",
+      "payment-flow",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 45,
+    "flakiness_potential": "medium"
+  }
+}

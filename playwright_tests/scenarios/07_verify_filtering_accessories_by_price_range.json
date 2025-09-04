@@ -1,0 +1,99 @@
+{
+  "test_name": "Verify Filtering Accessories by Price Range",
+  "description": "This test ensures that users can apply a price range filter to the Accessories category and view products within the specified price range.",
+  "type": "search_and_filter",
+  "pages": [
+    "https://atid.store/product-category/accessories/"
+  ],
+  "steps": [
+    "Navigate to the Accessories category page.",
+    "Locate the price filter section.",
+    "Input the minimum price in the 'Min price' field.",
+    "Input the maximum price in the 'Max price' field.",
+    "Click the 'FILTER' button.",
+    "Verify that the page reloads or updates dynamically.",
+    "Scroll through the list of filtered products.",
+    "Click on a product to view its details.",
+    "Verify that the product price falls within the specified range."
+  ],
+  "selectors": [
+    {
+      "element_type": "label",
+      "selector": "//div[@id='woocommerce_price_filter-2']/form/div/div[2]/label[1]",
+      "text": "Min price",
+      "action": "type",
+      "url_on_page": "https://atid.store/product-category/accessories/"
+    },
+    {
+      "element_type": "label",
+      "selector": "//div[@id='woocommerce_price_filter-2']/form/div/div[2]/label[2]",
+      "text": "Max price",
+      "action": "type",
+      "url_on_page": "https://atid.store/product-category/accessories/"
+    },
+    {
+      "element_type": "button",
+      "selector": "//button[normalize-space()=\"FILTER\"]",
+      "text": "FILTER",
+      "action": "click",
+      "url_on_page": "https://atid.store/product-category/accessories/"
+    }
+  ],
+  "expected_results": [
+    "Products within the specified price range are displayed.",
+    "No products outside the specified range are shown.",
+    "Price filter inputs are retained after filtering."
+  ],
+  "edge_cases": [
+    "No products found within the specified range.",
+    "User inputs non-numeric values in the price fields.",
+    "User inputs overlapping or reversed price ranges.",
+    "Filter button fails to trigger the update.",
+    "Price filter input fields are disabled."
+  ],
+  "data_requirements": [
+    "Product data with price attributes.",
+    "List of Accessories category products.",
+    "Dynamic filtering logic on the backend.",
+    "Frontend display logic for filtered items.",
+    "Valid price range values."
+  ],
+  "dependencies": [
+    "Products must exist in the Accessories category.",
+    "Price filter functionality must be implemented.",
+    "Dynamic loading or AJAX for filtering results."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "API call to fetch filtered products based on price range."
+  ],
+  "performance_metrics": [
+    "Response time of the filter operation.",
+    "Page load time after filtering.",
+    "Memory usage during dynamic filtering."
+  ],
+  "accessibility_requirements": [
+    "Labels for price fields must be accessible to screen readers.",
+    "Filter button must have ARIA roles.",
+    "Ensure keyboard navigation is supported for filter inputs."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "e69fc6ed-9482-4f9c-a929-744fac9d8991",
+    "created_at": "2025-09-04T16:00:03.879918Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "form-submission",
+      "performance",
+      "search_and_filter",
+      "ui-test"
+    ],
+    "estimated_execution_time": 45,
+    "flakiness_potential": "medium"
+  }
+}
