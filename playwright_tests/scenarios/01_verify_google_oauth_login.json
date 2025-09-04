@@ -1,0 +1,88 @@
+{
+  "test_name": "Verify Google OAuth Login",
+  "description": "This test verifies that a user can successfully log in to the platform using their Google account via the OAuth flow.",
+  "type": "authentication",
+  "pages": [
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "Navigate to the login page at https://dev.roost.ai/login.",
+    "Locate the Google login button.",
+    "Click on the Google login button.",
+    "Verify that the user is redirected to the Google OAuth authentication page.",
+    "Enter valid Google account credentials and submit.",
+    "Verify that the user is redirected back to the platform dashboard.",
+    "Check that the user is logged in and their Google profile data is displayed on the dashboard."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://accounts.google.com/o/oauth2/v2/auth?scope=email%20profile%20openid&openid.realm&include_granted_scopes=true&response_type=token&client_id=985988082020-h5fipp07abkqn9qer08dtc6ve33dan9i.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin' and contains(@class, 'google')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is redirected to Google's OAuth page.",
+    "User can authenticate using valid Google credentials.",
+    "User is redirected back to https://dev.roost.ai and logged in successfully.",
+    "User's Google profile details are displayed on the dashboard."
+  ],
+  "edge_cases": [
+    "Verify behavior when the user cancels login on the Google OAuth page.",
+    "Verify behavior when the user provides invalid Google credentials.",
+    "Verify behavior when Google's OAuth service is down.",
+    "Verify behavior when the redirect URI is tampered with.",
+    "Verify behavior when the user's Google account does not have an associated email address."
+  ],
+  "data_requirements": [
+    "A valid Google account with email and password.",
+    "OAuth client ID and secret configured for the application.",
+    "A redirect URI correctly set in the Google OAuth configuration.",
+    "Access to the Google OAuth authentication page.",
+    "Network connectivity for API calls to Google's servers."
+  ],
+  "dependencies": [
+    "Google OAuth service must be operational.",
+    "User's Google account must be active.",
+    "The platform must have a configured Google OAuth client ID and secret."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Google OAuth token exchange API.",
+    "Platform backend API to link Google account data with the user profile."
+  ],
+  "performance_metrics": [
+    "Time taken to redirect to Google's OAuth page.",
+    "Time taken to authenticate via Google.",
+    "Time taken to return to the platform after successful authentication."
+  ],
+  "accessibility_requirements": [
+    "Ensure that the Google login button is accessible via keyboard navigation.",
+    "Ensure that the Google login button has appropriate ARIA labels.",
+    "Verify that screen readers can identify and describe the Google login button accurately.",
+    "Ensure high contrast visibility of the Google login button."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "43985e68-ce3f-4ce7-97de-99b3bb19ef23",
+    "created_at": "2025-09-04T08:25:57.705710Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "error-handling",
+      "file-upload",
+      "form-submission",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "medium"
+  }
+}
