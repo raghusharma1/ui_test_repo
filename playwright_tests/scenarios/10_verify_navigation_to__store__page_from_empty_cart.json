@@ -1,0 +1,84 @@
+{
+  "test_name": "Verify Navigation to 'Store' Page from Empty Cart",
+  "description": "Tests the functionality of the 'Return to Shop' button on the cart page to ensure users can navigate back to the store page successfully.",
+  "type": "navigation",
+  "pages": [
+    "https://atid.store/cart-2/",
+    "https://atid.store/store/"
+  ],
+  "steps": [
+    "Navigate to https://atid.store/cart-2/.",
+    "Locate the 'Return to Shop' button using its stable selector.",
+    "Verify that the button is enabled and visible on the page.",
+    "Click on the 'Return to Shop' button.",
+    "Wait for the page to load completely.",
+    "Verify that the user is redirected to https://atid.store/store/.",
+    "Check that the store page displays product categories and listings."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/store/' and contains(@class, 'button')]",
+      "text": "RETURN TO SHOP",
+      "action": "click",
+      "url_on_page": "https://atid.store/cart-2/"
+    }
+  ],
+  "expected_results": [
+    "User is redirected to the store page.",
+    "Store page displays product categories and listings without errors."
+  ],
+  "edge_cases": [
+    "Button is disabled or not visible.",
+    "Button click does not redirect to the store page.",
+    "Store page fails to load or loads partially.",
+    "Network interruptions during navigation.",
+    "Button redirects to an incorrect page."
+  ],
+  "data_requirements": [
+    "Empty shopping cart state.",
+    "Valid store page URL: https://atid.store/store/",
+    "Accessible 'Return to Shop' button on the cart page.",
+    "Stable internet connection.",
+    "Browser compatibility for the cart page."
+  ],
+  "dependencies": [
+    "Cart page must load successfully.",
+    "Store page must be accessible.",
+    "User must have no items in the cart."
+  ],
+  "complexity": "low",
+  "api_interactions": [
+    "None, as this is purely a UI navigation test."
+  ],
+  "performance_metrics": [
+    "Page load time for the store page after navigation.",
+    "Button click response time."
+  ],
+  "accessibility_requirements": [
+    "Ensure the 'Return to Shop' button is keyboard accessible.",
+    "Verify ARIA roles and labels for the button.",
+    "Check color contrast for the button text against its background."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "2dbb1bc6-849a-402d-8421-c2b75cbd2241",
+    "created_at": "2025-09-04T16:00:03.881338Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "keyboard-navigation",
+      "navigation",
+      "network-resilience",
+      "payment-flow",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "high"
+  }
+}

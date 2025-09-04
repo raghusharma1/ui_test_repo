@@ -1,0 +1,104 @@
+{
+  "test_name": "Verify Navigation Menu Links",
+  "description": "Tests the navigation menu links ('Men', 'Women', 'Accessories') to ensure they redirect correctly to their respective category pages.",
+  "type": "navigation",
+  "pages": [
+    "https://atid.store/cart-2/",
+    "https://atid.store/product-category/men/",
+    "https://atid.store/product-category/women/",
+    "https://atid.store/product-category/accessories/"
+  ],
+  "steps": [
+    "Navigate to https://atid.store/cart-2/.",
+    "Locate the 'Men' link using its stable selector.",
+    "Click on the 'Men' link.",
+    "Verify that the page redirects to https://atid.store/product-category/men/.",
+    "Locate the 'Women' link using its stable selector.",
+    "Click on the 'Women' link.",
+    "Verify that the page redirects to https://atid.store/product-category/women/.",
+    "Locate the 'Accessories' link using its stable selector.",
+    "Click on the 'Accessories' link.",
+    "Verify that the page redirects to https://atid.store/product-category/accessories/."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+      "text": "MEN",
+      "action": "click",
+      "url_on_page": "https://atid.store/cart-2/"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'menu-link')]",
+      "text": "WOMEN",
+      "action": "click",
+      "url_on_page": "https://atid.store/cart-2/"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'menu-link')]",
+      "text": "ACCESSORIES",
+      "action": "click",
+      "url_on_page": "https://atid.store/cart-2/"
+    }
+  ],
+  "expected_results": [
+    "Link redirects to the correct category page.",
+    "Category pages load successfully without errors."
+  ],
+  "edge_cases": [
+    "Links are disabled or not visible.",
+    "Links redirect to incorrect pages.",
+    "Category pages fail to load or load partially.",
+    "Network interruptions during navigation.",
+    "Links trigger errors or fail silently."
+  ],
+  "data_requirements": [
+    "Accessible navigation menu links.",
+    "Valid category page URLs.",
+    "Browser compatibility for navigation links.",
+    "Stable internet connection.",
+    "Baseline page state without errors."
+  ],
+  "dependencies": [
+    "Navigation menu must load successfully.",
+    "Category pages must be accessible.",
+    "Links must be functional."
+  ],
+  "complexity": "low",
+  "api_interactions": [
+    "None, as this is purely a UI navigation test."
+  ],
+  "performance_metrics": [
+    "Page load time for category pages.",
+    "Link click response time."
+  ],
+  "accessibility_requirements": [
+    "Ensure links are keyboard accessible.",
+    "Verify ARIA roles and labels for the navigation links.",
+    "Check color contrast for link text against its background."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "7409255c-745b-42c3-9297-629444f93ce9",
+    "created_at": "2025-09-04T16:00:03.882088Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "error-handling",
+      "keyboard-navigation",
+      "navigation",
+      "network-resilience",
+      "payment-flow",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 50,
+    "flakiness_potential": "high"
+  }
+}

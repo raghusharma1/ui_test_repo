@@ -1,0 +1,97 @@
+{
+  "test_name": "Search for a Product Using the Search Bar",
+  "description": "This scenario tests the functionality of the search bar to locate specific products.",
+  "type": "search",
+  "pages": [
+    "https://atid.store/"
+  ],
+  "steps": [
+    "Navigate to the homepage (https://atid.store/).",
+    "Locate the search bar in the header.",
+    "Click on the search bar to activate it.",
+    "Type the product name 'Dark Brown Jeans' into the search bar.",
+    "Press Enter to initiate the search.",
+    "Verify the search results page loads with relevant products matching the query.",
+    "Locate the product 'Dark Brown Jeans' in the search results.",
+    "Click on the product link to view its detailed page."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/' and contains(@class, 'custom-logo-link')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://atid.store/"
+    },
+    {
+      "element_type": "input",
+      "selector": "//input[@type='search' and @placeholder='Search']",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://atid.store/"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product/dark-brown-jeans/' and contains(@class, 'ast-loop-product__link')]",
+      "text": "Dark Brown Jeans",
+      "action": "click",
+      "url_on_page": "https://atid.store/search"
+    }
+  ],
+  "expected_results": [
+    "The search results page should display products matching the query.",
+    "The 'Dark Brown Jeans' product should be clickable and lead to its detailed page."
+  ],
+  "edge_cases": [
+    "No results are found for the search query.",
+    "The search query contains typos or special characters.",
+    "The search bar is not responsive to user input.",
+    "User initiates a search without typing anything.",
+    "The search results page takes too long to load."
+  ],
+  "data_requirements": [
+    "Product catalog data for search indexing.",
+    "Search bar placeholder text.",
+    "Expected search results for 'Dark Brown Jeans'.",
+    "User session information.",
+    "Search results page layout and content."
+  ],
+  "dependencies": [
+    "The search functionality must be implemented and working.",
+    "The product 'Dark Brown Jeans' must exist in the catalog.",
+    "The search results page must be functional."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "GET /search?q=Dark+Brown+Jeans"
+  ],
+  "performance_metrics": [
+    "Search response time.",
+    "Page load time for the search results page."
+  ],
+  "accessibility_requirements": [
+    "Search bar should be accessible via keyboard navigation.",
+    "Screen readers should announce the purpose of the search bar.",
+    "Search results should be navigable using keyboard shortcuts."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "fbb9ceee-52d5-42bb-8115-ea31749cfc00",
+    "created_at": "2025-09-04T16:00:03.878893Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "form-submission",
+      "mobile",
+      "performance",
+      "search",
+      "ui-test"
+    ],
+    "estimated_execution_time": 40,
+    "flakiness_potential": "medium"
+  }
+}

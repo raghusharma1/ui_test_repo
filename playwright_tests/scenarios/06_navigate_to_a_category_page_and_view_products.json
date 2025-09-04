@@ -1,0 +1,90 @@
+{
+  "test_name": "Navigate to a Category Page and View Products",
+  "description": "This scenario tests navigation to a specific product category and browsing the listed products.",
+  "type": "navigation",
+  "pages": [
+    "https://atid.store/",
+    "https://atid.store/product-category/women/"
+  ],
+  "steps": [
+    "Navigate to the homepage (https://atid.store/).",
+    "Locate the category link 'Women' in the header menu.",
+    "Click on the 'Women' category link.",
+    "Verify the 'Women' category page loads with a list of products.",
+    "Scroll through the product list to view all available items.",
+    "Click on a product link (e.g., 'Blue Denim Shorts') to view its detailed page."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'menu-link')]",
+      "text": "WOMEN",
+      "action": "click",
+      "url_on_page": "https://atid.store/"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product/blue-denim-shorts/' and contains(@class, 'ast-loop-product__link')]",
+      "text": "Blue Denim Shorts",
+      "action": "click",
+      "url_on_page": "https://atid.store/product-category/women/"
+    }
+  ],
+  "expected_results": [
+    "The 'Women' category page should display all relevant products.",
+    "The product detail page for 'Blue Denim Shorts' should load correctly when clicked."
+  ],
+  "edge_cases": [
+    "The category page does not load due to a network error.",
+    "The 'Women' category contains no products.",
+    "The product list is incomplete or not displayed.",
+    "The category navigation link is broken.",
+    "The product detail page fails to load."
+  ],
+  "data_requirements": [
+    "Category data for 'Women'.",
+    "Product list for the 'Women' category.",
+    "Category navigation links.",
+    "User session information.",
+    "Product details for 'Blue Denim Shorts'."
+  ],
+  "dependencies": [
+    "The 'Women' category must exist in the catalog.",
+    "The category navigation links must be configured correctly.",
+    "The product catalog must be up-to-date."
+  ],
+  "complexity": "low",
+  "api_interactions": [
+    "GET /categories/women",
+    "GET /product/blue-denim-shorts"
+  ],
+  "performance_metrics": [
+    "Page load time for the category page.",
+    "Scroll performance for the product list."
+  ],
+  "accessibility_requirements": [
+    "Category links should be navigable via keyboard.",
+    "Screen readers should announce category names correctly.",
+    "Product links should have descriptive alt text."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "da7db30f-6ce6-4992-9794-edd50dc182d9",
+    "created_at": "2025-09-04T16:00:03.879268Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "error-handling",
+      "navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 30,
+    "flakiness_potential": "high"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "test_name": "Verify Product Search Functionality",
+  "description": "This test validates that users can search for products using the search bar and that relevant results are displayed.",
+  "type": "search",
+  "pages": [
+    "https://atid.store/store/"
+  ],
+  "steps": [
+    "Navigate to the Store page.",
+    "Locate the search bar on the page.",
+    "Enter the product name 'Anchor Bracelet' into the search bar.",
+    "Click the 'Search' button.",
+    "Wait for the search results page to load.",
+    "Verify that the product 'Anchor Bracelet' appears in the search results.",
+    "Clear the search bar and enter a non-existent product name.",
+    "Click the 'Search' button.",
+    "Verify that a 'No products found' message is displayed."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "#wc-block-search__input-1",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://atid.store/store/"
+    },
+    {
+      "element_type": "button",
+      "selector": "button[aria-label=\"Search\"]",
+      "text": "Search",
+      "action": "click",
+      "url_on_page": "https://atid.store/store/"
+    }
+  ],
+  "expected_results": [
+    "The search results page displays the product 'Anchor Bracelet'.",
+    "A 'No products found' message appears for non-existent product names."
+  ],
+  "edge_cases": [
+    "The search bar is unresponsive.",
+    "Search results display irrelevant products.",
+    "The 'Search' button is disabled.",
+    "Search results take too long to load.",
+    "Special characters in the search query cause errors."
+  ],
+  "data_requirements": [
+    "Product data including 'Anchor Bracelet'.",
+    "Error message text for no search results.",
+    "Valid input field configuration for the search bar.",
+    "Functional 'Search' button."
+  ],
+  "dependencies": [
+    "The search bar is correctly implemented.",
+    "Search indexing is up-to-date.",
+    "The 'Search' button triggers the search functionality."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "GET request to fetch products matching the search query."
+  ],
+  "performance_metrics": [
+    "Search execution time.",
+    "Search results rendering time."
+  ],
+  "accessibility_requirements": [
+    "Search bar must be operable via keyboard navigation.",
+    "Screen reader compatibility for search results.",
+    "Accessible labels for the search bar and button."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "27d49b4d-1020-4d98-8a61-28f883888491",
+    "created_at": "2025-09-04T16:00:03.883051Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "data-validation",
+      "error-handling",
+      "mobile",
+      "performance",
+      "search",
+      "ui-test"
+    ],
+    "estimated_execution_time": 45,
+    "flakiness_potential": "medium"
+  }
+}

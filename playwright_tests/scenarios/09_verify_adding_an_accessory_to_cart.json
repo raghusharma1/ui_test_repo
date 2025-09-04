@@ -1,0 +1,93 @@
+{
+  "test_name": "Verify Adding an Accessory to Cart",
+  "description": "This test ensures that users can add an accessory product to their shopping cart.",
+  "type": "cart_management",
+  "pages": [
+    "https://atid.store/product-category/accessories/",
+    "https://atid.store/cart-2/"
+  ],
+  "steps": [
+    "Navigate to the Accessories category page.",
+    "Scroll through the list of products.",
+    "Click on a product to view its details.",
+    "Locate the 'Add to cart' button.",
+    "Click the 'Add to cart' button.",
+    "Verify that the product is added to the cart.",
+    "Navigate to the cart page.",
+    "Verify that the product appears in the cart.",
+    "Check the product quantity and price in the cart."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product/anchor-bracelet/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://atid.store/product-category/accessories/"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'cart-container')]",
+      "text": "0.00  \u20aa 0",
+      "action": "click",
+      "url_on_page": "https://atid.store/product-category/accessories/"
+    }
+  ],
+  "expected_results": [
+    "Product is successfully added to the cart.",
+    "Cart reflects the correct product details and quantity.",
+    "Cart total updates accordingly."
+  ],
+  "edge_cases": [
+    "User adds a product that is out of stock.",
+    "Add to cart button fails to respond.",
+    "Cart page fails to load correctly.",
+    "User attempts to add multiple quantities of the same product.",
+    "Cart does not reflect the added product."
+  ],
+  "data_requirements": [
+    "Product data with stock attributes.",
+    "Cart functionality on the backend.",
+    "Frontend logic for displaying cart items.",
+    "Dynamic cart total calculation."
+  ],
+  "dependencies": [
+    "Product must exist in the Accessories category.",
+    "Add to cart functionality must be implemented.",
+    "Cart page must be accessible."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "API call to add product to cart.",
+    "API call to fetch cart details."
+  ],
+  "performance_metrics": [
+    "Response time for adding product to cart.",
+    "Cart page load time.",
+    "Memory usage during cart update."
+  ],
+  "accessibility_requirements": [
+    "Add to cart button must have ARIA roles.",
+    "Cart page must be navigable via keyboard.",
+    "Screen readers must correctly read cart details."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "4d9b0e25-3531-42e2-b8e8-b2947e7a31f2",
+    "created_at": "2025-09-04T16:00:03.880741Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "cart_management",
+      "payment-flow",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 45,
+    "flakiness_potential": "medium"
+  }
+}
