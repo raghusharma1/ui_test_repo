@@ -1,0 +1,89 @@
+{
+  "test_name": "Verify GitHub OAuth Login",
+  "description": "This test ensures that a user can log in to the platform using their GitHub account via the OAuth flow.",
+  "type": "authentication",
+  "pages": [
+    "https://dev.roost.ai/login"
+  ],
+  "steps": [
+    "Navigate to the login page at https://dev.roost.ai/login.",
+    "Locate the GitHub login button.",
+    "Click on the GitHub login button.",
+    "Verify that the user is redirected to the GitHub OAuth authentication page.",
+    "Enter valid GitHub account credentials and submit.",
+    "Authorize the application if prompted.",
+    "Verify that the user is redirected back to the platform dashboard.",
+    "Check that the user is logged in and their GitHub profile data is displayed on the dashboard."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://github.com/login/oauth/authorize?scope=user%3Aemail&client_id=0fc11ea1f52d5e2a8dcf&redirect_uri=https%3A%2F%2Fdev.roost.ai%2Flogin' and contains(@class, 'git')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User is redirected to GitHub's OAuth page.",
+    "User can authenticate using valid GitHub credentials.",
+    "User is redirected back to https://dev.roost.ai and logged in successfully.",
+    "User's GitHub profile details are displayed on the dashboard."
+  ],
+  "edge_cases": [
+    "Verify behavior when the user cancels login on the GitHub OAuth page.",
+    "Verify behavior when the user provides invalid GitHub credentials.",
+    "Verify behavior when GitHub's OAuth service is down.",
+    "Verify behavior when the redirect URI is tampered with.",
+    "Verify behavior when the user's GitHub account lacks a public email address."
+  ],
+  "data_requirements": [
+    "A valid GitHub account with email and password.",
+    "OAuth client ID and secret configured for the application.",
+    "A redirect URI correctly set in the GitHub OAuth configuration.",
+    "Access to the GitHub OAuth authentication page.",
+    "Network connectivity for API calls to GitHub's servers."
+  ],
+  "dependencies": [
+    "GitHub OAuth service must be operational.",
+    "User's GitHub account must be active.",
+    "The platform must have a configured GitHub OAuth client ID and secret."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "GitHub OAuth token exchange API.",
+    "Platform backend API to link GitHub account data with the user profile."
+  ],
+  "performance_metrics": [
+    "Time taken to redirect to GitHub's OAuth page.",
+    "Time taken to authenticate via GitHub.",
+    "Time taken to return to the platform after successful authentication."
+  ],
+  "accessibility_requirements": [
+    "Ensure that the GitHub login button is accessible via keyboard navigation.",
+    "Ensure that the GitHub login button has appropriate ARIA labels.",
+    "Verify that screen readers can identify and describe the GitHub login button accurately.",
+    "Ensure high contrast visibility of the GitHub login button."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "84abbf6f-71dc-4794-b920-e581782832c3",
+    "created_at": "2025-09-04T08:25:57.706285Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "error-handling",
+      "file-upload",
+      "form-submission",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 40,
+    "flakiness_potential": "medium"
+  }
+}
