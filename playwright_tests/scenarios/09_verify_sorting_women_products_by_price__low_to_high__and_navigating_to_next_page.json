@@ -1,0 +1,91 @@
+{
+  "test_name": "Verify Sorting Women Products by Price (Low to High) and Navigating to Next Page",
+  "description": "This test validates that users can sort products in the Women category by price from low to high and navigate to the next page of results.",
+  "type": "e-commerce",
+  "pages": [
+    "https://atid.store/product-category/women/"
+  ],
+  "steps": [
+    "Navigate to the Women category page.",
+    "Locate the sorting dropdown and select 'Sort by price: low to high'.",
+    "Verify that the product list updates to reflect the selected sorting option.",
+    "Scroll down to the bottom of the product list.",
+    "Locate and click the pagination link labeled '2'.",
+    "Verify that the second page of products is displayed.",
+    "Check that the products on the second page are sorted by price in ascending order."
+  ],
+  "selectors": [
+    {
+      "element_type": "select",
+      "selector": "select[aria-label=\"Shop order\"]",
+      "text": "Default sorting\nSort by popularity\nSort by average rating\nSort by latest\nSort by price: low to high\nSort by price: high to low",
+      "action": "select",
+      "url_on_page": "https://atid.store/product-category/women/"
+    },
+    {
+      "element_type": "link",
+      "selector": "//a[@href='https://atid.store/product-category/women/page/2/' and contains(@class, 'page-numbers')]",
+      "text": "2",
+      "action": "click",
+      "url_on_page": "https://atid.store/product-category/women/"
+    }
+  ],
+  "expected_results": [
+    "The product list updates to show items sorted by price in ascending order.",
+    "The second page of products is displayed upon clicking the pagination link.",
+    "Products on the second page are sorted by price in ascending order."
+  ],
+  "edge_cases": [
+    "Selecting the same sorting option multiple times.",
+    "Changing the sorting option while on the second page.",
+    "Network issues causing the product list to fail to update.",
+    "Pagination link not functioning correctly.",
+    "No products available after applying the sorting option."
+  ],
+  "data_requirements": [
+    "A product catalog with varying prices in the Women category.",
+    "At least 2 pages of products available.",
+    "A functional sorting dropdown.",
+    "Functional pagination links."
+  ],
+  "dependencies": [
+    "The Women category page must be accessible.",
+    "Sorting functionality must be implemented.",
+    "Pagination must be functional."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Check the API call that fetches sorted products.",
+    "Monitor the API call for paginated product data."
+  ],
+  "performance_metrics": [
+    "Time taken to update the product list after changing the sorting option.",
+    "Response time for loading the second page of products."
+  ],
+  "accessibility_requirements": [
+    "Ensure the sorting dropdown is accessible via keyboard navigation.",
+    "Verify that pagination links are screen-reader friendly.",
+    "Check for appropriate ARIA labels on the sorting dropdown and pagination links."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "03168075-d593-45ae-ac1a-e8569d0a047e",
+    "created_at": "2025-09-05T11:42:35.990220Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "data-validation",
+      "drag-and-drop",
+      "e-commerce",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "high"
+  }
+}

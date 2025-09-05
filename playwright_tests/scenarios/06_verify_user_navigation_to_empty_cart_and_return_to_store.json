@@ -1,0 +1,96 @@
+{
+  "test_name": "Verify User Navigation to Empty Cart and Return to Store",
+  "description": "This test validates the user's ability to access the cart page when it is empty and navigate back to the store using the 'Return to Shop' button.",
+  "type": "navigation",
+  "pages": [
+    "https://atid.store",
+    "https://atid.store/cart-2/",
+    "https://atid.store/store/"
+  ],
+  "steps": [
+    "Navigate to the homepage at https://atid.store.",
+    "Click on the 'Cart' link in the main navigation menu.",
+    "Verify that the cart page loads successfully.",
+    "Assert that the empty cart message is visible on the page.",
+    "Locate and click the 'RETURN TO SHOP' button.",
+    "Verify that the user is redirected to the store page."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'menu-link')]",
+      "text": "Cart",
+      "action": "click",
+      "url_on_page": "https://atid.store"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/store/' and contains(@class, 'button')]",
+      "text": "RETURN TO SHOP",
+      "action": "click",
+      "url_on_page": "https://atid.store/cart-2/"
+    }
+  ],
+  "expected_results": [
+    "User successfully navigates to the cart page.",
+    "The empty cart message is displayed.",
+    "User clicks the 'RETURN TO SHOP' button and is redirected to the store page."
+  ],
+  "edge_cases": [
+    "The 'Cart' link is not clickable due to network issues.",
+    "The empty cart message fails to load due to a server error.",
+    "The 'RETURN TO SHOP' button redirects to an incorrect page.",
+    "The cart page is inaccessible due to permissions or authentication issues.",
+    "The store page fails to load after redirection."
+  ],
+  "data_requirements": [
+    "User must have an empty cart state.",
+    "The 'RETURN TO SHOP' button must be enabled and functional.",
+    "The navigation menu must be visible.",
+    "The empty cart message must be configured to display correctly.",
+    "The store page must be available."
+  ],
+  "dependencies": [
+    "Homepage must be accessible.",
+    "Cart page must have proper routing configured.",
+    "Store page must be functional and accessible."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "GET request for cart contents.",
+    "GET request for store page data."
+  ],
+  "performance_metrics": [
+    "Page load time for the cart page.",
+    "Page load time for the store page."
+  ],
+  "accessibility_requirements": [
+    "The 'RETURN TO SHOP' button should be keyboard accessible.",
+    "Empty cart message should have appropriate ARIA roles.",
+    "Navigation links should have descriptive labels."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "eb2577af-e71a-4d22-9197-9b4fd694c766",
+    "created_at": "2025-09-05T11:42:35.990220Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "data-validation",
+      "error-handling",
+      "navigation",
+      "network-resilience",
+      "payment-flow",
+      "performance",
+      "security",
+      "ui-test"
+    ],
+    "estimated_execution_time": 30,
+    "flakiness_potential": "high"
+  }
+}

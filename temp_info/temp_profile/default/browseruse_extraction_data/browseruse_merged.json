@@ -1,0 +1,269 @@
+{
+  "https://atid.store/cart-2/": {
+    "explored_pages_and_scenarios": [
+      {
+        "page_title": "Cart Page",
+        "potential_user_journeys": [
+          {
+            "scenario_name": "Empty Cart Prompt",
+            "scenario_description": "User encounters an empty cart and is prompted to return to shopping.",
+            "steps": [
+              {
+                "action": "assert_visibility",
+                "element_description": "Message indicating the cart is empty."
+              },
+              {
+                "action": "click",
+                "element_description": "Return to Shop button."
+              }
+            ],
+            "expected_outcome": [
+              "User is redirected to the store page to continue shopping."
+            ]
+          },
+          {
+            "scenario_name": "Navigate Product Categories",
+            "scenario_description": "User explores product categories from the cart page.",
+            "steps": [
+              {
+                "action": "click",
+                "element_description": "Link to Women Jeans category."
+              },
+              {
+                "action": "click",
+                "element_description": "Link to Men Shirts category."
+              }
+            ],
+            "expected_outcome": [
+              "User views the selected product category pages."
+            ]
+          },
+          {
+            "scenario_name": "Use Accessibility Tools",
+            "scenario_description": "User adjusts page accessibility settings.",
+            "steps": [
+              {
+                "action": "click",
+                "element_description": "Accessibility toolbar button."
+              },
+              {
+                "action": "click",
+                "element_description": "Increase text size option."
+              }
+            ],
+            "expected_outcome": [
+              "The page text size is increased for better readability."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "https://atid.store/contact-us/": {
+    "explored_pages_and_scenarios": [
+      {
+        "page_title": "Contact Us",
+        "potential_user_journeys": [
+          {
+            "scenario_name": "Utilizing Accessibility Tools",
+            "scenario_description": "Users adjust the page's accessibility settings for better usability.",
+            "steps": [
+              {
+                "action": "click",
+                "element_description": "Button to increase text size."
+              },
+              {
+                "action": "click",
+                "element_description": "Button to enable high contrast mode."
+              }
+            ],
+            "expected_outcome": [
+              "Page accessibility is enhanced according to the user's preferences."
+            ]
+          },
+          {
+            "scenario_name": "Submitting a Contact Form",
+            "scenario_description": "Users fill out the contact form to reach customer support.",
+            "steps": [
+              {
+                "action": "type",
+                "element_description": "Form field for the user's name."
+              },
+              {
+                "action": "type",
+                "element_description": "Form field for the user's email address."
+              },
+              {
+                "action": "type",
+                "element_description": "Form field for the user's message."
+              },
+              {
+                "action": "click",
+                "element_description": "Button to submit the contact form."
+              }
+            ],
+            "expected_outcome": [
+              "The user's message is sent to customer support for further assistance."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "https://atid.store/product-category/women/": {
+    "explored_pages_and_scenarios": [
+      {
+        "page_title": "Women Category",
+        "potential_user_journeys": [
+          {
+            "scenario_name": "Browse Women Apparel",
+            "scenario_description": "User browses through the women apparel category and selects an item to view details.",
+            "steps": [
+              {
+                "action": "click",
+                "element_description": "Clickable link for the product item, e.g., 'Flamingo Tshirt'."
+              },
+              {
+                "action": "assert_visibility",
+                "element_description": "Product detail page is displayed with pricing and add-to-cart options."
+              }
+            ],
+            "expected_outcome": [
+              "The user can view detailed information about the selected product and add it to the cart."
+            ]
+          },
+          {
+            "scenario_name": "Filter by Accessories",
+            "scenario_description": "User applies filters to view accessories only and selects an item.",
+            "steps": [
+              {
+                "action": "click",
+                "element_description": "Filter option labeled 'Accessories'."
+              },
+              {
+                "action": "assert_visibility",
+                "element_description": "Filtered product list showing accessories."
+              }
+            ],
+            "expected_outcome": [
+              "The user sees a list of accessories and can proceed to select an item."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "https://atid.store/store/": {
+    "explored_pages_and_scenarios": [
+      {
+        "page_title": "Store Page",
+        "potential_user_journeys": [
+          {
+            "scenario_name": "Explore Product Categories",
+            "scenario_description": "Users can browse through different product categories to find items of interest.",
+            "steps": [
+              {
+                "action": "click",
+                "element_description": "Category link for Accessories, Men, or Women."
+              }
+            ],
+            "expected_outcome": [
+              "User is redirected to the selected category page displaying relevant products."
+            ]
+          },
+          {
+            "scenario_name": "Filter Products by Price",
+            "scenario_description": "Users can set a price range to filter products displayed in the store.",
+            "steps": [
+              {
+                "action": "input",
+                "element_description": "Price range slider to set minimum and maximum prices."
+              },
+              {
+                "action": "click",
+                "element_description": "Filter button to apply the price range."
+              }
+            ],
+            "expected_outcome": [
+              "Filtered list of products within the specified price range is displayed."
+            ]
+          },
+          {
+            "scenario_name": "Sort Products",
+            "scenario_description": "Users can sort the products by different criteria for easier navigation.",
+            "steps": [
+              {
+                "action": "select",
+                "element_description": "Dropdown menu to choose sorting criteria such as popularity or price."
+              }
+            ],
+            "expected_outcome": [
+              "Products are sorted based on the selected criteria."
+            ]
+          },
+          {
+            "scenario_name": "View Product Details",
+            "scenario_description": "Users can click on a product to view its detailed information and add it to the cart.",
+            "steps": [
+              {
+                "action": "click",
+                "element_description": "Product link from the listing."
+              }
+            ],
+            "expected_outcome": [
+              "Product detail page is displayed with options to add to the cart."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "https://atid.store/": {
+    "explored_pages_and_scenarios": [
+      {
+        "page_title": "ATID Demo Store",
+        "potential_user_journeys": [
+          {
+            "scenario_name": "Navigate to Men Section",
+            "scenario_description": "User navigates to the Men section to explore men's products.",
+            "steps": [
+              {
+                "action": "click",
+                "element_description": "Navigation menu item labeled 'Men'."
+              }
+            ],
+            "expected_outcome": [
+              "User is redirected to the Men product page."
+            ]
+          },
+          {
+            "scenario_name": "Accessibility Enhancement",
+            "scenario_description": "User adjusts the website's appearance for better accessibility.",
+            "steps": [
+              {
+                "action": "click",
+                "element_description": "Accessibility toolbar option, such as 'Increase Text'."
+              }
+            ],
+            "expected_outcome": [
+              "The text size increases for improved readability."
+            ]
+          },
+          {
+            "scenario_name": "View Promotional Offers",
+            "scenario_description": "User explores promotional offers available on the homepage.",
+            "steps": [
+              {
+                "action": "click",
+                "element_description": "Promotional banner labeled 'Shop Now' under '20% Off On Tank Tops'."
+              }
+            ],
+            "expected_outcome": [
+              "User is redirected to the tank tops product page with promotional details."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

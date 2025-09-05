@@ -1,0 +1,55 @@
+{
+  "url": "https://atid.store/cart-2/",
+  "explored_pages_and_scenarios": [
+    {
+      "page_title": "Cart Page",
+      "potential_user_journeys": [
+        {
+          "scenario_name": "Empty Cart Prompt",
+          "scenario_description": "User encounters an empty cart and is prompted to return to shopping.",
+          "steps": [
+            {
+              "action": "assert_visibility",
+              "element_description": "Message indicating the cart is empty."
+            },
+            {
+              "action": "click",
+              "element_description": "Return to Shop button."
+            }
+          ],
+          "expected_outcome": ["User is redirected to the store page to continue shopping."]
+        },
+        {
+          "scenario_name": "Navigate Product Categories",
+          "scenario_description": "User explores product categories from the cart page.",
+          "steps": [
+            {
+              "action": "click",
+              "element_description": "Link to Women Jeans category."
+            },
+            {
+              "action": "click",
+              "element_description": "Link to Men Shirts category."
+            }
+          ],
+          "expected_outcome": ["User views the selected product category pages."]
+        },
+        {
+          "scenario_name": "Use Accessibility Tools",
+          "scenario_description": "User adjusts page accessibility settings.",
+          "steps": [
+            {
+              "action": "click",
+              "element_description": "Accessibility toolbar button."
+            },
+            {
+              "action": "click",
+              "element_description": "Increase text size option."
+            }
+          ],
+          "expected_outcome": ["The page text size is increased for better readability."]
+        }
+      ]
+    }
+  ]
+}

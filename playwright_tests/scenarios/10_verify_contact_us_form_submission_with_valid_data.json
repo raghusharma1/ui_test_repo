@@ -1,0 +1,112 @@
+{
+  "test_name": "Verify Contact Us Form Submission with Valid Data",
+  "description": "This scenario tests the submission of the Contact Us form with valid user inputs and ensures the form is correctly processed.",
+  "type": "form_submission",
+  "pages": [
+    "https://atid.store/contact-us/"
+  ],
+  "steps": [
+    "Navigate to https://atid.store/contact-us/",
+    "Locate the 'Name *' input field using its stable selector and type 'John Doe'.",
+    "Locate the 'Email *' input field using its stable selector and type 'john.doe@example.com'.",
+    "Locate the 'Comment or Message *' textarea using its stable selector and type 'I would like to inquire about bulk orders.'",
+    "Locate the 'SEND MESSAGE' button using its stable selector and click on it.",
+    "Verify that a success message or confirmation appears indicating the form submission was successful."
+  ],
+  "selectors": [
+    {
+      "element_type": "input",
+      "selector": "#wpforms-15-field_0",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://atid.store/contact-us/"
+    },
+    {
+      "element_type": "input",
+      "selector": "#wpforms-15-field_4",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://atid.store/contact-us/"
+    },
+    {
+      "element_type": "textarea",
+      "selector": "#wpforms-15-field_2",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://atid.store/contact-us/"
+    },
+    {
+      "element_type": "button",
+      "selector": "#wpforms-submit-15",
+      "text": "SEND MESSAGE",
+      "action": "click",
+      "url_on_page": "https://atid.store/contact-us/"
+    }
+  ],
+  "expected_results": [
+    "All input fields accept valid data.",
+    "The 'SEND MESSAGE' button triggers the form submission.",
+    "A confirmation message is displayed indicating the form submission was successful."
+  ],
+  "edge_cases": [
+    "Empty input fields are submitted.",
+    "Invalid email formats such as 'john.doe.com' or 'john.doe@.com'.",
+    "Exceeding the character limit for the 'Comment or Message *' field.",
+    "Network failure during form submission.",
+    "Double-clicking the 'SEND MESSAGE' button results in duplicate submissions."
+  ],
+  "data_requirements": [
+    "Valid name such as 'John Doe'.",
+    "Valid email address such as 'john.doe@example.com'.",
+    "Valid comment or message text such as 'I would like to inquire about bulk orders.'",
+    "No special characters in input fields other than allowed ones.",
+    "Ensure the form is accessible for testing purposes."
+  ],
+  "dependencies": [
+    "The Contact Us page must be accessible.",
+    "The 'SEND MESSAGE' button must be functional.",
+    "The backend server must properly handle the form submission.",
+    "The success message element must be implemented.",
+    "The form fields must have proper validation rules in place."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Monitor the POST request for form submission.",
+    "Verify the server response status code (e.g., 200 for success).",
+    "Check if any validation API is used for email or message inputs."
+  ],
+  "performance_metrics": [
+    "Measure form submission response time.",
+    "Ensure the page does not freeze during or after form submission.",
+    "Monitor server response time after form submission."
+  ],
+  "accessibility_requirements": [
+    "Ensure all form fields have appropriate labels and ARIA roles.",
+    "Verify the 'SEND MESSAGE' button is accessible via keyboard navigation.",
+    "Check color contrast ratios for the form fields and button.",
+    "Ensure the success message is announced by screen readers.",
+    "Validate that the form can be completed without a mouse."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "b8285e24-ce9d-45b1-92ae-d5cff8e9d42d",
+    "created_at": "2025-09-05T11:42:35.990220Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "error-handling",
+      "form-submission",
+      "form_submission",
+      "keyboard-navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 30,
+    "flakiness_potential": "high"
+  }
+}

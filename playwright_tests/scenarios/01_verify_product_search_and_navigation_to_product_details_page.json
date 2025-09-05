@@ -1,0 +1,96 @@
+{
+  "test_name": "Verify Product Search and Navigation to Product Details Page",
+  "description": "Validates the ability of users to search for a product by category and navigate to its details page.",
+  "type": "navigation",
+  "pages": [
+    "https://atid.store/",
+    "https://atid.store/product-category/accessories/",
+    "https://atid.store/product/light-brown-purse/"
+  ],
+  "steps": [
+    "Navigate to https://atid.store/",
+    "Click on the 'ACCESSORIES' menu link in the navigation bar.",
+    "Wait for the Accessories category page to load.",
+    "Locate and click on the product link 'Light Brown Purse'.",
+    "Wait for the product details page for 'Light Brown Purse' to fully load.",
+    "Verify that the product name 'Light Brown Purse' is displayed on the product details page.",
+    "Verify that the product description and pricing information are displayed."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'menu-link')]",
+      "text": "ACCESSORIES",
+      "action": "click",
+      "url_on_page": "https://atid.store/"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product/light-brown-purse/' and contains(@class, 'ast-loop-product__link')]",
+      "text": "Light Brown Purse",
+      "action": "click",
+      "url_on_page": "https://atid.store/product-category/accessories/"
+    }
+  ],
+  "expected_results": [
+    "User is successfully redirected to the Accessories category page.",
+    "User is successfully redirected to the product details page of 'Light Brown Purse'.",
+    "Product name, description, and pricing information are correctly displayed."
+  ],
+  "edge_cases": [
+    "Product link is missing or broken.",
+    "Category page fails to load due to server issues.",
+    "Product details page fails to load or displays incorrect information.",
+    "Navigation link for 'ACCESSORIES' is disabled or non-functional.",
+    "Network latency causes delayed page loading."
+  ],
+  "data_requirements": [
+    "Category page must have products listed.",
+    "Product 'Light Brown Purse' must exist in the Accessories category.",
+    "Product details page must have valid data (name, description, price).",
+    "Navigation menu must be functional.",
+    "Category and product data must be pre-populated in the database."
+  ],
+  "dependencies": [
+    "The Accessories category must exist and be accessible.",
+    "The product 'Light Brown Purse' must be listed under Accessories.",
+    "The navigation menu must be correctly implemented."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "GET /categories to fetch available categories.",
+    "GET /products to fetch product listings.",
+    "GET /product-details/{product-id} to fetch product details."
+  ],
+  "performance_metrics": [
+    "Page load time for Accessories category page.",
+    "Page load time for product details page.",
+    "Navigation menu responsiveness."
+  ],
+  "accessibility_requirements": [
+    "Ensure that navigation links have appropriate ARIA roles.",
+    "Verify that the product details page is fully keyboard-navigable.",
+    "Check for proper alt text for images on the Accessories category page."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "c59774f8-c880-4f00-b06e-cc41843b0125",
+    "created_at": "2025-09-05T11:42:35.990220Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "data-validation",
+      "form-submission",
+      "navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "high"
+  }
+}
