@@ -1,0 +1,78 @@
+{
+  "COOKIE_DOMAIN": {
+    "key": "COOKIE_DOMAIN",
+    "value": "",
+    "type": "string",
+    "confidence": 0.8,
+    "metadata": {
+      "description": "The domain where cookies are valid (typically for authentication or session tracking).",
+      "example": "example.com or subdomain.example.com"
+    },
+    "is_sensitive": false,
+    "suggestions": [
+      "Provide a valid domain to ensure cookies work as expected.",
+      "Ensure the domain is properly scoped to avoid security risks, such as cross-site request forgery."
+    ]
+  },
+  "COOKIE_NAME": {
+    "key": "COOKIE_NAME",
+    "value": "",
+    "type": "string",
+    "confidence": 0.8,
+    "metadata": {
+      "description": "The name of the cookie used for authentication or session tracking.",
+      "example": "session_id or auth_token"
+    },
+    "is_sensitive": false,
+    "suggestions": [
+      "Provide a cookie name that is descriptive but does not expose sensitive information.",
+      "Avoid using generic names that could lead to conflicts with other applications."
+    ]
+  },
+  "LOGIN_TYPE": {
+    "key": "LOGIN_TYPE",
+    "value": "Okta",
+    "type": "string",
+    "confidence": 1.0,
+    "metadata": {
+      "description": "Specifies the login provider or authentication method (e.g., Okta, Google, or custom login).",
+      "example": "Okta"
+    },
+    "is_sensitive": false,
+    "suggestions": [
+      "Ensure the login type matches the authentication method configured for the system.",
+      "Document the supported login types for clarity."
+    ]
+  },
+  "SITE_PASSWORD": {
+    "key": "SITE_PASSWORD",
+    "value": "167d9a2d71e78409f6cc78f5f4b599f0a44d9cc87d83ef742249a073abf653f6",
+    "type": "string",
+    "confidence": 1.0,
+    "metadata": {
+      "description": "Represents a hashed or plaintext password used for authentication purposes.",
+      "example": "A hashed password or secure random string"
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Store passwords securely using hashing algorithms like bcrypt or Argon2.",
+      "Avoid storing plaintext passwords in environment variables.",
+      "Rotate passwords periodically to improve security."
+    ]
+  },
+  "SITE_USERNAME": {
+    "key": "SITE_USERNAME",
+    "value": "playwright1@zb.io",
+    "type": "email",
+    "confidence": 1.0,
+    "metadata": {
+      "description": "Represents an email address used as a username for authentication.",
+      "example": "user@example.com"
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Ensure the email address is valid and corresponds to the intended user.",
+      "Avoid hardcoding sensitive data like usernames in environment variables; consider using a secure vault."
+    ]
+  }
+}

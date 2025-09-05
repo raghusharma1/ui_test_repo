@@ -1,0 +1,58 @@
+{
+  "url": "https://atid.store/store/",
+  "explored_pages_and_scenarios": [
+    {
+      "page_title": "Store Page",
+      "potential_user_journeys": [
+        {
+          "scenario_name": "Explore Product Categories",
+          "scenario_description": "Users can browse through different product categories to find items of interest.",
+          "steps": [
+            {
+              "action": "click",
+              "element_description": "Category link for Accessories, Men, or Women."
+            }
+          ],
+          "expected_outcome": ["User is redirected to the selected category page displaying relevant products."]
+        },
+        {
+          "scenario_name": "Filter Products by Price",
+          "scenario_description": "Users can set a price range to filter products displayed in the store.",
+          "steps": [
+            {
+              "action": "input",
+              "element_description": "Price range slider to set minimum and maximum prices."
+            },
+            {
+              "action": "click",
+              "element_description": "Filter button to apply the price range."
+            }
+          ],
+          "expected_outcome": ["Filtered list of products within the specified price range is displayed."]
+        },
+        {
+          "scenario_name": "Sort Products",
+          "scenario_description": "Users can sort the products by different criteria for easier navigation.",
+          "steps": [
+            {
+              "action": "select",
+              "element_description": "Dropdown menu to choose sorting criteria such as popularity or price."
+            }
+          ],
+          "expected_outcome": ["Products are sorted based on the selected criteria."]
+        },
+        {
+          "scenario_name": "View Product Details",
+          "scenario_description": "Users can click on a product to view its detailed information and add it to the cart.",
+          "steps": [
+            {
+              "action": "click",
+              "element_description": "Product link from the listing."
+            }
+          ],
+          "expected_outcome": ["Product detail page is displayed with options to add to the cart."]
+        }
+      ]
+    }
+  ]
+}

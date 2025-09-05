@@ -1,0 +1,103 @@
+{
+  "test_name": "Verify User Navigation Across Categories",
+  "description": "Tests the ability of users to navigate between product categories using the main menu.",
+  "type": "navigation",
+  "pages": [
+    "https://atid.store/",
+    "https://atid.store/product-category/men/",
+    "https://atid.store/product-category/women/",
+    "https://atid.store/product-category/accessories/"
+  ],
+  "steps": [
+    "Navigate to https://atid.store/",
+    "Click on the 'MEN' menu link in the navigation bar.",
+    "Wait for the Men's category page to load.",
+    "Click on the 'WOMEN' menu link in the navigation bar.",
+    "Wait for the Women's category page to load.",
+    "Click on the 'ACCESSORIES' menu link in the navigation bar.",
+    "Wait for the Accessories category page to load.",
+    "Verify that each category page displays relevant products."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+      "text": "MEN",
+      "action": "click",
+      "url_on_page": "https://atid.store/"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'menu-link')]",
+      "text": "WOMEN",
+      "action": "click",
+      "url_on_page": "https://atid.store/"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'menu-link')]",
+      "text": "ACCESSORIES",
+      "action": "click",
+      "url_on_page": "https://atid.store/"
+    }
+  ],
+  "expected_results": [
+    "User can successfully navigate between categories.",
+    "Category pages display relevant products.",
+    "Navigation menu remains functional throughout the test."
+  ],
+  "edge_cases": [
+    "Category menu links are broken or disabled.",
+    "Category pages fail to load due to server issues.",
+    "Products are missing or incorrectly displayed on category pages.",
+    "Network latency causes delayed navigation.",
+    "Navigation menu disappears or becomes unresponsive."
+  ],
+  "data_requirements": [
+    "Men, Women, and Accessories categories must exist.",
+    "Each category must have products listed.",
+    "Navigation menu must be functional.",
+    "Category pages must have valid data.",
+    "Database must maintain product associations with categories."
+  ],
+  "dependencies": [
+    "Navigation menu must be correctly implemented.",
+    "Men, Women, and Accessories categories must exist.",
+    "Products must be associated with relevant categories."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "GET /categories to fetch available categories.",
+    "GET /products to fetch product listings."
+  ],
+  "performance_metrics": [
+    "Page load time for category pages.",
+    "Navigation menu responsiveness.",
+    "Time taken for category links to redirect."
+  ],
+  "accessibility_requirements": [
+    "Ensure that category links have appropriate ARIA roles.",
+    "Verify that each category page is keyboard-navigable.",
+    "Check for proper color contrast on category pages."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "1763c99c-3a64-4e54-b9f1-4f11d327b6dd",
+    "created_at": "2025-09-05T11:42:35.990220Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "mobile",
+      "navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 40,
+    "flakiness_potential": "high"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "test_name": "Verify Shopping Cart Functionality",
+  "description": "Tests the ability of users to add a product to the shopping cart and review the cart contents.",
+  "type": "cart_operations",
+  "pages": [
+    "https://atid.store/",
+    "https://atid.store/cart-2/"
+  ],
+  "steps": [
+    "Navigate to https://atid.store/",
+    "Click on the 'SHOP NOW' button under the Women's category.",
+    "Wait for the Women's category page to load.",
+    "Locate and click on the product link 'Blue Denim Shorts'.",
+    "Wait for the product details page of 'Blue Denim Shorts' to load.",
+    "Click on the 'Add to Cart' button on the product page.",
+    "Wait for the cart page to load.",
+    "Verify that 'Blue Denim Shorts' is displayed in the shopping cart with correct pricing."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'elementor-button-link')]",
+      "text": "SHOP NOW",
+      "action": "click",
+      "url_on_page": "https://atid.store/"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product/blue-denim-shorts/' and contains(@class, 'ast-loop-product__link')]",
+      "text": "Blue Denim Shorts",
+      "action": "click",
+      "url_on_page": "https://atid.store/product-category/women/"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'cart-container')]",
+      "text": "Cart",
+      "action": "click",
+      "url_on_page": "https://atid.store/"
+    }
+  ],
+  "expected_results": [
+    "Product 'Blue Denim Shorts' is successfully added to the cart.",
+    "Cart page displays 'Blue Denim Shorts' with correct pricing.",
+    "User can proceed to checkout from the cart page."
+  ],
+  "edge_cases": [
+    "Add to Cart button is non-functional.",
+    "Product does not appear in the cart after adding.",
+    "Cart page fails to load or displays incorrect information.",
+    "Network latency causes delayed cart updates.",
+    "Cart page does not display checkout options."
+  ],
+  "data_requirements": [
+    "Product 'Blue Denim Shorts' must exist and be purchasable.",
+    "Shopping cart functionality must be enabled.",
+    "Cart page must have valid data (product name, price).",
+    "User must have permissions to add products to the cart.",
+    "Database must maintain cart state for the session."
+  ],
+  "dependencies": [
+    "Product 'Blue Denim Shorts' must be listed under Women's category.",
+    "Add to Cart functionality must be implemented.",
+    "Cart page must be accessible."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "POST /cart/add to add the product to the cart.",
+    "GET /cart to retrieve cart contents.",
+    "GET /product-details/{product-id} to fetch product details."
+  ],
+  "performance_metrics": [
+    "Response time for adding a product to the cart.",
+    "Page load time for the cart page.",
+    "Time taken to update cart contents."
+  ],
+  "accessibility_requirements": [
+    "Ensure that all buttons have accessible labels.",
+    "Verify that cart page is keyboard-navigable.",
+    "Check for proper color contrast on the cart page."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "7426c0f3-f2d6-4361-8ca2-4c52b4e316e1",
+    "created_at": "2025-09-05T11:42:35.990220Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "cart_operations",
+      "form-submission",
+      "network-resilience",
+      "payment-flow",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 40,
+    "flakiness_potential": "high"
+  }
+}

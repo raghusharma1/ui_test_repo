@@ -1,0 +1,48 @@
+{
+  "url": "https://atid.store/contact-us/",
+  "explored_pages_and_scenarios": [
+    {
+      "page_title": "Contact Us",
+      "potential_user_journeys": [
+        {
+          "scenario_name": "Utilizing Accessibility Tools",
+          "scenario_description": "Users adjust the page's accessibility settings for better usability.",
+          "steps": [
+            {
+              "action": "click",
+              "element_description": "Button to increase text size."
+            },
+            {
+              "action": "click",
+              "element_description": "Button to enable high contrast mode."
+            }
+          ],
+          "expected_outcome": ["Page accessibility is enhanced according to the user's preferences."]
+        },
+        {
+          "scenario_name": "Submitting a Contact Form",
+          "scenario_description": "Users fill out the contact form to reach customer support.",
+          "steps": [
+            {
+              "action": "type",
+              "element_description": "Form field for the user's name."
+            },
+            {
+              "action": "type",
+              "element_description": "Form field for the user's email address."
+            },
+            {
+              "action": "type",
+              "element_description": "Form field for the user's message."
+            },
+            {
+              "action": "click",
+              "element_description": "Button to submit the contact form."
+            }
+          ],
+          "expected_outcome": ["The user's message is sent to customer support for further assistance."]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "test_name": "Verify Navigation to Contact Us Page",
+  "description": "This scenario tests the navigation link to the Contact Us page from the main menu and verifies its accessibility.",
+  "type": "navigation",
+  "pages": [
+    "https://atid.store",
+    "https://atid.store/contact-us/"
+  ],
+  "steps": [
+    "Navigate to https://atid.store.",
+    "Locate the 'CONTACT US' navigation link in the main menu using its stable selector and click on it.",
+    "Verify the browser redirects to https://atid.store/contact-us/.",
+    "Ensure the page title matches 'Contact Us'.",
+    "Verify the presence of the contact form on the page."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/contact-us/' and contains(@class, 'menu-link')]",
+      "text": "CONTACT US",
+      "action": "click",
+      "url_on_page": "https://atid.store"
+    }
+  ],
+  "expected_results": [
+    "The 'CONTACT US' link is clickable and functional.",
+    "The browser redirects to the correct URL (https://atid.store/contact-us/).",
+    "The Contact Us page loads successfully with all elements visible."
+  ],
+  "edge_cases": [
+    "The 'CONTACT US' link is not visible on smaller screen sizes.",
+    "Clicking the link results in a 404 Page Not Found error.",
+    "Slow page load due to network or server issues.",
+    "The navigation link is disabled or unclickable.",
+    "Incorrect URL redirection due to misconfiguration."
+  ],
+  "data_requirements": [
+    "Ensure the 'CONTACT US' link is visible and functional.",
+    "Confirm the Contact Us page URL is correctly configured.",
+    "Validate the presence of the contact form on the page.",
+    "Ensure no broken links or missing assets on the page.",
+    "Provide a test environment with stable network connectivity."
+  ],
+  "dependencies": [
+    "The main menu must be fully loaded on the homepage.",
+    "The 'CONTACT US' link must be configured correctly.",
+    "The Contact Us page must be accessible.",
+    "The contact form must be present on the page.",
+    "All required assets must be loaded properly on the Contact Us page."
+  ],
+  "complexity": "low",
+  "api_interactions": [
+    "No direct API interactions; verify that navigation does not interfere with existing API calls."
+  ],
+  "performance_metrics": [
+    "Measure page load time for the Contact Us page.",
+    "Monitor link click responsiveness.",
+    "Verify smooth navigation without delays."
+  ],
+  "accessibility_requirements": [
+    "Ensure the 'CONTACT US' link is accessible via keyboard navigation.",
+    "Verify the link has an appropriate ARIA role and label.",
+    "Check color contrast ratios for the navigation menu items.",
+    "Ensure the Contact Us page is accessible for screen readers.",
+    "Test navigation behavior with high contrast mode enabled."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "4b777099-6b59-40de-950f-a5e178e77c37",
+    "created_at": "2025-09-05T11:42:35.990220Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "cross-browser",
+      "error-handling",
+      "form-submission",
+      "keyboard-navigation",
+      "navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 25,
+    "flakiness_potential": "high"
+  }
+}

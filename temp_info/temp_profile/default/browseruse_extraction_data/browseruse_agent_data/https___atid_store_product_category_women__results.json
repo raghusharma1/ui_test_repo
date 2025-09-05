@@ -1,0 +1,40 @@
+{
+  "url": "https://atid.store/product-category/women/",
+  "explored_pages_and_scenarios": [
+    {
+      "page_title": "Women Category",
+      "potential_user_journeys": [
+        {
+          "scenario_name": "Browse Women Apparel",
+          "scenario_description": "User browses through the women apparel category and selects an item to view details.",
+          "steps": [
+            {
+              "action": "click",
+              "element_description": "Clickable link for the product item, e.g., 'Flamingo Tshirt'."
+            },
+            {
+              "action": "assert_visibility",
+              "element_description": "Product detail page is displayed with pricing and add-to-cart options."
+            }
+          ],
+          "expected_outcome": ["The user can view detailed information about the selected product and add it to the cart."]
+        },
+        {
+          "scenario_name": "Filter by Accessories",
+          "scenario_description": "User applies filters to view accessories only and selects an item.",
+          "steps": [
+            {
+              "action": "click",
+              "element_description": "Filter option labeled 'Accessories'."
+            },
+            {
+              "action": "assert_visibility",
+              "element_description": "Filtered product list showing accessories."
+            }
+          ],
+          "expected_outcome": ["The user sees a list of accessories and can proceed to select an item."]
+        }
+      ]
+    }
+  ]
+}

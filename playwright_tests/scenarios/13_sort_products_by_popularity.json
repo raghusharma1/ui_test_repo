@@ -1,0 +1,77 @@
+{
+  "test_name": "Sort Products by Popularity",
+  "description": "Ensure users can sort products by popularity through the sorting dropdown.",
+  "type": "functionality",
+  "pages": [
+    "https://atid.store/store/"
+  ],
+  "steps": [
+    "Navigate to the store page.",
+    "Locate the sorting dropdown menu.",
+    "Select the 'Sort by popularity' option from the dropdown.",
+    "Wait for the products list to refresh.",
+    "Verify that products are sorted based on popularity rankings."
+  ],
+  "selectors": [
+    {
+      "element_type": "select",
+      "selector": "select[aria-label=\"Shop order\"]",
+      "text": "Default sorting\nSort by popularity\nSort by average rating\nSort by latest\nSort by price: low to high\nSort by price: high to low",
+      "action": "select",
+      "url_on_page": "https://atid.store/store/"
+    }
+  ],
+  "expected_results": [
+    "Products are displayed in descending order of popularity.",
+    "Sorting updates the product list dynamically."
+  ],
+  "edge_cases": [
+    "Dropdown menu does not display sorting options.",
+    "User selects an invalid option from the dropdown.",
+    "Products have equal popularity scores, causing ambiguity.",
+    "Backend fails to fetch popularity data."
+  ],
+  "data_requirements": [
+    "Products with popularity scores defined in the backend.",
+    "Valid sorting options populated in the dropdown.",
+    "Backend logic to handle popularity-based sorting."
+  ],
+  "dependencies": [
+    "Sorting functionality must be implemented in the backend.",
+    "Popularity data for products must be accurate.",
+    "Dropdown menu must be functional."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "API call to fetch sorted product data.",
+    "Error handling for invalid sorting criteria."
+  ],
+  "performance_metrics": [
+    "Dropdown menu interaction latency should be minimal.",
+    "Sorting response time should be under 2 seconds."
+  ],
+  "accessibility_requirements": [
+    "Dropdown options must be accessible via keyboard navigation.",
+    "Ensure the selected option is announced by screen readers."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "276a150c-c710-493b-9827-82a87d927ba5",
+    "created_at": "2025-09-05T11:42:35.990220Z",
+    "complexity": "medium",
+    "risk_level": "medium",
+    "priority": "normal",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "drag-and-drop",
+      "error-handling",
+      "functionality",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 25,
+    "flakiness_potential": "medium"
+  }
+}

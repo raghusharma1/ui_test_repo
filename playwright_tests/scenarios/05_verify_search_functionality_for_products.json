@@ -1,0 +1,88 @@
+{
+  "test_name": "Verify Search Functionality for Products",
+  "description": "This test verifies the search functionality by ensuring users can search for specific products using keywords and navigate to product details.",
+  "type": "search",
+  "pages": [
+    "https://atid.store"
+  ],
+  "steps": [
+    "Navigate to the homepage at https://atid.store.",
+    "Locate and click on the 'Search' button in the header.",
+    "Type 'Yellow Shoes' into the search input field.",
+    "Submit the search query by pressing Enter.",
+    "Verify that the search results page displays products related to 'Yellow Shoes'.",
+    "Click on the product link for 'ATID Yellow Shoes' from the search results.",
+    "Verify that the product detail page for 'ATID Yellow Shoes' is displayed."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='#' and contains(@class, 'slide-search')]",
+      "text": "Search",
+      "action": "click",
+      "url_on_page": "https://atid.store"
+    },
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://atid.store/product/atid-yellow-shoes/' and contains(@class, 'ast-loop-product__link')]",
+      "text": "ATID Yellow Shoes",
+      "action": "click",
+      "url_on_page": "Search Results Page"
+    }
+  ],
+  "expected_results": [
+    "Search results for 'Yellow Shoes' are displayed.",
+    "The product detail page for 'ATID Yellow Shoes' is displayed."
+  ],
+  "edge_cases": [
+    "The search button is non-clickable or missing.",
+    "No products are displayed in the search results.",
+    "The product link in the search results is non-clickable.",
+    "The search results page fails to load.",
+    "Typing in the search input field does not work."
+  ],
+  "data_requirements": [
+    "The product 'ATID Yellow Shoes' must exist in the database.",
+    "Search functionality must be configured.",
+    "The search button must be present on the homepage.",
+    "Search indexing for products must be up-to-date.",
+    "Search results must link to product detail pages."
+  ],
+  "dependencies": [
+    "Search functionality is implemented.",
+    "The product 'ATID Yellow Shoes' exists.",
+    "The search index is updated."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "GET request to fetch search results for 'Yellow Shoes'."
+  ],
+  "performance_metrics": [
+    "Search response time.",
+    "Load time for the product detail page."
+  ],
+  "accessibility_requirements": [
+    "Search input field must have an accessible label.",
+    "Ensure the search button is keyboard-accessible.",
+    "Verify color contrast on the search results page."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "d8ed19d4-9010-4ee5-b870-24bf210ae4a7",
+    "created_at": "2025-09-05T11:42:35.990220Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "form-submission",
+      "performance",
+      "search",
+      "ui-test"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "medium"
+  }
+}

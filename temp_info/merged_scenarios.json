@@ -1,0 +1,3326 @@
+[
+  {
+    "https://atid.store/": {
+      "extracted_json": {
+        "elements": [
+          {
+            "description": "a with text \"Skip to content\"",
+            "stable_selector": "#pojo-a11y-skip-content",
+            "tag_name": "a",
+            "text_content": "Skip to content",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Open toolbar\"",
+            "stable_selector": "//a[@href='javascript:void(0);' and contains(@class, 'pojo-a11y-toolbar-link')]",
+            "tag_name": "a",
+            "text_content": "Open toolbar",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Increase Text\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'pojo-a11y-toolbar-link')]",
+            "tag_name": "a",
+            "text_content": "Increase Text",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Skip to content\"",
+            "stable_selector": "//a[@href='#content' and contains(@class, 'skip-link')]",
+            "tag_name": "a",
+            "text_content": "Skip to content",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/' and contains(@class, 'custom-logo-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"HOME\"",
+            "stable_selector": "//a[@href='https://atid.store/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "HOME",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"STORE\"",
+            "stable_selector": "//a[@href='https://atid.store/store/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "STORE",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"MEN\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "MEN",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"WOMEN\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "WOMEN",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ACCESSORIES\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "ACCESSORIES",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ABOUT\"",
+            "stable_selector": "//a[@href='https://atid.store/about/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "ABOUT",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"CONTACT US\"",
+            "stable_selector": "//a[@href='https://atid.store/contact-us/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "CONTACT US",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Search\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'slide-search')]",
+            "tag_name": "a",
+            "text_content": "Search",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"0.00\u00a0\u20aa 0\"",
+            "stable_selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'cart-container')]",
+            "tag_name": "a",
+            "text_content": "0.00\u00a0\u20aa 0",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "button with text \"Main Menu\"",
+            "stable_selector": "//button[normalize-space()=\"Main Menu\"]",
+            "tag_name": "button",
+            "text_content": "Main Menu",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Powered By ATID College\"",
+            "stable_selector": "//article[@id='post-2888']/div/div/section[1]/div[2]/div/div/div[3]/div/h5/a",
+            "tag_name": "a",
+            "text_content": "Powered By ATID College",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"SHOP NOW\"",
+            "stable_selector": "//a[@href='https://atid.store/store/' and contains(@class, 'elementor-button-link')]",
+            "tag_name": "a",
+            "text_content": "SHOP NOW",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"FIND MORE\"",
+            "stable_selector": "//a[@href='https://atid.store/contact-us/' and contains(@class, 'elementor-button-link')]",
+            "tag_name": "a",
+            "text_content": "FIND MORE",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "div with text \"Previous\"",
+            "stable_selector": "div[aria-label=\"Previous slide\"]",
+            "tag_name": "div",
+            "text_content": "Previous",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "div with text \"Next\"",
+            "stable_selector": "div[aria-label=\"Next slide\"]",
+            "tag_name": "div",
+            "text_content": "Next",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"SHOP NOW\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'elementor-button-link')]",
+            "tag_name": "a",
+            "text_content": "SHOP NOW",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"SHOP NOW\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'elementor-button-link')]",
+            "tag_name": "a",
+            "text_content": "SHOP NOW",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"CHECK OUT\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'elementor-button-link')]",
+            "tag_name": "a",
+            "text_content": "CHECK OUT",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-yellow-shoes/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ATID Yellow Shoes\"",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-yellow-shoes/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "ATID Yellow Shoes",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-blue-shoes/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ATID Blue Shoes\"",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-blue-shoes/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "ATID Blue Shoes",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/dark-brown-jeans/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Dark Brown Jeans\"",
+            "stable_selector": "//a[@href='https://atid.store/product/dark-brown-jeans/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Dark Brown Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-jeans/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Blue Denim Jeans\"",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-jeans/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Blue Denim Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/basic-gray-jeans/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Basic Gray Jeans\"",
+            "stable_selector": "//a[@href='https://atid.store/product/basic-gray-jeans/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Basic Gray Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-shorts/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Blue Denim Shorts\"",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-shorts/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Blue Denim Shorts",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/flamingo-tshirt/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Flamingo Tshirt\"",
+            "stable_selector": "//a[@href='https://atid.store/product/flamingo-tshirt/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Flamingo Tshirt",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/anchor-bracelet/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Anchor Bracelet\"",
+            "stable_selector": "//a[@href='https://atid.store/product/anchor-bracelet/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Anchor Bracelet",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/boho-bangle-bracelet/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Boho Bangle Bracelet\"",
+            "stable_selector": "//a[@href='https://atid.store/product/boho-bangle-bracelet/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Boho Bangle Bracelet",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/light-brown-purse/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Light Brown Purse\"",
+            "stable_selector": "//a[@href='https://atid.store/product/light-brown-purse/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Light Brown Purse",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"SHOP NOW\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'elementor-button-link')]",
+            "tag_name": "a",
+            "text_content": "SHOP NOW",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Cart\"",
+            "stable_selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "Cart",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Women Jeans\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "Women Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          }
+        ]
+      },
+      "agent_suggested_login_scenarios": []
+    }
+  },
+  {
+    "https://atid.store/": {
+      "extracted_json": {
+        "elements": [
+          {
+            "description": "a with text \"Skip to content\"",
+            "stable_selector": "#pojo-a11y-skip-content",
+            "tag_name": "a",
+            "text_content": "Skip to content",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Open toolbar\"",
+            "stable_selector": "//a[@href='javascript:void(0);' and contains(@class, 'pojo-a11y-toolbar-link')]",
+            "tag_name": "a",
+            "text_content": "Open toolbar",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Increase Text\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'pojo-a11y-toolbar-link')]",
+            "tag_name": "a",
+            "text_content": "Increase Text",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Skip to content\"",
+            "stable_selector": "//a[@href='#content' and contains(@class, 'skip-link')]",
+            "tag_name": "a",
+            "text_content": "Skip to content",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/' and contains(@class, 'custom-logo-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"HOME\"",
+            "stable_selector": "//a[@href='https://atid.store/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "HOME",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"STORE\"",
+            "stable_selector": "//a[@href='https://atid.store/store/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "STORE",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"MEN\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "MEN",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"WOMEN\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "WOMEN",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ACCESSORIES\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "ACCESSORIES",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ABOUT\"",
+            "stable_selector": "//a[@href='https://atid.store/about/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "ABOUT",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"CONTACT US\"",
+            "stable_selector": "//a[@href='https://atid.store/contact-us/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "CONTACT US",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Search\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'slide-search')]",
+            "tag_name": "a",
+            "text_content": "Search",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"0.00\u00a0\u20aa 0\"",
+            "stable_selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'cart-container')]",
+            "tag_name": "a",
+            "text_content": "0.00\u00a0\u20aa 0",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "button with text \"Main Menu\"",
+            "stable_selector": "//button[normalize-space()=\"Main Menu\"]",
+            "tag_name": "button",
+            "text_content": "Main Menu",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Powered By ATID College\"",
+            "stable_selector": "//article[@id='post-2888']/div/div/section[1]/div[2]/div/div/div[3]/div/h5/a",
+            "tag_name": "a",
+            "text_content": "Powered By ATID College",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"SHOP NOW\"",
+            "stable_selector": "//a[@href='https://atid.store/store/' and contains(@class, 'elementor-button-link')]",
+            "tag_name": "a",
+            "text_content": "SHOP NOW",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"FIND MORE\"",
+            "stable_selector": "//a[@href='https://atid.store/contact-us/' and contains(@class, 'elementor-button-link')]",
+            "tag_name": "a",
+            "text_content": "FIND MORE",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "div with text \"Previous\"",
+            "stable_selector": "div[aria-label=\"Previous slide\"]",
+            "tag_name": "div",
+            "text_content": "Previous",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "div with text \"Next\"",
+            "stable_selector": "div[aria-label=\"Next slide\"]",
+            "tag_name": "div",
+            "text_content": "Next",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"SHOP NOW\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'elementor-button-link')]",
+            "tag_name": "a",
+            "text_content": "SHOP NOW",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"SHOP NOW\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'elementor-button-link')]",
+            "tag_name": "a",
+            "text_content": "SHOP NOW",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"CHECK OUT\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'elementor-button-link')]",
+            "tag_name": "a",
+            "text_content": "CHECK OUT",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-yellow-shoes/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ATID Yellow Shoes\"",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-yellow-shoes/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "ATID Yellow Shoes",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-blue-shoes/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ATID Blue Shoes\"",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-blue-shoes/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "ATID Blue Shoes",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/dark-brown-jeans/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Dark Brown Jeans\"",
+            "stable_selector": "//a[@href='https://atid.store/product/dark-brown-jeans/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Dark Brown Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-jeans/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Blue Denim Jeans\"",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-jeans/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Blue Denim Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/basic-gray-jeans/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Basic Gray Jeans\"",
+            "stable_selector": "//a[@href='https://atid.store/product/basic-gray-jeans/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Basic Gray Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-shorts/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Blue Denim Shorts\"",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-shorts/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Blue Denim Shorts",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/flamingo-tshirt/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Flamingo Tshirt\"",
+            "stable_selector": "//a[@href='https://atid.store/product/flamingo-tshirt/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Flamingo Tshirt",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/anchor-bracelet/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Anchor Bracelet\"",
+            "stable_selector": "//a[@href='https://atid.store/product/anchor-bracelet/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Anchor Bracelet",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/boho-bangle-bracelet/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Boho Bangle Bracelet\"",
+            "stable_selector": "//a[@href='https://atid.store/product/boho-bangle-bracelet/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Boho Bangle Bracelet",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/light-brown-purse/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Light Brown Purse\"",
+            "stable_selector": "//a[@href='https://atid.store/product/light-brown-purse/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Light Brown Purse",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"SHOP NOW\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'elementor-button-link')]",
+            "tag_name": "a",
+            "text_content": "SHOP NOW",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Cart\"",
+            "stable_selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "Cart",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Women Jeans\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "Women Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          }
+        ]
+      },
+      "extracted_interactive_data": {
+        "pageContentOverview": {
+          "description": "The webpage is a demo store designed for practicing QA and test automation. It features a variety of product listings categorized into Men, Women, and Accessories, along with promotional offers, a shopping cart, and quick links to other sections of the site.",
+          "keySections": [
+            "Header navigation menu (Home, Store, Men, Women, Accessories, About, Contact Us)",
+            "Product listings with details such as category, price, ratings, and sale information",
+            "Promotional banners with calls-to-action like 'Shop Now' and 'Check Out'",
+            "Footer with quick links, such as 'Home', 'About', 'Cart', and 'Contact Us'",
+            "Accessibility tools for adjusting text size, contrast, and other visual settings"
+          ]
+        },
+        "relevantInformation": {
+          "userInteractableElements": [
+            {
+              "type": "Navigation Menu",
+              "elements": [
+                {
+                  "label": "Home",
+                  "context": "Main navigation to homepage"
+                },
+                {
+                  "label": "Store",
+                  "context": "Navigate to the store page"
+                },
+                {
+                  "label": "Men",
+                  "context": "Navigate to the Men\u2019s products section"
+                },
+                {
+                  "label": "Women",
+                  "context": "Navigate to the Women\u2019s products section"
+                },
+                {
+                  "label": "Accessories",
+                  "context": "Navigate to the Accessories section"
+                },
+                {
+                  "label": "About",
+                  "context": "Navigate to the About Us page"
+                },
+                {
+                  "label": "Contact Us",
+                  "context": "Navigate to the Contact Us form"
+                }
+              ]
+            },
+            {
+              "type": "Search Bar",
+              "context": "Allows users to search for products or other content on the site"
+            },
+            {
+              "type": "Accessibility Tools",
+              "elements": [
+                {
+                  "label": "Increase Text",
+                  "context": "Increase text size for better readability"
+                },
+                {
+                  "label": "Decrease Text",
+                  "context": "Decrease text size"
+                },
+                {
+                  "label": "Grayscale",
+                  "context": "Apply grayscale filter to the site"
+                },
+                {
+                  "label": "High Contrast",
+                  "context": "Enable high-contrast mode"
+                },
+                {
+                  "label": "Negative Contrast",
+                  "context": "Enable negative contrast mode"
+                },
+                {
+                  "label": "Light Background",
+                  "context": "Switch to a light background"
+                },
+                {
+                  "label": "Links Underline",
+                  "context": "Underline all links for better visibility"
+                },
+                {
+                  "label": "Readable Font",
+                  "context": "Switch to a more readable font"
+                },
+                {
+                  "label": "Reset",
+                  "context": "Reset all accessibility settings to default"
+                }
+              ]
+            },
+            {
+              "type": "Promotional Banners",
+              "elements": [
+                {
+                  "label": "Shop Now (20% Off On Tank Tops)",
+                  "context": "Redirects to the products page with tank tops"
+                },
+                {
+                  "label": "Shop Now (Latest Eyewear)",
+                  "context": "Redirects to the products page with eyewear"
+                },
+                {
+                  "label": "Check Out (Let\u2019s Lorem Suit Up!)",
+                  "context": "Redirects to the suit products page"
+                }
+              ]
+            },
+            {
+              "type": "Product Listings",
+              "elements": [
+                {
+                  "productName": "ATID Yellow Shoes",
+                  "context": "Add to cart or view product details"
+                },
+                {
+                  "productName": "ATID Blue Shoes",
+                  "context": "Add to cart or view product details"
+                },
+                {
+                  "productName": "Dark Brown Jeans",
+                  "context": "Add to cart or view product details"
+                },
+                {
+                  "productName": "Blue Denim Jeans",
+                  "context": "Add to cart or view product details"
+                },
+                {
+                  "productName": "Basic Gray Jeans",
+                  "context": "Add to cart or view product details"
+                },
+                {
+                  "productName": "Blue Denim Shorts",
+                  "context": "Add to cart or view product details"
+                },
+                {
+                  "productName": "Flamingo Tshirt",
+                  "context": "Add to cart or view product details"
+                },
+                {
+                  "productName": "Anchor Bracelet",
+                  "context": "Add to cart or view product details"
+                },
+                {
+                  "productName": "Boho Bangle Bracelet",
+                  "context": "Add to cart or view product details"
+                },
+                {
+                  "productName": "Light Brown Purse",
+                  "context": "Add to cart or view product details"
+                }
+              ]
+            },
+            {
+              "type": "Promotions",
+              "elements": [
+                {
+                  "label": "Limited Time Offer",
+                  "context": "Special Edition T-shirt promotion with details"
+                },
+                {
+                  "label": "Use Code OFF20",
+                  "context": "Apply code for 20% discount on T-shirts"
+                }
+              ]
+            },
+            {
+              "type": "Footer Quick Links",
+              "elements": [
+                {
+                  "label": "Home",
+                  "context": "Navigate to homepage"
+                },
+                {
+                  "label": "About",
+                  "context": "Navigate to About Us page"
+                },
+                {
+                  "label": "Cart",
+                  "context": "Navigate to the shopping cart"
+                },
+                {
+                  "label": "Contact Us",
+                  "context": "Navigate to the Contact Us form"
+                }
+              ]
+            },
+            {
+              "type": "Category Links",
+              "elements": [
+                {
+                  "label": "Women Jeans",
+                  "context": "Navigate to the Women\u2019s Jeans category"
+                },
+                {
+                  "label": "Tops and Shirts",
+                  "context": "Navigate to the Women\u2019s Tops and Shirts category"
+                },
+                {
+                  "label": "Women Jackets",
+                  "context": "Navigate to the Women\u2019s Jackets category"
+                },
+                {
+                  "label": "Heels and Flats",
+                  "context": "Navigate to Women\u2019s Footwear"
+                },
+                {
+                  "label": "Women Accessories",
+                  "context": "Navigate to Women\u2019s Accessories"
+                },
+                {
+                  "label": "Men Jeans",
+                  "context": "Navigate to the Men\u2019s Jeans category"
+                },
+                {
+                  "label": "Men Shirts",
+                  "context": "Navigate to the Men\u2019s Shirts category"
+                },
+                {
+                  "label": "Men Shoes",
+                  "context": "Navigate to Men\u2019s Footwear"
+                },
+                {
+                  "label": "Men Accessories",
+                  "context": "Navigate to Men\u2019s Accessories"
+                },
+                {
+                  "label": "Men Jackets",
+                  "context": "Navigate to Men\u2019s Jackets"
+                }
+              ]
+            }
+          ]
+        },
+        "missingInformation": {
+          "detailsOnCraftingUserJourneyScenarios": "The webpage does not provide specific guidance or contextual information for crafting user journey scenarios. It primarily lists user-interactable elements and their contexts."
+        }
+      },
+      "explored_pages_and_scenarios": [
+        {
+          "page_title": "ATID Demo Store",
+          "potential_user_journeys": [
+            {
+              "scenario_name": "Navigate to Men Section",
+              "scenario_description": "User navigates to the Men section to explore men's products.",
+              "steps": [
+                {
+                  "action": "click",
+                  "element_description": "Navigation menu item labeled 'Men'."
+                }
+              ],
+              "expected_outcome": [
+                "User is redirected to the Men product page."
+              ]
+            },
+            {
+              "scenario_name": "Accessibility Enhancement",
+              "scenario_description": "User adjusts the website's appearance for better accessibility.",
+              "steps": [
+                {
+                  "action": "click",
+                  "element_description": "Accessibility toolbar option, such as 'Increase Text'."
+                }
+              ],
+              "expected_outcome": [
+                "The text size increases for improved readability."
+              ]
+            },
+            {
+              "scenario_name": "View Promotional Offers",
+              "scenario_description": "User explores promotional offers available on the homepage.",
+              "steps": [
+                {
+                  "action": "click",
+                  "element_description": "Promotional banner labeled 'Shop Now' under '20% Off On Tank Tops'."
+                }
+              ],
+              "expected_outcome": [
+                "User is redirected to the tank tops product page with promotional details."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "https://atid.store/cart-2/": {
+      "extracted_json": {
+        "elements": [
+          {
+            "description": "a with text \"Skip to content\"",
+            "stable_selector": "#pojo-a11y-skip-content",
+            "tag_name": "a",
+            "text_content": "Skip to content",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Open toolbar\"",
+            "stable_selector": "//a[@href='javascript:void(0);' and contains(@class, 'pojo-a11y-toolbar-link')]",
+            "tag_name": "a",
+            "text_content": "Open toolbar",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Increase Text\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'pojo-a11y-toolbar-link')]",
+            "tag_name": "a",
+            "text_content": "Increase Text",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Skip to content\"",
+            "stable_selector": "//a[@href='#content' and contains(@class, 'skip-link')]",
+            "tag_name": "a",
+            "text_content": "Skip to content",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/' and contains(@class, 'custom-logo-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"HOME\"",
+            "stable_selector": "//a[@href='https://atid.store/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "HOME",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"STORE\"",
+            "stable_selector": "//a[@href='https://atid.store/store/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "STORE",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"MEN\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "MEN",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"WOMEN\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "WOMEN",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ACCESSORIES\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "ACCESSORIES",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ABOUT\"",
+            "stable_selector": "//a[@href='https://atid.store/about/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "ABOUT",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"CONTACT US\"",
+            "stable_selector": "//a[@href='https://atid.store/contact-us/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "CONTACT US",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Search\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'slide-search')]",
+            "tag_name": "a",
+            "text_content": "Search",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"0.00\u00a0\u20aa 0\"",
+            "stable_selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'cart-container')]",
+            "tag_name": "a",
+            "text_content": "0.00\u00a0\u20aa 0",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "button with text \"Main Menu\"",
+            "stable_selector": "//button[normalize-space()=\"Main Menu\"]",
+            "tag_name": "button",
+            "text_content": "Main Menu",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"RETURN TO SHOP\"",
+            "stable_selector": "//a[@href='https://atid.store/store/' and contains(@class, 'button')]",
+            "tag_name": "a",
+            "text_content": "RETURN TO SHOP",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Cart\"",
+            "stable_selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "Cart",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Women Jeans\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "Women Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          }
+        ]
+      },
+      "extracted_interactive_data": {
+        "query": "Identify all user-interactable elements and their context for crafting user journey scenarios.",
+        "response": {
+          "page_description": "This webpage is a demo e-commerce store's cart page. It includes navigation links, accessibility tools, and a message indicating the cart is empty, with a prompt to return to the shop. It also lists categories of products for men and women.",
+          "user_interactable_elements": [
+            {
+              "element": "Accessibility Tools",
+              "context": [
+                {
+                  "action": "Increase Text",
+                  "description": "Option to increase the text size for better readability."
+                },
+                {
+                  "action": "Decrease Text",
+                  "description": "Option to decrease the text size."
+                },
+                {
+                  "action": "Grayscale",
+                  "description": "Toggle to apply a grayscale color scheme to the page."
+                },
+                {
+                  "action": "High Contrast",
+                  "description": "Toggle to apply a high contrast color scheme."
+                },
+                {
+                  "action": "Negative Contrast",
+                  "description": "Toggle to apply a negative contrast color scheme."
+                },
+                {
+                  "action": "Light Background",
+                  "description": "Toggle to apply a light background color scheme."
+                },
+                {
+                  "action": "Links Underline",
+                  "description": "Option to underline all links for better visibility."
+                },
+                {
+                  "action": "Readable Font",
+                  "description": "Option to switch to a more readable font."
+                },
+                {
+                  "action": "Reset",
+                  "description": "Option to reset all accessibility settings to default."
+                }
+              ]
+            },
+            {
+              "element": "Navigation Menu",
+              "context": [
+                {
+                  "action": "Home",
+                  "description": "Navigate to the homepage."
+                },
+                {
+                  "action": "Store",
+                  "description": "Navigate to the store page."
+                },
+                {
+                  "action": "Men",
+                  "description": "View products for men."
+                },
+                {
+                  "action": "Women",
+                  "description": "View products for women."
+                },
+                {
+                  "action": "Accessories",
+                  "description": "View accessories."
+                },
+                {
+                  "action": "About",
+                  "description": "Navigate to the About Us page."
+                },
+                {
+                  "action": "Contact Us",
+                  "description": "Navigate to the Contact Us page."
+                }
+              ]
+            },
+            {
+              "element": "Search Bar",
+              "context": "Allows the user to search for products or content on the website."
+            },
+            {
+              "element": "Shopping Cart",
+              "context": "Displays the current state of the user's shopping cart. Currently shows a message indicating the cart is empty and includes a link to return to the shop."
+            },
+            {
+              "element": "Product Categories",
+              "context": [
+                {
+                  "action": "Women Jeans",
+                  "description": "Navigate to the Women Jeans category."
+                },
+                {
+                  "action": "Tops and Shirts",
+                  "description": "Navigate to the Tops and Shirts category for women."
+                },
+                {
+                  "action": "Women Jackets",
+                  "description": "Navigate to the Women Jackets category."
+                },
+                {
+                  "action": "Heels and Flats",
+                  "description": "Navigate to the Heels and Flats category for women."
+                },
+                {
+                  "action": "Women Accessories",
+                  "description": "Navigate to the Women Accessories category."
+                },
+                {
+                  "action": "Men Jeans",
+                  "description": "Navigate to the Men Jeans category."
+                },
+                {
+                  "action": "Men Shirts",
+                  "description": "Navigate to the Men Shirts category."
+                },
+                {
+                  "action": "Men Shoes",
+                  "description": "Navigate to the Men Shoes category."
+                },
+                {
+                  "action": "Men Accessories",
+                  "description": "Navigate to the Men Accessories category."
+                },
+                {
+                  "action": "Men Jackets",
+                  "description": "Navigate to the Men Jackets category."
+                }
+              ]
+            },
+            {
+              "element": "Footer Quick Links",
+              "context": [
+                {
+                  "action": "Home",
+                  "description": "Navigate to the homepage."
+                },
+                {
+                  "action": "About",
+                  "description": "Navigate to the About Us page."
+                },
+                {
+                  "action": "Cart",
+                  "description": "Navigate to the cart page."
+                },
+                {
+                  "action": "Contact Us",
+                  "description": "Navigate to the Contact Us page."
+                }
+              ]
+            }
+          ],
+          "note": "This page primarily serves as a cart interface with additional navigation and accessibility tools. No further user journey scenario-specific information is available beyond the listed elements."
+        }
+      },
+      "explored_pages_and_scenarios": [
+        {
+          "page_title": "Cart Page",
+          "potential_user_journeys": [
+            {
+              "scenario_name": "Empty Cart Prompt",
+              "scenario_description": "User encounters an empty cart and is prompted to return to shopping.",
+              "steps": [
+                {
+                  "action": "assert_visibility",
+                  "element_description": "Message indicating the cart is empty."
+                },
+                {
+                  "action": "click",
+                  "element_description": "Return to Shop button."
+                }
+              ],
+              "expected_outcome": [
+                "User is redirected to the store page to continue shopping."
+              ]
+            },
+            {
+              "scenario_name": "Navigate Product Categories",
+              "scenario_description": "User explores product categories from the cart page.",
+              "steps": [
+                {
+                  "action": "click",
+                  "element_description": "Link to Women Jeans category."
+                },
+                {
+                  "action": "click",
+                  "element_description": "Link to Men Shirts category."
+                }
+              ],
+              "expected_outcome": [
+                "User views the selected product category pages."
+              ]
+            },
+            {
+              "scenario_name": "Use Accessibility Tools",
+              "scenario_description": "User adjusts page accessibility settings.",
+              "steps": [
+                {
+                  "action": "click",
+                  "element_description": "Accessibility toolbar button."
+                },
+                {
+                  "action": "click",
+                  "element_description": "Increase text size option."
+                }
+              ],
+              "expected_outcome": [
+                "The page text size is increased for better readability."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "https://atid.store/product-category/women/": {
+      "extracted_json": {
+        "elements": [
+          {
+            "description": "a with text \"Skip to content\"",
+            "stable_selector": "#pojo-a11y-skip-content",
+            "tag_name": "a",
+            "text_content": "Skip to content",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Open toolbar\"",
+            "stable_selector": "//a[@href='javascript:void(0);' and contains(@class, 'pojo-a11y-toolbar-link')]",
+            "tag_name": "a",
+            "text_content": "Open toolbar",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Increase Text\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'pojo-a11y-toolbar-link')]",
+            "tag_name": "a",
+            "text_content": "Increase Text",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Skip to content\"",
+            "stable_selector": "//a[@href='#content' and contains(@class, 'skip-link')]",
+            "tag_name": "a",
+            "text_content": "Skip to content",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/' and contains(@class, 'custom-logo-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"HOME\"",
+            "stable_selector": "//a[@href='https://atid.store/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "HOME",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"STORE\"",
+            "stable_selector": "//a[@href='https://atid.store/store/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "STORE",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"MEN\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "MEN",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"WOMEN\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "WOMEN",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ACCESSORIES\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "ACCESSORIES",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ABOUT\"",
+            "stable_selector": "//a[@href='https://atid.store/about/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "ABOUT",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"CONTACT US\"",
+            "stable_selector": "//a[@href='https://atid.store/contact-us/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "CONTACT US",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Search\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'slide-search')]",
+            "tag_name": "a",
+            "text_content": "Search",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"0.00\u00a0\u20aa 0\"",
+            "stable_selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'cart-container')]",
+            "tag_name": "a",
+            "text_content": "0.00\u00a0\u20aa 0",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "button with text \"Main Menu\"",
+            "stable_selector": "//button[normalize-space()=\"Main Menu\"]",
+            "tag_name": "button",
+            "text_content": "Main Menu",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "label",
+            "stable_selector": "//div[@id='block-7']/div/form/label",
+            "tag_name": "label",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "input",
+            "stable_selector": "#wc-block-search__input-1",
+            "tag_name": "input",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "button with text \"Search\"",
+            "stable_selector": "button[aria-label=\"Search\"]",
+            "tag_name": "button",
+            "text_content": "Search",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "label with text \"Min price\"",
+            "stable_selector": "//div[@id='woocommerce_price_filter-2']/form/div/div[2]/label[1]",
+            "tag_name": "label",
+            "text_content": "Min price",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "label with text \"Max price\"",
+            "stable_selector": "//div[@id='woocommerce_price_filter-2']/form/div/div[2]/label[2]",
+            "tag_name": "label",
+            "text_content": "Max price",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "button with text \"FILTER\"",
+            "stable_selector": "//button[normalize-space()=\"FILTER\"]",
+            "tag_name": "button",
+            "text_content": "FILTER",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Accessories\"",
+            "stable_selector": "//div[@id='woocommerce_product_categories-2']/ul/li[1]/a",
+            "tag_name": "a",
+            "text_content": "Accessories",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Men\"",
+            "stable_selector": "//div[@id='woocommerce_product_categories-2']/ul/li[2]/a",
+            "tag_name": "a",
+            "text_content": "Men",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Women\"",
+            "stable_selector": "//div[@id='woocommerce_product_categories-2']/ul/li[3]/a",
+            "tag_name": "a",
+            "text_content": "Women",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Boho Bangle Bracelet\"",
+            "stable_selector": "//div[@id='woocommerce_top_rated_products-1']/ul/li[1]/a",
+            "tag_name": "a",
+            "text_content": "Boho Bangle Bracelet",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Buddha Bracelet\"",
+            "stable_selector": "//div[@id='woocommerce_top_rated_products-1']/ul/li[2]/a",
+            "tag_name": "a",
+            "text_content": "Buddha Bracelet",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Bright Gold Purse With Chain\"",
+            "stable_selector": "//div[@id='woocommerce_top_rated_products-1']/ul/li[3]/a",
+            "tag_name": "a",
+            "text_content": "Bright Gold Purse With Chain",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Flamingo Tshirt\"",
+            "stable_selector": "//div[@id='woocommerce_top_rated_products-1']/ul/li[4]/a",
+            "tag_name": "a",
+            "text_content": "Flamingo Tshirt",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Blue Hoodie\"",
+            "stable_selector": "//div[@id='woocommerce_top_rated_products-1']/ul/li[5]/a",
+            "tag_name": "a",
+            "text_content": "Blue Hoodie",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Home\"",
+            "stable_selector": "//main[@id='main']/div/nav[1]/a",
+            "tag_name": "a",
+            "text_content": "Home",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "select with text \"Default sorting\nSort by popularity\nSort by average\"",
+            "stable_selector": "select[aria-label=\"Shop order\"]",
+            "tag_name": "select",
+            "text_content": "Default sorting\nSort by popularity\nSort by average rating\nSort by latest\nSort by price: low to high\nSort by price: high to low",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/anchor-bracelet/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Anchor Bracelet\"",
+            "stable_selector": "//a[@href='https://atid.store/product/anchor-bracelet/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Anchor Bracelet",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-black-shoes/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ATID Black Shoes\"",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-black-shoes/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "ATID Black Shoes",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/basic-gray-jeans/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Basic Gray Jeans\"",
+            "stable_selector": "//a[@href='https://atid.store/product/basic-gray-jeans/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Basic Gray Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/black-over-the-shoulder-handbag/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Black Over-the-shoulder Handbag\"",
+            "stable_selector": "//a[@href='https://atid.store/product/black-over-the-shoulder-handbag/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Black Over-the-shoulder Handbag",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-jeans/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Blue Denim Jeans\"",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-jeans/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Blue Denim Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-shorts/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Blue Denim Shorts\"",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-shorts/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Blue Denim Shorts",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/boho-bangle-bracelet/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Boho Bangle Bracelet\"",
+            "stable_selector": "//a[@href='https://atid.store/product/boho-bangle-bracelet/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Boho Bangle Bracelet",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/bright-gold-purse-with-chain/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Bright Gold Purse With Chain\"",
+            "stable_selector": "//a[@href='https://atid.store/product/bright-gold-purse-with-chain/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Bright Gold Purse With Chain",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/bright-red-bag/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Bright Red Bag\"",
+            "stable_selector": "//a[@href='https://atid.store/product/bright-red-bag/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Bright Red Bag",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/buddha-bracelet/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Buddha Bracelet\"",
+            "stable_selector": "//a[@href='https://atid.store/product/buddha-bracelet/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Buddha Bracelet",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/flamingo-tshirt/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Flamingo Tshirt\"",
+            "stable_selector": "//a[@href='https://atid.store/product/flamingo-tshirt/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Flamingo Tshirt",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/gray-pattern-tshirt/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Gray Pattern Tshirt\"",
+            "stable_selector": "//a[@href='https://atid.store/product/gray-pattern-tshirt/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Gray Pattern Tshirt",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"2\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/women/page/2/' and contains(@class, 'page-numbers')]",
+            "tag_name": "a",
+            "text_content": "2",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"\u2192\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/women/page/2/' and contains(@class, 'next')]",
+            "tag_name": "a",
+            "text_content": "\u2192",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Cart\"",
+            "stable_selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "Cart",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Women Jeans\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "Women Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          }
+        ]
+      },
+      "extracted_interactive_data": null,
+      "explored_pages_and_scenarios": [
+        {
+          "page_title": "Women Category",
+          "potential_user_journeys": [
+            {
+              "scenario_name": "Browse Women Apparel",
+              "scenario_description": "User browses through the women apparel category and selects an item to view details.",
+              "steps": [
+                {
+                  "action": "click",
+                  "element_description": "Clickable link for the product item, e.g., 'Flamingo Tshirt'."
+                },
+                {
+                  "action": "assert_visibility",
+                  "element_description": "Product detail page is displayed with pricing and add-to-cart options."
+                }
+              ],
+              "expected_outcome": [
+                "The user can view detailed information about the selected product and add it to the cart."
+              ]
+            },
+            {
+              "scenario_name": "Filter by Accessories",
+              "scenario_description": "User applies filters to view accessories only and selects an item.",
+              "steps": [
+                {
+                  "action": "click",
+                  "element_description": "Filter option labeled 'Accessories'."
+                },
+                {
+                  "action": "assert_visibility",
+                  "element_description": "Filtered product list showing accessories."
+                }
+              ],
+              "expected_outcome": [
+                "The user sees a list of accessories and can proceed to select an item."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "https://atid.store/contact-us/": {
+      "extracted_json": {
+        "elements": [
+          {
+            "description": "a with text \"Skip to content\"",
+            "stable_selector": "#pojo-a11y-skip-content",
+            "tag_name": "a",
+            "text_content": "Skip to content",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Open toolbar\"",
+            "stable_selector": "//a[@href='javascript:void(0);' and contains(@class, 'pojo-a11y-toolbar-link')]",
+            "tag_name": "a",
+            "text_content": "Open toolbar",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Increase Text\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'pojo-a11y-toolbar-link')]",
+            "tag_name": "a",
+            "text_content": "Increase Text",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Skip to content\"",
+            "stable_selector": "//a[@href='#content' and contains(@class, 'skip-link')]",
+            "tag_name": "a",
+            "text_content": "Skip to content",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/' and contains(@class, 'custom-logo-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"HOME\"",
+            "stable_selector": "//a[@href='https://atid.store/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "HOME",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"STORE\"",
+            "stable_selector": "//a[@href='https://atid.store/store/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "STORE",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"MEN\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "MEN",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"WOMEN\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "WOMEN",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ACCESSORIES\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "ACCESSORIES",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ABOUT\"",
+            "stable_selector": "//a[@href='https://atid.store/about/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "ABOUT",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"CONTACT US\"",
+            "stable_selector": "//a[@href='https://atid.store/contact-us/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "CONTACT US",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Search\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'slide-search')]",
+            "tag_name": "a",
+            "text_content": "Search",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"0.00\u00a0\u20aa 0\"",
+            "stable_selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'cart-container')]",
+            "tag_name": "a",
+            "text_content": "0.00\u00a0\u20aa 0",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "button with text \"Main Menu\"",
+            "stable_selector": "//button[normalize-space()=\"Main Menu\"]",
+            "tag_name": "button",
+            "text_content": "Main Menu",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "label with text \"Name *\"",
+            "stable_selector": "//div[@id='wpforms-15-field_0-container']/label",
+            "tag_name": "label",
+            "text_content": "Name *",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "input",
+            "stable_selector": "#wpforms-15-field_0",
+            "tag_name": "input",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "label with text \"Single Line Text\"",
+            "stable_selector": "//div[@id='wpforms-15-field_5-container']/label",
+            "tag_name": "label",
+            "text_content": "Single Line Text",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "input",
+            "stable_selector": "#wpforms-15-field_5",
+            "tag_name": "input",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "label with text \"Email *\"",
+            "stable_selector": "//div[@id='wpforms-15-field_4-container']/label",
+            "tag_name": "label",
+            "text_content": "Email *",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "input",
+            "stable_selector": "#wpforms-15-field_4",
+            "tag_name": "input",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "label with text \"Comment or Message *\"",
+            "stable_selector": "//div[@id='wpforms-15-field_2-container']/label",
+            "tag_name": "label",
+            "text_content": "Comment or Message *",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "textarea",
+            "stable_selector": "#wpforms-15-field_2",
+            "tag_name": "textarea",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "label with text \"Phone\"",
+            "stable_selector": "//form[@id='wpforms-form-15']/div[2]/label",
+            "tag_name": "label",
+            "text_content": "Phone",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "input",
+            "stable_selector": "#wpforms-15-field-hp",
+            "tag_name": "input",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "button with text \"SEND MESSAGE\"",
+            "stable_selector": "#wpforms-submit-15",
+            "tag_name": "button",
+            "text_content": "SEND MESSAGE",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Cart\"",
+            "stable_selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "Cart",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Women Jeans\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "Women Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          }
+        ]
+      },
+      "extracted_interactive_data": {
+        "query": "Identify all user-interactable elements and their context for crafting user journey scenarios.",
+        "response": {
+          "user_interactable_elements": [
+            {
+              "type": "button",
+              "label": "Increase Text",
+              "context": "Part of Accessibility Tools to adjust text size."
+            },
+            {
+              "type": "button",
+              "label": "Decrease Text",
+              "context": "Part of Accessibility Tools to adjust text size."
+            },
+            {
+              "type": "button",
+              "label": "Grayscale",
+              "context": "Part of Accessibility Tools to apply grayscale effect to the webpage."
+            },
+            {
+              "type": "button",
+              "label": "High Contrast",
+              "context": "Part of Accessibility Tools to enable high contrast mode."
+            },
+            {
+              "type": "button",
+              "label": "Negative Contrast",
+              "context": "Part of Accessibility Tools to apply negative contrast."
+            },
+            {
+              "type": "button",
+              "label": "Light Background",
+              "context": "Part of Accessibility Tools to change background to a light theme."
+            },
+            {
+              "type": "button",
+              "label": "Links Underline",
+              "context": "Part of Accessibility Tools to underline links on the webpage."
+            },
+            {
+              "type": "button",
+              "label": "Readable Font",
+              "context": "Part of Accessibility Tools to enable a more readable font."
+            },
+            {
+              "type": "button",
+              "label": "Reset",
+              "context": "Part of Accessibility Tools to reset all accessibility settings to default."
+            },
+            {
+              "type": "navigation_link",
+              "label": "Home",
+              "context": "Main navigation menu link to the home page."
+            },
+            {
+              "type": "navigation_link",
+              "label": "Store",
+              "context": "Main navigation menu link to the store page."
+            },
+            {
+              "type": "navigation_link",
+              "label": "Men",
+              "context": "Main navigation menu link to the men's products section."
+            },
+            {
+              "type": "navigation_link",
+              "label": "Women",
+              "context": "Main navigation menu link to the women's products section."
+            },
+            {
+              "type": "navigation_link",
+              "label": "Accessories",
+              "context": "Main navigation menu link to the accessories section."
+            },
+            {
+              "type": "navigation_link",
+              "label": "About",
+              "context": "Main navigation menu link to the about page."
+            },
+            {
+              "type": "navigation_link",
+              "label": "Contact Us",
+              "context": "Main navigation menu link to the contact page."
+            },
+            {
+              "type": "search_bar",
+              "label": "Search for:",
+              "context": "Search bar for querying products or information on the site."
+            },
+            {
+              "type": "form_field",
+              "label": "Name",
+              "context": "Form field for the user to input their name on the contact form."
+            },
+            {
+              "type": "form_field",
+              "label": "Email",
+              "context": "Form field for the user to input their email on the contact form."
+            },
+            {
+              "type": "form_field",
+              "label": "Comment or Message",
+              "context": "Form field for the user to input their comment or message on the contact form."
+            },
+            {
+              "type": "form_field",
+              "label": "Phone",
+              "context": "Optional form field for the user to input their phone number on the contact form."
+            },
+            {
+              "type": "button",
+              "label": "Send Message",
+              "context": "Button to submit the contact form."
+            },
+            {
+              "type": "navigation_link",
+              "label": "Quick Links - Home",
+              "context": "Footer link to the home page."
+            },
+            {
+              "type": "navigation_link",
+              "label": "Quick Links - About",
+              "context": "Footer link to the about page."
+            },
+            {
+              "type": "navigation_link",
+              "label": "Quick Links - Cart",
+              "context": "Footer link to the shopping cart."
+            },
+            {
+              "type": "navigation_link",
+              "label": "Quick Links - Contact Us",
+              "context": "Footer link to the contact page."
+            },
+            {
+              "type": "navigation_link",
+              "label": "For Her - Women Jeans",
+              "context": "Footer link to the women's jeans category."
+            },
+            {
+              "type": "navigation_link",
+              "label": "For Her - Tops and Shirts",
+              "context": "Footer link to the tops and shirts category for women."
+            },
+            {
+              "type": "navigation_link",
+              "label": "For Her - Women Jackets",
+              "context": "Footer link to the women's jackets category."
+            },
+            {
+              "type": "navigation_link",
+              "label": "For Her - Heels and Flats",
+              "context": "Footer link to the women's footwear category."
+            },
+            {
+              "type": "navigation_link",
+              "label": "For Her - Women Accessories",
+              "context": "Footer link to the women's accessories category."
+            },
+            {
+              "type": "navigation_link",
+              "label": "For Him - Men Jeans",
+              "context": "Footer link to the men's jeans category."
+            },
+            {
+              "type": "navigation_link",
+              "label": "For Him - Men Shirts",
+              "context": "Footer link to the men's shirts category."
+            },
+            {
+              "type": "navigation_link",
+              "label": "For Him - Men Shoes",
+              "context": "Footer link to the men's shoes category."
+            },
+            {
+              "type": "navigation_link",
+              "label": "For Him - Men Accessories",
+              "context": "Footer link to the men's accessories category."
+            },
+            {
+              "type": "navigation_link",
+              "label": "For Him - Men Jackets",
+              "context": "Footer link to the men's jackets category."
+            }
+          ],
+          "summary": "The webpage contains numerous user-interactable elements including accessibility tool buttons, navigation links, a search bar, and a contact form with fields and a submission button. These elements provide functionality for navigation, accessibility adjustments, and user communication."
+        }
+      },
+      "explored_pages_and_scenarios": [
+        {
+          "page_title": "Contact Us",
+          "potential_user_journeys": [
+            {
+              "scenario_name": "Utilizing Accessibility Tools",
+              "scenario_description": "Users adjust the page's accessibility settings for better usability.",
+              "steps": [
+                {
+                  "action": "click",
+                  "element_description": "Button to increase text size."
+                },
+                {
+                  "action": "click",
+                  "element_description": "Button to enable high contrast mode."
+                }
+              ],
+              "expected_outcome": [
+                "Page accessibility is enhanced according to the user's preferences."
+              ]
+            },
+            {
+              "scenario_name": "Submitting a Contact Form",
+              "scenario_description": "Users fill out the contact form to reach customer support.",
+              "steps": [
+                {
+                  "action": "type",
+                  "element_description": "Form field for the user's name."
+                },
+                {
+                  "action": "type",
+                  "element_description": "Form field for the user's email address."
+                },
+                {
+                  "action": "type",
+                  "element_description": "Form field for the user's message."
+                },
+                {
+                  "action": "click",
+                  "element_description": "Button to submit the contact form."
+                }
+              ],
+              "expected_outcome": [
+                "The user's message is sent to customer support for further assistance."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "https://atid.store/store/": {
+      "extracted_json": {
+        "elements": [
+          {
+            "description": "a with text \"Skip to content\"",
+            "stable_selector": "#pojo-a11y-skip-content",
+            "tag_name": "a",
+            "text_content": "Skip to content",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Open toolbar\"",
+            "stable_selector": "//a[@href='javascript:void(0);' and contains(@class, 'pojo-a11y-toolbar-link')]",
+            "tag_name": "a",
+            "text_content": "Open toolbar",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Increase Text\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'pojo-a11y-toolbar-link')]",
+            "tag_name": "a",
+            "text_content": "Increase Text",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Skip to content\"",
+            "stable_selector": "//a[@href='#content' and contains(@class, 'skip-link')]",
+            "tag_name": "a",
+            "text_content": "Skip to content",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/' and contains(@class, 'custom-logo-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"HOME\"",
+            "stable_selector": "//a[@href='https://atid.store/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "HOME",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"STORE\"",
+            "stable_selector": "//a[@href='https://atid.store/store/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "STORE",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"MEN\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "MEN",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"WOMEN\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "WOMEN",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ACCESSORIES\"",
+            "stable_selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "ACCESSORIES",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ABOUT\"",
+            "stable_selector": "//a[@href='https://atid.store/about/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "ABOUT",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"CONTACT US\"",
+            "stable_selector": "//a[@href='https://atid.store/contact-us/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "CONTACT US",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Search\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'slide-search')]",
+            "tag_name": "a",
+            "text_content": "Search",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"0.00\u00a0\u20aa 0\"",
+            "stable_selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'cart-container')]",
+            "tag_name": "a",
+            "text_content": "0.00\u00a0\u20aa 0",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "button with text \"Main Menu\"",
+            "stable_selector": "//button[normalize-space()=\"Main Menu\"]",
+            "tag_name": "button",
+            "text_content": "Main Menu",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "label",
+            "stable_selector": "//div[@id='block-7']/div/form/label",
+            "tag_name": "label",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "input",
+            "stable_selector": "#wc-block-search__input-1",
+            "tag_name": "input",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "button with text \"Search\"",
+            "stable_selector": "button[aria-label=\"Search\"]",
+            "tag_name": "button",
+            "text_content": "Search",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "label with text \"Min price\"",
+            "stable_selector": "//div[@id='woocommerce_price_filter-2']/form/div/div[2]/label[1]",
+            "tag_name": "label",
+            "text_content": "Min price",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "label with text \"Max price\"",
+            "stable_selector": "//div[@id='woocommerce_price_filter-2']/form/div/div[2]/label[2]",
+            "tag_name": "label",
+            "text_content": "Max price",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "button with text \"FILTER\"",
+            "stable_selector": "//button[normalize-space()=\"FILTER\"]",
+            "tag_name": "button",
+            "text_content": "FILTER",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Accessories\"",
+            "stable_selector": "//div[@id='woocommerce_product_categories-2']/ul/li[1]/a",
+            "tag_name": "a",
+            "text_content": "Accessories",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Men\"",
+            "stable_selector": "//div[@id='woocommerce_product_categories-2']/ul/li[2]/a",
+            "tag_name": "a",
+            "text_content": "Men",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Women\"",
+            "stable_selector": "//div[@id='woocommerce_product_categories-2']/ul/li[3]/a",
+            "tag_name": "a",
+            "text_content": "Women",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Boho Bangle Bracelet\"",
+            "stable_selector": "//div[@id='woocommerce_top_rated_products-1']/ul/li[1]/a",
+            "tag_name": "a",
+            "text_content": "Boho Bangle Bracelet",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Buddha Bracelet\"",
+            "stable_selector": "//div[@id='woocommerce_top_rated_products-1']/ul/li[2]/a",
+            "tag_name": "a",
+            "text_content": "Buddha Bracelet",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Bright Gold Purse With Chain\"",
+            "stable_selector": "//div[@id='woocommerce_top_rated_products-1']/ul/li[3]/a",
+            "tag_name": "a",
+            "text_content": "Bright Gold Purse With Chain",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Flamingo Tshirt\"",
+            "stable_selector": "//div[@id='woocommerce_top_rated_products-1']/ul/li[4]/a",
+            "tag_name": "a",
+            "text_content": "Flamingo Tshirt",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Blue Hoodie\"",
+            "stable_selector": "//div[@id='woocommerce_top_rated_products-1']/ul/li[5]/a",
+            "tag_name": "a",
+            "text_content": "Blue Hoodie",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Home\"",
+            "stable_selector": "//main[@id='main']/div/nav[1]/a",
+            "tag_name": "a",
+            "text_content": "Home",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "select with text \"Default sorting\nSort by popularity\nSort by average\"",
+            "stable_selector": "select[aria-label=\"Shop order\"]",
+            "tag_name": "select",
+            "text_content": "Default sorting\nSort by popularity\nSort by average rating\nSort by latest\nSort by price: low to high\nSort by price: high to low",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/anchor-bracelet/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Anchor Bracelet\"",
+            "stable_selector": "//a[@href='https://atid.store/product/anchor-bracelet/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Anchor Bracelet",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-black-shoes/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ATID Black Shoes\"",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-black-shoes/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "ATID Black Shoes",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-blue-shoes/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ATID Blue Shoes\"",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-blue-shoes/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "ATID Blue Shoes",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-green-shoes/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ATID Green Shoes\"",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-green-shoes/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "ATID Green Shoes",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/dnk-tshirt/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ATID Green Tshirt\"",
+            "stable_selector": "//a[@href='https://atid.store/product/dnk-tshirt/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "ATID Green Tshirt",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"OUT OF STOCK\"",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-red-shoes/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "OUT OF STOCK",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ATID Red Shoes\"",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-red-shoes/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "ATID Red Shoes",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-yellow-shoes/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"ATID Yellow Shoes\"",
+            "stable_selector": "//a[@href='https://atid.store/product/atid-yellow-shoes/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "ATID Yellow Shoes",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/basic-gray-jeans/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Basic Gray Jeans\"",
+            "stable_selector": "//a[@href='https://atid.store/product/basic-gray-jeans/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Basic Gray Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/black-hoodie/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Black Hoodie\"",
+            "stable_selector": "//a[@href='https://atid.store/product/black-hoodie/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Black Hoodie",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/black-over-the-shoulder-handbag/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Black Over-the-shoulder Handbag\"",
+            "stable_selector": "//a[@href='https://atid.store/product/black-over-the-shoulder-handbag/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Black Over-the-shoulder Handbag",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-jeans/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Blue Denim Jeans\"",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-jeans/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Blue Denim Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-shorts/' and contains(@class, 'woocommerce-LoopProduct-link')]",
+            "tag_name": "a",
+            "text_content": "",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Blue Denim Shorts\"",
+            "stable_selector": "//a[@href='https://atid.store/product/blue-denim-shorts/' and contains(@class, 'ast-loop-product__link')]",
+            "tag_name": "a",
+            "text_content": "Blue Denim Shorts",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"2\"",
+            "stable_selector": "//a[@href='https://atid.store/store/page/2/' and contains(@class, 'page-numbers')]",
+            "tag_name": "a",
+            "text_content": "2",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"3\"",
+            "stable_selector": "//a[@href='https://atid.store/store/page/3/' and contains(@class, 'page-numbers')]",
+            "tag_name": "a",
+            "text_content": "3",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"\u2192\"",
+            "stable_selector": "//a[@href='https://atid.store/store/page/2/' and contains(@class, 'next')]",
+            "tag_name": "a",
+            "text_content": "\u2192",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Cart\"",
+            "stable_selector": "//a[@href='https://atid.store/cart-2/' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "Cart",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          },
+          {
+            "description": "a with text \"Women Jeans\"",
+            "stable_selector": "//a[@href='#' and contains(@class, 'menu-link')]",
+            "tag_name": "a",
+            "text_content": "Women Jeans",
+            "is_enabled": true,
+            "is_editable": false,
+            "is_checked": false
+          }
+        ]
+      },
+      "extracted_interactive_data": {
+        "status": "success",
+        "query": "Identify all user-interactable elements and their context for crafting user journey scenarios.",
+        "user_interactable_elements": [
+          {
+            "element": "Accessibility Tools",
+            "actions": [
+              "Increase Text",
+              "Decrease Text",
+              "Grayscale",
+              "High Contrast",
+              "Negative Contrast",
+              "Light Background",
+              "Links Underline",
+              "Readable Font",
+              "Reset"
+            ],
+            "context": "Tools to enhance website accessibility for users."
+          },
+          {
+            "element": "Navigation Menu",
+            "actions": [
+              "Home",
+              "Store",
+              "Men",
+              "Women",
+              "Accessories",
+              "About",
+              "Contact Us"
+            ],
+            "context": "Primary navigation for exploring main sections of the website."
+          },
+          {
+            "element": "Search",
+            "actions": [
+              "Enter search query"
+            ],
+            "context": "Search functionality to find products or content."
+          },
+          {
+            "element": "Shopping Cart",
+            "actions": [
+              "View items in the cart"
+            ],
+            "context": "Access the shopping cart to review selected items and their prices."
+          },
+          {
+            "element": "Filter by Price",
+            "actions": [
+              "Set Min Price",
+              "Set Max Price",
+              "Apply Filter"
+            ],
+            "context": "Filter available products by price range."
+          },
+          {
+            "element": "Product Categories",
+            "actions": [
+              "Accessories",
+              "Men",
+              "Women"
+            ],
+            "context": "Browse products by category."
+          },
+          {
+            "element": "Product Sorting",
+            "actions": [
+              "Default sorting",
+              "Sort by popularity",
+              "Sort by average rating",
+              "Sort by latest",
+              "Sort by price: low to high",
+              "Sort by price: high to low"
+            ],
+            "context": "Sort displayed products based on different criteria."
+          },
+          {
+            "element": "Product Listings",
+            "actions": [
+              "View individual product details",
+              "Add to cart (if available)"
+            ],
+            "context": "View and interact with individual product offerings."
+          },
+          {
+            "element": "Pagination",
+            "actions": [
+              "Navigate to page 1",
+              "Navigate to page 2",
+              "Navigate to page 3",
+              "Next page"
+            ],
+            "context": "Browse through multiple pages of product listings."
+          },
+          {
+            "element": "Quick Links",
+            "actions": [
+              "Home",
+              "About",
+              "Cart",
+              "Contact Us"
+            ],
+            "context": "Direct access to important pages of the website."
+          },
+          {
+            "element": "For Her",
+            "actions": [
+              "Women Jeans",
+              "Tops and Shirts",
+              "Women Jackets",
+              "Heels and Flats",
+              "Women Accessories"
+            ],
+            "context": "Explore products specifically for women."
+          },
+          {
+            "element": "For Him",
+            "actions": [
+              "Men Jeans",
+              "Men Shirts",
+              "Men Shoes",
+              "Men Accessories",
+              "Men Jackets"
+            ],
+            "context": "Explore products specifically for men."
+          }
+        ],
+        "notes": "All interactable elements have been identified along with their actions and contexts to aid in crafting user journey scenarios."
+      },
+      "explored_pages_and_scenarios": [
+        {
+          "page_title": "Store Page",
+          "potential_user_journeys": [
+            {
+              "scenario_name": "Explore Product Categories",
+              "scenario_description": "Users can browse through different product categories to find items of interest.",
+              "steps": [
+                {
+                  "action": "click",
+                  "element_description": "Category link for Accessories, Men, or Women."
+                }
+              ],
+              "expected_outcome": [
+                "User is redirected to the selected category page displaying relevant products."
+              ]
+            },
+            {
+              "scenario_name": "Filter Products by Price",
+              "scenario_description": "Users can set a price range to filter products displayed in the store.",
+              "steps": [
+                {
+                  "action": "input",
+                  "element_description": "Price range slider to set minimum and maximum prices."
+                },
+                {
+                  "action": "click",
+                  "element_description": "Filter button to apply the price range."
+                }
+              ],
+              "expected_outcome": [
+                "Filtered list of products within the specified price range is displayed."
+              ]
+            },
+            {
+              "scenario_name": "Sort Products",
+              "scenario_description": "Users can sort the products by different criteria for easier navigation.",
+              "steps": [
+                {
+                  "action": "select",
+                  "element_description": "Dropdown menu to choose sorting criteria such as popularity or price."
+                }
+              ],
+              "expected_outcome": [
+                "Products are sorted based on the selected criteria."
+              ]
+            },
+            {
+              "scenario_name": "View Product Details",
+              "scenario_description": "Users can click on a product to view its detailed information and add it to the cart.",
+              "steps": [
+                {
+                  "action": "click",
+                  "element_description": "Product link from the listing."
+                }
+              ],
+              "expected_outcome": [
+                "Product detail page is displayed with options to add to the cart."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

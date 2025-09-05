@@ -1,0 +1,96 @@
+{
+  "test_name": "Filter Products by Price Range",
+  "description": "Verify that users can filter products within a specified price range and view appropriate results.",
+  "type": "functionality",
+  "pages": [
+    "https://atid.store/store/"
+  ],
+  "steps": [
+    "Navigate to the store page.",
+    "Locate the 'Min price' and 'Max price' fields.",
+    "Input a value of 50 in the 'Min price' field.",
+    "Input a value of 150 in the 'Max price' field.",
+    "Click the 'FILTER' button to apply the price range filter.",
+    "Wait for the filtered products list to load.",
+    "Verify that all displayed products have prices within the range of 50 to 150."
+  ],
+  "selectors": [
+    {
+      "element_type": "label",
+      "selector": "//div[@id='woocommerce_price_filter-2']/form/div/div[2]/label[1]",
+      "text": "Min price",
+      "action": "type",
+      "url_on_page": "https://atid.store/store/"
+    },
+    {
+      "element_type": "label",
+      "selector": "//div[@id='woocommerce_price_filter-2']/form/div/div[2]/label[2]",
+      "text": "Max price",
+      "action": "type",
+      "url_on_page": "https://atid.store/store/"
+    },
+    {
+      "element_type": "button",
+      "selector": "//button[normalize-space()=\"FILTER\"]",
+      "text": "FILTER",
+      "action": "click",
+      "url_on_page": "https://atid.store/store/"
+    }
+  ],
+  "expected_results": [
+    "Products displayed are within the specified price range of 50 to 150.",
+    "No products with prices outside the range appear in the filtered list."
+  ],
+  "edge_cases": [
+    "User inputs non-numeric values in the 'Min price' or 'Max price' fields.",
+    "User sets 'Min price' greater than 'Max price'.",
+    "No products are available within the specified range.",
+    "User attempts to filter without setting values in both fields.",
+    "User sets an extremely large or small price range."
+  ],
+  "data_requirements": [
+    "Products with varying prices available in the store.",
+    "Minimum and maximum price thresholds defined in the backend.",
+    "Valid HTML structure for filter elements.",
+    "Accurate price data for each product.",
+    "Responsive design to adapt to user actions."
+  ],
+  "dependencies": [
+    "Product price data must be accurate and up-to-date.",
+    "The filter functionality must be implemented in the backend.",
+    "The store page must be accessible."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "API call to fetch products based on the applied filter.",
+    "Error handling for invalid inputs in price fields."
+  ],
+  "performance_metrics": [
+    "Filter response time should be under 2 seconds.",
+    "Ensure no UI lag while applying filters."
+  ],
+  "accessibility_requirements": [
+    "Labels must be readable and accessible via screen readers.",
+    "Ensure the filter buttons are keyboard navigable.",
+    "Field errors must be announced clearly for invalid input."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "22a34c12-2a48-43ca-9baf-9170f3d78e24",
+    "created_at": "2025-09-05T11:42:35.990220Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "form-submission",
+      "functionality",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "medium"
+  }
+}
