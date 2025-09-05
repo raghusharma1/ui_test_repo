@@ -1,0 +1,47 @@
+{
+  "SITE_USERNAME": {
+    "key": "SITE_USERNAME",
+    "value": "playwright1@zb.io",
+    "type": "email",
+    "confidence": 1.0,
+    "metadata": {
+      "description": "Likely an email address used for authentication or identification.",
+      "usage": "Appears to be a username for a site login, possibly linked to a specific service or application."
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Store this value securely using environment variable encryption or a secrets management tool.",
+      "Avoid hardcoding sensitive information in source code repositories."
+    ]
+  },
+  "LOGIN_TYPE": {
+    "key": "LOGIN_TYPE",
+    "value": "Okta",
+    "type": "string",
+    "confidence": 0.9,
+    "metadata": {
+      "description": "Indicates the type of login or authentication method being used (e.g., Okta, SSO, etc.).",
+      "usage": "This value is likely used to specify the authentication provider or mechanism."
+    },
+    "is_sensitive": false,
+    "suggestions": [
+      "Ensure the value matches the expected authentication type configured in the application.",
+      "Document the allowed values for this environment variable."
+    ]
+  },
+  "SITE_PASSWORD": {
+    "key": "SITE_PASSWORD",
+    "value": "playwright",
+    "type": "string",
+    "confidence": 1.0,
+    "metadata": {
+      "description": "A password used for site login, which is highly sensitive information.",
+      "usage": "This value is likely used for authenticating access to a service or application."
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Do not store plaintext passwords in environment variables; use a secrets vault or encrypted storage.",
+      "Rotate passwords regularly and ensure this value is not exposed in logs or error messages."
+    ]
+  }
+}
