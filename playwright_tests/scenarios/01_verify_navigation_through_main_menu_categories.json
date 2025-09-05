@@ -1,0 +1,102 @@
+{
+  "test_name": "Verify Navigation Through Main Menu Categories",
+  "description": "This test verifies that users can navigate through the main menu categories (Men, Women, Accessories) and reach the corresponding product category pages.",
+  "type": "navigation",
+  "pages": [
+    "https://atid.store",
+    "https://atid.store/product-category/men/",
+    "https://atid.store/product-category/women/",
+    "https://atid.store/product-category/accessories/"
+  ],
+  "steps": [
+    "Navigate to 'https://atid.store'.",
+    "Click on the 'MEN' menu link.",
+    "Verify that the page navigates to 'https://atid.store/product-category/men/'.",
+    "Click on the 'WOMEN' menu link.",
+    "Verify that the page navigates to 'https://atid.store/product-category/women/'.",
+    "Click on the 'ACCESSORIES' menu link.",
+    "Verify that the page navigates to 'https://atid.store/product-category/accessories/'."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "//a[@href='https://atid.store/product-category/men/' and contains(@class, 'menu-link')]",
+      "text": "MEN",
+      "action": "click",
+      "url_on_page": "https://atid.store"
+    },
+    {
+      "element_type": "link",
+      "selector": "//a[@href='https://atid.store/product-category/women/' and contains(@class, 'menu-link')]",
+      "text": "WOMEN",
+      "action": "click",
+      "url_on_page": "https://atid.store"
+    },
+    {
+      "element_type": "link",
+      "selector": "//a[@href='https://atid.store/product-category/accessories/' and contains(@class, 'menu-link')]",
+      "text": "ACCESSORIES",
+      "action": "click",
+      "url_on_page": "https://atid.store"
+    }
+  ],
+  "expected_results": [
+    "The 'MEN' menu link navigates to 'https://atid.store/product-category/men/'.",
+    "The 'WOMEN' menu link navigates to 'https://atid.store/product-category/women/'.",
+    "The 'ACCESSORIES' menu link navigates to 'https://atid.store/product-category/accessories/'."
+  ],
+  "edge_cases": [
+    "Verify the behavior when the menu links are clicked multiple times in quick succession.",
+    "Test with a slow network connection to ensure the links load the correct pages.",
+    "Check if the links work when accessed using keyboard navigation.",
+    "Verify that the links are functional in different browsers and devices.",
+    "Ensure the links are accessible for screen readers."
+  ],
+  "data_requirements": [
+    "The 'MEN' category page must exist.",
+    "The 'WOMEN' category page must exist.",
+    "The 'ACCESSORIES' category page must exist.",
+    "The menu links must be present and enabled.",
+    "The menu links must have the correct URLs."
+  ],
+  "dependencies": [
+    "The main menu must be present on the home page.",
+    "The category pages must be accessible.",
+    "The website must be online and functional."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Monitor any API calls triggered during the navigation process.",
+    "Ensure that the category data on the destination pages is fetched successfully."
+  ],
+  "performance_metrics": [
+    "Measure the time taken to load each category page.",
+    "Check the responsiveness of the menu links."
+  ],
+  "accessibility_requirements": [
+    "Ensure that the menu links are navigable using keyboard shortcuts.",
+    "Verify that the menu links have appropriate ARIA labels.",
+    "Check the menu links for sufficient color contrast."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "db4cadd2-688e-4bcf-a674-a08150e6f7a8",
+    "created_at": "2025-09-05T05:09:53.834785Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "cross-browser",
+      "keyboard-navigation",
+      "navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "high"
+  }
+}
