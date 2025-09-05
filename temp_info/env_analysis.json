@@ -1,0 +1,48 @@
+{
+  "SITE_USERNAME": {
+    "key": "SITE_USERNAME",
+    "value": "playwright1@zb.io",
+    "type": "email",
+    "confidence": 0.95,
+    "metadata": {
+      "description": "Likely an email address used for authentication or user identification.",
+      "purpose": "This appears to be a username for accessing the UI site."
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Ensure this email is valid and properly formatted.",
+      "Avoid hardcoding sensitive data in environment variables; consider using a secure secrets manager."
+    ]
+  },
+  "LOGIN_TYPE": {
+    "key": "LOGIN_TYPE",
+    "value": "Okta",
+    "type": "string",
+    "confidence": 0.9,
+    "metadata": {
+      "description": "Indicates the login type or identity provider being used.",
+      "purpose": "Could specify the authentication mechanism for the UI."
+    },
+    "is_sensitive": false,
+    "suggestions": [
+      "Document the possible values for this variable (e.g., 'Okta', 'Google', etc.).",
+      "If this value is configurable, ensure proper validation to avoid unexpected behavior."
+    ]
+  },
+  "SITE_PASSWORD": {
+    "key": "SITE_PASSWORD",
+    "value": "playwright",
+    "type": "string",
+    "confidence": 0.95,
+    "metadata": {
+      "description": "Appears to be a plaintext password used for authentication.",
+      "purpose": "Used in combination with the username for logging into the UI site."
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Never store passwords in plaintext in environment variables.",
+      "Use a secure secrets management solution to store and retrieve passwords securely.",
+      "Consider rotating passwords regularly and enforcing strong password policies."
+    ]
+  }
+}
