@@ -1,0 +1,322 @@
+2025-09-05 08:53:01,908 - INFO - Roost UI Test Generator: Beginning automated test creation process.
+2025-09-05 08:53:01,908 - INFO - Using Azure OpenAI deployment
+2025-09-05 08:53:01,908 - INFO - No user scenario file found or path not set.
+2025-09-05 08:53:01,909 - INFO - Using Azure OpenAI: gpt-4o
+2025-09-05 08:53:07,305 - INFO - Filtered 3 UI_ prefixed variables for form filling from 24 total variables
+2025-09-05 08:53:07,307 - INFO - AI detected 2 form fields in environment
+2025-09-05 08:53:07,308 - INFO - Found email: SITE_USERNAME (confidence: 0.95)
+2025-09-05 08:53:07,308 - INFO - Found username: **** (confidence: 0.95)
+2025-09-05 08:53:07,308 - INFO - Using credentials for user: playwright1@zb.io
+2025-09-05 08:53:07,310 - INFO - [extract_sensitive_data_from_env_analysis_json] Sensitive data extracted: ['x_site_username', 'x_site_password']
+2025-09-05 08:53:07,311 - INFO - Detected credentials. Running agent to conduct login
+2025-09-05 08:53:07,330 - INFO - 🧠 Starting a browser-use agent unknown with base_model=gpt-4o +vision extraction_model=gpt-4o +file_system
+2025-09-05 08:53:07,341 - INFO - 🚀 Starting task: 
+GOAL:
+Your mission is to perform a detailed login test for the website: https://atid.store.
+
+### --- Phase 1: Initial Page Analysis --- ###
+1.  **Navigate & Capture URL:** Go to https://atid.store and immediately capture the final URL after all initial loads and redirects. This is the `login_url`.
+2.  **Capture User Scenarios:** Before any login actions, explore the initial login page. Identify and describe 5 distinct user actions or "scenarios" a user might take on this page and format them as a JSON string.
+
+### --- Phase 2: Login Execution --- ###
+3.  **Locate & Execute Login:** Find the login form for the method "Okta". Fill it with the secure credentials `x_username` and `x_password`. If you see a "Remember me" option, check it.
+4.  **Handle Third-Party Logins:** If the process involves redirects to Google, GitHub, Okta, etc., follow the flow as instructed.
+
+### --- Phase 3: Verification & State Saving --- ###
+5.  **Confirm Login Success (CRITICAL):** After submitting, you MUST determine if the login was successful by looking for POSITIVE indicators like a "Dashboard", "PROFILE" icon or a "Logout" button. A change in URL also means login has been completed, use that to confirm login. 
+6.  **Save Authentication State:** Once login is completed, you MUST immediately call the `save_auth_state` function.
+
+### --- Phase 4: Final Reporting --- ###
+7.  **Report Your Findings:** As your absolute final action, you MUST call the `report_and_save_login_results` function. You need to provide it with all the information you gathered, including the `user_scenarios_json_string` you prepared.
+
+CRITICAL RULES:
+- The 5 user scenarios must be from the initial login landing page only.
+- The scenarios must be provided as a single, valid JSON formatted string.
+- You must call `report_and_save_login_results` in all situations at the end, whether the login succeeded or failed.
+
+CLOSING CONDITIONS:
+- IF LOGIN IS SUCCESSFUL, `report_and_save_login_results` AND `save_auth_state` HAVE BEEN CALLED AT LEAST ONCE, TERMINATE THE BROWSER.
+
+2025-09-05 08:53:07,804 - INFO - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= <incognito>
+2025-09-05 08:53:07,810 - INFO -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:56689/ with user_data_dir= /tmp/browseruse-tmp-i9vuawml
+2025-09-05 08:53:09,863 - INFO - 🌎 Connecting to newly spawned browser via CDP http://127.0.0.1:56689/ -> browser_pid=88 (local)
+2025-09-05 08:53:11,552 - INFO - ➡️ Page navigation [0]about:blank took 0.51s
+2025-09-05 08:53:11,570 - WARNING - ▫️ Sending LLM 1px placeholder instead of real screenshot of: about:blank (page empty)
+2025-09-05 08:53:11,585 - INFO - 📍 Step 2: Evaluating page with 0 interactive elements on: about:blank
+2025-09-05 08:53:12,882 - ERROR - ❌ Result failed 1/3 times:
+ ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/llm/openai/chat.py", line 175, in ainvoke
+  File "openai/resources/chat/completions/completions.py", line 2583, in create
+  File "openai/_base_client.py", line 1794, in post
+  File "openai/_base_client.py", line 1594, in request
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 667, in step
+  File "browser_use/agent/service.py", line 731, in _get_next_action
+  File "browser_use/agent/service.py", line 870, in _get_model_output_with_retry
+  File "browser_use/utils.py", line 358, in wrapper
+  File "browser_use/agent/service.py", line 972, in get_model_output
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/llm/openai/chat.py", line 221, in ainvoke
+browser_use.llm.exceptions.ModelProviderError: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:12,883 - INFO - 📍 Step 1: Ran 1 actions in 5.54s: ❌ 1
+2025-09-05 08:53:12,884 - INFO - --- Hook: Capturing UI state at step end ---
+2025-09-05 08:53:12,884 - INFO - --- Hook: Waiting for network idle on about:blank to ensure page is fully rendered... ---
+2025-09-05 08:53:12,922 - INFO - [Depth 0] Found 0 potential interactive elements.
+2025-09-05 08:53:12,922 - INFO - [Depth 0] No locators matched the selector list.
+2025-09-05 08:53:12,927 - WARNING - --- Hook Abort: Found 0 unique interactive elements on about:blank. ---
+2025-09-05 08:53:13,439 - INFO - ➡️ Page navigation [0]about:blank took 0.51s
+2025-09-05 08:53:13,555 - WARNING - ▫️ Sending LLM 1px placeholder instead of real screenshot of: about:blank (page empty)
+2025-09-05 08:53:13,569 - INFO - 📍 Step 2: Evaluating page with 0 interactive elements on: about:blank
+2025-09-05 08:53:14,080 - ERROR - ❌ Result failed 2/3 times:
+ ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/llm/openai/chat.py", line 175, in ainvoke
+  File "openai/resources/chat/completions/completions.py", line 2583, in create
+  File "openai/_base_client.py", line 1794, in post
+  File "openai/_base_client.py", line 1594, in request
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 667, in step
+  File "browser_use/agent/service.py", line 731, in _get_next_action
+  File "browser_use/agent/service.py", line 870, in _get_model_output_with_retry
+  File "browser_use/utils.py", line 358, in wrapper
+  File "browser_use/agent/service.py", line 972, in get_model_output
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/llm/openai/chat.py", line 221, in ainvoke
+browser_use.llm.exceptions.ModelProviderError: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:14,081 - INFO - 📍 Step 1: Ran 1 actions in 1.15s: ❌ 1
+2025-09-05 08:53:14,082 - INFO - --- Hook: Capturing UI state at step end ---
+2025-09-05 08:53:14,082 - INFO - --- Hook: Waiting for network idle on about:blank to ensure page is fully rendered... ---
+2025-09-05 08:53:14,094 - INFO - [Depth 0] Found 0 potential interactive elements.
+2025-09-05 08:53:14,094 - INFO - [Depth 0] No locators matched the selector list.
+2025-09-05 08:53:14,098 - WARNING - --- Hook Abort: Found 0 unique interactive elements on about:blank. ---
+2025-09-05 08:53:14,609 - INFO - ➡️ Page navigation [0]about:blank took 0.51s
+2025-09-05 08:53:14,623 - WARNING - ▫️ Sending LLM 1px placeholder instead of real screenshot of: about:blank (page empty)
+2025-09-05 08:53:14,637 - INFO - 📍 Step 2: Evaluating page with 0 interactive elements on: about:blank
+2025-09-05 08:53:15,145 - ERROR - ❌ Result failed 3/3 times:
+ ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/llm/openai/chat.py", line 175, in ainvoke
+  File "openai/resources/chat/completions/completions.py", line 2583, in create
+  File "openai/_base_client.py", line 1794, in post
+  File "openai/_base_client.py", line 1594, in request
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 667, in step
+  File "browser_use/agent/service.py", line 731, in _get_next_action
+  File "browser_use/agent/service.py", line 870, in _get_model_output_with_retry
+  File "browser_use/utils.py", line 358, in wrapper
+  File "browser_use/agent/service.py", line 972, in get_model_output
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/llm/openai/chat.py", line 221, in ainvoke
+browser_use.llm.exceptions.ModelProviderError: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:15,146 - INFO - 📍 Step 1: Ran 1 actions in 1.05s: ❌ 1
+2025-09-05 08:53:15,147 - INFO - --- Hook: Capturing UI state at step end ---
+2025-09-05 08:53:15,147 - INFO - --- Hook: Waiting for network idle on about:blank to ensure page is fully rendered... ---
+2025-09-05 08:53:15,159 - INFO - [Depth 0] Found 0 potential interactive elements.
+2025-09-05 08:53:15,160 - INFO - [Depth 0] No locators matched the selector list.
+2025-09-05 08:53:15,164 - WARNING - --- Hook Abort: Found 0 unique interactive elements on about:blank. ---
+2025-09-05 08:53:15,164 - ERROR - ❌ Stopping due to 3 consecutive failures
+2025-09-05 08:53:16,521 - INFO - 🛑 Closing cdp_url=http://127.0.0.1:56689/ browser context  <Browser type=<BrowserType name=chromium executable_path=/root/.cache/ms-playwright/chromium-1169/chrome-linux/chrome> version=136.0.7103.25>
+2025-09-05 08:53:16,537 - INFO -  ↳ Killing browser_pid=88 ~/.cache/ms-playwright/chromium-1169/chrome-linux/chrome (terminate() called)
+2025-09-05 08:53:16,683 - ERROR - Error reading /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/temp_profile/default/browseruse_login_data/login_result_and_scenarios.json: [Errno 2] No such file or directory: '/var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/temp_profile/default/browseruse_login_data/login_result_and_scenarios.json'
+2025-09-05 08:53:16,685 - INFO - [browser_use_module.runLoginAgent] Added login results to data
+2025-09-05 08:53:16,686 - INFO - Closing login agent's browser session...
+2025-09-05 08:53:16,686 - INFO - Login agent's session closed.
+2025-09-05 08:53:16,686 - WARNING - Login failed or skipped. Continuing
+2025-09-05 08:53:16,687 - INFO - 🚀 Starting scraper for https://atid.store...
+2025-09-05 08:53:17,091 - ERROR - Storage state file not found at: /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/state.json, continuing without logged in state
+2025-09-05 08:53:18,853 - INFO - Waiting for page content to render...
+2025-09-05 08:53:19,139 - INFO - Found 0 iframes to search for links.
+2025-09-05 08:53:19,139 - INFO - Found 20 unique URLs.
+2025-09-05 08:53:19,140 - INFO - Using Azure OpenAI: gpt-4o
+2025-09-05 08:53:19,230 - INFO - 🤖 Sending URLs to AI for analysis...
+2025-09-05 08:53:21,648 - INFO - 
+✅ AI has identified the following top URLs for testing:
+2025-09-05 08:53:21,648 - INFO - 1. https://atid.store/store/
+2025-09-05 08:53:21,648 - INFO - 2. https://atid.store/cart-2/
+2025-09-05 08:53:21,649 - INFO - 3. https://atid.store/product-category/women/
+2025-09-05 08:53:21,649 - INFO - 4. https://atid.store/product-category/men/
+2025-09-05 08:53:21,649 - INFO - 5. https://atid.store/contact-us/
+2025-09-05 08:53:21,683 - INFO - Using existing state
+2025-09-05 08:53:21,697 - INFO - 🧠 Starting a browser-use agent unknown with base_model=gpt-4o +vision extraction_model=gpt-4o +file_system
+2025-09-05 08:53:21,703 - INFO - Starting extraction process...
+2025-09-05 08:53:21,704 - INFO - 🚀 Starting task: 
+Go to these URLS:
+[["https://atid.store/store/", "https://atid.store/cart-2/", "https://atid.store/product-category/women/", "https://atid.store/product-category/men/", "https://atid.store/contact-us/"]]
+
+On each URL conduct these steps:
+1. Observe all the elements and identify the use case of the website
+2. Use observed knowledge to craft expert user journey scenarios (Consider things like, what would a user typically do after accessing this website? What are the most common functionalities of sites with such use case?)
+3. Capture your findings in a JSON file with file name url(replace "/" or "." or ":" with "_") append with _results.json. utilise the structure provided below for the file.
+
+```json
+{
+"url": "current_url_here",
+"explored_pages_and_scenarios": [
+    {
+    "page_title": "Title of the page",
+    "potential_user_journeys": [
+        {
+        "scenario_name": "Concise name for a potential user journey",
+        "scenario_description": "A brief summary of a user flow and its purpose.",
+        "steps": [
+            {
+            "action": "e.g., click, type, assert_visibility",
+            "element_description": "Natural language description of the element"
+            }
+        ],
+        "expected_outcome": ["Description of what should happen after the steps"]
+        }
+    ]
+    }
+]
+}
+```
+
+2025-09-05 08:53:21,810 - INFO - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= <incognito>
+2025-09-05 08:53:21,814 - INFO -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:40093/ with user_data_dir= /tmp/browseruse-tmp-ick5ge91
+2025-09-05 08:53:23,912 - INFO - 🌎 Connecting to newly spawned browser via CDP http://127.0.0.1:40093/ -> browser_pid=266 (local)
+2025-09-05 08:53:24,945 - WARNING - ❌ Failed to load cookies from storage_state= /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/state.json: FileNotFoundError: [Errno 2] No such file or directory: '/var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/state.json'
+2025-09-05 08:53:25,572 - INFO - ➡️ Page navigation [0]about:blank took 0.51s
+2025-09-05 08:53:25,588 - WARNING - ▫️ Sending LLM 1px placeholder instead of real screenshot of: about:blank (page empty)
+2025-09-05 08:53:25,602 - INFO - 📍 Step 2: Evaluating page with 0 interactive elements on: about:blank
+2025-09-05 08:53:26,873 - ERROR - ❌ Result failed 1/3 times:
+ ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/llm/openai/chat.py", line 175, in ainvoke
+  File "openai/resources/chat/completions/completions.py", line 2583, in create
+  File "openai/_base_client.py", line 1794, in post
+  File "openai/_base_client.py", line 1594, in request
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 667, in step
+  File "browser_use/agent/service.py", line 731, in _get_next_action
+  File "browser_use/agent/service.py", line 870, in _get_model_output_with_retry
+  File "browser_use/utils.py", line 358, in wrapper
+  File "browser_use/agent/service.py", line 972, in get_model_output
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/llm/openai/chat.py", line 221, in ainvoke
+browser_use.llm.exceptions.ModelProviderError: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:26,874 - INFO - 📍 Step 1: Ran 1 actions in 5.17s: ❌ 1
+2025-09-05 08:53:26,875 - INFO - --- Hook: Capturing UI state at step end ---
+2025-09-05 08:53:26,875 - INFO - --- Hook: Waiting for network idle on about:blank to ensure page is fully rendered... ---
+2025-09-05 08:53:26,909 - INFO - [Depth 0] Found 0 potential interactive elements.
+2025-09-05 08:53:26,910 - INFO - [Depth 0] No locators matched the selector list.
+2025-09-05 08:53:26,914 - WARNING - --- Hook Abort: Found 0 unique interactive elements on about:blank. ---
+2025-09-05 08:53:27,427 - INFO - ➡️ Page navigation [0]about:blank took 0.51s
+2025-09-05 08:53:27,542 - WARNING - ▫️ Sending LLM 1px placeholder instead of real screenshot of: about:blank (page empty)
+2025-09-05 08:53:27,557 - INFO - 📍 Step 2: Evaluating page with 0 interactive elements on: about:blank
+2025-09-05 08:53:28,080 - ERROR - ❌ Result failed 2/3 times:
+ ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/llm/openai/chat.py", line 175, in ainvoke
+  File "openai/resources/chat/completions/completions.py", line 2583, in create
+  File "openai/_base_client.py", line 1794, in post
+  File "openai/_base_client.py", line 1594, in request
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 667, in step
+  File "browser_use/agent/service.py", line 731, in _get_next_action
+  File "browser_use/agent/service.py", line 870, in _get_model_output_with_retry
+  File "browser_use/utils.py", line 358, in wrapper
+  File "browser_use/agent/service.py", line 972, in get_model_output
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/llm/openai/chat.py", line 221, in ainvoke
+browser_use.llm.exceptions.ModelProviderError: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:28,082 - INFO - 📍 Step 1: Ran 1 actions in 1.17s: ❌ 1
+2025-09-05 08:53:28,082 - INFO - --- Hook: Capturing UI state at step end ---
+2025-09-05 08:53:28,083 - INFO - --- Hook: Waiting for network idle on about:blank to ensure page is fully rendered... ---
+2025-09-05 08:53:28,095 - INFO - [Depth 0] Found 0 potential interactive elements.
+2025-09-05 08:53:28,095 - INFO - [Depth 0] No locators matched the selector list.
+2025-09-05 08:53:28,100 - WARNING - --- Hook Abort: Found 0 unique interactive elements on about:blank. ---
+2025-09-05 08:53:28,614 - INFO - ➡️ Page navigation [0]about:blank took 0.51s
+2025-09-05 08:53:28,627 - WARNING - ▫️ Sending LLM 1px placeholder instead of real screenshot of: about:blank (page empty)
+2025-09-05 08:53:28,641 - INFO - 📍 Step 2: Evaluating page with 0 interactive elements on: about:blank
+2025-09-05 08:53:29,162 - ERROR - ❌ Result failed 3/3 times:
+ ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/llm/openai/chat.py", line 175, in ainvoke
+  File "openai/resources/chat/completions/completions.py", line 2583, in create
+  File "openai/_base_client.py", line 1794, in post
+  File "openai/_base_client.py", line 1594, in request
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 667, in step
+  File "browser_use/agent/service.py", line 731, in _get_next_action
+  File "browser_use/agent/service.py", line 870, in _get_model_output_with_retry
+  File "browser_use/utils.py", line 358, in wrapper
+  File "browser_use/agent/service.py", line 972, in get_model_output
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/llm/openai/chat.py", line 221, in ainvoke
+browser_use.llm.exceptions.ModelProviderError: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:29,165 - INFO - 📍 Step 1: Ran 1 actions in 1.06s: ❌ 1
+2025-09-05 08:53:29,165 - INFO - --- Hook: Capturing UI state at step end ---
+2025-09-05 08:53:29,166 - INFO - --- Hook: Waiting for network idle on about:blank to ensure page is fully rendered... ---
+2025-09-05 08:53:29,177 - INFO - [Depth 0] Found 0 potential interactive elements.
+2025-09-05 08:53:29,177 - INFO - [Depth 0] No locators matched the selector list.
+2025-09-05 08:53:29,181 - WARNING - --- Hook Abort: Found 0 unique interactive elements on about:blank. ---
+2025-09-05 08:53:29,181 - ERROR - ❌ Stopping due to 3 consecutive failures
+2025-09-05 08:53:30,499 - INFO - 🍪 Saved 1 cookies to storage_state= /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/state.json
+2025-09-05 08:53:30,499 - INFO - 🛑 Closing cdp_url=http://127.0.0.1:40093/ browser context  <Browser type=<BrowserType name=chromium executable_path=/root/.cache/ms-playwright/chromium-1169/chrome-linux/chrome> version=136.0.7103.25>
+2025-09-05 08:53:30,512 - INFO -  ↳ Killing browser_pid=266 ~/.cache/ms-playwright/chromium-1169/chrome-linux/chrome (terminate() called)
+2025-09-05 08:53:30,665 - WARNING - No captured_ui_states found to write to file.
+2025-09-05 08:53:30,665 - INFO - Agent run complete. Processing agent history...
+2025-09-05 08:53:30,667 - WARNING - Extraction returned empty or null JSON.
+2025-09-05 08:53:30,667 - INFO - Closing login agent's browser session...
+2025-09-05 08:53:30,667 - INFO - Login agent's session closed.
+2025-09-05 08:53:30,668 - INFO - Data extraction completed successfully. Results saved to /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/merged_scenarios.json
+2025-09-05 08:53:30,668 - INFO -  Continuing to test generation using extracted data...
+2025-09-05 08:53:30,668 - INFO - 🧹 Cleaning up scenarios directory before generation: /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/playwright_tests/scenarios
+2025-09-05 08:53:30,669 - INFO - Starting scenario generation process...
+2025-09-05 08:53:30,669 - INFO - Using Azure OpenAI: gpt-4o
+2025-09-05 08:53:34,227 - INFO -   -> Saved business requirement to: business_requirements.json
+2025-09-05 08:53:34,229 - ERROR - No prompts were generated for processing
+2025-09-05 08:53:34,229 - ERROR - ❌ No valid scenarios could be generated across all URLs.
+2025-09-05 08:53:34,229 - INFO - 🧹 Cleaning up tests directory before generation: /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/playwright_tests/tests
+2025-09-05 08:53:34,229 - INFO - Directory '/var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/playwright_tests/tests' does not exist. Skipping cleanup.
+2025-09-05 08:53:34,230 - INFO -  Step 2: Generating Playwright tests from scenarios...
+2025-09-05 08:53:34,230 - INFO - Using Azure OpenAI: gpt-4o
+2025-09-05 08:53:34,317 - INFO - Loading and validating all scenario files...
+2025-09-05 08:53:34,317 - WARNING - No scenario JSON files found in the specified directory.
+2025-09-05 08:53:34,318 - INFO -  Generated tests saved to /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/playwright_tests/
+2025-09-05 08:53:34,318 - INFO -  All done! You can now run the tests with:
+2025-09-05 08:53:34,318 - INFO - cd /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/playwright_tests
+2025-09-05 08:53:34,318 - INFO - npm install
+2025-09-05 08:53:34,318 - INFO - npx playwright install
+2025-09-05 08:53:34,318 - INFO - npx playwright test

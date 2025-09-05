@@ -1,0 +1,14 @@
+{
+    "https://atid.store": {
+        "core_purpose": "The site provides an online e-commerce platform for users to browse, purchase, and manage orders for a variety of retail products.",
+        "business_requirements": [
+            "Users must be able to browse and filter products by categories, price range, and other attributes.",
+            "Users must be able to add multiple products to a shopping cart and view the total cost before proceeding to checkout.",
+            "Users must be able to securely enter payment and shipping information to complete purchases.",
+            "Users must be able to create and manage personal accounts to track order history and save preferences.",
+            "Users must receive confirmation emails upon successful orders, including order details and estimated delivery timelines.",
+            "Administrators must be able to update product listings, inventory levels, and pricing in real-time.",
+            "The platform must ensure responsive design to allow seamless usage across desktops, tablets, and mobile devices."
+        ]
+    }
+}

@@ -1,0 +1,527 @@
+2025-09-05 08:53:01,907 - DEBUG - ui-test-generator - setup_logging:143 - Starting the ROOST-ui-test-generator
+2025-09-05 08:53:01,907 - DEBUG - ui-test-generator - setup_logging:144 - === LOGGING SESSION STARTED ===
+2025-09-05 08:53:01,907 - DEBUG - ui-test-generator - setup_logging:145 - All logs (unfiltered) saved to: all_logs.log
+2025-09-05 08:53:01,908 - DEBUG - ui-test-generator - setup_logging:146 - Client-facing logs saved to: client.log
+2025-09-05 08:53:01,908 - DEBUG - ui-test-generator - setup_logging:147 - Client log level set to: INFO
+2025-09-05 08:53:01,908 - DEBUG - ui-test-generator - setup_logging:148 - Timestamp: 2025-09-05 08:53:01.908088
+2025-09-05 08:53:01,908 - DEBUG - ui-test-generator - setup_logging:149 - Logging configured. Logs are being saved to the '/var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/logs' directory.
+2025-09-05 08:53:01,908 - INFO - ui-test-generator - setup_logging:150 - Roost UI Test Generator: Beginning automated test creation process.
+2025-09-05 08:53:01,908 - INFO - browser_use_module - get_llm:76 - Using Azure OpenAI deployment
+2025-09-05 08:53:01,908 - INFO - browser_use_module - extract_data_from_protected_url:400 - No user scenario file found or path not set.
+2025-09-05 08:53:01,909 - INFO - llm_invoke - get_llm_client:28 - Using Azure OpenAI: gpt-4o
+2025-09-05 08:53:07,305 - INFO - browser_use_module - extract_data_from_protected_url:408 - Filtered 3 UI_ prefixed variables for form filling from 24 total variables
+2025-09-05 08:53:07,307 - INFO - browser_use_module - extract_data_from_protected_url:421 - AI detected 2 form fields in environment
+2025-09-05 08:53:07,308 - INFO - browser_use_module - extract_data_from_protected_url:423 - Found email: SITE_USERNAME (confidence: 0.95)
+2025-09-05 08:53:07,308 - INFO - browser_use_module - extract_data_from_protected_url:423 - Found username: **** (confidence: 0.95)
+2025-09-05 08:53:07,308 - INFO - browser_use_module - extract_data_from_protected_url:431 - Using credentials for user: playwright1@zb.io
+2025-09-05 08:53:07,310 - INFO - browser_use_module - extract_sensitive_data_from_env_analysis_json:62 - [extract_sensitive_data_from_env_analysis_json] Sensitive data extracted: ['x_site_username', 'x_site_password']
+2025-09-05 08:53:07,311 - INFO - browser_use_module - extract_data_from_protected_url:451 - Detected credentials. Running agent to conduct login
+2025-09-05 08:53:07,313 - DEBUG - browser_use.tokens.service - register_llm:314 - LLM instance 129374123009616 (azure_gpt-4o) is already registered
+2025-09-05 08:53:07,315 - INFO - browser_use.agent.service - _set_file_system:550 - 💾 File system path: /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/temp_profile/default/browseruse_login_data
+2025-09-05 08:53:07,330 - DEBUG - browser_use.utils - get_browser_use_version:573 - Error detecting browser-use version: PackageNotFoundError: No package metadata was found for browser-use
+2025-09-05 08:53:07,330 - INFO - browser_use.Agent🅰 855b on 🆂 855b 🅟 88 - __init__:282 - 🧠 Starting a browser-use agent unknown with base_model=gpt-4o +vision extraction_model=gpt-4o +file_system
+2025-09-05 08:53:07,341 - INFO - browser_use.Agent🅰 855b on 🆂 8e64 🅟 88 - _log_agent_run:990 - 🚀 Starting task: 
+GOAL:
+Your mission is to perform a detailed login test for the website: https://atid.store.
+
+### --- Phase 1: Initial Page Analysis --- ###
+1.  **Navigate & Capture URL:** Go to https://atid.store and immediately capture the final URL after all initial loads and redirects. This is the `login_url`.
+2.  **Capture User Scenarios:** Before any login actions, explore the initial login page. Identify and describe 5 distinct user actions or "scenarios" a user might take on this page and format them as a JSON string.
+
+### --- Phase 2: Login Execution --- ###
+3.  **Locate & Execute Login:** Find the login form for the method "Okta". Fill it with the secure credentials `x_username` and `x_password`. If you see a "Remember me" option, check it.
+4.  **Handle Third-Party Logins:** If the process involves redirects to Google, GitHub, Okta, etc., follow the flow as instructed.
+
+### --- Phase 3: Verification & State Saving --- ###
+5.  **Confirm Login Success (CRITICAL):** After submitting, you MUST determine if the login was successful by looking for POSITIVE indicators like a "Dashboard", "PROFILE" icon or a "Logout" button. A change in URL also means login has been completed, use that to confirm login. 
+6.  **Save Authentication State:** Once login is completed, you MUST immediately call the `save_auth_state` function.
+
+### --- Phase 4: Final Reporting --- ###
+7.  **Report Your Findings:** As your absolute final action, you MUST call the `report_and_save_login_results` function. You need to provide it with all the information you gathered, including the `user_scenarios_json_string` you prepared.
+
+CRITICAL RULES:
+- The 5 user scenarios must be from the initial login landing page only.
+- The scenarios must be provided as a single, valid JSON formatted string.
+- You must call `report_and_save_login_results` in all situations at the end, whether the login succeeded or failed.
+
+CLOSING CONDITIONS:
+- IF LOGIN IS SUCCESSFUL, `report_and_save_login_results` AND `save_auth_state` HAVE BEEN CALLED AT LEAST ONCE, TERMINATE THE BROWSER.
+
+2025-09-05 08:53:07,342 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 88 - _log_agent_run:992 - 🤖 Browser-Use Library Version unknown (pip)
+2025-09-05 08:53:07,343 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 88 - run:1168 - 🔧 Agent setup: Task ID 855b, Session ID 7691, Browser Session ID 8e64
+2025-09-05 08:53:07,343 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 88 - run:1176 - 📡 Dispatching CreateAgentSessionEvent...
+2025-09-05 08:53:07,343 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 88 - run:1180 - 📡 Dispatching CreateAgentTaskEvent...
+2025-09-05 08:53:07,343 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 88 - run:1191 - 🔄 Starting main execution loop with max 30 steps...
+2025-09-05 08:53:07,343 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 88 - run:1220 - 🚶 Starting step 1/30...
+2025-09-05 08:53:07,344 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 88 - _prepare_context:686 - 🌐 Step 2: Getting browser state...
+2025-09-05 08:53:07,804 - INFO - browser_use.BrowserSession🆂 8e64:None #08 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= <incognito>
+2025-09-05 08:53:07,810 - INFO - browser_use.BrowserSession🆂 8e64:None #08 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:56689/ with user_data_dir= /tmp/browseruse-tmp-i9vuawml
+2025-09-05 08:53:09,863 - INFO - browser_use.BrowserSession🆂 8e64:56689 #08 - setup_browser_via_browser_pid:999 - 🌎 Connecting to newly spawned browser via CDP http://127.0.0.1:56689/ -> browser_pid=88 (local)
+2025-09-05 08:53:10,910 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _unsafe_setup_new_browser_context:1078 - 👤 Using default browser_context opened in newly spawned browser: <BrowserContext browser=<Browser type=<BrowserType name=chromium executable_path=/root/.cache/ms-playwright/chromium-1169/chrome-linux/chrome> version=136.0.7103.25>>
+2025-09-05 08:53:10,916 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _setup_viewports:1551 - 📐 Setting up viewport: headless=True (no window) screen=1280x1100px viewport=1280x1100px device_scale_factor=1.0 is_mobile=False color_scheme=light permissions=clipboard-read,clipboard-write,notifications storage_state=<none> 
+2025-09-05 08:53:11,032 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _setup_current_page_change_listeners:1441 - 👁️‍🗨️ Found 1 existing tabs in browser, Agent 🅰 8e64 is on Page 🅟 56: about:blank
+2025-09-05 08:53:11,041 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - get_state_summary:3047 - 🔄 Starting get_state_summary...
+2025-09-05 08:53:11,552 - INFO - browser_use.BrowserSession🆂 8e64:56689 #08 - _wait_for_page_and_frames_load:2833 - ➡️ Page navigation [0]about:blank took 0.51s
+2025-09-05 08:53:11,557 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3151 - 🧹 Removing highlights...
+2025-09-05 08:53:11,561 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3165 - 🌳 Starting DOM processing...
+2025-09-05 08:53:11,564 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3176 - ✅ DOM processing completed
+2025-09-05 08:53:11,564 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3197 - 📋 Getting tabs info...
+2025-09-05 08:53:11,569 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3199 - ✅ Tabs info completed
+2025-09-05 08:53:11,569 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3223 - 📸 Capturing screenshot...
+2025-09-05 08:53:11,570 - WARNING - browser_use.BrowserSession🆂 8e64:56689 #08 - take_screenshot:3555 - ▫️ Sending LLM 1px placeholder instead of real screenshot of: about:blank (page empty)
+2025-09-05 08:53:11,574 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3234 - 📏 Getting scroll info...
+2025-09-05 08:53:11,582 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3236 - ✅ Scroll info completed
+2025-09-05 08:53:11,584 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3266 - ✅ get_state_summary completed successfully
+2025-09-05 08:53:11,584 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - wrapper:372 - ⏳ get_state_summary() took 4.24s
+2025-09-05 08:53:11,585 - INFO - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _log_step_context:998 - 📍 Step 2: Evaluating page with 0 interactive elements on: about:blank
+2025-09-05 08:53:11,585 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _prepare_context:697 - 📝 Step 2: Updating action models...
+2025-09-05 08:53:11,597 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _prepare_context:708 - 💬 Step 2: Adding state message to context...
+2025-09-05 08:53:11,599 - DEBUG - browser_use.agent.message_manager.service - get_messages:339 - 
+2025-09-05 08:53:11,599 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _get_next_action:727 - 🤖 Step 2: Calling LLM with 2 messages (model: gpt-4o)...
+2025-09-05 08:53:12,882 - ERROR - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _handle_step_error:814 - ❌ Result failed 1/3 times:
+ ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/llm/openai/chat.py", line 175, in ainvoke
+  File "openai/resources/chat/completions/completions.py", line 2583, in create
+  File "openai/_base_client.py", line 1794, in post
+  File "openai/_base_client.py", line 1594, in request
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 667, in step
+  File "browser_use/agent/service.py", line 731, in _get_next_action
+  File "browser_use/agent/service.py", line 870, in _get_model_output_with_retry
+  File "browser_use/utils.py", line 358, in wrapper
+  File "browser_use/agent/service.py", line 972, in get_model_output
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/llm/openai/chat.py", line 221, in ainvoke
+browser_use.llm.exceptions.ModelProviderError: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:12,883 - INFO - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _log_step_completion_summary:1063 - 📍 Step 1: Ran 1 actions in 5.54s: ❌ 1
+2025-09-05 08:53:12,883 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - wrapper:372 - ⏳ step() took 5.54s
+2025-09-05 08:53:12,884 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - run:1228 - ✅ Completed step 1/30
+2025-09-05 08:53:12,884 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:155 - --- Hook: Capturing UI state at step end ---
+2025-09-05 08:53:12,884 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:161 - --- Hook: Waiting for network idle on about:blank to ensure page is fully rendered... ---
+2025-09-05 08:53:12,922 - INFO - lifecycle_hook_extraction - capture_elements_recursively:114 - [Depth 0] Found 0 potential interactive elements.
+2025-09-05 08:53:12,922 - INFO - lifecycle_hook_extraction - capture_elements_recursively:119 - [Depth 0] No locators matched the selector list.
+2025-09-05 08:53:12,927 - WARNING - lifecycle_hook_extraction - capture_ui_state_for_llm:178 - --- Hook Abort: Found 0 unique interactive elements on about:blank. ---
+2025-09-05 08:53:12,927 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - run:1220 - 🚶 Starting step 2/30...
+2025-09-05 08:53:12,927 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _prepare_context:686 - 🌐 Step 2: Getting browser state...
+2025-09-05 08:53:12,928 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - get_state_summary:3047 - 🔄 Starting get_state_summary...
+2025-09-05 08:53:13,439 - INFO - browser_use.BrowserSession🆂 8e64:56689 #08 - _wait_for_page_and_frames_load:2833 - ➡️ Page navigation [0]about:blank took 0.51s
+2025-09-05 08:53:13,443 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3151 - 🧹 Removing highlights...
+2025-09-05 08:53:13,548 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3165 - 🌳 Starting DOM processing...
+2025-09-05 08:53:13,552 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3176 - ✅ DOM processing completed
+2025-09-05 08:53:13,552 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3197 - 📋 Getting tabs info...
+2025-09-05 08:53:13,554 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3199 - ✅ Tabs info completed
+2025-09-05 08:53:13,554 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3223 - 📸 Capturing screenshot...
+2025-09-05 08:53:13,555 - WARNING - browser_use.BrowserSession🆂 8e64:56689 #08 - take_screenshot:3555 - ▫️ Sending LLM 1px placeholder instead of real screenshot of: about:blank (page empty)
+2025-09-05 08:53:13,559 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3234 - 📏 Getting scroll info...
+2025-09-05 08:53:13,567 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3236 - ✅ Scroll info completed
+2025-09-05 08:53:13,569 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3266 - ✅ get_state_summary completed successfully
+2025-09-05 08:53:13,569 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - wrapper:372 - ⏳ get_state_summary() took 0.64s
+2025-09-05 08:53:13,569 - INFO - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _log_step_context:998 - 📍 Step 2: Evaluating page with 0 interactive elements on: about:blank
+2025-09-05 08:53:13,569 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _prepare_context:697 - 📝 Step 2: Updating action models...
+2025-09-05 08:53:13,582 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _prepare_context:708 - 💬 Step 2: Adding state message to context...
+2025-09-05 08:53:13,582 - DEBUG - browser_use.agent.message_manager.service - _update_agent_history_description:201 - Added error to action_results: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later......se_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:13,584 - DEBUG - browser_use.agent.message_manager.service - get_messages:339 - 
+2025-09-05 08:53:13,584 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _get_next_action:727 - 🤖 Step 2: Calling LLM with 2 messages (model: gpt-4o)...
+2025-09-05 08:53:14,080 - ERROR - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _handle_step_error:814 - ❌ Result failed 2/3 times:
+ ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/llm/openai/chat.py", line 175, in ainvoke
+  File "openai/resources/chat/completions/completions.py", line 2583, in create
+  File "openai/_base_client.py", line 1794, in post
+  File "openai/_base_client.py", line 1594, in request
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 667, in step
+  File "browser_use/agent/service.py", line 731, in _get_next_action
+  File "browser_use/agent/service.py", line 870, in _get_model_output_with_retry
+  File "browser_use/utils.py", line 358, in wrapper
+  File "browser_use/agent/service.py", line 972, in get_model_output
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/llm/openai/chat.py", line 221, in ainvoke
+browser_use.llm.exceptions.ModelProviderError: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:14,081 - INFO - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _log_step_completion_summary:1063 - 📍 Step 1: Ran 1 actions in 1.15s: ❌ 1
+2025-09-05 08:53:14,082 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - wrapper:372 - ⏳ step() took 1.15s
+2025-09-05 08:53:14,082 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - run:1228 - ✅ Completed step 2/30
+2025-09-05 08:53:14,082 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:155 - --- Hook: Capturing UI state at step end ---
+2025-09-05 08:53:14,082 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:161 - --- Hook: Waiting for network idle on about:blank to ensure page is fully rendered... ---
+2025-09-05 08:53:14,094 - INFO - lifecycle_hook_extraction - capture_elements_recursively:114 - [Depth 0] Found 0 potential interactive elements.
+2025-09-05 08:53:14,094 - INFO - lifecycle_hook_extraction - capture_elements_recursively:119 - [Depth 0] No locators matched the selector list.
+2025-09-05 08:53:14,098 - WARNING - lifecycle_hook_extraction - capture_ui_state_for_llm:178 - --- Hook Abort: Found 0 unique interactive elements on about:blank. ---
+2025-09-05 08:53:14,098 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - run:1220 - 🚶 Starting step 3/30...
+2025-09-05 08:53:14,098 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _prepare_context:686 - 🌐 Step 2: Getting browser state...
+2025-09-05 08:53:14,098 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - get_state_summary:3047 - 🔄 Starting get_state_summary...
+2025-09-05 08:53:14,609 - INFO - browser_use.BrowserSession🆂 8e64:56689 #08 - _wait_for_page_and_frames_load:2833 - ➡️ Page navigation [0]about:blank took 0.51s
+2025-09-05 08:53:14,612 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3151 - 🧹 Removing highlights...
+2025-09-05 08:53:14,616 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3165 - 🌳 Starting DOM processing...
+2025-09-05 08:53:14,619 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3176 - ✅ DOM processing completed
+2025-09-05 08:53:14,619 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3197 - 📋 Getting tabs info...
+2025-09-05 08:53:14,622 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3199 - ✅ Tabs info completed
+2025-09-05 08:53:14,622 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3223 - 📸 Capturing screenshot...
+2025-09-05 08:53:14,623 - WARNING - browser_use.BrowserSession🆂 8e64:56689 #08 - take_screenshot:3555 - ▫️ Sending LLM 1px placeholder instead of real screenshot of: about:blank (page empty)
+2025-09-05 08:53:14,627 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3234 - 📏 Getting scroll info...
+2025-09-05 08:53:14,634 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3236 - ✅ Scroll info completed
+2025-09-05 08:53:14,637 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _get_updated_state:3266 - ✅ get_state_summary completed successfully
+2025-09-05 08:53:14,637 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - wrapper:372 - ⏳ get_state_summary() took 0.54s
+2025-09-05 08:53:14,637 - INFO - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _log_step_context:998 - 📍 Step 2: Evaluating page with 0 interactive elements on: about:blank
+2025-09-05 08:53:14,637 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _prepare_context:697 - 📝 Step 2: Updating action models...
+2025-09-05 08:53:14,650 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _prepare_context:708 - 💬 Step 2: Adding state message to context...
+2025-09-05 08:53:14,650 - DEBUG - browser_use.agent.message_manager.service - _update_agent_history_description:201 - Added error to action_results: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later......se_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:14,650 - DEBUG - browser_use.agent.message_manager.service - get_messages:339 - 
+2025-09-05 08:53:14,650 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _get_next_action:727 - 🤖 Step 2: Calling LLM with 2 messages (model: gpt-4o)...
+2025-09-05 08:53:15,145 - ERROR - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _handle_step_error:814 - ❌ Result failed 3/3 times:
+ ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/llm/openai/chat.py", line 175, in ainvoke
+  File "openai/resources/chat/completions/completions.py", line 2583, in create
+  File "openai/_base_client.py", line 1794, in post
+  File "openai/_base_client.py", line 1594, in request
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 667, in step
+  File "browser_use/agent/service.py", line 731, in _get_next_action
+  File "browser_use/agent/service.py", line 870, in _get_model_output_with_retry
+  File "browser_use/utils.py", line 358, in wrapper
+  File "browser_use/agent/service.py", line 972, in get_model_output
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/llm/openai/chat.py", line 221, in ainvoke
+browser_use.llm.exceptions.ModelProviderError: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:15,146 - INFO - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - _log_step_completion_summary:1063 - 📍 Step 1: Ran 1 actions in 1.05s: ❌ 1
+2025-09-05 08:53:15,147 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - wrapper:372 - ⏳ step() took 1.05s
+2025-09-05 08:53:15,147 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - run:1228 - ✅ Completed step 3/30
+2025-09-05 08:53:15,147 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:155 - --- Hook: Capturing UI state at step end ---
+2025-09-05 08:53:15,147 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:161 - --- Hook: Waiting for network idle on about:blank to ensure page is fully rendered... ---
+2025-09-05 08:53:15,159 - INFO - lifecycle_hook_extraction - capture_elements_recursively:114 - [Depth 0] Found 0 potential interactive elements.
+2025-09-05 08:53:15,160 - INFO - lifecycle_hook_extraction - capture_elements_recursively:119 - [Depth 0] No locators matched the selector list.
+2025-09-05 08:53:15,164 - WARNING - lifecycle_hook_extraction - capture_ui_state_for_llm:178 - --- Hook Abort: Found 0 unique interactive elements on about:blank. ---
+2025-09-05 08:53:15,164 - ERROR - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - run:1201 - ❌ Stopping due to 3 consecutive failures
+2025-09-05 08:53:15,165 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - run:1271 - 📊 Collecting usage summary...
+2025-09-05 08:53:15,165 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 56 - run:1278 - 🏁 Agent.run() completed successfully
+2025-09-05 08:53:16,521 - INFO - browser_use.BrowserSession🆂 8e64:56689 #08 - stop:444 - 🛑 Closing cdp_url=http://127.0.0.1:56689/ browser context  <Browser type=<BrowserType name=chromium executable_path=/root/.cache/ms-playwright/chromium-1169/chrome-linux/chrome> version=136.0.7103.25>
+2025-09-05 08:53:16,537 - INFO - browser_use.BrowserSession🆂 8e64:56689 #08 - _unsafe_terminate_browser_process:727 -  ↳ Killing browser_pid=88 ~/.cache/ms-playwright/chromium-1169/chrome-linux/chrome (terminate() called)
+2025-09-05 08:53:16,551 - DEBUG - browser_use.BrowserSession🆂 8e64:56689 #08 - _kill_child_processes:601 - 🍂 Killed browser subprocess gracefully browser_pid=88 (terminate() called)
+2025-09-05 08:53:16,559 - DEBUG - browser_use.BrowserSession🆂 8e64:None #08 - _reset_connection_state:1764 - ⚰️ Browser browser=playwright:chromium disconnected
+2025-09-05 08:53:16,682 - DEBUG - browser_use.Agent🅰 855b on 🆂 8e64 🅟 88 - wrapper:372 - ⏳ run() took 9.34s
+2025-09-05 08:53:16,683 - ERROR - browser_use_module - load_and_validate_json:524 - Error reading /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/temp_profile/default/browseruse_login_data/login_result_and_scenarios.json: [Errno 2] No such file or directory: '/var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/temp_profile/default/browseruse_login_data/login_result_and_scenarios.json'
+2025-09-05 08:53:16,685 - INFO - browser_use_module - runLoginAgent:208 - [browser_use_module.runLoginAgent] Added login results to data
+2025-09-05 08:53:16,686 - INFO - browser_use_module - runLoginAgent:214 - Closing login agent's browser session...
+2025-09-05 08:53:16,686 - INFO - browser_use_module - runLoginAgent:216 - Login agent's session closed.
+2025-09-05 08:53:16,686 - WARNING - browser_use_module - extract_data_from_protected_url:464 - Login failed or skipped. Continuing
+2025-09-05 08:53:16,687 - INFO - ai_url_extraction_module.scrape_url - extract_urls_from_page:26 - 🚀 Starting scraper for https://atid.store...
+2025-09-05 08:53:17,091 - ERROR - ai_url_extraction_module.scrape_url - extract_urls_from_page:32 - Storage state file not found at: /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/state.json, continuing without logged in state
+2025-09-05 08:53:18,853 - INFO - ai_url_extraction_module.scrape_url - extract_urls_from_page:45 - Waiting for page content to render...
+2025-09-05 08:53:19,139 - INFO - ai_url_extraction_module.scrape_url - extract_urls_from_page:56 - Found 0 iframes to search for links.
+2025-09-05 08:53:19,139 - INFO - ai_url_extraction_module.scrape_url - extract_urls_from_page:72 - Found 20 unique URLs.
+2025-09-05 08:53:19,140 - INFO - llm_invoke - get_llm_client:28 - Using Azure OpenAI: gpt-4o
+2025-09-05 08:53:19,230 - INFO - ai_url_extraction_module.url_filter_ai - get_top_urls_with_ai:34 - 🤖 Sending URLs to AI for analysis...
+2025-09-05 08:53:21,648 - INFO - ai_url_extraction_module.scrape_url - extract_urls_from_page:78 - 
+✅ AI has identified the following top URLs for testing:
+2025-09-05 08:53:21,648 - INFO - ai_url_extraction_module.scrape_url - extract_urls_from_page:80 - 1. https://atid.store/store/
+2025-09-05 08:53:21,648 - INFO - ai_url_extraction_module.scrape_url - extract_urls_from_page:80 - 2. https://atid.store/cart-2/
+2025-09-05 08:53:21,649 - INFO - ai_url_extraction_module.scrape_url - extract_urls_from_page:80 - 3. https://atid.store/product-category/women/
+2025-09-05 08:53:21,649 - INFO - ai_url_extraction_module.scrape_url - extract_urls_from_page:80 - 4. https://atid.store/product-category/men/
+2025-09-05 08:53:21,649 - INFO - ai_url_extraction_module.scrape_url - extract_urls_from_page:80 - 5. https://atid.store/contact-us/
+2025-09-05 08:53:21,683 - INFO - browser_use_module - get_agent:128 - Using existing state
+2025-09-05 08:53:21,684 - DEBUG - browser_use.tokens.service - register_llm:314 - LLM instance 129374123009616 (azure_gpt-4o) is already registered
+2025-09-05 08:53:21,685 - INFO - browser_use.agent.service - _set_file_system:550 - 💾 File system path: /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/temp_profile/default/browseruse_extraction_data
+2025-09-05 08:53:21,697 - INFO - browser_use.Agent🅰 540d on 🆂 540d 🅟 88 - __init__:282 - 🧠 Starting a browser-use agent unknown with base_model=gpt-4o +vision extraction_model=gpt-4o +file_system
+2025-09-05 08:53:21,703 - INFO - browser_use_module - runExtractionAgent:342 - Starting extraction process...
+2025-09-05 08:53:21,704 - INFO - browser_use.Agent🅰 540d on 🆂 3770 🅟 88 - _log_agent_run:990 - 🚀 Starting task: 
+Go to these URLS:
+[["https://atid.store/store/", "https://atid.store/cart-2/", "https://atid.store/product-category/women/", "https://atid.store/product-category/men/", "https://atid.store/contact-us/"]]
+
+On each URL conduct these steps:
+1. Observe all the elements and identify the use case of the website
+2. Use observed knowledge to craft expert user journey scenarios (Consider things like, what would a user typically do after accessing this website? What are the most common functionalities of sites with such use case?)
+3. Capture your findings in a JSON file with file name url(replace "/" or "." or ":" with "_") append with _results.json. utilise the structure provided below for the file.
+
+```json
+{
+"url": "current_url_here",
+"explored_pages_and_scenarios": [
+    {
+    "page_title": "Title of the page",
+    "potential_user_journeys": [
+        {
+        "scenario_name": "Concise name for a potential user journey",
+        "scenario_description": "A brief summary of a user flow and its purpose.",
+        "steps": [
+            {
+            "action": "e.g., click, type, assert_visibility",
+            "element_description": "Natural language description of the element"
+            }
+        ],
+        "expected_outcome": ["Description of what should happen after the steps"]
+        }
+    ]
+    }
+]
+}
+```
+
+2025-09-05 08:53:21,705 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 88 - _log_agent_run:992 - 🤖 Browser-Use Library Version unknown (pip)
+2025-09-05 08:53:21,705 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 88 - run:1168 - 🔧 Agent setup: Task ID 540d, Session ID 47dd, Browser Session ID 3770
+2025-09-05 08:53:21,705 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 88 - run:1176 - 📡 Dispatching CreateAgentSessionEvent...
+2025-09-05 08:53:21,706 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 88 - run:1180 - 📡 Dispatching CreateAgentTaskEvent...
+2025-09-05 08:53:21,706 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 88 - run:1191 - 🔄 Starting main execution loop with max 50 steps...
+2025-09-05 08:53:21,706 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 88 - run:1220 - 🚶 Starting step 1/50...
+2025-09-05 08:53:21,706 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 88 - _prepare_context:686 - 🌐 Step 2: Getting browser state...
+2025-09-05 08:53:21,810 - INFO - browser_use.BrowserSession🆂 3770:None #28 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= <incognito>
+2025-09-05 08:53:21,814 - INFO - browser_use.BrowserSession🆂 3770:None #28 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:40093/ with user_data_dir= /tmp/browseruse-tmp-ick5ge91
+2025-09-05 08:53:23,912 - INFO - browser_use.BrowserSession🆂 3770:40093 #28 - setup_browser_via_browser_pid:999 - 🌎 Connecting to newly spawned browser via CDP http://127.0.0.1:40093/ -> browser_pid=266 (local)
+2025-09-05 08:53:24,936 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _unsafe_setup_new_browser_context:1078 - 👤 Using default browser_context opened in newly spawned browser: <BrowserContext browser=<Browser type=<BrowserType name=chromium executable_path=/root/.cache/ms-playwright/chromium-1169/chrome-linux/chrome> version=136.0.7103.25>>
+2025-09-05 08:53:24,942 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _setup_viewports:1551 - 📐 Setting up viewport: headless=True (no window) screen=1280x1100px viewport=1280x1100px device_scale_factor=1.0 is_mobile=False color_scheme=light permissions=clipboard-read,clipboard-write,notifications storage_state=/var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/state.json 
+2025-09-05 08:53:24,945 - WARNING - browser_use.BrowserSession🆂 3770:40093 #28 - load_storage_state:2549 - ❌ Failed to load cookies from storage_state= /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/state.json: FileNotFoundError: [Errno 2] No such file or directory: '/var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/state.json'
+2025-09-05 08:53:25,051 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _setup_current_page_change_listeners:1441 - 👁️‍🗨️ Found 1 existing tabs in browser, Agent 🅰 3770 is on Page 🅟 72: about:blank
+2025-09-05 08:53:25,061 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - get_state_summary:3047 - 🔄 Starting get_state_summary...
+2025-09-05 08:53:25,572 - INFO - browser_use.BrowserSession🆂 3770:40093 #28 - _wait_for_page_and_frames_load:2833 - ➡️ Page navigation [0]about:blank took 0.51s
+2025-09-05 08:53:25,576 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3151 - 🧹 Removing highlights...
+2025-09-05 08:53:25,580 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3165 - 🌳 Starting DOM processing...
+2025-09-05 08:53:25,583 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3176 - ✅ DOM processing completed
+2025-09-05 08:53:25,583 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3197 - 📋 Getting tabs info...
+2025-09-05 08:53:25,587 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3199 - ✅ Tabs info completed
+2025-09-05 08:53:25,587 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3223 - 📸 Capturing screenshot...
+2025-09-05 08:53:25,588 - WARNING - browser_use.BrowserSession🆂 3770:40093 #28 - take_screenshot:3555 - ▫️ Sending LLM 1px placeholder instead of real screenshot of: about:blank (page empty)
+2025-09-05 08:53:25,592 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3234 - 📏 Getting scroll info...
+2025-09-05 08:53:25,599 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3236 - ✅ Scroll info completed
+2025-09-05 08:53:25,601 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3266 - ✅ get_state_summary completed successfully
+2025-09-05 08:53:25,601 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - wrapper:372 - ⏳ get_state_summary() took 3.90s
+2025-09-05 08:53:25,602 - INFO - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _log_step_context:998 - 📍 Step 2: Evaluating page with 0 interactive elements on: about:blank
+2025-09-05 08:53:25,602 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _prepare_context:697 - 📝 Step 2: Updating action models...
+2025-09-05 08:53:25,618 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _prepare_context:708 - 💬 Step 2: Adding state message to context...
+2025-09-05 08:53:25,619 - DEBUG - browser_use.agent.message_manager.service - get_messages:339 - 
+2025-09-05 08:53:25,619 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _get_next_action:727 - 🤖 Step 2: Calling LLM with 2 messages (model: gpt-4o)...
+2025-09-05 08:53:26,873 - ERROR - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _handle_step_error:814 - ❌ Result failed 1/3 times:
+ ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/llm/openai/chat.py", line 175, in ainvoke
+  File "openai/resources/chat/completions/completions.py", line 2583, in create
+  File "openai/_base_client.py", line 1794, in post
+  File "openai/_base_client.py", line 1594, in request
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 667, in step
+  File "browser_use/agent/service.py", line 731, in _get_next_action
+  File "browser_use/agent/service.py", line 870, in _get_model_output_with_retry
+  File "browser_use/utils.py", line 358, in wrapper
+  File "browser_use/agent/service.py", line 972, in get_model_output
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/llm/openai/chat.py", line 221, in ainvoke
+browser_use.llm.exceptions.ModelProviderError: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:26,874 - INFO - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _log_step_completion_summary:1063 - 📍 Step 1: Ran 1 actions in 5.17s: ❌ 1
+2025-09-05 08:53:26,874 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - wrapper:372 - ⏳ step() took 5.17s
+2025-09-05 08:53:26,874 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - run:1228 - ✅ Completed step 1/50
+2025-09-05 08:53:26,875 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:155 - --- Hook: Capturing UI state at step end ---
+2025-09-05 08:53:26,875 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:161 - --- Hook: Waiting for network idle on about:blank to ensure page is fully rendered... ---
+2025-09-05 08:53:26,909 - INFO - lifecycle_hook_extraction - capture_elements_recursively:114 - [Depth 0] Found 0 potential interactive elements.
+2025-09-05 08:53:26,910 - INFO - lifecycle_hook_extraction - capture_elements_recursively:119 - [Depth 0] No locators matched the selector list.
+2025-09-05 08:53:26,914 - WARNING - lifecycle_hook_extraction - capture_ui_state_for_llm:178 - --- Hook Abort: Found 0 unique interactive elements on about:blank. ---
+2025-09-05 08:53:26,915 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - run:1220 - 🚶 Starting step 2/50...
+2025-09-05 08:53:26,915 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _prepare_context:686 - 🌐 Step 2: Getting browser state...
+2025-09-05 08:53:26,915 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - get_state_summary:3047 - 🔄 Starting get_state_summary...
+2025-09-05 08:53:27,427 - INFO - browser_use.BrowserSession🆂 3770:40093 #28 - _wait_for_page_and_frames_load:2833 - ➡️ Page navigation [0]about:blank took 0.51s
+2025-09-05 08:53:27,430 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3151 - 🧹 Removing highlights...
+2025-09-05 08:53:27,536 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3165 - 🌳 Starting DOM processing...
+2025-09-05 08:53:27,539 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3176 - ✅ DOM processing completed
+2025-09-05 08:53:27,539 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3197 - 📋 Getting tabs info...
+2025-09-05 08:53:27,542 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3199 - ✅ Tabs info completed
+2025-09-05 08:53:27,542 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3223 - 📸 Capturing screenshot...
+2025-09-05 08:53:27,542 - WARNING - browser_use.BrowserSession🆂 3770:40093 #28 - take_screenshot:3555 - ▫️ Sending LLM 1px placeholder instead of real screenshot of: about:blank (page empty)
+2025-09-05 08:53:27,546 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3234 - 📏 Getting scroll info...
+2025-09-05 08:53:27,554 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3236 - ✅ Scroll info completed
+2025-09-05 08:53:27,556 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3266 - ✅ get_state_summary completed successfully
+2025-09-05 08:53:27,557 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - wrapper:372 - ⏳ get_state_summary() took 0.64s
+2025-09-05 08:53:27,557 - INFO - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _log_step_context:998 - 📍 Step 2: Evaluating page with 0 interactive elements on: about:blank
+2025-09-05 08:53:27,557 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _prepare_context:697 - 📝 Step 2: Updating action models...
+2025-09-05 08:53:27,570 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _prepare_context:708 - 💬 Step 2: Adding state message to context...
+2025-09-05 08:53:27,570 - DEBUG - browser_use.agent.message_manager.service - _update_agent_history_description:201 - Added error to action_results: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later......se_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:27,570 - DEBUG - browser_use.agent.message_manager.service - get_messages:339 - 
+2025-09-05 08:53:27,570 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _get_next_action:727 - 🤖 Step 2: Calling LLM with 2 messages (model: gpt-4o)...
+2025-09-05 08:53:28,080 - ERROR - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _handle_step_error:814 - ❌ Result failed 2/3 times:
+ ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/llm/openai/chat.py", line 175, in ainvoke
+  File "openai/resources/chat/completions/completions.py", line 2583, in create
+  File "openai/_base_client.py", line 1794, in post
+  File "openai/_base_client.py", line 1594, in request
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 667, in step
+  File "browser_use/agent/service.py", line 731, in _get_next_action
+  File "browser_use/agent/service.py", line 870, in _get_model_output_with_retry
+  File "browser_use/utils.py", line 358, in wrapper
+  File "browser_use/agent/service.py", line 972, in get_model_output
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/llm/openai/chat.py", line 221, in ainvoke
+browser_use.llm.exceptions.ModelProviderError: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:28,082 - INFO - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _log_step_completion_summary:1063 - 📍 Step 1: Ran 1 actions in 1.17s: ❌ 1
+2025-09-05 08:53:28,082 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - wrapper:372 - ⏳ step() took 1.17s
+2025-09-05 08:53:28,082 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - run:1228 - ✅ Completed step 2/50
+2025-09-05 08:53:28,082 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:155 - --- Hook: Capturing UI state at step end ---
+2025-09-05 08:53:28,083 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:161 - --- Hook: Waiting for network idle on about:blank to ensure page is fully rendered... ---
+2025-09-05 08:53:28,095 - INFO - lifecycle_hook_extraction - capture_elements_recursively:114 - [Depth 0] Found 0 potential interactive elements.
+2025-09-05 08:53:28,095 - INFO - lifecycle_hook_extraction - capture_elements_recursively:119 - [Depth 0] No locators matched the selector list.
+2025-09-05 08:53:28,100 - WARNING - lifecycle_hook_extraction - capture_ui_state_for_llm:178 - --- Hook Abort: Found 0 unique interactive elements on about:blank. ---
+2025-09-05 08:53:28,101 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - run:1220 - 🚶 Starting step 3/50...
+2025-09-05 08:53:28,101 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _prepare_context:686 - 🌐 Step 2: Getting browser state...
+2025-09-05 08:53:28,101 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - get_state_summary:3047 - 🔄 Starting get_state_summary...
+2025-09-05 08:53:28,614 - INFO - browser_use.BrowserSession🆂 3770:40093 #28 - _wait_for_page_and_frames_load:2833 - ➡️ Page navigation [0]about:blank took 0.51s
+2025-09-05 08:53:28,618 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3151 - 🧹 Removing highlights...
+2025-09-05 08:53:28,621 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3165 - 🌳 Starting DOM processing...
+2025-09-05 08:53:28,624 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3176 - ✅ DOM processing completed
+2025-09-05 08:53:28,624 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3197 - 📋 Getting tabs info...
+2025-09-05 08:53:28,627 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3199 - ✅ Tabs info completed
+2025-09-05 08:53:28,627 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3223 - 📸 Capturing screenshot...
+2025-09-05 08:53:28,627 - WARNING - browser_use.BrowserSession🆂 3770:40093 #28 - take_screenshot:3555 - ▫️ Sending LLM 1px placeholder instead of real screenshot of: about:blank (page empty)
+2025-09-05 08:53:28,631 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3234 - 📏 Getting scroll info...
+2025-09-05 08:53:28,639 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3236 - ✅ Scroll info completed
+2025-09-05 08:53:28,641 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _get_updated_state:3266 - ✅ get_state_summary completed successfully
+2025-09-05 08:53:28,641 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - wrapper:372 - ⏳ get_state_summary() took 0.54s
+2025-09-05 08:53:28,641 - INFO - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _log_step_context:998 - 📍 Step 2: Evaluating page with 0 interactive elements on: about:blank
+2025-09-05 08:53:28,641 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _prepare_context:697 - 📝 Step 2: Updating action models...
+2025-09-05 08:53:28,654 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _prepare_context:708 - 💬 Step 2: Adding state message to context...
+2025-09-05 08:53:28,654 - DEBUG - browser_use.agent.message_manager.service - _update_agent_history_description:201 - Added error to action_results: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later......se_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:28,654 - DEBUG - browser_use.agent.message_manager.service - get_messages:339 - 
+2025-09-05 08:53:28,654 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _get_next_action:727 - 🤖 Step 2: Calling LLM with 2 messages (model: gpt-4o)...
+2025-09-05 08:53:29,162 - ERROR - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _handle_step_error:814 - ❌ Result failed 3/3 times:
+ ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/llm/openai/chat.py", line 175, in ainvoke
+  File "openai/resources/chat/completions/completions.py", line 2583, in create
+  File "openai/_base_client.py", line 1794, in post
+  File "openai/_base_client.py", line 1594, in request
+openai.BadRequestError: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 667, in step
+  File "browser_use/agent/service.py", line 731, in _get_next_action
+  File "browser_use/agent/service.py", line 870, in _get_model_output_with_retry
+  File "browser_use/utils.py", line 358, in wrapper
+  File "browser_use/agent/service.py", line 972, in get_model_output
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/tokens/service.py", line 327, in tracked_ainvoke
+  File "browser_use/llm/openai/chat.py", line 221, in ainvoke
+browser_use.llm.exceptions.ModelProviderError: ('response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later', 400)
+
+2025-09-05 08:53:29,165 - INFO - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - _log_step_completion_summary:1063 - 📍 Step 1: Ran 1 actions in 1.06s: ❌ 1
+2025-09-05 08:53:29,165 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - wrapper:372 - ⏳ step() took 1.06s
+2025-09-05 08:53:29,165 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - run:1228 - ✅ Completed step 3/50
+2025-09-05 08:53:29,165 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:155 - --- Hook: Capturing UI state at step end ---
+2025-09-05 08:53:29,166 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:161 - --- Hook: Waiting for network idle on about:blank to ensure page is fully rendered... ---
+2025-09-05 08:53:29,177 - INFO - lifecycle_hook_extraction - capture_elements_recursively:114 - [Depth 0] Found 0 potential interactive elements.
+2025-09-05 08:53:29,177 - INFO - lifecycle_hook_extraction - capture_elements_recursively:119 - [Depth 0] No locators matched the selector list.
+2025-09-05 08:53:29,181 - WARNING - lifecycle_hook_extraction - capture_ui_state_for_llm:178 - --- Hook Abort: Found 0 unique interactive elements on about:blank. ---
+2025-09-05 08:53:29,181 - ERROR - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - run:1201 - ❌ Stopping due to 3 consecutive failures
+2025-09-05 08:53:29,182 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - run:1271 - 📊 Collecting usage summary...
+2025-09-05 08:53:29,182 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 72 - run:1278 - 🏁 Agent.run() completed successfully
+2025-09-05 08:53:30,499 - INFO - browser_use.BrowserSession🆂 3770:40093 #28 - _save_storage_state_to_file:2436 - 🍪 Saved 1 cookies to storage_state= /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/state.json
+2025-09-05 08:53:30,499 - INFO - browser_use.BrowserSession🆂 3770:40093 #28 - stop:444 - 🛑 Closing cdp_url=http://127.0.0.1:40093/ browser context  <Browser type=<BrowserType name=chromium executable_path=/root/.cache/ms-playwright/chromium-1169/chrome-linux/chrome> version=136.0.7103.25>
+2025-09-05 08:53:30,512 - INFO - browser_use.BrowserSession🆂 3770:40093 #28 - _unsafe_terminate_browser_process:727 -  ↳ Killing browser_pid=266 ~/.cache/ms-playwright/chromium-1169/chrome-linux/chrome (terminate() called)
+2025-09-05 08:53:30,526 - DEBUG - browser_use.BrowserSession🆂 3770:40093 #28 - _kill_child_processes:601 - 🍂 Killed browser subprocess gracefully browser_pid=266 (terminate() called)
+2025-09-05 08:53:30,535 - DEBUG - browser_use.BrowserSession🆂 3770:None #28 - _reset_connection_state:1764 - ⚰️ Browser browser=playwright:chromium disconnected
+2025-09-05 08:53:30,665 - DEBUG - browser_use.Agent🅰 540d on 🆂 3770 🅟 88 - wrapper:372 - ⏳ run() took 8.96s
+2025-09-05 08:53:30,665 - WARNING - browser_use_module - runExtractionAgent:351 - No captured_ui_states found to write to file.
+2025-09-05 08:53:30,665 - INFO - browser_use_module - runExtractionAgent:354 - Agent run complete. Processing agent history...
+2025-09-05 08:53:30,666 - DEBUG - browser_use_module - merge_json_by_url:653 - UI States URLs: []
+2025-09-05 08:53:30,666 - DEBUG - browser_use_module - merge_json_by_url:654 - Tester Scenarios URLs: []
+2025-09-05 08:53:30,667 - DEBUG - browser_use_module - merge_json_by_url:655 - Browser Agent URLs: []
+2025-09-05 08:53:30,667 - DEBUG - browser_use_module - merge_json_by_url:656 - Common URLs: []
+2025-09-05 08:53:30,667 - WARNING - browser_use_module - runExtractionAgent:362 - Extraction returned empty or null JSON.
+2025-09-05 08:53:30,667 - INFO - browser_use_module - runExtractionAgent:370 - Closing login agent's browser session...
+2025-09-05 08:53:30,667 - INFO - browser_use_module - runExtractionAgent:372 - Login agent's session closed.
+2025-09-05 08:53:30,668 - INFO - starter_module - generate_user_scenarios:83 - Data extraction completed successfully. Results saved to /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/temp_info/merged_scenarios.json
+2025-09-05 08:53:30,668 - INFO - starter_module - generate_user_scenarios:85 -  Continuing to test generation using extracted data...
+2025-09-05 08:53:30,668 - INFO - scenario_generator_module - generate_scenarios_from_extraction:246 - 🧹 Cleaning up scenarios directory before generation: /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/playwright_tests/scenarios
+2025-09-05 08:53:30,669 - DEBUG - cleanup - clean_folder_contents:21 - --- Starting cleanup of folder: /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/playwright_tests/scenarios ---
+2025-09-05 08:53:30,669 - DEBUG - cleanup - clean_folder_contents:25 - --- Cleanup aborted. ---
+2025-09-05 08:53:30,669 - INFO - scenario_generator_module - generate_scenarios_from_extraction:258 - Starting scenario generation process...
+2025-09-05 08:53:30,669 - INFO - llm_invoke - get_llm_client:28 - Using Azure OpenAI: gpt-4o
+2025-09-05 08:53:30,757 - DEBUG - llm_invoke - ainvoke_requirements_with_websearch:97 - business requirement of ,https://atid.store,
+You are a senior business analyst reverse-engineering software requirements from a live web application.
+
+---
+
+### Objective:
+You are provided with the **visible content and UI structure** of a website located at `https://atid.store`. Your task is to extract **functional and non-functional business use case**
+
+---
+
+### Instructions:
+1. Determine what **core services or processes** the site enables users to perform.
+2. Write a **concise summary** of the **core business purpose** (i.e., what problem the site solves).
+3. Extract **high-value, user-centered business requirements** that are visible through the interface. Focus on workflows, roles, rules, and business goals, not just UI components.
+4. Requirements must describe real-world usage in business terms (e.g., “Users must be able to submit job applications with attachments”).
+5. Use clear and professional software requirement language.
+
+---
+
+### REQUIRED OUTPUT FORMAT:
+
+```json
+{
+  "https://atid.store": {
+    "core_purpose": "Brief explanation of the site's business purpose.",
+    "business_requirements": [
+      "Requirement 1",
+      "Requirement 2",
+      "Requirement 3",
+      "Requirement 4",
+      "Requirement 5"
+    ]
+  }
+}
+Only include 5 to 7 meaningful requirements that reflect actual user flows or business logic.
+Return only the final JSON output, with no explanation or markdown.
+
+2025-09-05 08:53:34,227 - INFO - scenario_generator_module - _generate_and_enrich_scenarios:102 -   -> Saved business requirement to: business_requirements.json
+2025-09-05 08:53:34,229 - ERROR - scenario_generator_module - _generate_and_enrich_scenarios:163 - No prompts were generated for processing
+2025-09-05 08:53:34,229 - ERROR - scenario_generator_module - generate_scenarios_from_extraction:262 - ❌ No valid scenarios could be generated across all URLs.
+2025-09-05 08:53:34,229 - INFO - starter_module - generate_playwright_tests:102 - 🧹 Cleaning up tests directory before generation: /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/playwright_tests/tests
+2025-09-05 08:53:34,229 - INFO - starter_module - generate_playwright_tests:106 - Directory '/var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/playwright_tests/tests' does not exist. Skipping cleanup.
+2025-09-05 08:53:34,230 - INFO - starter_module - generate_playwright_tests:111 -  Step 2: Generating Playwright tests from scenarios...
+2025-09-05 08:53:34,230 - INFO - llm_invoke - get_llm_client:28 - Using Azure OpenAI: gpt-4o
+2025-09-05 08:53:34,317 - INFO - test_generator - generate_tests_from_scenarios:120 - Loading and validating all scenario files...
+2025-09-05 08:53:34,317 - WARNING - test_generator - generate_tests_from_scenarios:125 - No scenario JSON files found in the specified directory.
+2025-09-05 08:53:34,318 - INFO - starter_module - generate_playwright_tests:119 -  Generated tests saved to /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/playwright_tests/
+2025-09-05 08:53:34,318 - INFO - starter_module - generate_playwright_tests:120 -  All done! You can now run the tests with:
+2025-09-05 08:53:34,318 - INFO - starter_module - generate_playwright_tests:121 - cd /var/tmp/Roost/RoostGPT/raghu_ui_test/bcc54b04-35e3-4071-bff9-270df396f1af/source/ui_test_repo/playwright_tests
+2025-09-05 08:53:34,318 - INFO - starter_module - generate_playwright_tests:122 - npm install
+2025-09-05 08:53:34,318 - INFO - starter_module - generate_playwright_tests:123 - npx playwright install
+2025-09-05 08:53:34,318 - INFO - starter_module - generate_playwright_tests:124 - npx playwright test
+2025-09-05 08:53:34,468 - DEBUG - browser_use.BrowserSession🆂 3770:None #28 - __del__:578 - 🗑️ Garbage collected BrowserSession 🆂 3770.88 ref #5728 keep_alive=False owns_browser=True ☠️
+2025-09-05 08:53:34,468 - DEBUG - browser_use.BrowserSession🆂 8e64:None #08 - __del__:578 - 🗑️ Garbage collected BrowserSession 🆂 8e64.88 ref #3408 keep_alive=False owns_browser=True ☠️
