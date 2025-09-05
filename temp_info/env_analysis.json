@@ -1,0 +1,54 @@
+{
+  "SITE_USERNAME": {
+    "key": "SITE_USERNAME",
+    "value": "playwright1@zb.io",
+    "type": "email",
+    "confidence": 0.95,
+    "metadata": {
+      "description": "Likely represents a username or email address for accessing a site or system.",
+      "pattern": "Matches standard email format."
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Ensure this value is stored securely, e.g., in an encrypted secrets manager.",
+      "Use environment-specific variations (e.g., dev, staging, production).",
+      "Consider masking or obfuscating this value in logs or monitoring tools."
+    ]
+  },
+  "LOGIN_TYPE": {
+    "key": "LOGIN_TYPE",
+    "value": "Okta",
+    "type": "string",
+    "confidence": 0.9,
+    "metadata": {
+      "description": "Represents the login provider or authentication method (e.g., Okta, SAML, OAuth).",
+      "allowed_values": [
+        "Okta",
+        "SAML",
+        "OAuth",
+        "Custom"
+      ]
+    },
+    "is_sensitive": false,
+    "suggestions": [
+      "Validate the value against expected login types to prevent misconfiguration.",
+      "Document the supported authentication methods in application configuration."
+    ]
+  },
+  "SITE_PASSWORD": {
+    "key": "SITE_PASSWORD",
+    "value": "playwright",
+    "type": "string",
+    "confidence": 0.95,
+    "metadata": {
+      "description": "Likely represents a password for accessing a site or system.",
+      "security_risk": "Sensitive information that should never be exposed in plaintext."
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Store this value securely using an encrypted secrets manager.",
+      "Avoid hardcoding passwords in environment variables; use a vault solution instead.",
+      "Rotate passwords periodically to minimize security risks."
+    ]
+  }
+}
