@@ -1,0 +1,48 @@
+{
+  "SITE_USERNAME": {
+    "key": "SITE_USERNAME",
+    "value": "playwright1@zb.io",
+    "type": "email",
+    "confidence": 0.95,
+    "metadata": {
+      "description": "This appears to be an email address, potentially used for authentication or identification.",
+      "usage": "Likely used as the username for logging into the system or service."
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Ensure this email address is used securely and avoid exposing it in logs or error messages.",
+      "Consider using environment variables management tools to better protect sensitive data."
+    ]
+  },
+  "LOGIN_TYPE": {
+    "key": "LOGIN_TYPE",
+    "value": "Okta",
+    "type": "string",
+    "confidence": 0.9,
+    "metadata": {
+      "description": "This seems to indicate the type of login mechanism or provider being used.",
+      "usage": "Could determine which authentication provider or method is utilized for the login process."
+    },
+    "is_sensitive": false,
+    "suggestions": [
+      "Validate this value against a predefined list of supported login types to ensure compatibility.",
+      "Consider documenting the supported login types in the system for better maintainability."
+    ]
+  },
+  "SITE_PASSWORD": {
+    "key": "SITE_PASSWORD",
+    "value": "playwright",
+    "type": "string",
+    "confidence": 0.85,
+    "metadata": {
+      "description": "This appears to be a password, likely used in conjunction with the username for authentication.",
+      "usage": "Critical for authentication; ensure proper security practices are followed when handling this value."
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Use a strong and complex password to improve security.",
+      "Avoid hardcoding passwords in environment variables; consider using a secure secrets management tool.",
+      "Ensure this environment variable is encrypted in storage and transit."
+    ]
+  }
+}
