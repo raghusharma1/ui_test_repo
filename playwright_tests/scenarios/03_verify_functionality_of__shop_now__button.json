@@ -1,0 +1,80 @@
+{
+  "test_name": "Verify Functionality of 'SHOP NOW' Button",
+  "description": "This test ensures that the 'SHOP NOW' button on the homepage navigates users to the store page.",
+  "type": "navigation",
+  "pages": [
+    "https://atid.store",
+    "https://atid.store/store/"
+  ],
+  "steps": [
+    "Navigate to 'https://atid.store'.",
+    "Locate the 'SHOP NOW' button.",
+    "Click on the 'SHOP NOW' button.",
+    "Verify that the page navigates to 'https://atid.store/store/'.",
+    "Verify that the store page displays a list of products."
+  ],
+  "selectors": [
+    {
+      "element_type": "link",
+      "selector": "//a[@href='https://atid.store/store/' and contains(@class, 'elementor-button-link')]",
+      "text": "SHOP NOW",
+      "action": "click",
+      "url_on_page": "https://atid.store"
+    }
+  ],
+  "expected_results": [
+    "Clicking the 'SHOP NOW' button navigates to 'https://atid.store/store/'.",
+    "The store page displays a list of products available for purchase."
+  ],
+  "edge_cases": [
+    "Verify behavior if the store page is inaccessible.",
+    "Check for broken buttons or links.",
+    "Ensure the button works across different browsers and devices.",
+    "Test with a slow network connection to ensure the page loads correctly.",
+    "Ensure the button is accessible for screen readers."
+  ],
+  "data_requirements": [
+    "The 'SHOP NOW' button must be present on the homepage.",
+    "The store page must exist.",
+    "The store page must display a list of products.",
+    "The 'SHOP NOW' button must be enabled and functional."
+  ],
+  "dependencies": [
+    "The 'SHOP NOW' button must be implemented on the homepage.",
+    "The store page must be accessible.",
+    "The website must be online and functional."
+  ],
+  "complexity": "low",
+  "api_interactions": [
+    "Monitor any API calls fetching product data on the store page."
+  ],
+  "performance_metrics": [
+    "Measure the time taken to navigate to the store page.",
+    "Check for responsiveness of the 'SHOP NOW' button."
+  ],
+  "accessibility_requirements": [
+    "Ensure that the 'SHOP NOW' button is navigable using keyboard shortcuts.",
+    "Verify that the button has appropriate ARIA labels.",
+    "Check for sufficient color contrast of the button."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "d174733e-abf8-4c14-bfc4-4ae6c5483afd",
+    "created_at": "2025-09-05T05:09:53.835646Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "cross-browser",
+      "navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 25,
+    "flakiness_potential": "high"
+  }
+}
