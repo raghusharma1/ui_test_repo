@@ -1,0 +1,96 @@
+{
+  "test_name": "Clone Virtual Environment",
+  "description": "Tests the cloning of a virtual environment to reproduce issues or test scenarios.",
+  "type": "virtual_environment_management",
+  "pages": [
+    "https://dev.roost.ai/gptCLIForm"
+  ],
+  "steps": [
+    "Navigate to the 'RoostGPT Config' page from the navigation menu.",
+    "Select an existing virtual environment from the list.",
+    "Click the 'Clone' button associated with the selected virtual environment.",
+    "Provide a unique name for the cloned environment in the pop-up input field.",
+    "Click the 'Confirm Clone' button to proceed.",
+    "Verify that the cloned environment appears in the environment list.",
+    "Check if the cloned environment inherits all configurations from the original environment."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='/gptCLIForm' and contains(@class, 'nav-link')]",
+      "text": "RoostGPT Config",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid=\"clone-environment-button\"]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "input",
+      "selector": "[data-testid=\"cloned-environment-name\"]",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    }
+  ],
+  "expected_results": [
+    "The cloned environment appears in the list with the provided name.",
+    "The cloned environment inherits all configurations from the original."
+  ],
+  "edge_cases": [
+    "Cloning an environment with the same name as an existing one.",
+    "Leaving the cloned environment name blank.",
+    "Attempting to clone an environment when the original is in an error state.",
+    "Cloning an environment with a very large name input.",
+    "Cloning without confirming the action."
+  ],
+  "data_requirements": [
+    "At least one existing virtual environment.",
+    "A valid name for the cloned environment.",
+    "Access to the 'RoostGPT Config' page.",
+    "Pop-up confirmation dialog functionality."
+  ],
+  "dependencies": [
+    "User is logged into the application.",
+    "Virtual environments are loaded and visible.",
+    "Cloning functionality is enabled for the user."
+  ],
+  "complexity": "high",
+  "api_interactions": [
+    "API call to fetch the list of environments.",
+    "API call to clone the environment with new data."
+  ],
+  "performance_metrics": [
+    "Measure time taken to clone the environment.",
+    "Verify UI responsiveness during the cloning process."
+  ],
+  "accessibility_requirements": [
+    "Ensure the clone button is accessible via keyboard navigation.",
+    "Verify proper ARIA roles for the pop-up dialog.",
+    "Check for screen reader compatibility during cloning actions."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "02222b51-e423-42de-9e9a-e574a115aa19",
+    "created_at": "2025-09-05T04:35:07.776148Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "error-handling",
+      "form-submission",
+      "performance",
+      "ui-test",
+      "virtual_environment_management"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "medium"
+  }
+}

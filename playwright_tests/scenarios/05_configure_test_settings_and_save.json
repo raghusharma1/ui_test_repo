@@ -1,0 +1,111 @@
+{
+  "test_name": "Configure Test Settings and Save",
+  "description": "Tests the ability of users to configure test settings including test name, cloud/git type, and OpenAI API token, and save the configuration.",
+  "type": "configuration",
+  "pages": [
+    "https://dev.roost.ai/gptCLIForm"
+  ],
+  "steps": [
+    "Navigate to the 'RoostGPT Config' page from the navigation menu.",
+    "Type 'Sample Test' into the test name input field.",
+    "Select 'Cloud Git' as the git type by ensuring the 'Cloud Git' radio button is selected.",
+    "Type a valid OpenAI API token into the OpenAI token input field.",
+    "Click the OpenAI token unmask icon to verify the token entry.",
+    "Click the 'Save Configuration' button to save the test settings.",
+    "Verify that a confirmation message is displayed indicating successful save."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='/gptCLIForm' and contains(@class, 'nav-link')]",
+      "text": "RoostGPT Config",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai"
+    },
+    {
+      "element_type": "input",
+      "selector": "[data-testid=\"test-name-input\"]",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "input",
+      "selector": "[data-testid=\"cloud-git-type-radio-button-selected\"]",
+      "text": "",
+      "action": "verify selected",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "input",
+      "selector": "[data-testid=\"openai-token\"]",
+      "text": "",
+      "action": "type",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    },
+    {
+      "element_type": "button",
+      "selector": "[data-testid=\"openai-token-unMask-icon\"]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/gptCLIForm"
+    }
+  ],
+  "expected_results": [
+    "Test settings are successfully saved, and a confirmation message is displayed.",
+    "The OpenAI token input value is correctly visible after unmasking."
+  ],
+  "edge_cases": [
+    "Entering a test name with special characters.",
+    "Leaving the OpenAI token field blank and attempting to save.",
+    "Entering an invalid OpenAI token format.",
+    "Changing the git type to 'Server Git' and verifying the selection.",
+    "Attempting to save configuration without selecting a git type."
+  ],
+  "data_requirements": [
+    "Valid OpenAI API token",
+    "Test name with valid characters",
+    "Default git type set to 'Cloud Git'",
+    "Access to the 'RoostGPT Config' page",
+    "Browser with JavaScript enabled"
+  ],
+  "dependencies": [
+    "User is logged into the application.",
+    "The 'RoostGPT Config' page is accessible.",
+    "Default configurations for git type and test settings are loaded."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "Verify if the OpenAI token is validated via an API call during save.",
+    "Monitor if the save configuration triggers an API request to persist data."
+  ],
+  "performance_metrics": [
+    "Measure time taken to save the configuration.",
+    "Verify the responsiveness of the input fields during typing."
+  ],
+  "accessibility_requirements": [
+    "Ensure all input fields and buttons are navigable using the keyboard.",
+    "Verify proper ARIA labels for all input and button elements.",
+    "Check for sufficient color contrast on the confirmation message."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "3986796a-b04e-45f7-b14b-357c09aa4416",
+    "created_at": "2025-09-05T04:35:07.775777Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "configuration",
+      "error-handling",
+      "form-submission",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 35,
+    "flakiness_potential": "medium"
+  }
+}

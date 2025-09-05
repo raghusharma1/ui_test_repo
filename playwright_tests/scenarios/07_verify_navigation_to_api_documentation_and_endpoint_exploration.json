@@ -1,0 +1,84 @@
+{
+  "test_name": "Verify Navigation to API Documentation and Endpoint Exploration",
+  "description": "Tests the user's ability to navigate to the API documentation page and explore API endpoints by scrolling through the content.",
+  "type": "navigation",
+  "pages": [
+    "https://dev.roost.ai",
+    "https://dev.roost.ai/docs/api"
+  ],
+  "steps": [
+    "Navigate to https://dev.roost.ai.",
+    "Locate the 'roost.ai' logo link in the header.",
+    "Click on the 'roost.ai' logo link.",
+    "Ensure the page redirects to https://dev.roost.ai/docs/api.",
+    "Verify the API documentation page is loaded successfully.",
+    "Scroll through the API documentation content.",
+    "Identify and verify the presence of multiple API endpoint details.",
+    "Scroll to the bottom of the page and ensure all content is visible."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='/docs/api' and contains(@class, 'logo')]",
+      "text": "roost.ai",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai"
+    }
+  ],
+  "expected_results": [
+    "User is successfully redirected to the API documentation page.",
+    "All API documentation content is visible and accessible.",
+    "User can scroll through and view all API endpoints."
+  ],
+  "edge_cases": [
+    "The API documentation page does not load.",
+    "The link to the API documentation is disabled or broken.",
+    "The page content does not render correctly.",
+    "Scroll functionality is not working.",
+    "API endpoint details are incomplete or missing."
+  ],
+  "data_requirements": [
+    "Valid API documentation content available on the page.",
+    "Network connectivity to load the documentation.",
+    "Functioning navigation link to the API documentation.",
+    "Complete set of API endpoint details.",
+    "Fully loaded page assets (CSS, JS)."
+  ],
+  "dependencies": [
+    "The API documentation page is deployed and accessible.",
+    "The 'roost.ai' logo link is functional.",
+    "The browser supports scrolling functionality."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "None"
+  ],
+  "performance_metrics": [
+    "Page load time for the API documentation page.",
+    "Scroll performance (smoothness).",
+    "Rendering speed of API endpoint details."
+  ],
+  "accessibility_requirements": [
+    "All interactive elements have appropriate ARIA labels.",
+    "Content is navigable using a keyboard.",
+    "Page structure is semantic and follows WCAG guidelines."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "4fd185a2-1b13-4820-a623-93761cf67828",
+    "created_at": "2025-09-05T04:35:07.776742Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "navigation",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 40,
+    "flakiness_potential": "medium"
+  }
+}

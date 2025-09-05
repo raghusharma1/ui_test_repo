@@ -1,0 +1,77 @@
+{
+  "test_name": "Verify API Documentation Link Redirection",
+  "description": "Tests whether the API documentation link on the main page redirects the user to the correct external API documentation URL.",
+  "type": "redirection",
+  "pages": [
+    "https://dev.roost.ai",
+    "https://docs.roost.ai"
+  ],
+  "steps": [
+    "Navigate to https://dev.roost.ai.",
+    "Locate the API documentation link with the 'roost-icon' class.",
+    "Click on the link.",
+    "Verify that the user is redirected to https://docs.roost.ai.",
+    "Ensure the content of the external API documentation is loaded correctly."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://docs.roost.ai' and contains(@class, 'roost-icon')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai"
+    }
+  ],
+  "expected_results": [
+    "Clicking the link redirects the user to https://docs.roost.ai.",
+    "The external API documentation content is visible and functional."
+  ],
+  "edge_cases": [
+    "The redirection URL is incorrect.",
+    "The external API documentation page is unavailable.",
+    "The link is disabled or broken.",
+    "The external page takes too long to load.",
+    "The external content is unavailable or incomplete."
+  ],
+  "data_requirements": [
+    "A valid external API documentation URL.",
+    "Network connectivity to access the external page.",
+    "Functional redirection link from the main page."
+  ],
+  "dependencies": [
+    "The external API documentation page is live.",
+    "The redirection link is configured correctly.",
+    "The browser supports redirection functionality."
+  ],
+  "complexity": "low",
+  "api_interactions": [
+    "None"
+  ],
+  "performance_metrics": [
+    "Redirection response time.",
+    "External page load time."
+  ],
+  "accessibility_requirements": [
+    "Link has a descriptive accessible name or aria-label.",
+    "Redirection confirmation for screen readers.",
+    "Accessible navigation on the external page."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "40ce4ee4-3fb0-442c-829e-fa392c27d2af",
+    "created_at": "2025-09-05T04:35:07.777127Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "performance",
+      "redirection",
+      "ui-test"
+    ],
+    "estimated_execution_time": 25,
+    "flakiness_potential": "medium"
+  }
+}

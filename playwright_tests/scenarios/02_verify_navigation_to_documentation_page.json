@@ -1,0 +1,92 @@
+{
+  "test_name": "Verify Navigation to Documentation Page",
+  "description": "This test ensures that users can navigate to the Documentation page from the footer of the login page.",
+  "type": "navigation",
+  "pages": [
+    "https://dev.roost.ai/login",
+    "https://docs.roost.ai"
+  ],
+  "steps": [
+    "Navigate to the login page at https://dev.roost.ai/login.",
+    "Scroll to the footer section of the page.",
+    "Locate the 'Documentation' link using the provided stable selector.",
+    "Click the 'Documentation' link.",
+    "Ensure the browser is redirected to https://docs.roost.ai.",
+    "Verify that the Documentation page loads successfully by checking for specific content unique to that page."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://docs.roost.ai' and contains(@class, 'footer-item')]",
+      "text": "Documentation",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai/login"
+    }
+  ],
+  "expected_results": [
+    "User can see the 'Documentation' link in the footer.",
+    "Clicking the link redirects the user to the Documentation page.",
+    "The Documentation page loads successfully with relevant content."
+  ],
+  "edge_cases": [
+    "The Documentation page is down.",
+    "The 'Documentation' link is not visible due to a rendering issue.",
+    "User clicks the link, but the browser blocks the navigation (e.g., popup blocker).",
+    "The Documentation page loads with a delay.",
+    "Network latency causes the page to load incompletely."
+  ],
+  "data_requirements": [
+    "Valid URL for the Documentation page.",
+    "Footer content including the 'Documentation' link.",
+    "Test content on the Documentation page for verification.",
+    "Stable internet connection.",
+    "Browser cache cleared to test fresh loading."
+  ],
+  "dependencies": [
+    "Footer section visibility on the login page.",
+    "Active Documentation page at https://docs.roost.ai.",
+    "Working internet connection.",
+    "No browser extensions blocking redirection.",
+    "Roost.ai server uptime."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "GET request to https://docs.roost.ai.",
+    "GET requests for assets required by the Documentation page.",
+    "Optional API calls to fetch dynamic content on the Documentation page."
+  ],
+  "performance_metrics": [
+    "Page load time for the Documentation page.",
+    "Time taken to resolve the 'Documentation' link redirection.",
+    "Time to fully render the Documentation page."
+  ],
+  "accessibility_requirements": [
+    "Ensure the 'Documentation' link has an appropriate ARIA label.",
+    "Check that the link is keyboard-navigable.",
+    "Verify color contrast for the link text.",
+    "Ensure the page title is correctly set on the Documentation page.",
+    "Validate screen reader compatibility for the footer links."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "30393934-decd-46bb-b726-1817f957828b",
+    "created_at": "2025-09-05T04:35:07.774160Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "authentication",
+      "auto-generated",
+      "cross-browser",
+      "keyboard-navigation",
+      "navigation",
+      "network-resilience",
+      "performance",
+      "ui-test"
+    ],
+    "estimated_execution_time": 30,
+    "flakiness_potential": "high"
+  }
+}

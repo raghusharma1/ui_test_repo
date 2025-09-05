@@ -1,0 +1,77 @@
+{
+  "test_name": "Verify Swagger API Interface Access",
+  "description": "Tests whether the Swagger API interface link on the main page redirects to the correct Swagger-based API configuration interface.",
+  "type": "redirection",
+  "pages": [
+    "https://dev.roost.ai",
+    "https://dev.roost.ai/api/swagger"
+  ],
+  "steps": [
+    "Navigate to https://dev.roost.ai.",
+    "Locate the Swagger API interface link with the 'roost-icon' class.",
+    "Click on the link.",
+    "Verify that the user is redirected to https://dev.roost.ai/api/swagger.",
+    "Ensure the Swagger interface loads and displays the API configuration options."
+  ],
+  "selectors": [
+    {
+      "element_type": "a",
+      "selector": "//a[@href='https://dev.roost.ai/api/swagger' and contains(@class, 'roost-icon')]",
+      "text": "",
+      "action": "click",
+      "url_on_page": "https://dev.roost.ai"
+    }
+  ],
+  "expected_results": [
+    "Clicking the Swagger link redirects the user to the correct Swagger interface.",
+    "The Swagger interface loads and displays all API configuration options."
+  ],
+  "edge_cases": [
+    "The redirection URL is incorrect.",
+    "The Swagger interface page is unavailable.",
+    "The link is disabled or broken.",
+    "The Swagger interface does not load correctly.",
+    "The page takes too long to load."
+  ],
+  "data_requirements": [
+    "A valid Swagger interface URL.",
+    "Network connectivity to access the Swagger interface.",
+    "Functional redirection link from the main page."
+  ],
+  "dependencies": [
+    "The Swagger interface page is live and functional.",
+    "The redirection link is configured correctly.",
+    "The browser supports Swagger interface rendering."
+  ],
+  "complexity": "medium",
+  "api_interactions": [
+    "None"
+  ],
+  "performance_metrics": [
+    "Redirection response time.",
+    "Swagger interface load time."
+  ],
+  "accessibility_requirements": [
+    "Link has a descriptive accessible name or aria-label.",
+    "Swagger interface is keyboard accessible.",
+    "Semantic structure of the Swagger page."
+  ],
+  "additional_data": {},
+  "metadata": {
+    "uuid": "780ead8d-8df4-4176-b65b-1aaa156aaa52",
+    "created_at": "2025-09-05T04:35:07.777488Z",
+    "complexity": "high",
+    "risk_level": "high",
+    "priority": "high",
+    "tags": [
+      "accessibility",
+      "api-integration",
+      "auto-generated",
+      "performance",
+      "redirection",
+      "ui-test"
+    ],
+    "estimated_execution_time": 25,
+    "flakiness_potential": "medium"
+  }
+}
