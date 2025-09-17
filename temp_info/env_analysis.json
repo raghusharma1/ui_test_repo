@@ -1,0 +1,61 @@
+{
+  "LOGIN_TYPE": {
+    "key": "LOGIN_TYPE",
+    "value": "",
+    "type": "string",
+    "confidence": 0.9,
+    "metadata": {
+      "description": "Likely represents the type of login mechanism (e.g., 'password', 'oauth', 'sso').",
+      "examples": [
+        "password",
+        "oauth",
+        "sso"
+      ],
+      "purpose": "Defines the method used for user authentication."
+    },
+    "is_sensitive": false,
+    "suggestions": [
+      "Ensure the value matches a predefined list of valid login types.",
+      "Document the accepted values for clarity in usage."
+    ]
+  },
+  "SITE_USERNAME": {
+    "key": "SITE_USERNAME",
+    "value": "",
+    "type": "string",
+    "confidence": 1.0,
+    "metadata": {
+      "description": "Likely represents the username used for logging into the site.",
+      "examples": [
+        "admin",
+        "user@example.com"
+      ],
+      "purpose": "Identifies the user for authentication purposes."
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Ensure this variable is stored securely and not exposed in logs.",
+      "Consider validating the format if usernames follow specific patterns (e.g., email format)."
+    ]
+  },
+  "SITE_PASSWORD": {
+    "key": "SITE_PASSWORD",
+    "value": "",
+    "type": "string",
+    "confidence": 1.0,
+    "metadata": {
+      "description": "Represents the password used for logging into the site.",
+      "examples": [
+        "P@ssw0rd123",
+        "securepassword"
+      ],
+      "purpose": "Used for authenticating the user securely."
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Ensure this variable is securely encrypted or stored using secure secrets management tools.",
+      "Never expose this value in logs or error messages.",
+      "Consider enforcing strong password policies for better security."
+    ]
+  }
+}
