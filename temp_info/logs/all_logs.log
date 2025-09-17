@@ -1,0 +1,532 @@
+2025-09-17 15:29:56,896 - DEBUG - ui-test-generator - setup_logging:143 - Starting the ROOST-ui-test-generator
+2025-09-17 15:29:56,896 - DEBUG - ui-test-generator - setup_logging:144 - === LOGGING SESSION STARTED ===
+2025-09-17 15:29:56,896 - DEBUG - ui-test-generator - setup_logging:145 - All logs (unfiltered) saved to: all_logs.log
+2025-09-17 15:29:56,896 - DEBUG - ui-test-generator - setup_logging:146 - Client-facing logs saved to: client.log
+2025-09-17 15:29:56,896 - DEBUG - ui-test-generator - setup_logging:147 - Client log level set to: INFO
+2025-09-17 15:29:56,897 - DEBUG - ui-test-generator - setup_logging:148 - Timestamp: 2025-09-17 15:29:56.897063
+2025-09-17 15:29:56,897 - DEBUG - ui-test-generator - setup_logging:149 - Logging configured. Logs are being saved to the '/var/tmp/Roost/RoostGPT/raghu_ui_test/1758103100/source/ui_test_repo/temp_info/logs' directory.
+2025-09-17 15:29:56,897 - INFO - ui-test-generator - setup_logging:150 - Roost UI Test Generator: Beginning automated test creation process.
+2025-09-17 15:29:56,898 - INFO - browser_use_module - get_llm:76 - Using Azure OpenAI deployment
+2025-09-17 15:29:56,899 - INFO - browser_use_module - extract_data_from_protected_url:400 - No user scenario file found or path not set.
+2025-09-17 15:29:56,900 - INFO - llm_invoke - get_llm_client:28 - Using Azure OpenAI: gpt-4o
+2025-09-17 15:30:02,557 - INFO - browser_use_module - extract_data_from_protected_url:408 - Filtered 3 UI_ prefixed variables for form filling from 24 total variables
+2025-09-17 15:30:02,557 - INFO - browser_use_module - extract_data_from_protected_url:421 - AI detected 0 form fields in environment
+2025-09-17 15:30:02,558 - WARNING - browser_use_module - extract_data_from_protected_url:426 - No credentials provided and none found in .env file (SITE_USERNAME, SITE_PASSWORD)
+2025-09-17 15:30:02,558 - WARNING - browser_use_module - extract_data_from_protected_url:427 - Skipping login process
+2025-09-17 15:30:02,559 - INFO - browser_use_module - extract_sensitive_data_from_env_analysis_json:62 - [extract_sensitive_data_from_env_analysis_json] Sensitive data extracted: ['x_site_username', 'x_site_password']
+2025-09-17 15:30:02,559 - WARNING - browser_use_module - extract_data_from_protected_url:462 - No credentials provided, skipping login
+2025-09-17 15:30:02,560 - WARNING - browser_use_module - extract_data_from_protected_url:464 - Login failed or skipped. Continuing
+2025-09-17 15:30:02,560 - INFO - ai_url_extraction_module.scrape_url - extract_urls_from_page:26 - 🚀 Starting scraper for https://help.salesforce.com/s/...
+2025-09-17 15:30:04,675 - INFO - browser_use_module - get_agent:128 - Using existing state
+2025-09-17 15:30:04,677 - DEBUG - browser_use.tokens.service - register_llm:314 - LLM instance 4587678000 (azure_gpt-4o) is already registered
+2025-09-17 15:30:04,681 - INFO - browser_use.agent.service - _set_file_system:550 - 💾 File system path: /var/tmp/Roost/RoostGPT/raghu_ui_test/1758103100/source/ui_test_repo/temp_info/temp_profile/default/browseruse_extraction_data
+2025-09-17 15:30:04,700 - DEBUG - browser_use.utils - get_browser_use_version:573 - Error detecting browser-use version: PackageNotFoundError: No package metadata was found for browser-use
+2025-09-17 15:30:04,700 - INFO - browser_use.Agent🅰 99b2 on 🆂 99b2 🅟 24 - __init__:282 - 🧠 Starting a browser-use agent unknown with base_model=gpt-4o +vision extraction_model=gpt-4o +file_system
+2025-09-17 15:30:04,714 - INFO - browser_use_module - runExtractionAgent:342 - Starting extraction process...
+2025-09-17 15:30:04,715 - INFO - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _log_agent_run:990 - 🚀 Starting task: 
+        # Primary Goal
+        Your objective is to explore the web application starting at `https://help.salesforce.com/s/`. You will navigate through the site to **identify and document exactly 5 unique internal pages**. For each page, you will also document 1-2 primary user interaction scenarios.
+
+        # Form Interaction During Exploration
+        **IMPORTANT**: While exploring each page, also check for forms and fill them as part of natural user interaction:
+        - If you encounter forms (contact, create, edit, search, etc.), fill them using environment values
+        - Use appropriate values for each field type, or reasonable defaults if env data unavailable
+        - Submit forms after filling to see the complete user flow
+        - Document form interactions as part of your page scenarios
+        - Pay attention to "Add Test", "Create Test", or similar forms relevant to the application
+        # Termination Condition
+        You MUST stop browsing and output the final JSON **immediately after you have documented the 5th unique page**. Do not explore any further.
+
+        # Documenting Goals
+        First understand the webpage's purpose well (its business use cases, it's actual user use cases). Then document potential user journeys for the webpage in the JSON format below.
+        Ensure your user journeys are robust and test functionalities of ONLY that URL well (Please ensure you do not document user journeys that require traversing other URLs or pages of which UI element data isnt clear)
+        Do not expect the webpage to document its user interaction scenarios and workflows, you have to be creative and generate some from the knowledge acquired by the page
+        # Execution Plan
+        1.  **State Management**: Maintain a running list of already visited URLs to avoid duplicates.
+        2.  **Navigate & Document**:
+            * Go to `https://help.salesforce.com/s/`.
+            * This is your first page. Document its URL, title, user scenarios and every internal link. Add the URL to your list of visited URLs.
+        3.  **Exploration Loop (Repeat 4 times)**:
+            * From your **current page**, find the most promising, **unvisited** internal link. Prioritize links that lead to new features (e.g., "Dashboard", "Products", "Settings") over utility links (e.g., "Privacy Policy").
+            * Navigate to that link.
+            * This is a new unique page. Document its URL, title, and 1-2 primary user scenarios. Add the URL to your visited list.
+            * **Form Interaction**: If this page contains forms, fill them with available environment values and submit them. Document the form interaction as part of the user scenarios.
+        4.  **Final Output**: After documenting the final page, assemble all collected information into a single JSON object matching the `FINAL OUTPUT FORMAT` and terminate the process.
+        ---
+
+        ### FINAL OUTPUT FORMAT (JSON - EXACT STRUCTURE)
+
+        Your entire output **MUST** be a single, valid JSON object conforming to this structure. Do not include any other text or explanation.
+        
+        ```json
+        {
+        "url":,
+        "explored_pages_and_scenarios": [
+            {
+            "page_title": "Title of the page",
+            "scenarios_on_page": [
+                {
+                "scenario_name": "Concise name for a potential user journey",
+                "scenario_description": "A brief summary of a user flow and its purpose.",
+                "steps": [
+                    {
+                    "action": "e.g., click, type, assert_visibility",
+                    "element_description": "Natural language description of the element",
+                    }
+                ],
+                "expected_outcome": ["Description of what should happen after the steps"]
+                }
+            ]
+            }
+            "selector_for_scenario": [
+                    {
+                        "Name of element":- page 2 button
+                    }
+            ]
+        ],
+        }
+
+2025-09-17 15:30:04,718 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _log_agent_run:992 - 🤖 Browser-Use Library Version unknown (pip)
+2025-09-17 15:30:04,718 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1168 - 🔧 Agent setup: Task ID 99b2, Session ID 1f0a, Browser Session ID b61e
+2025-09-17 15:30:04,718 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1176 - 📡 Dispatching CreateAgentSessionEvent...
+2025-09-17 15:30:04,719 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1180 - 📡 Dispatching CreateAgentTaskEvent...
+2025-09-17 15:30:04,719 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1191 - 🔄 Starting main execution loop with max 50 steps...
+2025-09-17 15:30:04,719 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1220 - 🚶 Starting step 1/50...
+2025-09-17 15:30:04,719 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _prepare_context:686 - 🌐 Step 2: Getting browser state...
+2025-09-17 15:30:08,138 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= <incognito>
+2025-09-17 15:30:08,205 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57627/ with user_data_dir= /private/tmp/browseruse-tmp-sij_yfm9
+2025-09-17 15:30:08,227 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-sij_yfm9 (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:09,229 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-sij_yfm9
+2025-09-17 15:30:09,232 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-sij_yfm9 and using fresh one:/tmp/browseruse-tmp-kinmpku5
+2025-09-17 15:30:09,281 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57633/ with user_data_dir= /private/tmp/browseruse-tmp-kinmpku5
+2025-09-17 15:30:09,304 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-kinmpku5 (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:09,305 - WARNING - bubus.helpers - _execute_with_retries:380 - setup_new_browser_context failed (attempt 2/3): FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'. Waiting 1.0s before retry...
+2025-09-17 15:30:10,306 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-kinmpku5
+2025-09-17 15:30:10,308 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-kinmpku5 and using fresh one:/tmp/browseruse-tmp-dsnuhwp3
+2025-09-17 15:30:10,348 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57634/ with user_data_dir= /private/tmp/browseruse-tmp-dsnuhwp3
+2025-09-17 15:30:10,366 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-dsnuhwp3 (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:10,367 - ERROR - bubus.helpers - _execute_with_retries:396 - setup_new_browser_context failed after 3 attempts over 2.2s. Semaphore wait: 0.0s. Final error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:10,367 - WARNING - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _get_browser_state_with_recovery:648 - Full state retrieval failed: FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:10,368 - WARNING - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _get_browser_state_with_recovery:650 - 🔄 Falling back to minimal state summary
+2025-09-17 15:30:10,375 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-dsnuhwp3
+2025-09-17 15:30:10,378 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-dsnuhwp3 and using fresh one:/tmp/browseruse-tmp-k3qkjd7o
+2025-09-17 15:30:10,421 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57635/ with user_data_dir= /private/tmp/browseruse-tmp-k3qkjd7o
+2025-09-17 15:30:10,441 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-k3qkjd7o (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:11,443 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-k3qkjd7o
+2025-09-17 15:30:11,445 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-k3qkjd7o and using fresh one:/tmp/browseruse-tmp-3rl45_hr
+2025-09-17 15:30:11,488 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57636/ with user_data_dir= /private/tmp/browseruse-tmp-3rl45_hr
+2025-09-17 15:30:11,516 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-3rl45_hr (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:11,517 - WARNING - bubus.helpers - _execute_with_retries:380 - setup_new_browser_context failed (attempt 2/3): FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'. Waiting 1.0s before retry...
+2025-09-17 15:30:12,519 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-3rl45_hr
+2025-09-17 15:30:12,521 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-3rl45_hr and using fresh one:/tmp/browseruse-tmp-37w5thh8
+2025-09-17 15:30:12,562 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57637/ with user_data_dir= /private/tmp/browseruse-tmp-37w5thh8
+2025-09-17 15:30:12,583 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-37w5thh8 (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:12,584 - ERROR - bubus.helpers - _execute_with_retries:396 - setup_new_browser_context failed after 3 attempts over 2.2s. Semaphore wait: 0.0s. Final error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:13,639 - ERROR - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _handle_step_error:814 - ❌ Result failed 1/3 times:
+ [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 664, in step
+  File "browser_use/agent/service.py", line 687, in _prepare_context
+  File "browser_use/agent/service.py", line 651, in _get_browser_state_with_recovery
+  File "browser_use/browser/session.py", line 112, in wrapper
+  File "browser_use/browser/session.py", line 382, in start
+  File "browser_use/browser/session.py", line 779, in _connect_or_launch_browser
+  File "bubus/helpers.py", line 507, in wrapper
+  File "bubus/helpers.py", line 367, in _execute_with_retries
+  File "browser_use/browser/session.py", line 1060, in setup_new_browser_context
+  File "browser_use/browser/session.py", line 1167, in _unsafe_setup_new_browser_context
+  File "asyncio/subprocess.py", line 224, in create_subprocess_exec
+  File "asyncio/base_events.py", line 1756, in subprocess_exec
+  File "asyncio/unix_events.py", line 211, in _make_subprocess_transport
+  File "asyncio/base_subprocess.py", line 36, in __init__
+  File "asyncio/unix_events.py", line 820, in _start
+  File "subprocess.py", line 1026, in __init__
+  File "subprocess.py", line 1955, in _execute_child
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+
+2025-09-17 15:30:13,640 - INFO - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _log_step_completion_summary:1063 - 📍 Step 1: Ran 1 actions in 8.92s: ❌ 1
+2025-09-17 15:30:13,640 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - wrapper:372 - ⏳ step() took 8.92s
+2025-09-17 15:30:13,641 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1228 - ✅ Completed step 1/50
+2025-09-17 15:30:13,641 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:155 - --- Hook: Capturing UI state at step end ---
+2025-09-17 15:30:13,754 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-37w5thh8
+2025-09-17 15:30:13,756 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-37w5thh8 and using fresh one:/tmp/browseruse-tmp-_gtlm01m
+2025-09-17 15:30:13,797 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57638/ with user_data_dir= /private/tmp/browseruse-tmp-_gtlm01m
+2025-09-17 15:30:13,816 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-_gtlm01m (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:14,817 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-_gtlm01m
+2025-09-17 15:30:14,819 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-_gtlm01m and using fresh one:/tmp/browseruse-tmp-5xl8ec27
+2025-09-17 15:30:14,858 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57641/ with user_data_dir= /private/tmp/browseruse-tmp-5xl8ec27
+2025-09-17 15:30:14,876 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-5xl8ec27 (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:14,876 - WARNING - bubus.helpers - _execute_with_retries:380 - setup_new_browser_context failed (attempt 2/3): FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'. Waiting 1.0s before retry...
+2025-09-17 15:30:15,877 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-5xl8ec27
+2025-09-17 15:30:15,879 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-5xl8ec27 and using fresh one:/tmp/browseruse-tmp-phvt6n70
+2025-09-17 15:30:15,919 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57642/ with user_data_dir= /private/tmp/browseruse-tmp-phvt6n70
+2025-09-17 15:30:15,948 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-phvt6n70 (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:15,950 - ERROR - bubus.helpers - _execute_with_retries:396 - setup_new_browser_context failed after 3 attempts over 2.2s. Semaphore wait: 0.0s. Final error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:15,951 - ERROR - lifecycle_hook_extraction - capture_ui_state_for_llm:185 - --- Hook Error: An unexpected error occurred: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium' ---
+Traceback (most recent call last):
+  File "lifecycle_hook_extraction.py", line 157, in capture_ui_state_for_llm
+  File "browser_use/browser/session.py", line 1945, in get_current_page
+  File "browser_use/browser/session.py", line 382, in start
+  File "browser_use/browser/session.py", line 779, in _connect_or_launch_browser
+  File "bubus/helpers.py", line 507, in wrapper
+  File "bubus/helpers.py", line 367, in _execute_with_retries
+  File "browser_use/browser/session.py", line 1060, in setup_new_browser_context
+  File "browser_use/browser/session.py", line 1167, in _unsafe_setup_new_browser_context
+  File "asyncio/subprocess.py", line 224, in create_subprocess_exec
+  File "asyncio/base_events.py", line 1756, in subprocess_exec
+  File "asyncio/unix_events.py", line 211, in _make_subprocess_transport
+  File "asyncio/base_subprocess.py", line 36, in __init__
+  File "asyncio/unix_events.py", line 820, in _start
+  File "subprocess.py", line 1026, in __init__
+  File "subprocess.py", line 1955, in _execute_child
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:15,957 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1220 - 🚶 Starting step 2/50...
+2025-09-17 15:30:15,957 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _prepare_context:686 - 🌐 Step 2: Getting browser state...
+2025-09-17 15:30:15,964 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-phvt6n70
+2025-09-17 15:30:15,967 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-phvt6n70 and using fresh one:/tmp/browseruse-tmp-8xc0gr5j
+2025-09-17 15:30:16,024 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57643/ with user_data_dir= /private/tmp/browseruse-tmp-8xc0gr5j
+2025-09-17 15:30:16,044 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-8xc0gr5j (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:17,046 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-8xc0gr5j
+2025-09-17 15:30:17,051 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-8xc0gr5j and using fresh one:/tmp/browseruse-tmp-_ae8363r
+2025-09-17 15:30:17,112 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57644/ with user_data_dir= /private/tmp/browseruse-tmp-_ae8363r
+2025-09-17 15:30:17,146 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-_ae8363r (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:17,148 - WARNING - bubus.helpers - _execute_with_retries:380 - setup_new_browser_context failed (attempt 2/3): FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'. Waiting 1.0s before retry...
+2025-09-17 15:30:18,149 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-_ae8363r
+2025-09-17 15:30:18,153 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-_ae8363r and using fresh one:/tmp/browseruse-tmp-076x5bek
+2025-09-17 15:30:18,227 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57645/ with user_data_dir= /private/tmp/browseruse-tmp-076x5bek
+2025-09-17 15:30:18,264 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-076x5bek (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:18,266 - ERROR - bubus.helpers - _execute_with_retries:396 - setup_new_browser_context failed after 3 attempts over 2.3s. Semaphore wait: 0.0s. Final error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:18,267 - WARNING - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _get_browser_state_with_recovery:648 - Full state retrieval failed: FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:18,268 - WARNING - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _get_browser_state_with_recovery:650 - 🔄 Falling back to minimal state summary
+2025-09-17 15:30:18,279 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-076x5bek
+2025-09-17 15:30:18,283 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-076x5bek and using fresh one:/tmp/browseruse-tmp-5mikgntc
+2025-09-17 15:30:18,347 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57646/ with user_data_dir= /private/tmp/browseruse-tmp-5mikgntc
+2025-09-17 15:30:18,371 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-5mikgntc (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:19,373 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-5mikgntc
+2025-09-17 15:30:19,376 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-5mikgntc and using fresh one:/tmp/browseruse-tmp-98woc1zs
+2025-09-17 15:30:19,431 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57647/ with user_data_dir= /private/tmp/browseruse-tmp-98woc1zs
+2025-09-17 15:30:19,457 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-98woc1zs (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:19,458 - WARNING - bubus.helpers - _execute_with_retries:380 - setup_new_browser_context failed (attempt 2/3): FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'. Waiting 1.0s before retry...
+2025-09-17 15:30:20,460 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-98woc1zs
+2025-09-17 15:30:20,462 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-98woc1zs and using fresh one:/tmp/browseruse-tmp-6p7gs4nz
+2025-09-17 15:30:20,518 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57650/ with user_data_dir= /private/tmp/browseruse-tmp-6p7gs4nz
+2025-09-17 15:30:20,538 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-6p7gs4nz (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:20,539 - ERROR - bubus.helpers - _execute_with_retries:396 - setup_new_browser_context failed after 3 attempts over 2.3s. Semaphore wait: 0.0s. Final error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:20,542 - ERROR - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _handle_step_error:814 - ❌ Result failed 2/3 times:
+ [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 664, in step
+  File "browser_use/agent/service.py", line 687, in _prepare_context
+  File "browser_use/agent/service.py", line 651, in _get_browser_state_with_recovery
+  File "browser_use/browser/session.py", line 112, in wrapper
+  File "browser_use/browser/session.py", line 382, in start
+  File "browser_use/browser/session.py", line 779, in _connect_or_launch_browser
+  File "bubus/helpers.py", line 507, in wrapper
+  File "bubus/helpers.py", line 367, in _execute_with_retries
+  File "browser_use/browser/session.py", line 1060, in setup_new_browser_context
+  File "browser_use/browser/session.py", line 1167, in _unsafe_setup_new_browser_context
+  File "asyncio/subprocess.py", line 224, in create_subprocess_exec
+  File "asyncio/base_events.py", line 1756, in subprocess_exec
+  File "asyncio/unix_events.py", line 211, in _make_subprocess_transport
+  File "asyncio/base_subprocess.py", line 36, in __init__
+  File "asyncio/unix_events.py", line 820, in _start
+  File "subprocess.py", line 1026, in __init__
+  File "subprocess.py", line 1955, in _execute_child
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+
+2025-09-17 15:30:20,543 - INFO - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _log_step_completion_summary:1063 - 📍 Step 1: Ran 1 actions in 4.59s: ❌ 1
+2025-09-17 15:30:20,543 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - wrapper:372 - ⏳ step() took 4.59s
+2025-09-17 15:30:20,544 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1228 - ✅ Completed step 2/50
+2025-09-17 15:30:20,544 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:155 - --- Hook: Capturing UI state at step end ---
+2025-09-17 15:30:20,654 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-6p7gs4nz
+2025-09-17 15:30:20,656 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-6p7gs4nz and using fresh one:/tmp/browseruse-tmp-_9071lxi
+2025-09-17 15:30:20,695 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57651/ with user_data_dir= /private/tmp/browseruse-tmp-_9071lxi
+2025-09-17 15:30:20,715 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-_9071lxi (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:21,717 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-_9071lxi
+2025-09-17 15:30:21,719 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-_9071lxi and using fresh one:/tmp/browseruse-tmp-f6gidr4y
+2025-09-17 15:30:21,761 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57652/ with user_data_dir= /private/tmp/browseruse-tmp-f6gidr4y
+2025-09-17 15:30:21,793 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-f6gidr4y (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:21,811 - WARNING - bubus.helpers - _execute_with_retries:380 - setup_new_browser_context failed (attempt 2/3): FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'. Waiting 1.0s before retry...
+2025-09-17 15:30:22,832 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-f6gidr4y
+2025-09-17 15:30:22,834 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-f6gidr4y and using fresh one:/tmp/browseruse-tmp-jiskypx6
+2025-09-17 15:30:22,876 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57653/ with user_data_dir= /private/tmp/browseruse-tmp-jiskypx6
+2025-09-17 15:30:22,895 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-jiskypx6 (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:22,896 - ERROR - bubus.helpers - _execute_with_retries:396 - setup_new_browser_context failed after 3 attempts over 2.2s. Semaphore wait: 0.0s. Final error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:22,896 - ERROR - lifecycle_hook_extraction - capture_ui_state_for_llm:185 - --- Hook Error: An unexpected error occurred: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium' ---
+Traceback (most recent call last):
+  File "lifecycle_hook_extraction.py", line 157, in capture_ui_state_for_llm
+  File "browser_use/browser/session.py", line 1945, in get_current_page
+  File "browser_use/browser/session.py", line 382, in start
+  File "browser_use/browser/session.py", line 779, in _connect_or_launch_browser
+  File "bubus/helpers.py", line 507, in wrapper
+  File "bubus/helpers.py", line 367, in _execute_with_retries
+  File "browser_use/browser/session.py", line 1060, in setup_new_browser_context
+  File "browser_use/browser/session.py", line 1167, in _unsafe_setup_new_browser_context
+  File "asyncio/subprocess.py", line 224, in create_subprocess_exec
+  File "asyncio/base_events.py", line 1756, in subprocess_exec
+  File "asyncio/unix_events.py", line 211, in _make_subprocess_transport
+  File "asyncio/base_subprocess.py", line 36, in __init__
+  File "asyncio/unix_events.py", line 820, in _start
+  File "subprocess.py", line 1026, in __init__
+  File "subprocess.py", line 1955, in _execute_child
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:22,898 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1220 - 🚶 Starting step 3/50...
+2025-09-17 15:30:22,898 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _prepare_context:686 - 🌐 Step 2: Getting browser state...
+2025-09-17 15:30:22,904 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-jiskypx6
+2025-09-17 15:30:22,906 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-jiskypx6 and using fresh one:/tmp/browseruse-tmp-eq4scnt2
+2025-09-17 15:30:22,948 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57654/ with user_data_dir= /private/tmp/browseruse-tmp-eq4scnt2
+2025-09-17 15:30:22,968 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-eq4scnt2 (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:23,971 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-eq4scnt2
+2025-09-17 15:30:23,972 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-eq4scnt2 and using fresh one:/tmp/browseruse-tmp-d3xh58o2
+2025-09-17 15:30:24,016 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57655/ with user_data_dir= /private/tmp/browseruse-tmp-d3xh58o2
+2025-09-17 15:30:24,034 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-d3xh58o2 (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:24,034 - WARNING - bubus.helpers - _execute_with_retries:380 - setup_new_browser_context failed (attempt 2/3): FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'. Waiting 1.0s before retry...
+2025-09-17 15:30:25,035 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-d3xh58o2
+2025-09-17 15:30:25,037 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-d3xh58o2 and using fresh one:/tmp/browseruse-tmp-w5x9j6ei
+2025-09-17 15:30:25,079 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57656/ with user_data_dir= /private/tmp/browseruse-tmp-w5x9j6ei
+2025-09-17 15:30:25,096 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-w5x9j6ei (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:25,097 - ERROR - bubus.helpers - _execute_with_retries:396 - setup_new_browser_context failed after 3 attempts over 2.2s. Semaphore wait: 0.0s. Final error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:25,098 - WARNING - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _get_browser_state_with_recovery:648 - Full state retrieval failed: FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:25,098 - WARNING - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _get_browser_state_with_recovery:650 - 🔄 Falling back to minimal state summary
+2025-09-17 15:30:25,104 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-w5x9j6ei
+2025-09-17 15:30:25,106 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-w5x9j6ei and using fresh one:/tmp/browseruse-tmp-bj61xd6h
+2025-09-17 15:30:25,151 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57657/ with user_data_dir= /private/tmp/browseruse-tmp-bj61xd6h
+2025-09-17 15:30:25,175 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-bj61xd6h (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:26,176 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-bj61xd6h
+2025-09-17 15:30:26,178 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-bj61xd6h and using fresh one:/tmp/browseruse-tmp-m33j63jk
+2025-09-17 15:30:26,219 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57658/ with user_data_dir= /private/tmp/browseruse-tmp-m33j63jk
+2025-09-17 15:30:26,238 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-m33j63jk (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:26,239 - WARNING - bubus.helpers - _execute_with_retries:380 - setup_new_browser_context failed (attempt 2/3): FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'. Waiting 1.0s before retry...
+2025-09-17 15:30:27,240 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-m33j63jk
+2025-09-17 15:30:27,242 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-m33j63jk and using fresh one:/tmp/browseruse-tmp-mcviniqo
+2025-09-17 15:30:27,284 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57661/ with user_data_dir= /private/tmp/browseruse-tmp-mcviniqo
+2025-09-17 15:30:27,304 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-mcviniqo (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:27,305 - ERROR - bubus.helpers - _execute_with_retries:396 - setup_new_browser_context failed after 3 attempts over 2.2s. Semaphore wait: 0.0s. Final error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:27,308 - ERROR - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _handle_step_error:814 - ❌ Result failed 3/3 times:
+ [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+Stacktrace:
+Traceback (most recent call last):
+  File "browser_use/agent/service.py", line 664, in step
+  File "browser_use/agent/service.py", line 687, in _prepare_context
+  File "browser_use/agent/service.py", line 651, in _get_browser_state_with_recovery
+  File "browser_use/browser/session.py", line 112, in wrapper
+  File "browser_use/browser/session.py", line 382, in start
+  File "browser_use/browser/session.py", line 779, in _connect_or_launch_browser
+  File "bubus/helpers.py", line 507, in wrapper
+  File "bubus/helpers.py", line 367, in _execute_with_retries
+  File "browser_use/browser/session.py", line 1060, in setup_new_browser_context
+  File "browser_use/browser/session.py", line 1167, in _unsafe_setup_new_browser_context
+  File "asyncio/subprocess.py", line 224, in create_subprocess_exec
+  File "asyncio/base_events.py", line 1756, in subprocess_exec
+  File "asyncio/unix_events.py", line 211, in _make_subprocess_transport
+  File "asyncio/base_subprocess.py", line 36, in __init__
+  File "asyncio/unix_events.py", line 820, in _start
+  File "subprocess.py", line 1026, in __init__
+  File "subprocess.py", line 1955, in _execute_child
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+
+2025-09-17 15:30:27,310 - INFO - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - _log_step_completion_summary:1063 - 📍 Step 1: Ran 1 actions in 4.41s: ❌ 1
+2025-09-17 15:30:27,310 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - wrapper:372 - ⏳ step() took 4.41s
+2025-09-17 15:30:27,311 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1228 - ✅ Completed step 3/50
+2025-09-17 15:30:27,311 - INFO - lifecycle_hook_extraction - capture_ui_state_for_llm:155 - --- Hook: Capturing UI state at step end ---
+2025-09-17 15:30:27,424 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-mcviniqo
+2025-09-17 15:30:27,426 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-mcviniqo and using fresh one:/tmp/browseruse-tmp-g0at3p2j
+2025-09-17 15:30:27,467 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57662/ with user_data_dir= /private/tmp/browseruse-tmp-g0at3p2j
+2025-09-17 15:30:27,489 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-g0at3p2j (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:28,491 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-g0at3p2j
+2025-09-17 15:30:28,492 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-g0at3p2j and using fresh one:/tmp/browseruse-tmp-mdd2j37a
+2025-09-17 15:30:28,533 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57663/ with user_data_dir= /private/tmp/browseruse-tmp-mdd2j37a
+2025-09-17 15:30:28,552 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-mdd2j37a (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:28,553 - WARNING - bubus.helpers - _execute_with_retries:380 - setup_new_browser_context failed (attempt 2/3): FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'. Waiting 1.0s before retry...
+2025-09-17 15:30:29,554 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1097 - 🎭 Launching new local browser playwright:chromium keep_alive=False user_data_dir= /private/tmp/browseruse-tmp-mdd2j37a
+2025-09-17 15:30:29,557 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1117 - 🗑️ Cleaning up old tmp user_data_dir= /private/tmp/browseruse-tmp-mdd2j37a and using fresh one:/tmp/browseruse-tmp-okahpnms
+2025-09-17 15:30:29,597 - INFO - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1164 -  ↳ Spawning Chrome subprocess listening on CDP http://127.0.0.1:57664/ with user_data_dir= /private/tmp/browseruse-tmp-okahpnms
+2025-09-17 15:30:29,615 - ERROR - browser_use.BrowserSession🆂 b61e:None #52 - _unsafe_setup_new_browser_context:1294 - ❌ Launching new local browser playwright:chromium (v???) failed!
+	Failed for unknown reason with user_data_dir= /private/tmp/browseruse-tmp-okahpnms (created with v???)
+	Try using a different browser version/channel or delete the user_data_dir to start over with a fresh profile.
+	(can happen if different versions of Chrome/Chromium/Brave/etc. tried to share one dir)
+
+FileNotFoundError [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:29,616 - ERROR - bubus.helpers - _execute_with_retries:396 - setup_new_browser_context failed after 3 attempts over 2.2s. Semaphore wait: 0.0s. Final error: FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:29,616 - ERROR - lifecycle_hook_extraction - capture_ui_state_for_llm:185 - --- Hook Error: An unexpected error occurred: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium' ---
+Traceback (most recent call last):
+  File "lifecycle_hook_extraction.py", line 157, in capture_ui_state_for_llm
+  File "browser_use/browser/session.py", line 1945, in get_current_page
+  File "browser_use/browser/session.py", line 382, in start
+  File "browser_use/browser/session.py", line 779, in _connect_or_launch_browser
+  File "bubus/helpers.py", line 507, in wrapper
+  File "bubus/helpers.py", line 367, in _execute_with_retries
+  File "browser_use/browser/session.py", line 1060, in setup_new_browser_context
+  File "browser_use/browser/session.py", line 1167, in _unsafe_setup_new_browser_context
+  File "asyncio/subprocess.py", line 224, in create_subprocess_exec
+  File "asyncio/base_events.py", line 1756, in subprocess_exec
+  File "asyncio/unix_events.py", line 211, in _make_subprocess_transport
+  File "asyncio/base_subprocess.py", line 36, in __init__
+  File "asyncio/unix_events.py", line 820, in _start
+  File "subprocess.py", line 1026, in __init__
+  File "subprocess.py", line 1955, in _execute_child
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/mgdevstack/Library/Caches/ms-playwright/chromium-1169/chrome-mac/Chromium.app/Contents/MacOS/Chromium'
+2025-09-17 15:30:29,618 - ERROR - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1201 - ❌ Stopping due to 3 consecutive failures
+2025-09-17 15:30:29,618 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1271 - 📊 Collecting usage summary...
+2025-09-17 15:30:29,619 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - run:1278 - 🏁 Agent.run() completed successfully
+2025-09-17 15:30:31,055 - DEBUG - browser_use.Agent🅰 99b2 on 🆂 b61e 🅟 24 - wrapper:372 - ⏳ run() took 26.34s
+2025-09-17 15:30:31,055 - WARNING - browser_use_module - runExtractionAgent:351 - No captured_ui_states found to write to file.
+2025-09-17 15:30:31,056 - INFO - browser_use_module - runExtractionAgent:354 - Agent run complete. Processing agent history...
+2025-09-17 15:30:31,057 - DEBUG - browser_use_module - merge_json_by_url:653 - UI States URLs: []
+2025-09-17 15:30:31,057 - DEBUG - browser_use_module - merge_json_by_url:654 - Tester Scenarios URLs: []
+2025-09-17 15:30:31,057 - DEBUG - browser_use_module - merge_json_by_url:655 - Browser Agent URLs: []
+2025-09-17 15:30:31,058 - DEBUG - browser_use_module - merge_json_by_url:656 - Common URLs: []
+2025-09-17 15:30:31,058 - WARNING - browser_use_module - runExtractionAgent:362 - Extraction returned empty or null JSON.
+2025-09-17 15:30:31,059 - INFO - browser_use_module - runExtractionAgent:370 - Closing login agent's browser session...
+2025-09-17 15:30:31,059 - INFO - browser_use_module - runExtractionAgent:372 - Login agent's session closed.
+2025-09-17 15:30:31,060 - INFO - starter_module - generate_user_scenarios:83 - Data extraction completed successfully. Results saved to /var/tmp/Roost/RoostGPT/raghu_ui_test/1758103100/source/ui_test_repo/temp_info/merged_scenarios.json
+2025-09-17 15:30:31,061 - INFO - starter_module - generate_user_scenarios:85 -  Continuing to test generation using extracted data...
+2025-09-17 15:30:31,061 - INFO - scenario_generator_module - generate_scenarios_from_extraction:246 - 🧹 Cleaning up scenarios directory before generation: /var/tmp/Roost/RoostGPT/raghu_ui_test/1758103100/source/ui_test_repo/playwright_tests/scenarios
+2025-09-17 15:30:31,061 - DEBUG - cleanup - clean_folder_contents:21 - --- Starting cleanup of folder: /var/tmp/Roost/RoostGPT/raghu_ui_test/1758103100/source/ui_test_repo/playwright_tests/scenarios ---
+2025-09-17 15:30:31,061 - DEBUG - cleanup - clean_folder_contents:25 - --- Cleanup aborted. ---
+2025-09-17 15:30:31,063 - WARNING - scenario_generator_module - generate_scenarios_from_extraction:255 - No input data provided for scenario generation.
+2025-09-17 15:30:31,064 - INFO - starter_module - generate_playwright_tests:102 - 🧹 Cleaning up tests directory before generation: /var/tmp/Roost/RoostGPT/raghu_ui_test/1758103100/source/ui_test_repo/playwright_tests/tests
+2025-09-17 15:30:31,064 - INFO - starter_module - generate_playwright_tests:106 - Directory '/var/tmp/Roost/RoostGPT/raghu_ui_test/1758103100/source/ui_test_repo/playwright_tests/tests' does not exist. Skipping cleanup.
+2025-09-17 15:30:31,065 - INFO - starter_module - generate_playwright_tests:111 -  Step 2: Generating Playwright tests from scenarios...
+2025-09-17 15:30:31,065 - INFO - llm_invoke - get_llm_client:28 - Using Azure OpenAI: gpt-4o
+2025-09-17 15:30:31,096 - INFO - test_generator - generate_tests_from_scenarios:120 - Loading and validating all scenario files...
+2025-09-17 15:30:31,096 - WARNING - test_generator - generate_tests_from_scenarios:125 - No scenario JSON files found in the specified directory.
+2025-09-17 15:30:31,097 - INFO - starter_module - generate_playwright_tests:119 -  Generated tests saved to /var/tmp/Roost/RoostGPT/raghu_ui_test/1758103100/source/ui_test_repo/playwright_tests/
+2025-09-17 15:30:31,097 - INFO - starter_module - generate_playwright_tests:120 -  All done! You can now run the tests with:
+2025-09-17 15:30:31,097 - INFO - starter_module - generate_playwright_tests:121 - cd /var/tmp/Roost/RoostGPT/raghu_ui_test/1758103100/source/ui_test_repo/playwright_tests
+2025-09-17 15:30:31,097 - INFO - starter_module - generate_playwright_tests:122 - npm install
+2025-09-17 15:30:31,097 - INFO - starter_module - generate_playwright_tests:123 - npx playwright install
+2025-09-17 15:30:31,098 - INFO - starter_module - generate_playwright_tests:124 - npx playwright test
+2025-09-17 15:30:31,298 - DEBUG - browser_use.BrowserSession🆂 b61e:None #52 - __del__:578 - 🗑️ Garbage collected BrowserSession 🆂 b61e.24 ref #3552 keep_alive=None owns_browser=True ☠️
