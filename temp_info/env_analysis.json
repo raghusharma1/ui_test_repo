@@ -1,0 +1,54 @@
+{
+  "LOGIN_TYPE": {
+    "key": "LOGIN_TYPE",
+    "value": "",
+    "type": "string",
+    "confidence": 0.9,
+    "metadata": {
+      "description": "Likely represents the type of login mechanism (e.g., 'basic', 'oauth', etc.).",
+      "expected_values": [
+        "basic",
+        "oauth",
+        "sso",
+        "ldap"
+      ]
+    },
+    "is_sensitive": false,
+    "suggestions": [
+      "Ensure the value is clearly documented and aligns with the application's supported login types.",
+      "Consider using a default value if this is required for application functionality."
+    ]
+  },
+  "SITE_USERNAME": {
+    "key": "SITE_USERNAME",
+    "value": "",
+    "type": "string",
+    "confidence": 1.0,
+    "metadata": {
+      "description": "Represents the username for accessing a site or service.",
+      "common_usage": "Authentication credentials for a site or application."
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Ensure this value is securely stored and accessed using environment variable management tools.",
+      "Avoid hardcoding sensitive credentials in code repositories."
+    ]
+  },
+  "SITE_PASSWORD": {
+    "key": "SITE_PASSWORD",
+    "value": "",
+    "type": "string",
+    "confidence": 1.0,
+    "metadata": {
+      "description": "Represents the password for accessing a site or service.",
+      "common_usage": "Authentication credentials for a site or application.",
+      "security_risks": "Exposure could lead to unauthorized access."
+    },
+    "is_sensitive": true,
+    "suggestions": [
+      "Store this value securely using tools like secret managers (e.g., HashiCorp Vault, AWS Secrets Manager).",
+      "Ensure the environment variable is encrypted in transit and at rest.",
+      "Regularly rotate passwords to minimize security risks."
+    ]
+  }
+}
