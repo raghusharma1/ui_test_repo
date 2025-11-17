@@ -1,0 +1,253 @@
+{
+  "site_url": "https://hub.docker.com/",
+  "site_type": "unknown",
+  "site_category": "general",
+  "test_name": "search_for_nginx_repository_and_view_tags_-_e2e_workflow",
+  "login_mechanisms": [
+    "site_navigation",
+    "content_browsing"
+  ],
+  "user_journeys": [
+    {
+      "workflow_type": "navigation_flow",
+      "path": [],
+      "success_rate": "discovered_site_navigation",
+      "scenario_priority": "medium",
+      "description": "General website navigation and content discovery"
+    }
+  ],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "Search for 'nginx' Repository and View Tags - E2E Workflow",
+      "description": "This end-to-end scenario validates the primary user path on Docker Hub. It begins by navigating to the homepage, performing a search for the 'nginx' image, selecting the official repository from the search results, navigating to the repository details page, and finally switching to the 'Tags' tab to verify that image versions are correctly listed. This test ensures the core search, navigation, and content display functionalities are operational.",
+      "test_type": "e2e_workflow",
+      "priority": "critical",
+      "business_goal": "Validate that a user can successfully find a specific public container image and view its available tags, which is the platform's primary function.",
+      "user_story": "As a developer, I want to search for the official 'nginx' image and see its tags, so that I can choose the correct version for my application deployment.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "Navigate to Docker Hub Homepage",
+          "action_type": "navigate",
+          "description": "Load the Docker Hub homepage at https://hub.docker.com/. Wait for the page to fully render, including the main navigation header, search functionality, and featured content sections. Verify all critical elements like the Docker logo, search input field, and sign-in link are present. The page should reach a stable state with no ongoing network activity before proceeding. This establishes the starting point for the repository search workflow.",
+          "expected_page_url": "https://hub.docker.com/",
+          "selector": null,
+          "all_selectors": [],
+          "selector_reference": {
+            "pool_index": null,
+            "confidence": null,
+            "selection_reason": "No selector is required for a direct navigation action (page.goto()). This step initiates the test at the target URL.",
+            "all_pool_matches": []
+          },
+          "input_value": null,
+          "wait_strategy": "Wait for the page to reach the 'networkidle' state, ensuring all initial resources have loaded. Then, specifically wait for the main search input field to be visible and enabled, as this is the primary interactive element for the next step. Allow a maximum of 10 seconds for the initial page load.",
+          "verification_strategy": "Verify the browser's current URL is exactly 'https://hub.docker.com/'. Check that the page title includes the text 'Docker Hub'. Confirm the presence and visibility of the main search input field, which is essential for the test to proceed.",
+          "error_recovery": "If the page fails to load within 10 seconds, perform a hard refresh and retry the navigation once. If the second attempt also fails, terminate the test with an error message indicating 'Homepage failed to load', including the target URL and timeout details.",
+          "business_context": "Establishes the initial entry point for any user looking to discover and utilize container images.",
+          "based_on_interaction": false,
+          "captured_from_url": "https://hub.docker.com/"
+        },
+        {
+          "step_number": 2,
+          "action": "Enter 'nginx' into the main search field",
+          "action_type": "input_text",
+          "description": "Locate the prominent search input field in the center of the main header. This field should have placeholder text like 'Search Docker Hub'. Click to focus the field and type the search term 'nginx'. The input should be entered character by character to simulate user behavior. Expect that autocomplete suggestions may appear below the input field as you type, but do not interact with them. This action prepares the search query for submission.",
+          "expected_page_url": "https://hub.docker.com/",
+          "selector": "input[placeholder='Search']",
+          "all_selectors": [
+            {
+              "selector": "input[placeholder='Search']",
+              "confidence": 95,
+              "strategy": "attribute",
+              "is_unique": true,
+              "match_count": 1
+            },
+            {
+              "selector": "[data-testid='header-search']",
+              "confidence": 90,
+              "strategy": "attribute",
+              "is_unique": true,
+              "match_count": 1
+            }
+          ],
+          "selector_reference": {
+            "pool_index": null,
+            "confidence": null,
+            "selection_reason": "No selector in the empty pool matches this step. A high-confidence selector using the 'placeholder' attribute was generated as it is descriptive and likely stable for a primary search field.",
+            "all_pool_matches": []
+          },
+          "input_value": "nginx",
+          "wait_strategy": "Before typing, wait for the search input element to be visible, enabled, and editable. After typing the full search term, pause for approximately 500 milliseconds to allow any client-side scripts (like autocomplete) to execute without interference.",
+          "verification_strategy": "After the input action, verify that the `value` attribute of the search input field is exactly 'nginx'. This confirms the text was entered correctly. Optionally, check if an autocomplete dropdown container becomes visible, but do not fail the test if it does not.",
+          "error_recovery": "If the search input field is not found within 5 seconds, fail the test with a clear error: 'Search input field not found on homepage'. If the field is found but is disabled or read-only, fail with a message indicating the field is not interactable.",
+          "business_context": "User specifies their search intent, which is the first step in the image discovery process.",
+          "based_on_interaction": false,
+          "captured_from_url": "https://hub.docker.com/"
+        },
+        {
+          "step_number": 3,
+          "action": "Submit the search by pressing Enter",
+          "action_type": "keyboard_press",
+          "description": "With the search input field still focused after entering 'nginx', simulate pressing the 'Enter' key on the keyboard. This action will submit the search form and trigger navigation to the search results page. This is a common user alternative to clicking a search button. The page should transition from the homepage to a view listing repositories that match the query.",
+          "expected_page_url": "https://hub.docker.com/search?q=nginx",
+          "selector": "input[placeholder='Search']",
+          "all_selectors": [
+            {
+              "selector": "input[placeholder='Search']",
+              "confidence": 95,
+              "strategy": "attribute",
+              "is_unique": true,
+              "match_count": 1
+            }
+          ],
+          "selector_reference": {
+            "pool_index": null,
+            "confidence": null,
+            "selection_reason": "No selector in the empty pool matches this step. The selector for the input field is reused as it's the target for the keyboard action. Pressing 'Enter' on this element submits the form.",
+            "all_pool_matches": []
+          },
+          "input_value": "Enter",
+          "wait_strategy": "After pressing 'Enter', wait for the page navigation to complete. This should be a full page load, so wait for the URL to change and for the network to become idle. Specifically, wait for a heading element containing 'Search Results' or the search term 'nginx' to become visible.",
+          "verification_strategy": "Verify that the URL has changed and now contains the path '/search' and the query parameter 'q=nginx'. Confirm the page title has been updated to reflect a search results page. Check for the presence of a container element for search results, and ensure at least one result item is visible.",
+          "error_recovery": "If the URL does not change within 10 seconds of pressing Enter, the search submission failed. Fail the test with the message 'Search submission did not trigger navigation'. If navigation occurs but no results are shown, check for a 'No results found' message and fail if appropriate.",
+          "business_context": "Executes the user's search query, transitioning them from discovery intent to result evaluation.",
+          "based_on_interaction": false,
+          "captured_from_url": "https://hub.docker.com/"
+        },
+        {
+          "step_number": 4,
+          "action": "Click on the official 'nginx' repository link",
+          "action_type": "click",
+          "description": "On the search results page, identify and click the link for the official 'nginx' repository. This result is typically distinguished by a 'Docker Official Image' badge or label and is usually one of the top results. Clicking this link should navigate the user to the detailed repository page for the official nginx image.",
+          "expected_page_url": "https://hub.docker.com/_/nginx",
+          "selector": "a[href='_nginx']",
+          "all_selectors": [
+            {
+              "selector": "a[href='_nginx']",
+              "confidence": 90,
+              "strategy": "attribute",
+              "is_unique": true,
+              "match_count": 1
+            },
+            {
+              "selector": "div:has-text('Docker Official Image') >> a:has-text('nginx')",
+              "confidence": 85,
+              "strategy": "css",
+              "is_unique": true,
+              "match_count": 1
+            }
+          ],
+          "selector_reference": {
+            "pool_index": null,
+            "confidence": null,
+            "selection_reason": "No selector in the empty pool matches this step. A selector targeting the specific 'href' for the official nginx image ('/_/nginx') was generated. This is a stable and precise way to identify the correct link.",
+            "all_pool_matches": []
+          },
+          "input_value": null,
+          "wait_strategy": "After clicking the link, wait for the navigation to the repository details page. Wait for the URL to contain '/_/nginx' and for the main page heading, which should be the repository name 'nginx', to become visible. This may take a few seconds as it loads README content and metadata.",
+          "verification_strategy": "Confirm the URL has successfully changed to the repository page, for example 'https://hub.docker.com/_/nginx'. Verify the main heading of the page displays 'nginx'. Check for the presence of key tabs like 'Overview' and 'Tags', indicating the repository page has loaded correctly.",
+          "error_recovery": "If the official 'nginx' link is not found on the search results page, fail the test. If the click does not lead to the correct repository page within 10 seconds, fail the test with a message 'Navigation to nginx repository page failed'.",
+          "business_context": "User selects a specific image to evaluate, moving deeper into the product information funnel.",
+          "based_on_interaction": false,
+          "captured_from_url": "https://hub.docker.com/search?q=nginx"
+        },
+        {
+          "step_number": 5,
+          "action": "Click on the 'Tags' tab on the repository page",
+          "action_type": "click",
+          "description": "On the 'nginx' repository details page, locate and click the 'Tags' navigation tab. This tab is typically positioned near the top of the page alongside 'Overview'. Clicking it will switch the main content view to display a list of all available image tags (versions) for the repository, which may involve an asynchronous data fetch.",
+          "expected_page_url": "https://hub.docker.com/_/nginx/tags",
+          "selector": "a:has-text('Tags')",
+          "all_selectors": [
+            {
+              "selector": "a:has-text('Tags')",
+              "confidence": 95,
+              "strategy": "text",
+              "is_unique": true,
+              "match_count": 1
+            },
+            {
+              "selector": "[data-testid='tags-tab']",
+              "confidence": 90,
+              "strategy": "attribute",
+              "is_unique": true,
+              "match_count": 1
+            }
+          ],
+          "selector_reference": {
+            "pool_index": null,
+            "confidence": null,
+            "selection_reason": "No selector in the empty pool matches this step. A text-based selector for the 'Tags' link was generated. This is a reliable approach for primary navigation elements.",
+            "all_pool_matches": []
+          },
+          "input_value": null,
+          "wait_strategy": "After clicking the 'Tags' tab, wait for the content to update. This may not be a full page navigation but an in-page content load. Wait for a loading indicator to disappear and for the first row of the tags list to become visible. Also, monitor the URL to ensure it updates to include '/tags'.",
+          "verification_strategy": "Verify the URL now ends with '/tags'. Check that the 'Tags' tab element now has an 'active' or 'selected' visual state (e.g., via a class name or aria attribute). Most importantly, verify that a container holding the list of tags is now visible on the page.",
+          "error_recovery": "If the 'Tags' tab is not clickable or not found, fail the test. If clicking the tab does not load the tags list within 8 seconds, fail with an error 'Tags list failed to load after clicking tab'.",
+          "business_context": "Allows users to view specific versions of an image, which is crucial for reproducibility and selecting appropriate software.",
+          "based_on_interaction": false,
+          "captured_from_url": "https://hub.docker.com/_/nginx"
+        },
+        {
+          "step_number": 6,
+          "action": "Verify that a list of image tags is visible",
+          "action_type": "verify",
+          "description": "This is the final verification step. After navigating to the Tags tab, confirm that a list of image tags is rendered on the page. Check for the presence of at least one tag entry, which should display information like the tag name (e.g., 'latest', '1.25.3'), compressed size, and the last update time. This confirms the core functionality of viewing image versions is working.",
+          "expected_page_url": "https://hub.docker.com/_/nginx/tags",
+          "selector": "div[data-testid='tagRow']",
+          "all_selectors": [
+            {
+              "selector": "div[data-testid='tagRow']",
+              "confidence": 90,
+              "strategy": "attribute",
+              "is_unique": false,
+              "match_count": 10
+            }
+          ],
+          "selector_reference": {
+            "pool_index": null,
+            "confidence": null,
+            "selection_reason": "No selector in the empty pool matches this step. A selector for a tag row element was generated. This verification step doesn't require a unique selector, just confirmation that at least one such element exists.",
+            "all_pool_matches": []
+          },
+          "input_value": null,
+          "wait_strategy": "Wait up to 5 seconds for the first tag row element to appear. The tags list is loaded asynchronously, so a reasonable wait is necessary to account for API response times.",
+          "verification_strategy": "Verify that the count of elements matching the tag row selector is greater than zero. As a more robust check, identify a specific, common tag like 'latest' and verify that an element containing this text is visible within the tags list. This confirms not only that the list loaded, but that it contains expected data.",
+          "error_recovery": "If no tag row elements are visible after a 10-second wait, the test should fail with a clear error message: 'No image tags were displayed on the Tags tab for the nginx repository'.",
+          "business_context": "Confirms the successful completion of the user journey, validating that the platform can deliver critical versioning information to the user.",
+          "based_on_interaction": false,
+          "captured_from_url": "https://hub.docker.com/_/nginx/tags"
+        }
+      ],
+      "expected_results": [
+        "User successfully navigates from the homepage to the 'nginx' repository's tags view.",
+        "Search functionality correctly returns the official 'nginx' image.",
+        "The repository details page and its 'Tags' tab load and display content correctly.",
+        "A list of available image tags for 'nginx' is visible to the user."
+      ],
+      "edge_cases_to_test": [
+        "Search for a term with no results and verify the 'no results' message.",
+        "Search for a term with special characters.",
+        "Navigate directly to a repository URL and verify it loads correctly.",
+        "Check pagination on the tags list if it exists."
+      ],
+      "data_requirements": [
+        "A known, public, and stable Docker Hub repository (e.g., 'nginx').",
+        "The expected URL structure for search results and repository pages."
+      ],
+      "prerequisites": [
+        "The Docker Hub website (https://hub.docker.com/) must be online and accessible.",
+        "Public search functionality must not require user authentication.",
+        "The 'nginx' official repository must remain public and available."
+      ],
+      "auth_required": false,
+      "starting_url": null
+    }
+  ],
+  "login_completion_state": "successful",
+  "analysis_timestamp": "2025-11-17T13:39:35.651387",
+  "confidence_score": 0.5,
+  "captured_selectors": [],
+  "auth_required": false,
+  "starting_url": null
+}
