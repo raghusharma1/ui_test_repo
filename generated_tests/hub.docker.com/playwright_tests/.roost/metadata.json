@@ -1,0 +1,20 @@
+{
+  "metadata_version": "1.0",
+  "created_at": "2025-12-09T07:09:07.171989",
+  "last_updated": "2025-12-09T07:10:10.713778",
+  "Login_File": {
+    "name": "standard",
+    "path": "/var/tmp/Roost/RoostGPT/dockerhub-ui-login-scenario/4ca17a4f-d03b-47fb-860d-7f37c0ecda99/uidockercomloginscenario.pdf",
+    "hash": "4294e3dbe594493232fd0b4baa9d7cd1cd2b128f6e4266a0640ae8596fb6a383",
+    "agent_workflow_completed": false,
+    "agent_workflow_file_path": "/var/tmp/Roost/RoostGPT/dockerhub-ui-login-scenario/4ca17a4f-d03b-47fb-860d-7f37c0ecda99/temp_info/hub.docker.com/extracted_data/login_result_4294e3dbe594493232fd0b4baa9d7cd1cd2b128f6e4266a0640ae8596fb6a383.json",
+    "agent_interaction_file_path": "/var/tmp/Roost/RoostGPT/dockerhub-ui-login-scenario/4ca17a4f-d03b-47fb-860d-7f37c0ecda99/temp_info/hub.docker.com/extracted_data/login_data_f5f2c4da4c5a06a1bbac0cb2916f4f1efed8e1bb8925c791280454ad0ec129bd.json",
+    "scenario_name": "login_analysis_happy_path",
+    "scenario_file_path": "scenarios/login_analysis_happy_path.json",
+    "test_generated": true,
+    "test_name": "login_analysis_happy_path.spec.js",
+    "test_file_path": "tests/login_analysis_happy_path.spec.js",
+    "test_executed_success": true
+  },
+  "User_Scenarios_File": []
+}
