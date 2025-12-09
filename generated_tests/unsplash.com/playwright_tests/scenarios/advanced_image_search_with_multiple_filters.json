@@ -1,0 +1,311 @@
+{
+  "site_url": "https://unsplash.com/",
+  "site_type": "unknown",
+  "site_category": "general",
+  "test_name": "advanced_image_search_with_multiple_filters",
+  "login_mechanisms": [
+    "content_browsing",
+    "site_navigation"
+  ],
+  "user_journeys": [
+    {
+      "workflow_type": "navigation_flow",
+      "path": [
+        "s",
+        "homepage"
+      ],
+      "success_rate": "discovered_site_navigation",
+      "scenario_priority": "medium",
+      "description": "General website navigation and content discovery"
+    }
+  ],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "Discovered Workflow: Advanced Image Search with Multiple Filters",
+      "description": "This end-to-end scenario validates the complete user journey of performing a search, applying an orientation filter, opening the sort menu, and then refining the search by selecting a related topic tag. It's based on the primary successful path discovered during exploration.",
+      "test_type": "e2e_business_workflow",
+      "priority": "critical",
+      "business_goal": "Verify that users can effectively search for images and use multiple filtering and refinement tools to narrow down the results to their specific needs.",
+      "user_story": "As a content creator, I want to search for images and apply specific filters for orientation and topic, so that I can quickly find the perfect landscape photo of a forest for my blog post.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "Navigate to website homepage",
+          "description": "Load the Unsplash homepage.",
+          "expected_page_url": "https://unsplash.com/",
+          "verification_point": "Homepage loads successfully.",
+          "business_impact": "Ensures the primary entry point of the website is accessible to all users.",
+          "selector": "page.goto('https://unsplash.com/')",
+          "all_selectors": [],
+          "confidence": 100,
+          "based_on_interaction": true
+        },
+        {
+          "step_number": 2,
+          "action": "input_text",
+          "description": "Enter the search term 'nature' into the main search bar.",
+          "expected_page_url": "https://unsplash.com/",
+          "input_value": "nature",
+          "verification_point": "",
+          "business_impact": "Initiates the core user workflow of finding an image.",
+          "selector": "page.getByTestId('nav-bar-search-form-input')",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('nav-bar-search-form-input')",
+              "strategy": "testid",
+              "confidence": 100,
+              "is_unique": true
+            },
+            {
+              "selector": "page.locator('input[type=\"search\"][name=\"searchKeyword\"]')",
+              "strategy": "css_combined",
+              "confidence": 89,
+              "is_unique": true
+            },
+            {
+              "selector": "page.getByPlaceholder('Search photos and illustrations')",
+              "strategy": "placeholder",
+              "confidence": 85,
+              "is_unique": true
+            }
+          ],
+          "confidence": 100,
+          "based_on_interaction": true
+        },
+        {
+          "step_number": 3,
+          "action": "click",
+          "description": "Click the search button to submit the search query for 'nature'.",
+          "expected_page_url": "https://unsplash.com/s/photos/nature",
+          "verification_point": "User is navigated to the search results page for 'nature'.",
+          "business_impact": "Executes the search, which is a critical step in the image discovery process.",
+          "selector": "page.getByTestId('nav-bar-search-form-button')",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('nav-bar-search-form-button')",
+              "strategy": "testid",
+              "confidence": 100,
+              "is_unique": true
+            },
+            {
+              "selector": "page.getByText('A magnifying glass')",
+              "strategy": "text",
+              "confidence": 88,
+              "is_unique": true
+            },
+            {
+              "selector": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^A magnifying glass$/ })",
+              "strategy": "button_filter_exact",
+              "confidence": 75,
+              "is_unique": true
+            }
+          ],
+          "confidence": 100,
+          "based_on_interaction": true
+        },
+        {
+          "step_number": 4,
+          "action": "click",
+          "description": "Click on the 'Orientation' filter button to reveal the filtering options.",
+          "expected_page_url": "https://unsplash.com/s/photos/nature",
+          "verification_point": "",
+          "business_impact": "Allows users to begin refining their search results based on image orientation.",
+          "selector": "page.locator('[data-testid=\"search-route\"]').getByRole('button', { name: 'Orientation' })",
+          "all_selectors": [
+            {
+              "selector": "page.locator('[data-testid=\"search-route\"]').getByRole('button', { name: 'Orientation' })",
+              "strategy": "parent_testid_role",
+              "confidence": 98,
+              "is_unique": true
+            },
+            {
+              "selector": "page.getByRole('button', { name: 'Orientation' })",
+              "strategy": "role_name",
+              "confidence": 95,
+              "is_unique": true
+            },
+            {
+              "selector": "page.getByText('Aspect')",
+              "strategy": "text_phrase",
+              "confidence": 78,
+              "is_unique": true
+            }
+          ],
+          "confidence": 98,
+          "based_on_interaction": true
+        },
+        {
+          "step_number": 5,
+          "action": "click",
+          "description": "Select the 'Landscape' option from the 'Orientation' filter dropdown.",
+          "expected_page_url": "https://unsplash.com/s/photos/nature?orientation=landscape",
+          "verification_point": "URL updates to include 'orientation=landscape', confirming the filter was applied.",
+          "business_impact": "Successfully applies a key filter, significantly narrowing the search results to user's preference.",
+          "selector": "page.locator('a[data-unchecked]')",
+          "all_selectors": [
+            {
+              "selector": "page.locator('a[data-unchecked]')",
+              "strategy": "data_attr_unchecked_presence",
+              "confidence": 50,
+              "is_unique": false
+            }
+          ],
+          "confidence": 50,
+          "based_on_interaction": true
+        },
+        {
+          "step_number": 6,
+          "action": "click",
+          "description": "Click on the 'Sort by' filter button to open the sorting options.",
+          "expected_page_url": "https://unsplash.com/s/photos/nature?orientation=landscape",
+          "verification_point": "",
+          "business_impact": "Enables users to order search results by relevance or recency.",
+          "selector": "page.locator('[data-testid=\"search-route\"]').getByRole('button', { name: /Sort by Relevance/ })",
+          "all_selectors": [
+            {
+              "selector": "page.locator('[data-testid=\"search-route\"]').getByRole('button', { name: /Sort by Relevance/ })",
+              "strategy": "parent_testid_role_regex",
+              "confidence": 98,
+              "is_unique": true
+            },
+            {
+              "selector": "page.getByRole('button', { name: /Sort by Relevance/ })",
+              "strategy": "role_name_regex",
+              "confidence": 95,
+              "is_unique": true
+            },
+            {
+              "selector": "page.getByText('Unfold')",
+              "strategy": "text_phrase",
+              "confidence": 78,
+              "is_unique": true
+            }
+          ],
+          "confidence": 98,
+          "based_on_interaction": true
+        },
+        {
+          "step_number": 7,
+          "action": "click",
+          "description": "Refine the search further by clicking the 'forest' related search tag.",
+          "expected_page_url": "https://unsplash.com/s/photos/forest?order_by=latest&orientation=landscape",
+          "verification_point": "URL updates to reflect the new search term 'forest' while retaining previous filters.",
+          "business_impact": "Allows users to pivot their search to a related topic, improving discovery and exploration.",
+          "selector": "page.getByText('forest')",
+          "all_selectors": [
+            {
+              "selector": "page.getByText('forest')",
+              "strategy": "text",
+              "confidence": 88,
+              "is_unique": true
+            },
+            {
+              "selector": "page.locator('[data-testid=\"search-route\"]').getByRole('link', { name: 'Forest' })",
+              "strategy": "parent_testid_role",
+              "confidence": 98,
+              "is_unique": false
+            },
+            {
+              "selector": "page.getByRole('link', { name: 'Forest' })",
+              "strategy": "role_name",
+              "confidence": 95,
+              "is_unique": false
+            },
+            {
+              "selector": "page.locator('a').filter({ hasText: /^forest$/ })",
+              "strategy": "link_filter_exact",
+              "confidence": 74,
+              "is_unique": true
+            }
+          ],
+          "confidence": 88,
+          "based_on_interaction": true
+        }
+      ],
+      "expected_results": [
+        "User successfully searches for a term.",
+        "User can open and apply an orientation filter.",
+        "User can open the sort menu.",
+        "User can refine the search by clicking a related tag.",
+        "The final URL reflects all applied search terms and filters.",
+        "The system handles the complete workflow without errors."
+      ],
+      "edge_cases_to_test": [
+        "How the page behaves when filters are applied in a different order.",
+        "What happens if the user clears a filter after applying it.",
+        "How the system handles search terms with no results."
+      ],
+      "data_requirements": [
+        "A list of valid search terms with predictable results.",
+        "Test data for various filter combinations."
+      ],
+      "prerequisites": [
+        "The Unsplash website is accessible and functional.",
+        "The search and filtering services are operational."
+      ],
+      "auth_required": true,
+      "starting_url": "https://unsplash.com/"
+    }
+  ],
+  "login_completion_state": "successful",
+  "analysis_timestamp": "2025-12-09T08:08:51.096438",
+  "confidence_score": 0.5,
+  "captured_selectors": [
+    {
+      "selector": "page.getByTestId('nav-bar-search-form-input')",
+      "confidence": 100,
+      "action": "input",
+      "input_value": "",
+      "element": "<input> ''",
+      "url": "https://unsplash.com/",
+      "timestamp": "2025-12-09T08:05:42.569455"
+    },
+    {
+      "selector": "page.getByTestId('nav-bar-search-form-button')",
+      "confidence": 100,
+      "action": "click",
+      "input_value": "A magnifying glass",
+      "element": "<button> 'A magnifying glass'",
+      "url": "https://unsplash.com/",
+      "timestamp": "2025-12-09T08:05:45.674297"
+    },
+    {
+      "selector": "page.locator('[data-testid=\"search-route\"]').getByRole('button', { name: 'Orientation' })",
+      "confidence": 98,
+      "action": "click",
+      "input_value": "Aspect ratioOrientationArrow down",
+      "element": "<button> 'Aspect ratioOrientationArrow d'",
+      "url": "https://unsplash.com/s/photos/nature",
+      "timestamp": "2025-12-09T08:06:09.869959"
+    },
+    {
+      "selector": "page.locator('a[data-unchecked]')",
+      "confidence": 50,
+      "action": "click",
+      "input_value": "",
+      "element": "<a> ''",
+      "url": "https://unsplash.com/s/photos/nature",
+      "timestamp": "2025-12-09T08:06:22.350267"
+    },
+    {
+      "selector": "page.locator('[data-testid=\"search-route\"]').getByRole('button', { name: /Sort by Relevance/ })",
+      "confidence": 98,
+      "action": "click",
+      "input_value": "UnfoldSort by RelevanceArrow down",
+      "element": "<button> 'UnfoldSort by RelevanceArrow d'",
+      "url": "https://unsplash.com/s/photos/nature?orientation=landscape",
+      "timestamp": "2025-12-09T08:06:34.374270"
+    },
+    {
+      "selector": "page.getByText('forest')",
+      "confidence": 88,
+      "action": "click",
+      "input_value": "forest",
+      "element": "<a> 'forest'",
+      "url": "https://unsplash.com/s/photos/nature?order_by=latest&orientation=landscape",
+      "timestamp": "2025-12-09T08:07:02.865196"
+    }
+  ],
+  "auth_required": true,
+  "starting_url": "https://unsplash.com/"
+}
