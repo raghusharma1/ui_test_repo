@@ -1,0 +1,200 @@
+{
+  "site_url": "https://unsplash.com/",
+  "site_type": "unknown",
+  "site_category": "general",
+  "test_name": "basic_image_search",
+  "login_mechanisms": [
+    "content_browsing",
+    "site_navigation"
+  ],
+  "user_journeys": [
+    {
+      "workflow_type": "navigation_flow",
+      "path": [
+        "s",
+        "homepage"
+      ],
+      "success_rate": "discovered_site_navigation",
+      "scenario_priority": "medium",
+      "description": "General website navigation and content discovery"
+    }
+  ],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "Discovered Workflow: Basic Image Search",
+      "description": "This scenario validates the most fundamental and critical user action: performing a simple search and arriving at the search results page. This is the primary happy path for all users.",
+      "test_type": "smoke_test",
+      "priority": "critical",
+      "business_goal": "Verify that the core search functionality of the website is working correctly.",
+      "user_story": "As a user, I want to type a keyword into the search bar and see relevant images, so that I can begin my search for a photo.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "Navigate to website homepage",
+          "description": "Load the Unsplash homepage.",
+          "expected_page_url": "https://unsplash.com/",
+          "verification_point": "Homepage loads successfully.",
+          "business_impact": "Ensures the primary entry point of the website is accessible to all users.",
+          "selector": "page.goto('https://unsplash.com/')",
+          "all_selectors": [],
+          "confidence": 100,
+          "based_on_interaction": true
+        },
+        {
+          "step_number": 2,
+          "action": "input_text",
+          "description": "Enter the search term 'nature' into the main search bar.",
+          "expected_page_url": "https://unsplash.com/",
+          "input_value": "nature",
+          "verification_point": "",
+          "business_impact": "Initiates the core user workflow of finding an image.",
+          "selector": "page.getByTestId('nav-bar-search-form-input')",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('nav-bar-search-form-input')",
+              "strategy": "testid",
+              "confidence": 100,
+              "is_unique": true
+            },
+            {
+              "selector": "page.locator('input[type=\"search\"][name=\"searchKeyword\"]')",
+              "strategy": "css_combined",
+              "confidence": 89,
+              "is_unique": true
+            },
+            {
+              "selector": "page.getByPlaceholder('Search photos and illustrations')",
+              "strategy": "placeholder",
+              "confidence": 85,
+              "is_unique": true
+            }
+          ],
+          "confidence": 100,
+          "based_on_interaction": true
+        },
+        {
+          "step_number": 3,
+          "action": "click",
+          "description": "Click the search button to submit the search query for 'nature'.",
+          "expected_page_url": "https://unsplash.com/s/photos/nature",
+          "verification_point": "User is navigated to the search results page for 'nature'.",
+          "business_impact": "Executes the search, which is a critical step in the image discovery process.",
+          "selector": "page.getByTestId('nav-bar-search-form-button')",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('nav-bar-search-form-button')",
+              "strategy": "testid",
+              "confidence": 100,
+              "is_unique": true
+            },
+            {
+              "selector": "page.getByText('A magnifying glass')",
+              "strategy": "text",
+              "confidence": 88,
+              "is_unique": true
+            },
+            {
+              "selector": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^A magnifying glass$/ })",
+              "strategy": "button_filter_exact",
+              "confidence": 75,
+              "is_unique": true
+            }
+          ],
+          "confidence": 100,
+          "based_on_interaction": true
+        },
+        {
+          "step_number": 4,
+          "action": "verify_navigation",
+          "description": "Verify that the page URL corresponds to the search results for 'nature'.",
+          "expected_page_url": "https://unsplash.com/s/photos/nature",
+          "verification_point": "Page URL contains '/s/photos/nature'.",
+          "business_impact": "Confirms that the core search functionality has successfully completed.",
+          "selector": "",
+          "all_selectors": [],
+          "confidence": 100,
+          "based_on_interaction": false
+        }
+      ],
+      "expected_results": [
+        "User can enter text into the search bar.",
+        "Clicking the search button navigates the user to the correct search results page.",
+        "The URL of the results page reflects the search term used."
+      ],
+      "edge_cases_to_test": [
+        "Searching for a term with special characters.",
+        "Submitting an empty search.",
+        "Searching for a very long string of text."
+      ],
+      "data_requirements": [
+        "A list of common search terms."
+      ],
+      "prerequisites": [
+        "The Unsplash website is accessible and functional."
+      ],
+      "auth_required": true,
+      "starting_url": "https://unsplash.com/"
+    }
+  ],
+  "login_completion_state": "successful",
+  "analysis_timestamp": "2025-12-09T08:08:51.096438",
+  "confidence_score": 0.5,
+  "captured_selectors": [
+    {
+      "selector": "page.getByTestId('nav-bar-search-form-input')",
+      "confidence": 100,
+      "action": "input",
+      "input_value": "",
+      "element": "<input> ''",
+      "url": "https://unsplash.com/",
+      "timestamp": "2025-12-09T08:05:42.569455"
+    },
+    {
+      "selector": "page.getByTestId('nav-bar-search-form-button')",
+      "confidence": 100,
+      "action": "click",
+      "input_value": "A magnifying glass",
+      "element": "<button> 'A magnifying glass'",
+      "url": "https://unsplash.com/",
+      "timestamp": "2025-12-09T08:05:45.674297"
+    },
+    {
+      "selector": "page.locator('[data-testid=\"search-route\"]').getByRole('button', { name: 'Orientation' })",
+      "confidence": 98,
+      "action": "click",
+      "input_value": "Aspect ratioOrientationArrow down",
+      "element": "<button> 'Aspect ratioOrientationArrow d'",
+      "url": "https://unsplash.com/s/photos/nature",
+      "timestamp": "2025-12-09T08:06:09.869959"
+    },
+    {
+      "selector": "page.locator('a[data-unchecked]')",
+      "confidence": 50,
+      "action": "click",
+      "input_value": "",
+      "element": "<a> ''",
+      "url": "https://unsplash.com/s/photos/nature",
+      "timestamp": "2025-12-09T08:06:22.350267"
+    },
+    {
+      "selector": "page.locator('[data-testid=\"search-route\"]').getByRole('button', { name: /Sort by Relevance/ })",
+      "confidence": 98,
+      "action": "click",
+      "input_value": "UnfoldSort by RelevanceArrow down",
+      "element": "<button> 'UnfoldSort by RelevanceArrow d'",
+      "url": "https://unsplash.com/s/photos/nature?orientation=landscape",
+      "timestamp": "2025-12-09T08:06:34.374270"
+    },
+    {
+      "selector": "page.getByText('forest')",
+      "confidence": 88,
+      "action": "click",
+      "input_value": "forest",
+      "element": "<a> 'forest'",
+      "url": "https://unsplash.com/s/photos/nature?order_by=latest&orientation=landscape",
+      "timestamp": "2025-12-09T08:07:02.865196"
+    }
+  ],
+  "auth_required": true,
+  "starting_url": "https://unsplash.com/"
+}
