@@ -1,0 +1,29 @@
+{
+  "site_url": "https://hub.docker.com",
+  "site_type": "login_workflow",
+  "site_category": "authentication",
+  "test_name": "login_analysis_happy_path",
+  "login_mechanisms": [
+    "form_login"
+  ],
+  "user_journeys": [],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "login_analysis_happy_path",
+      "test_name": "login_analysis_happy_path",
+      "test_type": "e2e_authentication_workflow",
+      "auth_required": false,
+      "detailed_steps": []
+    }
+  ],
+  "login_completion_state": "incomplete",
+  "analysis_timestamp": "2025-12-09T07:09:38.020653",
+  "confidence_score": 0.5,
+  "flow_type": "happy_path_only",
+  "excluded_scenarios": [],
+  "scenario_count": 1,
+  "focus": "failed_authentication_documented",
+  "generated_from": "login_analysis.json",
+  "generation_timestamp": "2025-12-09T07:09:38.022544",
+  "captured_selectors": []
+}
