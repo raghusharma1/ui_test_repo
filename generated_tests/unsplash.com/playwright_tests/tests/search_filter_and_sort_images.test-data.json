@@ -1,0 +1,16 @@
+{
+  "variations": [
+    {
+      "searchTerm": "nature",
+      "description": "A common and broad search term."
+    },
+    {
+      "searchTerm": "technology",
+      "description": "A different category to test."
+    },
+    {
+      "searchTerm": "architecture",
+      "description": "Another distinct search category."
+    }
+  ]
+}

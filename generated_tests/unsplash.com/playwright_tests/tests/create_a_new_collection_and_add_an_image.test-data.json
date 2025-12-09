@@ -1,0 +1,19 @@
+{
+  "variations": [
+    {
+      "searchTerm": "nature",
+      "collectionName": "My Nature Collection",
+      "collectionDescription": "A collection of beautiful nature photos."
+    },
+    {
+      "searchTerm": "architecture",
+      "collectionName": "Urban Structures",
+      "collectionDescription": "Impressive buildings and cityscapes from around the world."
+    },
+    {
+      "searchTerm": "space",
+      "collectionName": "Cosmic Wonders",
+      "collectionDescription": "Stunning images of galaxies, nebulae, and celestial events."
+    }
+  ]
+}

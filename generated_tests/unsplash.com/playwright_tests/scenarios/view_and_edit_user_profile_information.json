@@ -1,0 +1,516 @@
+{
+  "site_url": "https://unsplash.com/",
+  "site_type": "unknown",
+  "site_category": "general",
+  "test_name": "view_and_edit_user_profile_information",
+  "login_mechanisms": [
+    "site_navigation",
+    "content_browsing"
+  ],
+  "user_journeys": [
+    {
+      "workflow_type": "navigation_flow",
+      "path": [
+        "photos",
+        "s",
+        "@testerui39",
+        "profile_page",
+        "homepage",
+        "collections"
+      ],
+      "success_rate": "discovered_site_navigation",
+      "scenario_priority": "medium",
+      "description": "General website navigation and content discovery"
+    }
+  ],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "Discovered Workflow: View and Edit User Profile Information",
+      "description": "This scenario verifies that a logged-in user can navigate to their account settings, update their personal information (first and last name), and save the changes successfully.",
+      "test_type": "e2e_business_workflow",
+      "priority": "high",
+      "business_goal": "Ensure users can manage their own account information, which is fundamental for user data accuracy and personalization.",
+      "user_story": "As a registered user, I want to edit my profile name so that my account information is up to date.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "Navigate to website homepage",
+          "description": "Load the main Unsplash homepage.",
+          "expected_page_url": "https://unsplash.com/",
+          "verification_point": "Page URL is https://unsplash.com/",
+          "business_impact": "First point of entry for all users.",
+          "selector": "page.goto('https://unsplash.com/')",
+          "confidence": 100,
+          "based_on_interaction": true
+        },
+        {
+          "step_number": 2,
+          "action": "click",
+          "description": "Click on the user profile icon in the navigation bar to open the menu.",
+          "selector": "page.getByRole('button', { name: 'Profile', exact: true })",
+          "expected_page_url": "https://unsplash.com/",
+          "confidence": 96,
+          "based_on_interaction": true,
+          "all_selectors": [
+            {
+              "selector": "page.getByRole('button', { name: 'Profile', exact: true })",
+              "strategy": "aria_label_exact",
+              "confidence": 96
+            },
+            {
+              "selector": "page.getByRole('button', { name: 'Profile' })",
+              "strategy": "role_name",
+              "confidence": 95
+            },
+            {
+              "selector": "page.locator('#base-ui-_R_rr5am_')",
+              "strategy": "id",
+              "confidence": 75
+            }
+          ]
+        },
+        {
+          "step_number": 3,
+          "action": "click",
+          "description": "Click on the 'View profile' link from the dropdown menu.",
+          "selector": "page.locator('a.profileLink-_4S3Tu')",
+          "expected_page_url": "https://unsplash.com/@testerui39",
+          "verification_point": "Page should navigate to the user's public profile page.",
+          "confidence": 84,
+          "based_on_interaction": true,
+          "all_selectors": [
+            {
+              "selector": "page.locator('a.profileLink-_4S3Tu')",
+              "strategy": "css_tag_semantic_empty",
+              "confidence": 84
+            },
+            {
+              "selector": "page.locator('.profileLink-_4S3Tu')",
+              "strategy": "css_semantic_empty",
+              "confidence": 82
+            }
+          ]
+        },
+        {
+          "step_number": 4,
+          "action": "click",
+          "description": "Click the 'Edit profile' link to go to the account settings page.",
+          "selector": "page.locator('[data-testid=\"users-route\"]').getByRole('link', { name: /Edit profile/ })",
+          "expected_page_url": "https://unsplash.com/account",
+          "verification_point": "Page should navigate to the account editing page.",
+          "confidence": 98,
+          "based_on_interaction": true,
+          "all_selectors": [
+            {
+              "selector": "page.locator('[data-testid=\"users-route\"]').getByRole('link', { name: /Edit profile/ })",
+              "strategy": "parent_testid_role_regex",
+              "confidence": 98
+            },
+            {
+              "selector": "page.getByRole('link', { name: /Edit profile/ })",
+              "strategy": "role_name_regex",
+              "confidence": 95
+            },
+            {
+              "selector": "page.getByText('Edit')",
+              "strategy": "text_phrase",
+              "confidence": 78
+            }
+          ]
+        },
+        {
+          "step_number": 5,
+          "action": "input_text",
+          "description": "Enter an updated first name into the 'First name' field.",
+          "selector": "page.locator('form[action*=\"account\"]').getByRole('textbox', { name: /First name/ })",
+          "input_value": "Updated First Name",
+          "expected_page_url": "https://unsplash.com/account",
+          "confidence": 97,
+          "based_on_interaction": true,
+          "all_selectors": [
+            {
+              "selector": "page.locator('form[action*=\"account\"]').getByRole('textbox', { name: /First name/ })",
+              "strategy": "form_action_role_regex",
+              "confidence": 97
+            },
+            {
+              "selector": "page.getByRole('textbox', { name: /First name/ })",
+              "strategy": "role_name_regex",
+              "confidence": 95
+            },
+            {
+              "selector": "page.getByLabel('First name')",
+              "strategy": "label_text",
+              "confidence": 93
+            },
+            {
+              "selector": "page.locator('#user_first_name')",
+              "strategy": "id",
+              "confidence": 75
+            }
+          ]
+        },
+        {
+          "step_number": 6,
+          "action": "input_text",
+          "description": "Enter an updated last name into the 'Last name' field.",
+          "selector": "page.locator('form[action*=\"account\"]').getByRole('textbox', { name: /Last name/ })",
+          "input_value": "Updated Last Name",
+          "expected_page_url": "https://unsplash.com/account",
+          "confidence": 97,
+          "based_on_interaction": true,
+          "all_selectors": [
+            {
+              "selector": "page.locator('form[action*=\"account\"]').getByRole('textbox', { name: /Last name/ })",
+              "strategy": "form_action_role_regex",
+              "confidence": 97
+            },
+            {
+              "selector": "page.getByRole('textbox', { name: /Last name/ })",
+              "strategy": "role_name_regex",
+              "confidence": 95
+            },
+            {
+              "selector": "page.getByLabel('Last name')",
+              "strategy": "label_text",
+              "confidence": 93
+            },
+            {
+              "selector": "page.locator('#user_last_name')",
+              "strategy": "id",
+              "confidence": 75
+            }
+          ]
+        },
+        {
+          "step_number": 7,
+          "action": "click",
+          "description": "Click the 'Update account' button to save the changes.",
+          "selector": "page.locator('form[action*=\"account\"]').getByRole('button', { name: /Update account/ })",
+          "expected_page_url": "https://unsplash.com/account",
+          "verification_point": "A confirmation message should appear indicating the profile was updated.",
+          "confidence": 97,
+          "based_on_interaction": true,
+          "all_selectors": [
+            {
+              "selector": "page.locator('form[action*=\"account\"]').getByRole('button', { name: /Update account/ })",
+              "strategy": "form_action_role_regex",
+              "confidence": 97
+            },
+            {
+              "selector": "page.getByRole('button', { name: /Update account/ })",
+              "strategy": "role_name_regex",
+              "confidence": 95
+            },
+            {
+              "selector": "page.locator('input[value=\"Update account\"]')",
+              "strategy": "css_tag_value",
+              "confidence": 89
+            }
+          ]
+        }
+      ],
+      "expected_results": [
+        "User can navigate from the homepage to their account settings.",
+        "User can successfully input new values into the name fields.",
+        "The system saves the updated information and provides a success confirmation."
+      ],
+      "edge_cases_to_test": [],
+      "data_requirements": [
+        "A valid, logged-in user account."
+      ],
+      "prerequisites": [
+        "Website is accessible and functional.",
+        "User is logged in."
+      ],
+      "auth_required": true,
+      "starting_url": "https://unsplash.com/"
+    }
+  ],
+  "login_completion_state": "successful",
+  "analysis_timestamp": "2025-12-09T07:22:31.699888",
+  "confidence_score": 0.5,
+  "captured_selectors": [
+    {
+      "selector": "page.getByTestId('nav-bar-search-form-input')",
+      "confidence": 100,
+      "action": "input",
+      "input_value": "",
+      "element": "<input> ''",
+      "url": "https://unsplash.com/",
+      "timestamp": "2025-12-09T07:11:27.490176"
+    },
+    {
+      "selector": "page.getByTestId('nav-bar-search-form-button')",
+      "confidence": 100,
+      "action": "click",
+      "input_value": "A magnifying glass",
+      "element": "<button> 'A magnifying glass'",
+      "url": "https://unsplash.com/",
+      "timestamp": "2025-12-09T07:11:33.758858"
+    },
+    {
+      "selector": "page.locator('a.photoInfoLink-mG0SPO[href*=\"of-trees-fWBZ9r4vO9M\"]')",
+      "confidence": 88,
+      "action": "click",
+      "input_value": "",
+      "element": "<a> ''",
+      "url": "https://unsplash.com/s/photos/nature",
+      "timestamp": "2025-12-09T07:11:52.585996"
+    },
+    {
+      "selector": "page.locator('#base-ui-_r_9a_')",
+      "confidence": 75,
+      "action": "click",
+      "input_value": "A plus sign",
+      "element": "<button> 'A plus sign'",
+      "url": "https://unsplash.com/photos/a-lush-green-forest-filled-with-lots-of-trees-fWBZ9r4vO9M",
+      "timestamp": "2025-12-09T07:12:03.894461"
+    },
+    {
+      "selector": "page.locator('[role=\"dialog\"]').getByRole('button', { name: 'An X shape' })",
+      "confidence": 95,
+      "action": "click",
+      "input_value": "An X shape",
+      "element": "<button> 'An X shape'",
+      "url": "https://unsplash.com/photos/a-lush-green-forest-filled-with-lots-of-trees-fWBZ9r4vO9M",
+      "timestamp": "2025-12-09T07:12:32.172506"
+    },
+    {
+      "selector": "page.locator('button.createCollectionButton-G8yTlC')",
+      "confidence": 84,
+      "action": "click",
+      "input_value": "",
+      "element": "<button> ''",
+      "url": "https://unsplash.com/photos/a-lush-green-forest-filled-with-lots-of-trees-fWBZ9r4vO9M",
+      "timestamp": "2025-12-09T07:13:09.514903"
+    },
+    {
+      "selector": "page.locator('input[type=\"text\"][name=\"title\"]')",
+      "confidence": 89,
+      "action": "input",
+      "input_value": "",
+      "element": "<input> ''",
+      "url": "https://unsplash.com/photos/a-lush-green-forest-filled-with-lots-of-trees-fWBZ9r4vO9M",
+      "timestamp": "2025-12-09T07:13:20.536771"
+    },
+    {
+      "selector": "page.locator('textarea[name=\"description\"]')",
+      "confidence": 87,
+      "action": "input",
+      "input_value": "",
+      "element": "<textarea> ''",
+      "url": "https://unsplash.com/photos/a-lush-green-forest-filled-with-lots-of-trees-fWBZ9r4vO9M",
+      "timestamp": "2025-12-09T07:13:26.923400"
+    },
+    {
+      "selector": "page.locator('[role=\"dialog\"]').getByRole('button', { name: 'Create collection' })",
+      "confidence": 95,
+      "action": "click",
+      "input_value": "Create collection",
+      "element": "<button> 'Create collection'",
+      "url": "https://unsplash.com/photos/a-lush-green-forest-filled-with-lots-of-trees-fWBZ9r4vO9M",
+      "timestamp": "2025-12-09T07:13:37.598075"
+    },
+    {
+      "selector": "page.locator('div.item-N862Xg')",
+      "confidence": 78,
+      "action": "click",
+      "input_value": "My first collectionA lock0 imagesA plus sign",
+      "element": "<div> 'My first collectionA lock0 ima'",
+      "url": "https://unsplash.com/photos/a-lush-green-forest-filled-with-lots-of-trees-fWBZ9r4vO9M",
+      "timestamp": "2025-12-09T07:13:57.432268"
+    },
+    {
+      "selector": "page.locator('svg.searchIcon-yuowTt')",
+      "confidence": 84,
+      "action": "click",
+      "input_value": "",
+      "element": "<svg> ''",
+      "url": "https://unsplash.com/photos/a-lush-green-forest-filled-with-lots-of-trees-fWBZ9r4vO9M",
+      "timestamp": "2025-12-09T07:14:16.362216"
+    },
+    {
+      "selector": "page.locator('#base-ui-_r_ls_')",
+      "confidence": 75,
+      "action": "click",
+      "input_value": "A lock Download",
+      "element": "<button> 'A lock Download'",
+      "url": "https://unsplash.com/photos/a-lush-green-forest-filled-with-lots-of-trees-fWBZ9r4vO9M",
+      "timestamp": "2025-12-09T07:15:01.476055"
+    },
+    {
+      "selector": "page.getByTestId('search-route')",
+      "confidence": 100,
+      "action": "click",
+      "input_value": "A photoPhotos 174kPen ToolIllustrations 1.8kMoreA copyright icon ©LicenseArrow downAspect ratioOrientationArrow downUnfoldSort by RelevanceArrow downFiltersFiltersNaturelandscapedesktop wallpaperforestanimalsspringnaturalflowerflowersmountainwildlifebeachmountainsPlus sign for Unsplash+BookmarkA plus signDario BrönnimannFor Unsplash+A lock DownloadBookmarkA plus signv2oskAvailable for hireA checkmark inside of a circleArrow pointing downPlus sign for Unsplash+BookmarkA plus signA Chosen SoulFor Unsplash+A lock DownloadBookmarkA plus signBlake VerdoornArrow pointing downBookmarkA plus signMatthew SmithArrow pointing downPlus sign for Unsplash+BookmarkA plus signJonny GiosFor Unsplash+A lock DownloadBookmarkA plus signRobert LukemanArrow pointing downPlus sign for Unsplash+BookmarkA plus signJonny GiosFor Unsplash+A lock DownloadBookmarkA plus signQingbao MengAvailable for hireA checkmark inside of a circleArrow pointing downBookmarkA plus signHenry BeAvailable for hireA checkmark inside of a circleArrow pointing downBookmarkA plus signJeremy BishopAvailable for hireA checkmark inside of a circleArrow pointing downBookmarkA plus signJohannes AnderssonAvailable for hireA checkmark inside of a circleArrow pointing downPlus sign for Unsplash+BookmarkA plus signCasey HornerFor Unsplash+A lock DownloadBookmarkA plus signUrban VintageAvailable for hireA checkmark inside of a circleArrow pointing downBookmarkA plus signClément M.Available for hireA checkmark inside of a circleArrow pointing downBookmarkA plus signAdam KoolArrow pointing down–– ––– –––  –– ––– –  ––– –––  ––––  –   – –– –––  – – ––– –– –– –––– ––The best in on-brand content creationLearn MoreRelated illustrationsSee allBookmarkA plus signDamiano BaschieraArrow pointing downBookmarkA plus signShifaaz shamoonAvailable for hireA checkmark inside of a circleArrow pointing downBookmarkA plus signGoutham KrishnaArrow pointing downBookmarkA plus signCasey HornerAvailable for hireA checkmark inside of a circleArrow pointing downBrowse premium images on iStock | Claim your discount nowView more on iStock ↗View more on iStock ↗Load moreUnsplash logoMake something awesome",
+      "element": "<div> 'A photoPhotos 174kPen ToolIllu'",
+      "url": "https://unsplash.com/photos/a-lush-green-forest-filled-with-lots-of-trees-fWBZ9r4vO9M",
+      "timestamp": "2025-12-09T07:15:17.879366"
+    },
+    {
+      "selector": "page.locator('[data-testid=\"search-route\"]').getByRole('button', { name: 'Orientation' })",
+      "confidence": 98,
+      "action": "click",
+      "input_value": "Aspect ratioOrientationArrow down",
+      "element": "<button> 'Aspect ratioOrientationArrow d'",
+      "url": "https://unsplash.com/s/photos/nature",
+      "timestamp": "2025-12-09T07:15:35.273975"
+    },
+    {
+      "selector": "page.locator('a[data-unchecked]')",
+      "confidence": 50,
+      "action": "click",
+      "input_value": "",
+      "element": "<a> ''",
+      "url": "https://unsplash.com/s/photos/nature",
+      "timestamp": "2025-12-09T07:15:46.492764"
+    },
+    {
+      "selector": "page.locator('[data-testid=\"search-route\"]').getByRole('button', { name: /Sort by Relevance/ })",
+      "confidence": 98,
+      "action": "click",
+      "input_value": "UnfoldSort by RelevanceArrow down",
+      "element": "<button> 'UnfoldSort by RelevanceArrow d'",
+      "url": "https://unsplash.com/s/photos/nature?orientation=landscape",
+      "timestamp": "2025-12-09T07:15:56.000445"
+    },
+    {
+      "selector": "page.locator('a.container-plQgEq.resetAnchor-rkYpCn')",
+      "confidence": 80,
+      "action": "click",
+      "input_value": "Unsplash logoUnsplash Home",
+      "element": "<a> 'Unsplash logoUnsplash Home'",
+      "url": "https://unsplash.com/s/photos/nature?order_by=latest&orientation=landscape",
+      "timestamp": "2025-12-09T07:16:16.871328"
+    },
+    {
+      "selector": "page.getByRole('button', { name: /Submit an image/ })",
+      "confidence": 95,
+      "action": "click",
+      "input_value": "Submit an image",
+      "element": "<button> 'Submit an image'",
+      "url": "https://unsplash.com/",
+      "timestamp": "2025-12-09T07:16:27.022991"
+    },
+    {
+      "selector": "page.locator('form[action*=\"javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')\"]').getByRole('checkbox', { name: /I understand and agree/ })",
+      "confidence": 97,
+      "action": "click",
+      "input_value": "on",
+      "element": "<input> ''",
+      "url": "https://unsplash.com/?modal=%5B%22Uploader%22%2C%5B%22Publish%22%2Cnull%5D%5D",
+      "timestamp": "2025-12-09T07:16:48.730735"
+    },
+    {
+      "selector": "page.locator('form[action*=\"javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')\"]').getByRole('button', { name: /Start uploading/ })",
+      "confidence": 97,
+      "action": "click",
+      "input_value": "Start uploading",
+      "element": "<button> 'Start uploading'",
+      "url": "https://unsplash.com/?modal=%5B%22Uploader%22%2C%5B%22Publish%22%2Cnull%5D%5D",
+      "timestamp": "2025-12-09T07:16:57.763812"
+    },
+    {
+      "selector": "page.locator('[role=\"dialog\"]').getByRole('button', { name: 'OK, got it' })",
+      "confidence": 95,
+      "action": "click",
+      "input_value": "OK, got it",
+      "element": "<button> 'OK, got it'",
+      "url": "https://unsplash.com/?modal=%5B%22Uploader%22%2C%5B%22Publish%22%2Cnull%5D%5D",
+      "timestamp": "2025-12-09T07:17:31.794257"
+    },
+    {
+      "selector": "page.locator('[role=\"dialog\"]').getByRole('button', { name: 'Cancel' })",
+      "confidence": 95,
+      "action": "click",
+      "input_value": "Cancel",
+      "element": "<button> 'Cancel'",
+      "url": "https://unsplash.com/?modal=%5B%22Uploader%22%2C%5B%22Publish%22%2Cnull%5D%5D",
+      "timestamp": "2025-12-09T07:17:41.075222"
+    },
+    {
+      "selector": "page.getByRole('link', { name: 'Collections', exact: true })",
+      "confidence": 96,
+      "action": "click",
+      "input_value": "A stack of folders",
+      "element": "<a> 'A stack of folders'",
+      "url": "https://unsplash.com/",
+      "timestamp": "2025-12-09T07:17:51.462710"
+    },
+    {
+      "selector": "page.locator('a[data-discover=\"true\"]')",
+      "confidence": 55,
+      "action": "click",
+      "input_value": "",
+      "element": "<a> ''",
+      "url": "https://unsplash.com/s/photos/nature",
+      "timestamp": "2025-12-09T07:18:19.346996"
+    },
+    {
+      "selector": "page.locator('[data-testid=\"collection-feed-card\"]').getByRole('link', { name: /My first collection/ })",
+      "confidence": 98,
+      "action": "click",
+      "input_value": "A lockMy first collection",
+      "element": "<a> 'A lockMy first collection'",
+      "url": "https://unsplash.com/@testerui39/collections",
+      "timestamp": "2025-12-09T07:18:37.493565"
+    },
+    {
+      "selector": "page.getByRole('button', { name: 'Profile', exact: true })",
+      "confidence": 96,
+      "action": "click",
+      "input_value": "",
+      "element": "<button> ''",
+      "url": "https://unsplash.com/collections/1cup8h3SCQo/my-first-collection/1ced08b04ea481b44f74e988dd55726b",
+      "timestamp": "2025-12-09T07:18:49.961499"
+    },
+    {
+      "selector": "page.locator('a.profileLink-_4S3Tu')",
+      "confidence": 84,
+      "action": "click",
+      "input_value": "",
+      "element": "<a> ''",
+      "url": "https://unsplash.com/collections/1cup8h3SCQo/my-first-collection/1ced08b04ea481b44f74e988dd55726b",
+      "timestamp": "2025-12-09T07:18:59.647402"
+    },
+    {
+      "selector": "page.locator('[data-testid=\"users-route\"]').getByRole('link', { name: /Edit profile/ })",
+      "confidence": 98,
+      "action": "click",
+      "input_value": "A pencilEdit profile",
+      "element": "<a> 'A pencilEdit profile'",
+      "url": "https://unsplash.com/@testerui39",
+      "timestamp": "2025-12-09T07:19:08.287718"
+    },
+    {
+      "selector": "page.locator('form[action*=\"account\"]').getByRole('textbox', { name: /First name/ })",
+      "confidence": 97,
+      "action": "input",
+      "input_value": "Tester",
+      "element": "<input> ''",
+      "url": "https://unsplash.com/account",
+      "timestamp": "2025-12-09T07:19:28.002748"
+    },
+    {
+      "selector": "page.locator('form[action*=\"account\"]').getByRole('textbox', { name: /Last name/ })",
+      "confidence": 97,
+      "action": "input",
+      "input_value": "UI",
+      "element": "<input> ''",
+      "url": "https://unsplash.com/account",
+      "timestamp": "2025-12-09T07:19:34.320621"
+    },
+    {
+      "selector": "page.locator('form[action*=\"account\"]').getByRole('button', { name: /Update account/ })",
+      "confidence": 97,
+      "action": "click",
+      "input_value": "Update account",
+      "element": "<input> ''",
+      "url": "https://unsplash.com/account",
+      "timestamp": "2025-12-09T07:19:44.572836"
+    }
+  ],
+  "auth_required": true,
+  "starting_url": "https://unsplash.com/"
+}
