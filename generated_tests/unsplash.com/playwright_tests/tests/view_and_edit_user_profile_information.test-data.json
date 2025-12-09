@@ -1,0 +1,16 @@
+{
+  "variations": [
+    {
+      "firstName": "Alex",
+      "lastName": "Johnson"
+    },
+    {
+      "firstName": "Maria",
+      "lastName": "Garcia"
+    },
+    {
+      "firstName": "Sam",
+      "lastName": "Taylor"
+    }
+  ]
+}
