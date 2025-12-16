@@ -1,0 +1,25 @@
+{
+  "metadata_version": "1.0",
+  "created_at": "2025-12-16T09:50:09.673677",
+  "last_updated": "2025-12-16T09:50:09.673704",
+  "Login_File": {
+    "name": null,
+    "path": null,
+    "hash": null,
+    "agent_workflow_completed": false,
+    "agent_workflow_file_path": null,
+    "agent_interaction_file_path": null,
+    "agent_activity_summary": null,
+    "agent_activity_error": null,
+    "agent_activity_outcome": null,
+    "agent_recommendation": null,
+    "scenario_name": null,
+    "scenario_file_path": null,
+    "test_generated": false,
+    "test_generation_error": null,
+    "test_file_path": null,
+    "test_executed_success": false,
+    "test_execution_error": null
+  },
+  "User_Scenarios_File": []
+}
