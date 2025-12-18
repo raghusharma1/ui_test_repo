@@ -1,0 +1,729 @@
+[
+  {
+    "index": 6,
+    "element": "<input> ''",
+    "action": "verify_presence",
+    "selector": "page.getByTestId('nav-bar-search-form-input')",
+    "confidence": 99,
+    "input_value": "",
+    "url": "https://unsplash.com/",
+    "timestamp": "2025-12-18T16:23:43.899833",
+    "tag_name": "input",
+    "text_content": "",
+    "accessible_name": "Search photos and illustrations",
+    "role": "textbox",
+    "viable_selectors": [
+      {
+        "selector": "page.getByTestId('nav-bar-search-form-input')",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByTestId('nav-bar-search-form-input')",
+        "strategy": "testid",
+        "confidence": 100,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('input[type=\"search\"][name=\"searchKeyword\"]')",
+        "strategy": "css_combined",
+        "confidence": 89,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('input[type=\"search\"]')",
+        "strategy": "input_type",
+        "confidence": 88,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('input[name=\"searchKeyword\"]')",
+        "strategy": "name_attribute",
+        "confidence": 87,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('[role=\"combobox\"]').getByPlaceholder('Search photos and illustrations')",
+        "strategy": "parent_role_placeholder",
+        "confidence": 86,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByPlaceholder('Search photos and illustrations')",
+        "strategy": "placeholder",
+        "confidence": 85,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('input.roundedInput-DevoOG.input-kt4UcU')",
+        "strategy": "css_combined_classes",
+        "confidence": 80,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('input.roundedInput-DevoOG')",
+        "strategy": "css_stable_class",
+        "confidence": 78,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[2]/div/div/div/div[2]/nav/div[1]/form/div/input')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 15,
+    "viable_count": 10,
+    "selector_metadata": {
+      "has_testid": true,
+      "has_role_based": true,
+      "has_text_based": false,
+      "has_scoped": true,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    }
+  },
+  {
+    "index": 237,
+    "element": "<button> 'Submit an image'",
+    "action": "verify_presence",
+    "selector": "page.getByRole('button', { name: 'Submit an image' })",
+    "confidence": 99,
+    "input_value": "",
+    "url": "https://unsplash.com/",
+    "timestamp": "2025-12-18T16:23:47.765597",
+    "tag_name": "button",
+    "text_content": "Submit an image",
+    "accessible_name": "Submit an image",
+    "role": "button",
+    "viable_selectors": [
+      {
+        "selector": "page.getByRole('button', { name: 'Submit an image' })",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByRole('button', { name: /Submit an image/ })",
+        "strategy": "role_name_regex",
+        "confidence": 95,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByText('Submit an image')",
+        "strategy": "text",
+        "confidence": 88,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByText('Submit')",
+        "strategy": "text_phrase",
+        "confidence": 78,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^Submit an image$/ })",
+        "strategy": "button_filter_exact",
+        "confidence": 75,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button').filter({ hasText: 'Submit an image' })",
+        "strategy": "tag_filter_text",
+        "confidence": 69,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[2]/div/div/div/div[2]/nav/div[3]/button')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 10,
+    "viable_count": 7,
+    "selector_metadata": {
+      "has_testid": false,
+      "has_role_based": true,
+      "has_text_based": true,
+      "has_scoped": false,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    }
+  },
+  {
+    "index": 208,
+    "element": "<button> ''",
+    "action": "verify_presence",
+    "selector": "page.getByRole('button', { name: 'Profile' })",
+    "confidence": 99,
+    "input_value": "",
+    "url": "https://unsplash.com/",
+    "timestamp": "2025-12-18T16:23:51.578075",
+    "tag_name": "button",
+    "text_content": "",
+    "accessible_name": "Profile",
+    "role": "button",
+    "viable_selectors": [
+      {
+        "selector": "page.getByRole('button', { name: 'Profile' })",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByRole('button', { name: 'Profile', exact: true })",
+        "strategy": "aria_label_exact",
+        "confidence": 96,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByRole('button', { name: 'Profile' })",
+        "strategy": "role_name",
+        "confidence": 95,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button.userMenuTrigger-anKBYe.resetBtn-aZVYwi')",
+        "strategy": "css_combined_classes",
+        "confidence": 80,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button.userMenuTrigger-anKBYe')",
+        "strategy": "css_stable_class",
+        "confidence": 78,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('#base-ui-_R_rr5am_')",
+        "strategy": "id",
+        "confidence": 75,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[2]/div/div/nav/div[2]/button[2]')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 7,
+    "viable_count": 7,
+    "selector_metadata": {
+      "has_testid": false,
+      "has_role_based": true,
+      "has_text_based": false,
+      "has_scoped": false,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    }
+  },
+  {
+    "index": 258,
+    "element": "<a> 'Wallpapers'",
+    "action": "click",
+    "selector": "page.getByRole('link', { name: 'Wallpapers' })",
+    "confidence": 99,
+    "input_value": "Wallpapers",
+    "url": "https://unsplash.com/",
+    "timestamp": "2025-12-18T16:24:26.922471",
+    "tag_name": "a",
+    "text_content": "Wallpapers",
+    "accessible_name": "Wallpapers",
+    "role": "link",
+    "viable_selectors": [
+      {
+        "selector": "page.getByRole('link', { name: 'Wallpapers' })",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByRole('link', { name: 'Wallpapers' })",
+        "strategy": "role_name",
+        "confidence": 95,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByText('Wallpapers')",
+        "strategy": "text",
+        "confidence": 88,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('a').filter({ hasText: /^Wallpapers$/ })",
+        "strategy": "link_filter_exact",
+        "confidence": 74,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('a').filter({ hasText: 'Wallpapers' })",
+        "strategy": "tag_filter_text",
+        "confidence": 69,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[2]/div/div/div/div[2]/div[1]/div/div/div/div/ul/li[3]/a')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 8,
+    "viable_count": 6,
+    "selector_metadata": {
+      "has_testid": false,
+      "has_role_based": true,
+      "has_text_based": true,
+      "has_scoped": false,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    }
+  },
+  {
+    "index": 2231,
+    "element": "<button> 'Submit to Wallpapers'",
+    "action": "verify_presence",
+    "selector": "page.getByRole('button', { name: 'Submit to Wallpapers' })",
+    "confidence": 99,
+    "input_value": "",
+    "url": "https://unsplash.com/t/wallpapers",
+    "timestamp": "2025-12-18T16:25:11.658391",
+    "tag_name": "button",
+    "text_content": "Submit to Wallpapers",
+    "accessible_name": "Submit to Wallpapers",
+    "role": "button",
+    "viable_selectors": [
+      {
+        "selector": "page.getByRole('button', { name: 'Submit to Wallpapers' })",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.locator('[data-testid=\"topic-route\"]').getByRole('button', { name: /Submit to Wallpapers/ })",
+        "strategy": "parent_testid_role_regex",
+        "confidence": 98,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 0,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('[data-testid=\"topic-route\"]').getByRole('button', { name: /Submit to Wallpapers/ }) >> nth=0"
+      },
+      {
+        "selector": "page.getByRole('button', { name: /Submit to Wallpapers/ })",
+        "strategy": "aria_label_regex",
+        "confidence": 96,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 7,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.getByRole('button', { name: /Submit to Wallpapers/ }) >> nth=7"
+      },
+      {
+        "selector": "page.getByRole('button', { name: /Submit to Wallpapers/ })",
+        "strategy": "role_name_regex",
+        "confidence": 95,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 7,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.getByRole('button', { name: /Submit to Wallpapers/ }) >> nth=7"
+      },
+      {
+        "selector": "page.getByText('Submit')",
+        "strategy": "text_phrase",
+        "confidence": 80,
+        "element_count": 3,
+        "is_unique": false,
+        "target_index": 1,
+        "tier": "near_unique",
+        "warning": "Matches 3 elements",
+        "selector_with_index": "page.getByText('Submit') >> nth=1"
+      },
+      {
+        "selector": "page.locator('#base-ui-_r_7p_')",
+        "strategy": "id",
+        "confidence": 75,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^Submit to Wallpapers$/ })",
+        "strategy": "button_filter_exact",
+        "confidence": 75,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 7,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^Submit to Wallpapers$/ }) >> nth=7"
+      },
+      {
+        "selector": "page.locator('button').filter({ hasText: 'Submit to Wallpapers' })",
+        "strategy": "tag_filter_text",
+        "confidence": 69,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 0,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('button').filter({ hasText: 'Submit to Wallpapers' }) >> nth=0"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[2]/div/div/div/div[2]/div[2]/div[1]/div/div/button')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 16,
+    "viable_count": 9,
+    "selector_metadata": {
+      "has_testid": false,
+      "has_role_based": true,
+      "has_text_based": true,
+      "has_scoped": true,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    }
+  },
+  {
+    "index": 2302,
+    "element": "<a> ''",
+    "action": "click",
+    "selector": "page.getByRole('link', { name: 'A glowing stag silhouette in' })",
+    "confidence": 99,
+    "input_value": "",
+    "url": "https://unsplash.com/t/wallpapers",
+    "timestamp": "2025-12-18T16:26:01.434417",
+    "tag_name": "a",
+    "text_content": "",
+    "accessible_name": "",
+    "role": "link",
+    "viable_selectors": [
+      {
+        "selector": "page.getByRole('link', { name: 'A glowing stag silhouette in' })",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.locator('a.photoInfoLink-mG0SPO[href*=\"andscape-toDQSKTkfdM\"]')",
+        "strategy": "css_class_href_combined",
+        "confidence": 88,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('a[href*=\"a-glowing-stag-silhouette-in-a-snowy-landscape-toDQSKTkfdM\"]')",
+        "strategy": "href_relative",
+        "confidence": 79,
+        "element_count": 3,
+        "is_unique": false,
+        "target_index": 0,
+        "tier": "near_unique",
+        "warning": "Matches 3 elements",
+        "selector_with_index": "page.locator('a[href*=\"a-glowing-stag-silhouette-in-a-snowy-landscape-toDQSKTkfdM\"]') >> nth=0"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[2]/div/div/div/div[2]/div[2]/div[3]/div[3]/div/div/div[1]/figure[1]/div[1]/div/a')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 11,
+    "viable_count": 4,
+    "selector_metadata": {
+      "has_testid": false,
+      "has_role_based": false,
+      "has_text_based": false,
+      "has_scoped": false,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    }
+  },
+  {
+    "index": 3714,
+    "element": "<div> 'An X shapeChevron leftChevron '",
+    "action": "verify_presence",
+    "selector": "page.getByText('An X shapeChevron leftChevron')",
+    "confidence": 99,
+    "input_value": null,
+    "url": "https://unsplash.com/photos/a-glowing-stag-silhouette-in-a-snowy-landscape-toDQSKTkfdM",
+    "timestamp": "2025-12-18T16:26:56.551154",
+    "tag_name": "div",
+    "text_content": "An X shapeChevron leftChevron right{\"@context\":\"https://schema.org\",\"@type\":\"ImageObject\",\"creator\":{\"@type\":\"Person\",\"name\":\"Planet Volumes\"},\"author\":{\"@type\":\"Person\",\"name\":\"Planet Volumes\"},\"creditText\":\"Planet Volumes\",\"copyrightNotice\":\"Unsplash\",\"license\":\"https://unsplash.com/plus/license\",\"acquireLicensePage\":\"https://unsplash.com/photos/a-glowing-stag-silhouette-in-a-snowy-landscape-toDQSKTkfdM\",\"contentUrl\":\"https://plus.unsplash.com/premium_photo-1765727307497-a5e764e12eaf?auto=format&fit=crop&q=60&crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzY2MDU1MzkzfA&ixlib=rb-4.1.0\",\"thumbnail\":{\"@type\":\"ImageObject\",\"url\":\"https://plus.unsplash.com/premium_photo-1765727307497-a5e764e12eaf?auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzY2MDU1MzkzfA&ixlib=rb-4.1.0&w=200\"},\"datePublished\":\"2025-12-14T17:32:19.000Z\",\"description\":\"A glowing stag silhouette in a snowy landscape\",\"name\":\"A glowing stag silhouette in a snowy landscape\",\"width\":\"4644px\",\"height\":\"3375px\",\"isAccessibleForFree\":false,\"isFamilyFriendly\":true,\"caption\":\"A glowing stag silhouette in a snowy landscape\",\"representativeOfPage\":true}Planet VolumesFor Unsplash+BookmarkA plus signEdit image Plus sign for Unsplash+A lock DownloadZoom inFeatured inPhotos, WallpapersA forward-right arrowShareMore ActionsCalendar outlinedPublished 4 days agoSafetyLicensed under the Unsplash+ Licensechristmaswinterillustration3d renderwallpapersbackgroundsmagicdigital artsparklereindeersnowfallmagicalwinter wonderlandetherealfestivechristmas sceneholiday seasonsparklingglowingdreamlikeRelated imagesPlus sign for Unsplash+BookmarkA plus signPlanet VolumesFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signPlanet VolumesFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signResource DatabaseFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signTim SchmidbauerFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signTim SchmidbauerFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signTim SchmidbauerFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signUnsplash+ CommunityFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signHansFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signGetty ImagesFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signAhmedFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signJoshua EarleFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signGetty ImagesFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signGetty ImagesFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signGetty ImagesFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signGetty ImagesFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signPh\u1ea1m Nh\u1eadtFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signUnsplash+ CommunityFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signGetty ImagesFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signAles KrivecFor Unsplash+A lock DownloadPlus sign for Unsplash+BookmarkA plus signCphotosFor Unsplash+A lock Download",
+    "accessible_name": "Planet Volumes\nFor Unsplash+\nEdit image\nDownload\nFeatured in\nPhotos, Wallpapers\nShare\nPublished 4 days ago\nLicensed under the Unsplash+ License\nChristmas\nWinter\nIllustration\n3d Render\nWallpapers\nBackgrounds\nMagic\nDigital Art\nSparkle\nReindeer\nSnowfall\nMagical\nWinter Wonderland\nEthereal\nFestive\nChristmas Scene\nHoliday Season\nSparkling\nGlowing\nDreamlike\nRelated images",
+    "role": "dialog",
+    "viable_selectors": [
+      {
+        "selector": "page.getByText('An X shapeChevron leftChevron')",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.locator('div[data-open]')",
+        "strategy": "data_attr_open_presence",
+        "confidence": 70,
+        "element_count": 5,
+        "is_unique": false,
+        "target_index": 2,
+        "tier": "semantic_fallback",
+        "warning": "Matches 5 elements (use .nth(2) for disambiguation)",
+        "selector_with_index": "page.locator('div[data-open]') >> nth=2"
+      },
+      {
+        "selector": "page.locator('div[data-base-ui-focusable]')",
+        "strategy": "data_attr_base-ui-focusable_presence",
+        "confidence": 80,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 0,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('div[data-base-ui-focusable]') >> nth=0"
+      },
+      {
+        "selector": "page.locator('div.popupContainer-y8PaYw')",
+        "strategy": "css_stable_class",
+        "confidence": 78,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('#_r_ea_')",
+        "strategy": "id",
+        "confidence": 75,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[3]/div[3]/div')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 10,
+    "viable_count": 6,
+    "selector_metadata": {
+      "has_testid": false,
+      "has_role_based": false,
+      "has_text_based": false,
+      "has_scoped": false,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    }
+  },
+  {
+    "index": 4145,
+    "element": "<button> 'A lock Download'",
+    "action": "verify_presence",
+    "selector": "page.getByRole('button', { name: 'Download' })",
+    "confidence": 99,
+    "input_value": "",
+    "url": "https://unsplash.com/photos/a-glowing-stag-silhouette-in-a-snowy-landscape-toDQSKTkfdM",
+    "timestamp": "2025-12-18T16:27:00.660097",
+    "tag_name": "button",
+    "text_content": "A lock Download",
+    "accessible_name": "Download",
+    "role": "button",
+    "viable_selectors": [
+      {
+        "selector": "page.getByRole('button', { name: 'Download' })",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.locator('button[data-popup-open]')",
+        "strategy": "data_attr_popup-open_presence",
+        "confidence": 80,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('#base-ui-_r_gk_')",
+        "strategy": "id",
+        "confidence": 75,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[3]/div[3]/div/div[4]/div/div[1]/div[1]/header/div[2]/div/button')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 22,
+    "viable_count": 4,
+    "selector_metadata": {
+      "has_testid": false,
+      "has_role_based": false,
+      "has_text_based": false,
+      "has_scoped": false,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    }
+  }
+]
