@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "total_steps": 3,
+    "sites_involved": [
+      "unsplash.com"
+    ],
+    "flow_type": "standard_login",
+    "generated_timestamp": "2025-12-18T15:05:02.665378"
+  },
+  "action_flow": [
+    {
+      "step": 1,
+      "site": "unsplash.com",
+      "action": "input_text",
+      "element": "<input> ''",
+      "selector": "page.getByRole('textbox', { name: 'Email' })",
+      "description": "Enter data into <input> '' on unsplash.com",
+      "url": "https://unsplash.com/login"
+    },
+    {
+      "step": 2,
+      "site": "unsplash.com",
+      "action": "input_text",
+      "element": "<input> ''",
+      "selector": "page.getByRole('textbox', { name: 'Password Forgot your password?' })",
+      "description": "Enter data into <input> '' on unsplash.com",
+      "url": "https://unsplash.com/login"
+    },
+    {
+      "step": 3,
+      "site": "unsplash.com",
+      "action": "click",
+      "element": "<button> 'Login'",
+      "selector": "page.getByRole('button', { name: 'Login' })",
+      "description": "Click <button> 'Login' on unsplash.com",
+      "url": "https://unsplash.com/login"
+    }
+  ],
+  "site_grouping": {
+    "unsplash.com": {
+      "purpose": "Initial authentication",
+      "steps": [
+        1,
+        2,
+        3
+      ],
+      "total_interactions": 3
+    }
+  }
+}
