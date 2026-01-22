@@ -1,0 +1,84 @@
+{
+  "metadata_version": "1.0",
+  "created_at": "2026-01-22T10:56:05.973640",
+  "last_updated": "2026-01-22T11:10:52.997042",
+  "urls_to_pom_map": {
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/login": "HomePage.js",
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/home": "HomePage.js",
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards": "CardsPage.js",
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/preview": "CardsPreviewPage.js",
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp": "CardsOtpPage.js",
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/details": "CardsDetailsPage.js"
+  },
+  "Login_File": {
+    "name": "standard",
+    "path": null,
+    "hash": "96c994d7e4f57f45392e9d15df6f8799a7d17e6475387ff6f934417dde6274ca",
+    "agent_workflow_completed": true,
+    "agent_workflow_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769059483\\temp_info\\mutual-buy-bird-marketing.trycloudflare.com\\extracted_data\\login_result_96c994d7e4f57f45392e9d15df6f8799a7d17e6475387ff6f934417dde6274ca.json",
+    "agent_interaction_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769059483\\temp_info\\mutual-buy-bird-marketing.trycloudflare.com\\extracted_data\\login_data_3b2a2d4135af680332929f8cff94c457e88647d945ba012238f47650c000952e.json",
+    "scenario_name": "login_analysis_happy_path",
+    "scenario_file_path": "scenarios\\login_analysis_happy_path.json",
+    "test_generated": true,
+    "test_name": "login_analysis_happy_path.spec.js",
+    "test_file_path": "tests\\login_analysis_happy_path.spec.js",
+    "test_executed_success": true,
+    "pom_test_name": "login_analysis_happy_path_pom.spec.js",
+    "pom_test_file_path": "tests\\login_analysis_happy_path_pom.spec.js",
+    "pom_test_executed_success": true,
+    "pom_test_execution_error": null,
+    "agent_activity_summary": [
+      "The agent successfully navigated to the login page. It located and populated the username and password fields using the provided credentials. The agent then clicked the login button, resulting in a successful redirection to the application's home page. The authentication state was saved for subsequent test scenarios."
+    ],
+    "agent_activity_error": [
+      "No issues, errors, or recovery actions were observed during this execution. The test flow was completed successfully without any deviations."
+    ],
+    "agent_activity_outcome": [
+      "The execution successfully fulfilled the user's goal. The agent logged into the application as required."
+    ],
+    "agent_recommendation": "The login functionality is working as expected. The test case is stable and can be reliably used in regression suites. The use of 'data-testid' attributes for key elements is a best practice that contributed to the high confidence and stability of the selectors.",
+    "urls_to_pom_map": {
+      "https://mutual-buy-bird-marketing.trycloudflare.com/#/login": "HomePage.js"
+    }
+  },
+  "User_Scenarios_File": [
+    {
+      "name": "hapo-scenario.txt",
+      "path": "C:\\Users\\ZB\\Downloads\\hapo-scenario.txt",
+      "hash": "030f048b1fe8631ad388eb9b23dacf8b476c27dd0b7148505d07c5f7d6b31167",
+      "agent_workflow_completed": true,
+      "agent_workflow_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769059483\\temp_info\\mutual-buy-bird-marketing.trycloudflare.com\\extracted_data\\interaction_data_e28e995905241729c53e0681250a49f211eaf8ccb66d39696696a00f12461d56.json",
+      "agent_activity_summary": [
+        "The agent initiated the 'View Credit Card Details' test. It successfully navigated to the cards section, selected a card, and proceeded to the details preview. The agent correctly entered the six-digit OTP code '122074' and submitted it to view the card information. The test concluded by clicking the 'Finish' button, successfully completing the user flow from start to finish."
+      ],
+      "agent_activity_error": [
+        "During the execution, the agent encountered repeated, non-blocking errors at steps 1, 2, 3, 13, and 14. The error, \"'charmap' codec can't encode characters...\", occurred during internal `write_file` and `replace_file` actions. This indicates a character encoding issue, likely related to handling Hebrew text. The agent successfully recovered in each instance by ignoring the internal file operation failure and proceeding with the primary UI interaction, which allowed the test to continue without interruption to the user-facing flow."
+      ],
+      "agent_activity_outcome": [
+        "The execution successfully fulfilled the requirements of the original user scenario. Despite the internal encoding errors, all specified user-facing steps, including navigation, card selection, OTP entry, and finalization, were completed as intended, leading to the desired outcome."
+      ],
+      "agent_recommendation": "Investigate and resolve the underlying 'charmap' codec error within the agent's environment. The agent's file system or logging mechanism should be configured to support UTF-8 encoding to properly handle non-ASCII characters and prevent these recurring, non-critical errors in future test runs.",
+      "scenario_analysis_result_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769059483\\temp_info\\mutual-buy-bird-marketing.trycloudflare.com\\extracted_data\\user_scenario_e28e995905241729c53e0681250a49f211eaf8ccb66d39696696a00f12461d56.json",
+      "scenario_name": "view_credit_card_details_with_otp_verification",
+      "scenario_file_path": "scenarios\\view_credit_card_details_with_otp_verification.json",
+      "feature_file_path": null,
+      "test_generated": true,
+      "test_generation_error": null,
+      "test_name": "view_credit_card_details_with_otp_verification_pom.auth.spec.js",
+      "test_file_path": "tests\\view_credit_card_details_with_otp_verification_pom.auth.spec.js",
+      "test_execution_error": null,
+      "test_executed_success": true,
+      "pom_test_name": "view_credit_card_details_with_otp_verification_pom.auth.spec.js",
+      "pom_test_file_path": "tests\\view_credit_card_details_with_otp_verification_pom.auth.spec.js",
+      "pom_test_executed_success": true,
+      "pom_test_execution_error": null,
+      "urls_to_pom_map": {
+        "https://mutual-buy-bird-marketing.trycloudflare.com/#/home": "HomePage.js",
+        "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards": "CardsPage.js",
+        "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/preview": "CardsPreviewPage.js",
+        "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp": "CardsOtpPage.js",
+        "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/details": "CardsDetailsPage.js"
+      }
+    }
+  ]
+}
