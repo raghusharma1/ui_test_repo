@@ -1,0 +1,67 @@
+{
+  "metadata_version": "1.0",
+  "created_at": "2026-01-22T10:13:02.792677",
+  "last_updated": "2026-01-22T10:20:43.100024",
+  "urls_to_pom_map": {
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/login": "HomePage.js"
+  },
+  "Login_File": {
+    "name": "standard",
+    "path": null,
+    "hash": "96c994d7e4f57f45392e9d15df6f8799a7d17e6475387ff6f934417dde6274ca",
+    "agent_workflow_completed": true,
+    "agent_workflow_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769056948\\temp_info\\mutual-buy-bird-marketing.trycloudflare.com\\extracted_data\\login_result_96c994d7e4f57f45392e9d15df6f8799a7d17e6475387ff6f934417dde6274ca.json",
+    "agent_interaction_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769056948\\temp_info\\mutual-buy-bird-marketing.trycloudflare.com\\extracted_data\\login_data_3b2a2d4135af680332929f8cff94c457e88647d945ba012238f47650c000952e.json",
+    "scenario_name": "login_analysis_happy_path",
+    "scenario_file_path": "scenarios\\login_analysis_happy_path.json",
+    "test_generated": true,
+    "test_name": "login_analysis_happy_path.spec.js",
+    "test_file_path": "tests\\login_analysis_happy_path.spec.js",
+    "test_executed_success": true,
+    "pom_test_name": "login_analysis_happy_path_pom.spec.js",
+    "pom_test_file_path": "tests\\login_analysis_happy_path_pom.spec.js",
+    "pom_test_executed_success": true,
+    "pom_test_execution_error": null,
+    "agent_activity_summary": [
+      "The agent initiated the test by navigating to the login URL. It successfully located the username and password input fields, entered the required credentials, and clicked the login button. The agent confirmed a successful login by landing on the home page, after which it saved the authentication state to complete the process."
+    ],
+    "agent_activity_error": [
+      "No issues or errors were encountered during the execution. The agent proceeded through all steps without deviation."
+    ],
+    "agent_activity_outcome": [
+      "The execution was successful. The agent logged into the application as required by the original user scenario."
+    ],
+    "agent_recommendation": "The test case passed successfully using stable, test-ID-based selectors. Recommend approving this test for inclusion in the automated regression suite.",
+    "urls_to_pom_map": {
+      "https://mutual-buy-bird-marketing.trycloudflare.com/#/login": "HomePage.js"
+    }
+  },
+  "User_Scenarios_File": [
+    {
+      "name": "hapo-scenario.txt",
+      "path": "C:\\Users\\ZB\\Downloads\\hapo-scenario.txt",
+      "hash": "4b095c765e222762e4c6d87105937cd0d0863219e65b97fc65f9efab62cb500c",
+      "agent_workflow_completed": false,
+      "agent_workflow_file_path": null,
+      "agent_activity_summary": null,
+      "agent_activity_error": null,
+      "agent_activity_outcome": null,
+      "agent_recommendation": null,
+      "scenario_analysis_result_file_path": null,
+      "scenario_name": null,
+      "scenario_file_path": null,
+      "feature_file_path": null,
+      "test_generated": false,
+      "test_generation_error": null,
+      "test_name": null,
+      "test_file_path": null,
+      "test_execution_error": null,
+      "test_executed_success": false,
+      "pom_test_name": null,
+      "pom_test_file_path": null,
+      "pom_test_executed_success": false,
+      "pom_test_execution_error": null,
+      "urls_to_pom_map": {}
+    }
+  ]
+}
