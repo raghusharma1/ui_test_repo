@@ -1,0 +1,428 @@
+{
+  "site_url": "https://unsplash.com/login",
+  "site_type": "login_workflow",
+  "site_category": "authentication",
+  "test_name": "login_analysis_happy_path",
+  "login_mechanisms": [
+    "form_login"
+  ],
+  "user_journeys": [],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "login_analysis_happy_path",
+      "test_name": "login_analysis_happy_path",
+      "test_type": "e2e_authentication_workflow",
+      "auth_required": false,
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "navigate",
+          "description": "Navigate to the Unsplash login page.",
+          "expected_page_url": "https://unsplash.com/login",
+          "verification_point": "The page URL is 'https://unsplash.com/login' and the title is 'Login | Unsplash'."
+        },
+        {
+          "step_number": 2,
+          "action": "input_text",
+          "description": "Enter a valid email address into the Email input field.",
+          "selector": "page.getByRole('textbox', { name: 'Email' })",
+          "value": "<secret>UI_SITE_USERNAME</secret>",
+          "all_selectors": [
+            {
+              "selector": "page.getByRole('textbox', { name: 'Email' })",
+              "strategy": "roost_primary",
+              "confidence": 99,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique",
+              "source": "roost-primary-selector"
+            },
+            {
+              "selector": "page.locator('[data-testid=\"login-route\"]').getByRole('textbox', { name: 'Email' })",
+              "strategy": "parent_testid_role",
+              "confidence": 98,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('form[action*=\"nlog?referrer_locale=en-US\"]').getByRole('textbox', { name: 'Email' })",
+              "strategy": "form_action_role",
+              "confidence": 97,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.getByRole('textbox', { name: 'Email' })",
+              "strategy": "role_name",
+              "confidence": 95,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.getByLabel('Email')",
+              "strategy": "label_text",
+              "confidence": 93,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.getByLabel('Email', { exact: true })",
+              "strategy": "label_text_exact",
+              "confidence": 92,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.getByLabel('Email')",
+              "strategy": "label",
+              "confidence": 90,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('input[type=\"email\"][name=\"email\"]')",
+              "strategy": "css_combined",
+              "confidence": 89,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('input[type=\"email\"]')",
+              "strategy": "input_type",
+              "confidence": 88,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('input[name=\"email\"]')",
+              "strategy": "name_attribute",
+              "confidence": 87,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('input.baseInput-Pp_oVW.textM-yZhvJa')",
+              "strategy": "css_combined_classes",
+              "confidence": 80,
+              "element_count": 2,
+              "is_unique": false,
+              "target_index": 0,
+              "tier": "near_unique",
+              "warning": "Matches 2 elements",
+              "selector_with_index": "page.locator('input.baseInput-Pp_oVW.textM-yZhvJa') >> nth=0"
+            },
+            {
+              "selector": "page.locator('input.baseInput-Pp_oVW')",
+              "strategy": "css_stable_class",
+              "confidence": 78,
+              "element_count": 2,
+              "is_unique": false,
+              "target_index": 0,
+              "tier": "near_unique",
+              "warning": "Matches 2 elements",
+              "selector_with_index": "page.locator('input.baseInput-Pp_oVW') >> nth=0"
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[2]/div/div/div/div[2]/div/div/div[1]/form/label[1]/input')",
+              "strategy": "xpath",
+              "confidence": 50,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            }
+          ],
+          "expected_page_url": "https://unsplash.com/login",
+          "confidence": 99,
+          "based_on_interaction": true,
+          "component": "Email",
+          "page_context": {
+            "page_title": "Login | Unsplash",
+            "page_url": "https://unsplash.com/login",
+            "page_url_pattern": "/login",
+            "suggested_page_class": "LoginPage"
+          },
+          "method_context": {
+            "action_type": "interact",
+            "suggested_method_name": "interactEmail",
+            "causes_navigation": false
+          }
+        },
+        {
+          "step_number": 3,
+          "action": "input_text",
+          "description": "Enter the corresponding password into the Password input field.",
+          "selector": "page.getByRole('textbox', { name: 'Password Forgot your password?' })",
+          "value": "<secret>UI_SITE_PASSWORD</secret>",
+          "all_selectors": [
+            {
+              "selector": "page.getByRole('textbox', { name: 'Password Forgot your password?' })",
+              "strategy": "roost_primary",
+              "confidence": 99,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique",
+              "source": "roost-primary-selector"
+            },
+            {
+              "selector": "page.locator('input[type=\"password\"][name=\"password\"]')",
+              "strategy": "css_combined",
+              "confidence": 89,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('input[type=\"password\"]')",
+              "strategy": "input_type",
+              "confidence": 88,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('input[name=\"password\"]')",
+              "strategy": "name_attribute",
+              "confidence": 87,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('input.baseInput-Pp_oVW.textM-yZhvJa')",
+              "strategy": "css_combined_classes",
+              "confidence": 80,
+              "element_count": 2,
+              "is_unique": false,
+              "target_index": 1,
+              "tier": "near_unique",
+              "warning": "Matches 2 elements",
+              "selector_with_index": "page.locator('input.baseInput-Pp_oVW.textM-yZhvJa') >> nth=1"
+            },
+            {
+              "selector": "page.locator('input.baseInput-Pp_oVW')",
+              "strategy": "css_stable_class",
+              "confidence": 78,
+              "element_count": 2,
+              "is_unique": false,
+              "target_index": 1,
+              "tier": "near_unique",
+              "warning": "Matches 2 elements",
+              "selector_with_index": "page.locator('input.baseInput-Pp_oVW') >> nth=1"
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[2]/div/div/div/div[2]/div/div/div[1]/form/label[2]/input')",
+              "strategy": "xpath",
+              "confidence": 50,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            }
+          ],
+          "expected_page_url": "https://unsplash.com/login",
+          "confidence": 99,
+          "based_on_interaction": true,
+          "component": "Password",
+          "page_context": {
+            "page_title": "Login | Unsplash",
+            "page_url": "https://unsplash.com/login",
+            "page_url_pattern": "/login",
+            "suggested_page_class": "LoginPage"
+          },
+          "method_context": {
+            "action_type": "interact",
+            "suggested_method_name": "interactPasswordforgotyourpassword",
+            "causes_navigation": false
+          }
+        },
+        {
+          "step_number": 4,
+          "action": "click",
+          "description": "Click the 'Login' button to submit credentials.",
+          "selector": "page.getByRole('button', { name: 'Login' })",
+          "all_selectors": [
+            {
+              "selector": "page.getByRole('button', { name: 'Login' })",
+              "strategy": "roost_primary",
+              "confidence": 99,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique",
+              "source": "roost-primary-selector"
+            },
+            {
+              "selector": "page.locator('[data-testid=\"login-route\"]').getByRole('button', { name: 'Login' })",
+              "strategy": "parent_testid_role",
+              "confidence": 98,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('form[action*=\"nlog?referrer_locale=en-US\"]').getByRole('button', { name: 'Login' })",
+              "strategy": "form_action_role",
+              "confidence": 97,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.getByTestId('login-route').locator('[value=\"Login\"]')",
+              "strategy": "parent_testid_value",
+              "confidence": 95,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.getByRole('button', { name: 'Login' })",
+              "strategy": "role_name",
+              "confidence": 95,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('button[value=\"Login\"]')",
+              "strategy": "css_tag_value",
+              "confidence": 89,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.getByText('Login')",
+              "strategy": "text",
+              "confidence": 88,
+              "element_count": 2,
+              "is_unique": false,
+              "target_index": 1,
+              "tier": "near_unique",
+              "warning": "Matches 2 elements",
+              "selector_with_index": "page.getByText('Login') >> nth=1"
+            },
+            {
+              "selector": "page.locator('.baseWithShadowInteractive-y9IO60[value=\"Login\"]')",
+              "strategy": "css_class_value",
+              "confidence": 87,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('[value=\"Login\"]')",
+              "strategy": "css_value",
+              "confidence": 85,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('button.reset-WfcG4c.base-WybTAX')",
+              "strategy": "css_combined_classes",
+              "confidence": 80,
+              "element_count": 2,
+              "is_unique": false,
+              "target_index": 1,
+              "tier": "near_unique",
+              "warning": "Matches 2 elements",
+              "selector_with_index": "page.locator('button.reset-WfcG4c.base-WybTAX') >> nth=1"
+            },
+            {
+              "selector": "page.locator('button.reset-WfcG4c')",
+              "strategy": "css_stable_class",
+              "confidence": 78,
+              "element_count": 2,
+              "is_unique": false,
+              "target_index": 1,
+              "tier": "near_unique",
+              "warning": "Matches 2 elements",
+              "selector_with_index": "page.locator('button.reset-WfcG4c') >> nth=1"
+            },
+            {
+              "selector": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^Login$/ })",
+              "strategy": "button_filter_exact",
+              "confidence": 75,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[2]/div/div/div/div[2]/div/div/div[1]/form/button')",
+              "strategy": "xpath",
+              "confidence": 50,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            }
+          ],
+          "expected_page_url": "https://unsplash.com/login",
+          "confidence": 99,
+          "based_on_interaction": true,
+          "component": "Login Button",
+          "page_context": {
+            "page_title": "Login | Unsplash",
+            "page_url": "https://unsplash.com/login",
+            "page_url_pattern": "/login",
+            "suggested_page_class": "LoginPage"
+          },
+          "method_context": {
+            "action_type": "click",
+            "suggested_method_name": "clickLogin",
+            "causes_navigation": true
+          }
+        },
+        {
+          "step_number": 5,
+          "action": "verify_navigation",
+          "description": "Verify successful login by checking the URL has changed to the homepage.",
+          "expected_page_url": "https://unsplash.com/",
+          "verification_point": "Page successfully navigated to 'https://unsplash.com/', indicating a successful login."
+        }
+      ]
+    }
+  ],
+  "login_completion_state": "successful",
+  "analysis_timestamp": "2026-01-22T09:54:49.261845",
+  "confidence_score": 1.0,
+  "flow_type": "happy_path_only",
+  "excluded_scenarios": [],
+  "scenario_count": 1,
+  "focus": "successful_authentication_only",
+  "generated_from": "login_analysis.json",
+  "generation_timestamp": "2026-01-22T09:54:49.262840"
+}

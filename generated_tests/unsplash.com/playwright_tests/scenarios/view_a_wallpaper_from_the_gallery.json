@@ -1,0 +1,156 @@
+{
+  "site_url": "https://unsplash.com/",
+  "site_type": "unknown",
+  "site_category": "general",
+  "test_name": "view_a_wallpaper_from_the_gallery",
+  "login_mechanisms": [
+    "site_navigation",
+    "content_browsing"
+  ],
+  "user_journeys": [
+    {
+      "workflow_type": "navigation_flow",
+      "path": [
+        "t",
+        "homepage"
+      ],
+      "success_rate": "discovered_site_navigation",
+      "scenario_priority": "medium",
+      "description": "General website navigation and content discovery"
+    }
+  ],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "View a Wallpaper from the Gallery",
+      "description": "This scenario validates the primary user path for discovering and viewing content. It starts from the homepage, navigates to the dedicated 'Wallpapers' category, and selects a specific image to view its detail page.",
+      "test_type": "e2e_business_workflow",
+      "priority": "critical",
+      "business_goal": "To ensure users can successfully navigate category pages and view individual content items, which is essential for the platform's core user experience.",
+      "user_story": "As a user seeking a new background for my device, I want to easily find the 'Wallpapers' category and click on an image to view it in full detail, so I can decide if it meets my needs.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "Navigate to website homepage",
+          "component": "Global Navigation",
+          "description": "Load the Unsplash homepage to begin the user journey.",
+          "expected_page_url": "https://unsplash.com/",
+          "verification_point": "Page URL is 'https://unsplash.com/'",
+          "business_impact": "Ensures the primary entry point of the website is accessible and functional.",
+          "selector": "page.goto('https://unsplash.com/')",
+          "confidence": 100,
+          "based_on_interaction": true
+        },
+        {
+          "step_number": 2,
+          "action": "click",
+          "component": "Navigation Menu",
+          "description": "Click on the 'Wallpapers' link in the main navigation bar to access the curated wallpaper collection.",
+          "expected_page_url": "https://unsplash.com/t/wallpapers",
+          "verification_point": "Page successfully navigates to the wallpapers gallery URL.",
+          "business_impact": "Critical for category-based content discovery. Failure prevents users from accessing a major content section.",
+          "selector": "page.getByRole('link', { name: 'Wallpapers' })",
+          "confidence": 99,
+          "based_on_interaction": true,
+          "all_selectors": [
+            {
+              "selector": "page.getByRole('link', { name: 'Wallpapers' })",
+              "confidence": 99
+            },
+            {
+              "selector": "page.getByText('Wallpapers')",
+              "confidence": 88
+            },
+            {
+              "selector": "page.locator('a').filter({ hasText: /^Wallpapers$/ })",
+              "confidence": 74
+            },
+            {
+              "selector": "page.locator('a').filter({ hasText: 'Wallpapers' })",
+              "confidence": 69
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[2]/div/div/div/div[2]/div[1]/div/div/div/div/ul/li[2]/a')",
+              "confidence": 50
+            }
+          ],
+          "page_context": {
+            "page_title": "Beautiful Free Images & Pictures | Unsplash",
+            "page_url": "https://unsplash.com/",
+            "page_url_pattern": "/",
+            "suggested_page_class": "HomePage"
+          },
+          "method_context": {
+            "action_type": "navigate",
+            "suggested_method_name": "clickWallpapers",
+            "causes_navigation": true
+          }
+        },
+        {
+          "step_number": 3,
+          "action": "click",
+          "component": "Wallpaper Image",
+          "description": "Select and click on a wallpaper image from the gallery to open its detailed view page.",
+          "expected_page_url": "https://unsplash.com/photos/abstract-pink-and-purple-marbled-texture-ghYgiyVb9N4",
+          "verification_point": "Page navigates to the specific photo detail URL.",
+          "business_impact": "This is the final step in the content viewing funnel. Failure means users cannot inspect or download images, defeating the site's purpose.",
+          "selector": "page.getByRole('link', { name: 'Abstract pink and purple' })",
+          "confidence": 99,
+          "based_on_interaction": true,
+          "all_selectors": [
+            {
+              "selector": "page.getByRole('link', { name: 'Abstract pink and purple' })",
+              "confidence": 99
+            },
+            {
+              "selector": "page.locator('a.photoInfoLink-mG0SPO[href*=\"-texture-ghYgiyVb9N4\"]')",
+              "confidence": 88
+            },
+            {
+              "selector": "page.locator('a[href*=\"abstract-pink-and-purple-marbled-texture-ghYgiyVb9N4\"]')",
+              "confidence": 79
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[2]/div/div/div/div[2]/div[2]/div[3]/div[3]/div/div/div[1]/figure[1]/div[1]/div/a')",
+              "confidence": 50
+            }
+          ],
+          "page_context": {
+            "page_title": "Wallpapers | Unsplash",
+            "page_url": "https://unsplash.com/t/wallpapers",
+            "page_url_pattern": "/t/wallpapers",
+            "suggested_page_class": "WallpapersPage"
+          },
+          "method_context": {
+            "action_type": "navigate",
+            "suggested_method_name": "performClick",
+            "causes_navigation": true
+          }
+        }
+      ],
+      "expected_results": [
+        "User successfully navigates from the homepage to the Wallpapers category.",
+        "User is able to select and view the detail page of a specific wallpaper.",
+        "The entire workflow completes without any navigation errors or broken links."
+      ],
+      "edge_cases_to_test": [
+        "How the page responds if the selected image is no longer available.",
+        "Performance of the wallpaper gallery page with a slow internet connection.",
+        "Behavior when clicking on various types of images (e.g., portrait, landscape)."
+      ],
+      "data_requirements": [
+        "No specific user data is required as this is a public browsing flow."
+      ],
+      "prerequisites": [
+        "The Unsplash website must be online and accessible.",
+        "The 'Wallpapers' category must contain images to select."
+      ],
+      "auth_required": true,
+      "starting_url": "https://unsplash.com/"
+    }
+  ],
+  "login_completion_state": "successful",
+  "analysis_timestamp": "2026-01-22T10:00:11.556755",
+  "confidence_score": 0.5,
+  "auth_required": true,
+  "starting_url": "https://unsplash.com/"
+}
