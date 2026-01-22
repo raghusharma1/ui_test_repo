@@ -1,0 +1,15 @@
+{
+  "cookies": [
+    {
+      "name": "hapoalim_auth",
+      "value": "authenticated_user_1769058249114",
+      "domain": "mutual-buy-bird-marketing.trycloudflare.com",
+      "path": "/",
+      "expires": 1769144649,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    }
+  ],
+  "origins": []
+}

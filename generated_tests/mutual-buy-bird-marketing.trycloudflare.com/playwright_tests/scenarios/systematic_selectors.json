@@ -1,0 +1,810 @@
+[
+  {
+    "index": 52,
+    "element": "<li> '\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1'",
+    "action": "click",
+    "selector": "page.getByTestId('sidebar-view-card-details')",
+    "confidence": 99,
+    "input_value": "\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+    "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/home",
+    "timestamp": "2026-01-22T10:35:20.528067",
+    "tag_name": "li",
+    "text_content": "\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+    "accessible_name": "\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+    "role": null,
+    "viable_selectors": [
+      {
+        "selector": "page.getByTestId('sidebar-view-card-details')",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByTestId('sidebar-view-card-details')",
+        "strategy": "testid",
+        "confidence": 100,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByText('\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1')",
+        "strategy": "text",
+        "confidence": 88,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 1,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.getByText('\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1') >> nth=1"
+      },
+      {
+        "selector": "page.locator('li').filter({ hasText: '\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1' })",
+        "strategy": "list_item_filter_text",
+        "confidence": 76,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('li').filter({ hasText: '\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1' })",
+        "strategy": "tag_filter_text",
+        "confidence": 69,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('li').filter({ hasText: /^\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1$/ })",
+        "strategy": "tag_filter_exact",
+        "confidence": 67,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div/div/div[2]/div[2]/div[5]/ul/li[4]')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 8,
+    "viable_count": 7,
+    "selector_metadata": {
+      "has_testid": true,
+      "has_role_based": false,
+      "has_text_based": true,
+      "has_scoped": false,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    },
+    "page_context": {
+      "page_title": "\u05d1\u05e0\u05e7 \u05d4\u05e4\u05d5\u05e2\u05dc\u05d9\u05dd - \u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+      "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/home",
+      "page_url_pattern": "/",
+      "suggested_page_class": "HomePage"
+    },
+    "method_context": {
+      "action_type": "click",
+      "suggested_method_name": "performClick",
+      "causes_navigation": false
+    }
+  },
+  {
+    "index": 263,
+    "element": "<div> '\u05e1\u05d5\u05d2 \u05db\u05e8\u05d8\u05d9\u05e1\u05de\u05d0\u05e1\u05d8\u05e8\u05e7\u05d0\u05e8\u05d3\u05de\u05e1\u05e4\u05e8 \u05db\u05e8\u05d8\u05d9\u05e114'",
+    "action": "click",
+    "selector": "page.getByTestId('card-item-1425')",
+    "confidence": 99,
+    "input_value": "\u05e1\u05d5\u05d2 \u05db\u05e8\u05d8\u05d9\u05e1\u05de\u05d0\u05e1\u05d8\u05e8\u05e7\u05d0\u05e8\u05d3\u05de\u05e1\u05e4\u05e8 \u05db\u05e8\u05d8\u05d9\u05e11425\u05d1\u05e2\u05dc \u05d4\u05db\u05e8\u05d8\u05d9\u05e1\u05d9\u05e9\u05e8\u05d0\u05dc \u05d9\u05e9\u05e8\u05d0\u05dc\u05d9",
+    "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards",
+    "timestamp": "2026-01-22T10:35:32.433422",
+    "tag_name": "div",
+    "text_content": "\u05e1\u05d5\u05d2 \u05db\u05e8\u05d8\u05d9\u05e1\u05de\u05d0\u05e1\u05d8\u05e8\u05e7\u05d0\u05e8\u05d3\u05de\u05e1\u05e4\u05e8 \u05db\u05e8\u05d8\u05d9\u05e11425\u05d1\u05e2\u05dc \u05d4\u05db\u05e8\u05d8\u05d9\u05e1\u05d9\u05e9\u05e8\u05d0\u05dc \u05d9\u05e9\u05e8\u05d0\u05dc\u05d9",
+    "accessible_name": "\u05e1\u05d5\u05d2 \u05db\u05e8\u05d8\u05d9\u05e1\n\u05de\u05d0\u05e1\u05d8\u05e8\u05e7\u05d0\u05e8\u05d3\n\u05de\u05e1\u05e4\u05e8 \u05db\u05e8\u05d8\u05d9\u05e1\n1425\n\u05d1\u05e2\u05dc \u05d4\u05db\u05e8\u05d8\u05d9\u05e1\n\u05d9\u05e9\u05e8\u05d0\u05dc \u05d9\u05e9\u05e8\u05d0\u05dc\u05d9",
+    "role": null,
+    "viable_selectors": [
+      {
+        "selector": "page.getByTestId('card-item-1425')",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByTestId('card-item-1425')",
+        "strategy": "testid",
+        "confidence": 100,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('div.card-item')",
+        "strategy": "css_stable_class",
+        "confidence": 78,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 0,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('div.card-item') >> nth=0"
+      },
+      {
+        "selector": "page.locator('div').filter({ hasText: '\u05e1\u05d5\u05d2 \u05db\u05e8\u05d8\u05d9\u05e1\u05de\u05d0\u05e1\u05d8\u05e8\u05e7\u05d0\u05e8\u05d3\u05de\u05e1\u05e4\u05e8 \u05db\u05e8\u05d8\u05d9\u05e11425\u05d1\u05e2\u05dc \u05d4\u05db\u05e8\u05d8\u05d9\u05e1\u05d9\u05e9\u05e8\u05d0\u05dc \u05d9\u05e9\u05e8\u05d0\u05dc\u05d9' })",
+        "strategy": "tag_filter_text",
+        "confidence": 55,
+        "element_count": 9,
+        "is_unique": false,
+        "target_index": 7,
+        "tier": "semantic_fallback",
+        "warning": "Matches 9 elements (use .nth(7) for disambiguation)",
+        "selector_with_index": "page.locator('div').filter({ hasText: '\u05e1\u05d5\u05d2 \u05db\u05e8\u05d8\u05d9\u05e1\u05de\u05d0\u05e1\u05d8\u05e8\u05e7\u05d0\u05e8\u05d3\u05de\u05e1\u05e4\u05e8 \u05db\u05e8\u05d8\u05d9\u05e11425\u05d1\u05e2\u05dc \u05d4\u05db\u05e8\u05d8\u05d9\u05e1\u05d9\u05e9\u05e8\u05d0\u05dc \u05d9\u05e9\u05e8\u05d0\u05dc\u05d9' }) >> nth=7"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 7,
+    "viable_count": 5,
+    "selector_metadata": {
+      "has_testid": true,
+      "has_role_based": false,
+      "has_text_based": true,
+      "has_scoped": false,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    },
+    "page_context": {
+      "page_title": "\u05d1\u05e0\u05e7 \u05d4\u05e4\u05d5\u05e2\u05dc\u05d9\u05dd - \u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+      "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards",
+      "page_url_pattern": "/",
+      "suggested_page_class": "HomePage"
+    },
+    "method_context": {
+      "action_type": "click",
+      "suggested_method_name": "click1425",
+      "causes_navigation": false
+    },
+    "component": "Credit Card Selection"
+  },
+  {
+    "index": 247,
+    "element": "<div> ''",
+    "action": "click",
+    "selector": "page.locator('.card-image').first()",
+    "confidence": 99,
+    "input_value": "",
+    "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards",
+    "timestamp": "2026-01-22T10:35:49.905309",
+    "tag_name": "div",
+    "text_content": "",
+    "accessible_name": "",
+    "role": null,
+    "viable_selectors": [
+      {
+        "selector": "page.locator('.card-image').first()",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.locator('[data-testid=\"card-item-1425\"]').locator('div')",
+        "strategy": "parent_testid_tag",
+        "confidence": 67,
+        "element_count": 10,
+        "is_unique": false,
+        "target_index": 1,
+        "tier": "semantic_fallback",
+        "warning": "Matches 10 elements (use .nth(1) for disambiguation)",
+        "selector_with_index": "page.locator('[data-testid=\"card-item-1425\"]').locator('div') >> nth=1"
+      },
+      {
+        "selector": "page.locator('div.mastercard')",
+        "strategy": "css_tag_semantic_empty",
+        "confidence": 84,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('.mastercard')",
+        "strategy": "css_semantic_empty",
+        "confidence": 82,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('div.card-image.mastercard')",
+        "strategy": "css_combined_classes",
+        "confidence": 80,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('div.card-image')",
+        "strategy": "css_stable_class",
+        "confidence": 78,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 0,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('div.card-image') >> nth=0"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 8,
+    "viable_count": 7,
+    "selector_metadata": {
+      "has_testid": false,
+      "has_role_based": false,
+      "has_text_based": false,
+      "has_scoped": true,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    },
+    "page_context": {
+      "page_title": "\u05d1\u05e0\u05e7 \u05d4\u05e4\u05d5\u05e2\u05dc\u05d9\u05dd - \u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+      "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards",
+      "page_url_pattern": "/",
+      "suggested_page_class": "HomePage"
+    },
+    "method_context": {
+      "action_type": "click",
+      "suggested_method_name": "performClick",
+      "causes_navigation": false
+    },
+    "component": "Card"
+  },
+  {
+    "index": 265,
+    "element": "<button> '\u05d4\u05de\u05e9\u05da'",
+    "action": "click",
+    "selector": "page.getByTestId('continue-button')",
+    "confidence": 99,
+    "input_value": "\u05d4\u05de\u05e9\u05da",
+    "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards",
+    "timestamp": "2026-01-22T10:36:24.522154",
+    "tag_name": "button",
+    "text_content": "\u05d4\u05de\u05e9\u05da",
+    "accessible_name": "\u05d4\u05de\u05e9\u05da",
+    "role": "button",
+    "viable_selectors": [
+      {
+        "selector": "page.getByTestId('continue-button')",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByTestId('continue-button')",
+        "strategy": "testid",
+        "confidence": 100,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByRole('button', { name: '\u05d4\u05de\u05e9\u05da' })",
+        "strategy": "role_name",
+        "confidence": 95,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByText('\u05d4\u05de\u05e9\u05da')",
+        "strategy": "text",
+        "confidence": 88,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('#root').getByRole('button', { name: '\u05d4\u05de\u05e9\u05da' })",
+        "strategy": "parent_id_role",
+        "confidence": 82,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button.btn.btn-primary')",
+        "strategy": "css_combined_classes",
+        "confidence": 80,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button.btn')",
+        "strategy": "css_stable_class",
+        "confidence": 78,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 0,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('button.btn') >> nth=0"
+      },
+      {
+        "selector": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^\u05d4\u05de\u05e9\u05da$/ })",
+        "strategy": "button_filter_exact",
+        "confidence": 75,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/button[1]')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 9,
+    "viable_count": 9,
+    "selector_metadata": {
+      "has_testid": true,
+      "has_role_based": true,
+      "has_text_based": true,
+      "has_scoped": true,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    },
+    "page_context": {
+      "page_title": "\u05d1\u05e0\u05e7 \u05d4\u05e4\u05d5\u05e2\u05dc\u05d9\u05dd - \u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+      "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards",
+      "page_url_pattern": "/",
+      "suggested_page_class": "HomePage"
+    },
+    "method_context": {
+      "action_type": "click",
+      "suggested_method_name": "performClick",
+      "causes_navigation": true
+    },
+    "component": "Card Details"
+  },
+  {
+    "index": 350,
+    "element": "<button> '\u05dc\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05d4\u05db\u05e8\u05d8\u05d9\u05e1'",
+    "action": "click",
+    "selector": "page.getByTestId('view-card-details-button')",
+    "confidence": 99,
+    "input_value": "\u05dc\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05d4\u05db\u05e8\u05d8\u05d9\u05e1",
+    "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/preview",
+    "timestamp": "2026-01-22T10:36:35.627285",
+    "tag_name": "button",
+    "text_content": "\u05dc\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05d4\u05db\u05e8\u05d8\u05d9\u05e1",
+    "accessible_name": "\u05dc\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05d4\u05db\u05e8\u05d8\u05d9\u05e1",
+    "role": "button",
+    "viable_selectors": [
+      {
+        "selector": "page.getByTestId('view-card-details-button')",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByTestId('view-card-details-button')",
+        "strategy": "testid",
+        "confidence": 100,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByRole('button', { name: /\u05dc\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05d4\u05db\u05e8\u05d8\u05d9\u05e1/ })",
+        "strategy": "role_name_regex",
+        "confidence": 95,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByText('\u05dc\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05d4\u05db\u05e8\u05d8\u05d9\u05e1')",
+        "strategy": "text",
+        "confidence": 88,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('#root').getByRole('button', { name: '\u05dc\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05d4\u05db\u05e8\u05d8\u05d9\u05e1' })",
+        "strategy": "parent_id_role",
+        "confidence": 82,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button.btn.btn-primary')",
+        "strategy": "css_combined_classes",
+        "confidence": 80,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button.btn')",
+        "strategy": "css_stable_class",
+        "confidence": 78,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 0,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('button.btn') >> nth=0"
+      },
+      {
+        "selector": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^\u05dc\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05d4\u05db\u05e8\u05d8\u05d9\u05e1$/ })",
+        "strategy": "button_filter_exact",
+        "confidence": 75,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button').filter({ hasText: '\u05dc\u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05d4\u05db\u05e8\u05d8\u05d9\u05e1' })",
+        "strategy": "tag_filter_text",
+        "confidence": 69,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/button[1]')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 10,
+    "viable_count": 10,
+    "selector_metadata": {
+      "has_testid": true,
+      "has_role_based": true,
+      "has_text_based": true,
+      "has_scoped": true,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    },
+    "page_context": {
+      "page_title": "\u05d1\u05e0\u05e7 \u05d4\u05e4\u05d5\u05e2\u05dc\u05d9\u05dd - \u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+      "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/preview",
+      "page_url_pattern": "/",
+      "suggested_page_class": "HomePage"
+    },
+    "method_context": {
+      "action_type": "click",
+      "suggested_method_name": "performClick",
+      "causes_navigation": true
+    }
+  },
+  {
+    "index": 382,
+    "element": "<button> '\u05d4\u05de\u05e9\u05da'",
+    "action": "click",
+    "selector": "page.getByTestId('verify-otp-button')",
+    "confidence": 99,
+    "input_value": "\u05d4\u05de\u05e9\u05da",
+    "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+    "timestamp": "2026-01-22T10:37:14.544889",
+    "tag_name": "button",
+    "text_content": "\u05d4\u05de\u05e9\u05da",
+    "accessible_name": "\u05d4\u05de\u05e9\u05da",
+    "role": "button",
+    "viable_selectors": [
+      {
+        "selector": "page.getByTestId('verify-otp-button')",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByTestId('verify-otp-button')",
+        "strategy": "testid",
+        "confidence": 100,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByRole('button', { name: '\u05d4\u05de\u05e9\u05da' })",
+        "strategy": "role_name",
+        "confidence": 95,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByText('\u05d4\u05de\u05e9\u05da')",
+        "strategy": "text",
+        "confidence": 88,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('#root').getByRole('button', { name: '\u05d4\u05de\u05e9\u05da' })",
+        "strategy": "parent_id_role",
+        "confidence": 82,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button.btn.btn-primary')",
+        "strategy": "css_combined_classes",
+        "confidence": 80,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button.btn')",
+        "strategy": "css_stable_class",
+        "confidence": 78,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 0,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('button.btn') >> nth=0"
+      },
+      {
+        "selector": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^\u05d4\u05de\u05e9\u05da$/ })",
+        "strategy": "button_filter_exact",
+        "confidence": 75,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[5]/button[1]')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 9,
+    "viable_count": 9,
+    "selector_metadata": {
+      "has_testid": true,
+      "has_role_based": true,
+      "has_text_based": true,
+      "has_scoped": true,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    },
+    "page_context": {
+      "page_title": "\u05d1\u05e0\u05e7 \u05d4\u05e4\u05d5\u05e2\u05dc\u05d9\u05dd - \u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+      "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+      "page_url_pattern": "/",
+      "suggested_page_class": "HomePage"
+    },
+    "method_context": {
+      "action_type": "click",
+      "suggested_method_name": "performClick",
+      "causes_navigation": true
+    }
+  },
+  {
+    "index": 709,
+    "element": "<button> '\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea'",
+    "action": "click",
+    "selector": "page.getByRole('button', { name: '\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea' })",
+    "confidence": 99,
+    "input_value": "\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea",
+    "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards",
+    "timestamp": "2026-01-22T10:41:48.070565",
+    "tag_name": "button",
+    "text_content": "\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea",
+    "accessible_name": "\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea",
+    "role": "button",
+    "viable_selectors": [
+      {
+        "selector": "page.getByRole('button', { name: '\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea' })",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByRole('button', { name: /\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea/ })",
+        "strategy": "role_name_regex",
+        "confidence": 95,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByText('\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea')",
+        "strategy": "text",
+        "confidence": 88,
+        "element_count": 3,
+        "is_unique": false,
+        "target_index": 1,
+        "tier": "near_unique",
+        "warning": "Matches 3 elements",
+        "selector_with_index": "page.getByText('\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea') >> nth=1"
+      },
+      {
+        "selector": "page.locator('#root').getByRole('button', { name: '\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea' })",
+        "strategy": "parent_id_role",
+        "confidence": 82,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button.btn.btn-secondary')",
+        "strategy": "css_combined_classes",
+        "confidence": 80,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button.btn')",
+        "strategy": "css_stable_class",
+        "confidence": 78,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 1,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('button.btn') >> nth=1"
+      },
+      {
+        "selector": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea$/ })",
+        "strategy": "button_filter_exact",
+        "confidence": 75,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button').filter({ hasText: '\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea' })",
+        "strategy": "tag_filter_text",
+        "confidence": 69,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div/div/div[2]/div[1]/div[2]/div[2]/div[2]/button[2]')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 9,
+    "viable_count": 9,
+    "selector_metadata": {
+      "has_testid": false,
+      "has_role_based": true,
+      "has_text_based": true,
+      "has_scoped": true,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    },
+    "page_context": {
+      "page_title": "\u05d1\u05e0\u05e7 \u05d4\u05e4\u05d5\u05e2\u05dc\u05d9\u05dd - \u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+      "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards",
+      "page_url_pattern": "/",
+      "suggested_page_class": "HomePage"
+    },
+    "method_context": {
+      "action_type": "click",
+      "suggested_method_name": "performClick",
+      "causes_navigation": true
+    },
+    "component": "Card Selection"
+  }
+]
