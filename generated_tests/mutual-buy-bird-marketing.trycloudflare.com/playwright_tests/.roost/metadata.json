@@ -1,0 +1,101 @@
+{
+  "metadata_version": "1.0",
+  "created_at": "2026-01-22T11:30:18.324549",
+  "last_updated": "2026-01-22T12:09:15.651285",
+  "urls_to_pom_map": {
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/login": "HomePage.js",
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/home": "HomePage.js",
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards": "CardsPage.js",
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/preview": "CardsPreviewPage.js",
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp": "CardsOtpPage.js",
+    "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/details": "CardsDetailsPage.js"
+  },
+  "Login_File": {
+    "name": "standard",
+    "path": null,
+    "hash": "96c994d7e4f57f45392e9d15df6f8799a7d17e6475387ff6f934417dde6274ca",
+    "agent_workflow_completed": true,
+    "agent_workflow_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769061583\\temp_info\\mutual-buy-bird-marketing.trycloudflare.com\\extracted_data\\login_result_96c994d7e4f57f45392e9d15df6f8799a7d17e6475387ff6f934417dde6274ca.json",
+    "agent_interaction_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769061583\\temp_info\\mutual-buy-bird-marketing.trycloudflare.com\\extracted_data\\login_data_3b2a2d4135af680332929f8cff94c457e88647d945ba012238f47650c000952e.json",
+    "scenario_name": "login_analysis_happy_path",
+    "scenario_file_path": "scenarios\\login_analysis_happy_path.json",
+    "test_generated": true,
+    "test_name": "login_analysis_happy_path.spec.js",
+    "test_file_path": "tests\\login_analysis_happy_path.spec.js",
+    "test_executed_success": false,
+    "pom_test_name": "login_analysis_happy_path_pom.spec.js",
+    "pom_test_file_path": "tests\\login_analysis_happy_path_pom.spec.js",
+    "pom_test_executed_success": false,
+    "pom_test_execution_error": [
+      "Top-level Playwright errors (test setup/configuration issues):",
+      "",
+      "Error: Error: Cannot find module 'C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769061583\\source\\ui_test_repo\\generated_tests\\mutual-buy-bird-marketing.trycloudflare.com\\playwright_tests\\pom\\LoginPage.js' imported from C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769061583\\source\\ui_test_repo\\generated_tests\\mutual-buy-bird-marketing.trycloudflare.com\\playwright_tests\\tests\\login_analysis_happy_path_pom.spec.js",
+      "",
+      "Error: Error: No tests found.",
+      "Make sure that arguments are regular expressions matching test files.",
+      "You may need to escape symbols like \"$\" or \"*\" and quote the arguments."
+    ],
+    "agent_activity_summary": [
+      "The agent successfully navigated to the login page. It located the username and password input fields, populated them with the provided credentials, and then clicked the login button. The agent verified a successful login by observing the URL redirect to the home page and proceeded to save the authentication state."
+    ],
+    "agent_activity_error": [
+      "No issues, errors, or recovery actions were reported during the execution. The test flow was completed without any deviations."
+    ],
+    "agent_activity_outcome": [
+      "The execution was successful and fully aligns with the original user scenario to perform a login."
+    ],
+    "agent_recommendation": "The test passed successfully with high-confidence selectors generated for all interactive elements. The resulting script is stable and can be approved for inclusion in the regression suite.",
+    "urls_to_pom_map": {
+      "https://mutual-buy-bird-marketing.trycloudflare.com/#/login": "HomePage.js"
+    },
+    "test_execution_error": [
+      "Top-level Playwright errors (test setup/configuration issues):",
+      "",
+      "Error: Error: Cannot find module 'C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769061583\\source\\ui_test_repo\\generated_tests\\mutual-buy-bird-marketing.trycloudflare.com\\playwright_tests\\pom\\LoginPage.js' imported from C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769061583\\source\\ui_test_repo\\generated_tests\\mutual-buy-bird-marketing.trycloudflare.com\\playwright_tests\\tests\\login_analysis_happy_path_pom.spec.js",
+      "",
+      "Error: Error: No tests found.",
+      "Make sure that arguments are regular expressions matching test files.",
+      "You may need to escape symbols like \"$\" or \"*\" and quote the arguments."
+    ]
+  },
+  "User_Scenarios_File": [
+    {
+      "name": "hapo-scenario-pdf.pdf",
+      "path": "C:\\Users\\ZB\\Downloads\\hapo-scenario-pdf.pdf",
+      "hash": "54fda54a031a00da2c014130cf766aa5466f47b8dc00325ce1478b35c364ccc6",
+      "agent_workflow_completed": true,
+      "agent_workflow_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769061583\\temp_info\\mutual-buy-bird-marketing.trycloudflare.com\\extracted_data\\interaction_data_2b04fe9daef4de4ff1d770ef3f2f5cb64618033cce2a00aecc86c6bc44d80428.json",
+      "agent_activity_summary": [
+        "The agent initiated the 'View Credit Card Details' test case. After an initial self-recovering error, the agent successfully navigated the application by clicking the 'View card details' link, selecting a card, and proceeding to the OTP verification screen. The agent correctly entered the provided OTP value '122074' and clicked the final 'Finish' button, successfully reaching the confirmation page as intended by the user scenario."
+      ],
+      "agent_activity_error": [
+        "In Step 1, the agent encountered a 'charmap' codec error while attempting to write to a local file. The agent automatically recovered in Step 2 by successfully retrying the file write operation and then proceeding with the test execution without further issue. This error was related to the agent's internal processing and did not affect the interaction with the application under test."
+      ],
+      "agent_activity_outcome": [
+        "The execution successfully fulfilled the requirements of the original user scenario. The agent completed all specified steps, from initiating the flow to entering the OTP and finalizing the process, achieving the desired goal of viewing the credit card details."
+      ],
+      "agent_recommendation": "The test case passed successfully. The initial file write error, while self-recovering, should be investigated internally to enhance agent reliability. No changes are recommended for the application based on this execution.",
+      "scenario_analysis_result_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\temp_url_hapoalim_mock_ui_test\\1769061583\\temp_info\\mutual-buy-bird-marketing.trycloudflare.com\\extracted_data\\user_scenario_2b04fe9daef4de4ff1d770ef3f2f5cb64618033cce2a00aecc86c6bc44d80428.json",
+      "scenario_name": "view_credit_card_details_via_otp_verification",
+      "scenario_file_path": "scenarios\\view_credit_card_details_via_otp_verification.json",
+      "feature_file_path": null,
+      "test_generated": true,
+      "test_generation_error": null,
+      "test_name": "view_credit_card_details_via_otp_verification_pom.auth.spec.js",
+      "test_file_path": "tests\\view_credit_card_details_via_otp_verification_pom.auth.spec.js",
+      "test_execution_error": null,
+      "test_executed_success": true,
+      "pom_test_name": "view_credit_card_details_via_otp_verification_pom.auth.spec.js",
+      "pom_test_file_path": "tests\\view_credit_card_details_via_otp_verification_pom.auth.spec.js",
+      "pom_test_executed_success": true,
+      "pom_test_execution_error": null,
+      "urls_to_pom_map": {
+        "https://mutual-buy-bird-marketing.trycloudflare.com/#/home": "HomePage.js",
+        "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards": "CardsPage.js",
+        "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/preview": "CardsPreviewPage.js",
+        "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp": "CardsOtpPage.js",
+        "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/details": "CardsDetailsPage.js"
+      }
+    }
+  ]
+}
