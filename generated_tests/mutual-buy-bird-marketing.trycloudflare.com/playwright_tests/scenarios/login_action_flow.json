@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "total_steps": 3,
+    "sites_involved": [
+      "mutual-buy-bird-marketing.trycloudflare.com"
+    ],
+    "flow_type": "standard_login",
+    "generated_timestamp": "2026-01-22T10:48:26.297965"
+  },
+  "action_flow": [
+    {
+      "step": 1,
+      "site": "mutual-buy-bird-marketing.trycloudflare.com",
+      "action": "input",
+      "element": "<input> ''",
+      "selector": "page.getByTestId('username-input')",
+      "description": "input on <input> '' at mutual-buy-bird-marketing.trycloudflare.com",
+      "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+      "component": "Login Form",
+      "page_context": {
+        "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+        "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+        "page_url_pattern": "/",
+        "suggested_page_class": "HomePage"
+      },
+      "method_context": {
+        "action_type": "interact",
+        "suggested_method_name": "performInput",
+        "causes_navigation": false
+      }
+    },
+    {
+      "step": 2,
+      "site": "mutual-buy-bird-marketing.trycloudflare.com",
+      "action": "input",
+      "element": "<input> ''",
+      "selector": "page.getByTestId('password-input')",
+      "description": "input on <input> '' at mutual-buy-bird-marketing.trycloudflare.com",
+      "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+      "component": null,
+      "page_context": {
+        "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+        "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+        "page_url_pattern": "/",
+        "suggested_page_class": "HomePage"
+      },
+      "method_context": {
+        "action_type": "interact",
+        "suggested_method_name": "performInput",
+        "causes_navigation": false
+      }
+    },
+    {
+      "step": 3,
+      "site": "mutual-buy-bird-marketing.trycloudflare.com",
+      "action": "click",
+      "element": "<button> 'כניסה'",
+      "selector": "page.getByTestId('login-button')",
+      "description": "Click <button> 'כניסה' on mutual-buy-bird-marketing.trycloudflare.com",
+      "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+      "component": null,
+      "page_context": {
+        "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+        "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+        "page_url_pattern": "/",
+        "suggested_page_class": "HomePage"
+      },
+      "method_context": {
+        "action_type": "click",
+        "suggested_method_name": "performClick",
+        "causes_navigation": true
+      }
+    }
+  ],
+  "site_grouping": {
+    "mutual-buy-bird-marketing.trycloudflare.com": {
+      "purpose": "Initial authentication",
+      "steps": [
+        1,
+        2,
+        3
+      ],
+      "total_interactions": 3
+    }
+  }
+}

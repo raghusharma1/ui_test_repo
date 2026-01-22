@@ -1,0 +1,322 @@
+[
+  {
+    "index": 6,
+    "element": "<input> ''",
+    "action": "input",
+    "selector": "page.getByTestId('username-input')",
+    "confidence": 99,
+    "input_value": "",
+    "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+    "timestamp": "2026-01-22T10:47:25.185658",
+    "tag_name": "input",
+    "text_content": "",
+    "accessible_name": "\u05d4\u05d6\u05df \u05e7\u05d5\u05d3 \u05de\u05e9\u05ea\u05de\u05e9",
+    "role": "textbox",
+    "viable_selectors": [
+      {
+        "selector": "page.getByTestId('username-input')",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByTestId('username-input')",
+        "strategy": "testid",
+        "confidence": 100,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByPlaceholder('\u05d4\u05d6\u05df \u05e7\u05d5\u05d3 \u05de\u05e9\u05ea\u05de\u05e9')",
+        "strategy": "placeholder",
+        "confidence": 85,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByRole('heading', { name: '\u05db\u05e0\u05d9\u05e1\u05d4 \u05dc\u05d7\u05e9\u05d1\u05d5\u05e0\u05da' }).locator('..').getByPlaceholder('\u05d4\u05d6\u05df \u05e7\u05d5\u05d3 \u05de\u05e9\u05ea\u05de\u05e9')",
+        "strategy": "heading_context_placeholder",
+        "confidence": 84,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('input.form-input')",
+        "strategy": "css_stable_class",
+        "confidence": 78,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 0,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('input.form-input') >> nth=0"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div/div/div[2]/div[2]/form/div[1]/input')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 10,
+    "viable_count": 6,
+    "selector_metadata": {
+      "has_testid": true,
+      "has_role_based": false,
+      "has_text_based": true,
+      "has_scoped": false,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    },
+    "page_context": {
+      "page_title": "\u05d1\u05e0\u05e7 \u05d4\u05e4\u05d5\u05e2\u05dc\u05d9\u05dd - \u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+      "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+      "page_url_pattern": "/",
+      "suggested_page_class": "HomePage"
+    },
+    "method_context": {
+      "action_type": "interact",
+      "suggested_method_name": "performInput",
+      "causes_navigation": false
+    },
+    "component": "Login Form"
+  },
+  {
+    "index": 7,
+    "element": "<input> ''",
+    "action": "input",
+    "selector": "page.getByTestId('password-input')",
+    "confidence": 99,
+    "input_value": "",
+    "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+    "timestamp": "2026-01-22T10:47:34.606835",
+    "tag_name": "input",
+    "text_content": "",
+    "accessible_name": "\u05d4\u05d6\u05df \u05e1\u05d9\u05e1\u05de\u05d4",
+    "role": "textbox",
+    "viable_selectors": [
+      {
+        "selector": "page.getByTestId('password-input')",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByTestId('password-input')",
+        "strategy": "testid",
+        "confidence": 100,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('input[type=\"password\"]')",
+        "strategy": "input_type",
+        "confidence": 88,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByPlaceholder('\u05d4\u05d6\u05df \u05e1\u05d9\u05e1\u05de\u05d4')",
+        "strategy": "placeholder",
+        "confidence": 85,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByRole('heading', { name: '\u05db\u05e0\u05d9\u05e1\u05d4 \u05dc\u05d7\u05e9\u05d1\u05d5\u05e0\u05da' }).locator('..').getByPlaceholder('\u05d4\u05d6\u05df \u05e1\u05d9\u05e1\u05de\u05d4')",
+        "strategy": "heading_context_placeholder",
+        "confidence": 84,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('input.form-input')",
+        "strategy": "css_stable_class",
+        "confidence": 78,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 1,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('input.form-input') >> nth=1"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[2]/form/div[2]/input')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 11,
+    "viable_count": 7,
+    "selector_metadata": {
+      "has_testid": true,
+      "has_role_based": false,
+      "has_text_based": true,
+      "has_scoped": false,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    },
+    "page_context": {
+      "page_title": "\u05d1\u05e0\u05e7 \u05d4\u05e4\u05d5\u05e2\u05dc\u05d9\u05dd - \u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+      "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+      "page_url_pattern": "/",
+      "suggested_page_class": "HomePage"
+    },
+    "method_context": {
+      "action_type": "interact",
+      "suggested_method_name": "performInput",
+      "causes_navigation": false
+    }
+  },
+  {
+    "index": 10,
+    "element": "<button> '\u05db\u05e0\u05d9\u05e1\u05d4'",
+    "action": "click",
+    "selector": "page.getByTestId('login-button')",
+    "confidence": 99,
+    "input_value": "\u05db\u05e0\u05d9\u05e1\u05d4",
+    "url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+    "timestamp": "2026-01-22T10:47:43.636294",
+    "tag_name": "button",
+    "text_content": "\u05db\u05e0\u05d9\u05e1\u05d4",
+    "accessible_name": "\u05db\u05e0\u05d9\u05e1\u05d4",
+    "role": "button",
+    "viable_selectors": [
+      {
+        "selector": "page.getByTestId('login-button')",
+        "strategy": "roost_primary",
+        "confidence": 99,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique",
+        "source": "roost-primary-selector"
+      },
+      {
+        "selector": "page.getByTestId('login-button')",
+        "strategy": "testid",
+        "confidence": 100,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.getByRole('button', { name: '\u05db\u05e0\u05d9\u05e1\u05d4' })",
+        "strategy": "role_name",
+        "confidence": 95,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 0,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.getByRole('button', { name: '\u05db\u05e0\u05d9\u05e1\u05d4' }) >> nth=0"
+      },
+      {
+        "selector": "page.getByText('\u05db\u05e0\u05d9\u05e1\u05d4')",
+        "strategy": "text",
+        "confidence": 78,
+        "element_count": 4,
+        "is_unique": false,
+        "target_index": 2,
+        "tier": "semantic_fallback",
+        "warning": "Matches 4 elements (use .nth(2) for disambiguation)",
+        "selector_with_index": "page.getByText('\u05db\u05e0\u05d9\u05e1\u05d4') >> nth=2"
+      },
+      {
+        "selector": "page.locator('#root').getByRole('button', { name: '\u05db\u05e0\u05d9\u05e1\u05d4' })",
+        "strategy": "parent_id_role",
+        "confidence": 82,
+        "element_count": 2,
+        "is_unique": false,
+        "target_index": 0,
+        "tier": "near_unique",
+        "warning": "Matches 2 elements",
+        "selector_with_index": "page.locator('#root').getByRole('button', { name: '\u05db\u05e0\u05d9\u05e1\u05d4' }) >> nth=0"
+      },
+      {
+        "selector": "page.locator('button.login-btn')",
+        "strategy": "css_stable_class",
+        "confidence": 78,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^\u05db\u05e0\u05d9\u05e1\u05d4$/ })",
+        "strategy": "button_filter_exact",
+        "confidence": 75,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      },
+      {
+        "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[2]/form/button')",
+        "strategy": "xpath",
+        "confidence": 50,
+        "element_count": 1,
+        "is_unique": true,
+        "target_index": 0,
+        "tier": "unique"
+      }
+    ],
+    "tested_count": 9,
+    "viable_count": 8,
+    "selector_metadata": {
+      "has_testid": true,
+      "has_role_based": true,
+      "has_text_based": true,
+      "has_scoped": true,
+      "best_strategy": "roost_primary",
+      "uniqueness_status": "unique",
+      "target_index": 0,
+      "selector_with_index": null
+    },
+    "page_context": {
+      "page_title": "\u05d1\u05e0\u05e7 \u05d4\u05e4\u05d5\u05e2\u05dc\u05d9\u05dd - \u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1\u05e4\u05e8\u05d8\u05d9 \u05db\u05e8\u05d8\u05d9\u05e1",
+      "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+      "page_url_pattern": "/",
+      "suggested_page_class": "HomePage"
+    },
+    "method_context": {
+      "action_type": "click",
+      "suggested_method_name": "performClick",
+      "causes_navigation": true
+    }
+  }
+]
