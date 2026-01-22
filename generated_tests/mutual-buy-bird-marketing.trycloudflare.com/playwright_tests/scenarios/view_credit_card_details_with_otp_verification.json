@@ -1,0 +1,647 @@
+{
+  "site_url": "https://mutual-buy-bird-marketing.trycloudflare.com/",
+  "site_type": "unknown",
+  "site_category": "general",
+  "test_name": "view_credit_card_details_with_otp_verification",
+  "login_mechanisms": [
+    "site_navigation",
+    "content_browsing"
+  ],
+  "user_journeys": [
+    {
+      "workflow_type": "navigation_flow",
+      "path": [
+        "homepage"
+      ],
+      "success_rate": "discovered_site_navigation",
+      "scenario_priority": "medium",
+      "description": "General website navigation and content discovery"
+    }
+  ],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "View Credit Card Details with OTP Verification",
+      "description": "This end-to-end scenario validates the complete user workflow for securely viewing credit card details. The test covers navigating to the cards section, selecting a specific card, passing a preview screen, successfully entering a multi-digit OTP, viewing the details, and completing the session.",
+      "test_type": "e2e_business_workflow",
+      "priority": "critical",
+      "business_goal": "Ensure users can securely and reliably access their credit card details after completing the required OTP verification process.",
+      "user_story": "As a bank customer, I want to view my full credit card details after verifying my identity with an OTP, so that I can use the information for online transactions.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "Navigate to website homepage",
+          "component": "Global Navigation",
+          "description": "Load the main website homepage to begin the user journey.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/",
+          "verification_point": "Page URL is the homepage.",
+          "business_impact": "Ensures the application's entry point is accessible.",
+          "selector": "page.goto('https://mutual-buy-bird-marketing.trycloudflare.com/')",
+          "confidence": 100,
+          "based_on_interaction": true
+        },
+        {
+          "step_number": 2,
+          "action": "click",
+          "component": "Credit Card Actions",
+          "description": "Click the 'View card details' button on the homepage to start the process of viewing credit cards.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards",
+          "verification_point": "Page navigates to the card selection screen.",
+          "business_impact": "Initiates the primary user flow for accessing card information.",
+          "selector": "page.getByTestId('home-view-cards-button').getByText('צפייה בפרטי כרטיס')",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('home-view-cards-button').getByText('צפייה בפרטי כרטיס')",
+              "confidence": 99
+            },
+            {
+              "selector": "page.getByText('צפייה בפרטי כרטיס')",
+              "confidence": 88
+            },
+            {
+              "selector": "page.locator('[data-testid=\"home-view-cards-button\"]').locator('div')",
+              "confidence": 75
+            },
+            {
+              "selector": "page.locator('div').filter({ hasText: /^צפייה בפרטי כרטיס$/ })",
+              "confidence": 68
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div/div/div[2]/div[1]/div/div[2]/div[2]/div[1]/div[3]')",
+              "confidence": 50
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/home",
+            "page_url_pattern": "/",
+            "suggested_page_class": "HomePage"
+          },
+          "method_context": {
+            "action_type": "click",
+            "suggested_method_name": "performClick",
+            "causes_navigation": true
+          }
+        },
+        {
+          "step_number": 3,
+          "action": "click",
+          "component": "Credit Card Selection",
+          "description": "Select the Mastercard ending in 1425 from the list of available cards.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards",
+          "verification_point": "The specific card is highlighted or selected.",
+          "business_impact": "Allows the user to specify which card's details they wish to view.",
+          "selector": "page.getByTestId('card-item-1425')",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('card-item-1425')",
+              "confidence": 100
+            },
+            {
+              "selector": "page.locator('div.card-item')",
+              "confidence": 78
+            },
+            {
+              "selector": "page.locator('div').filter({ hasText: 'סוג כרטיסמאסטרקארדמספר כרטיס1425בעל הכרטיסישראל ישראלי' })",
+              "confidence": 55
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]')",
+              "confidence": 50
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards",
+            "page_url_pattern": "/",
+            "suggested_page_class": "CardsPage"
+          },
+          "method_context": {
+            "action_type": "click",
+            "suggested_method_name": "clickCardItem1425",
+            "causes_navigation": false
+          }
+        },
+        {
+          "step_number": 4,
+          "action": "click",
+          "component": "Card Selection",
+          "description": "Click the 'Continue' button to proceed after selecting a credit card.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/preview",
+          "verification_point": "Page navigates to the card details preview screen.",
+          "business_impact": "Confirms the user's card selection and moves to the next step.",
+          "selector": "page.getByTestId('continue-button')",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('continue-button')",
+              "confidence": 100
+            },
+            {
+              "selector": "page.getByRole('button', { name: 'המשך' })",
+              "confidence": 95
+            },
+            {
+              "selector": "page.getByText('המשך')",
+              "confidence": 88
+            },
+            {
+              "selector": "page.locator('#root').getByRole('button', { name: 'המשך' })",
+              "confidence": 82
+            },
+            {
+              "selector": "page.locator('button.btn.btn-primary')",
+              "confidence": 80
+            },
+            {
+              "selector": "page.locator('button.btn')",
+              "confidence": 78
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/button[1]')",
+              "confidence": 50
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards",
+            "page_url_pattern": "/",
+            "suggested_page_class": "CardsPage"
+          },
+          "method_context": {
+            "action_type": "click",
+            "suggested_method_name": "clickContinueButton",
+            "causes_navigation": true
+          }
+        },
+        {
+          "step_number": 5,
+          "action": "click",
+          "component": "Card Details View",
+          "description": "Click the 'View card details' button on the preview page to trigger the OTP verification step.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+          "verification_point": "Page navigates to the OTP input screen.",
+          "business_impact": "Acts as a final confirmation before initiating the security verification process.",
+          "selector": "page.getByTestId('view-card-details-button')",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('view-card-details-button')",
+              "confidence": 100
+            },
+            {
+              "selector": "page.getByRole('button', { name: /לצפייה בפרטי הכרטיס/ })",
+              "confidence": 95
+            },
+            {
+              "selector": "page.getByText('לצפייה בפרטי הכרטיס')",
+              "confidence": 88
+            },
+            {
+              "selector": "page.locator('#root').getByRole('button', { name: 'לצפייה בפרטי הכרטיס' })",
+              "confidence": 82
+            },
+            {
+              "selector": "page.locator('button.btn.btn-primary')",
+              "confidence": 80
+            },
+            {
+              "selector": "page.locator('button.btn')",
+              "confidence": 78
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/button[1]')",
+              "confidence": 50
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/preview",
+            "page_url_pattern": "/cards/preview",
+            "suggested_page_class": "CardsPreviewPage"
+          },
+          "method_context": {
+            "action_type": "click",
+            "suggested_method_name": "clickViewCardDetailsButton",
+            "causes_navigation": true
+          }
+        },
+        {
+          "step_number": 6,
+          "action": "input_text",
+          "component": "OTP Input",
+          "description": "Enter the first digit '1' of the OTP code '122074' into the first input field.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+          "verification_point": "The first OTP field is populated with '1'.",
+          "business_impact": "Begins the critical security verification step.",
+          "selector": "page.getByTestId('otp-input-0')",
+          "input_value": "1",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('otp-input-0')",
+              "confidence": 100
+            },
+            {
+              "selector": "page.locator('input.otp-input')",
+              "confidence": 69
+            },
+            {
+              "selector": "page.locator('.otp-input')",
+              "confidence": 67
+            },
+            {
+              "selector": "page.locator('#root').locator('input')",
+              "confidence": 63
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/input[1]')",
+              "confidence": 50
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+            "page_url_pattern": "/cards/otp",
+            "suggested_page_class": "CardsOtpPage"
+          },
+          "method_context": {
+            "action_type": "interact",
+            "suggested_method_name": "fillOtpInput0",
+            "causes_navigation": false
+          }
+        },
+        {
+          "step_number": 7,
+          "action": "input_text",
+          "component": "OTP Input",
+          "description": "Enter the second digit '2' of the OTP code '122074' into the second input field.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+          "verification_point": "The second OTP field is populated with '2'.",
+          "business_impact": "Continues the security verification process.",
+          "selector": "page.getByTestId('otp-input-1')",
+          "input_value": "2",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('otp-input-1')",
+              "confidence": 100
+            },
+            {
+              "selector": "page.locator('input.otp-input')",
+              "confidence": 69
+            },
+            {
+              "selector": "page.locator('.otp-input')",
+              "confidence": 67
+            },
+            {
+              "selector": "page.locator('#root').locator('input')",
+              "confidence": 63
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/input[2]')",
+              "confidence": 50
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+            "page_url_pattern": "/cards/otp",
+            "suggested_page_class": "CardsOtpPage"
+          },
+          "method_context": {
+            "action_type": "interact",
+            "suggested_method_name": "fillOtpInput1",
+            "causes_navigation": false
+          }
+        },
+        {
+          "step_number": 8,
+          "action": "input_text",
+          "component": "OTP Input",
+          "description": "Enter the third digit '2' of the OTP code '122074' into the third input field.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+          "verification_point": "The third OTP field is populated with '2'.",
+          "business_impact": "Continues the security verification process.",
+          "selector": "page.getByTestId('otp-input-2')",
+          "input_value": "2",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('otp-input-2')",
+              "confidence": 100
+            },
+            {
+              "selector": "page.locator('input.otp-input')",
+              "confidence": 69
+            },
+            {
+              "selector": "page.locator('.otp-input')",
+              "confidence": 67
+            },
+            {
+              "selector": "page.locator('#root').locator('input')",
+              "confidence": 63
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/input[3]')",
+              "confidence": 50
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+            "page_url_pattern": "/cards/otp",
+            "suggested_page_class": "CardsOtpPage"
+          },
+          "method_context": {
+            "action_type": "interact",
+            "suggested_method_name": "fillOtpInput2",
+            "causes_navigation": false
+          }
+        },
+        {
+          "step_number": 9,
+          "action": "input_text",
+          "component": "OTP Input",
+          "description": "Enter the fourth digit '0' of the OTP code '122074' into the fourth input field.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+          "verification_point": "The fourth OTP field is populated with '0'.",
+          "business_impact": "Continues the security verification process.",
+          "selector": "page.getByTestId('otp-input-3')",
+          "input_value": "0",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('otp-input-3')",
+              "confidence": 100
+            },
+            {
+              "selector": "page.locator('input.otp-input')",
+              "confidence": 69
+            },
+            {
+              "selector": "page.locator('.otp-input')",
+              "confidence": 67
+            },
+            {
+              "selector": "page.locator('#root').locator('input')",
+              "confidence": 63
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/input[4]')",
+              "confidence": 50
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+            "page_url_pattern": "/cards/otp",
+            "suggested_page_class": "CardsOtpPage"
+          },
+          "method_context": {
+            "action_type": "interact",
+            "suggested_method_name": "fillOtpInput3",
+            "causes_navigation": false
+          }
+        },
+        {
+          "step_number": 10,
+          "action": "input_text",
+          "component": "OTP Input",
+          "description": "Enter the fifth digit '7' of the OTP code '122074' into the fifth input field.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+          "verification_point": "The fifth OTP field is populated with '7'.",
+          "business_impact": "Continues the security verification process.",
+          "selector": "page.getByTestId('otp-input-4')",
+          "input_value": "7",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('otp-input-4')",
+              "confidence": 100
+            },
+            {
+              "selector": "page.locator('input.otp-input')",
+              "confidence": 69
+            },
+            {
+              "selector": "page.locator('.otp-input')",
+              "confidence": 67
+            },
+            {
+              "selector": "page.locator('#root').locator('input')",
+              "confidence": 63
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/input[5]')",
+              "confidence": 50
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+            "page_url_pattern": "/cards/otp",
+            "suggested_page_class": "CardsOtpPage"
+          },
+          "method_context": {
+            "action_type": "interact",
+            "suggested_method_name": "fillOtpInput4",
+            "causes_navigation": false
+          }
+        },
+        {
+          "step_number": 11,
+          "action": "input_text",
+          "component": "OTP Input",
+          "description": "Enter the final digit '4' of the OTP code '122074' into the sixth input field.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+          "verification_point": "The sixth OTP field is populated with '4'.",
+          "business_impact": "Completes the entry of the security code.",
+          "selector": "page.getByTestId('otp-input-5')",
+          "input_value": "4",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('otp-input-5')",
+              "confidence": 100
+            },
+            {
+              "selector": "page.locator('input.otp-input')",
+              "confidence": 69
+            },
+            {
+              "selector": "page.locator('.otp-input')",
+              "confidence": 67
+            },
+            {
+              "selector": "page.locator('#root').locator('input')",
+              "confidence": 63
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/input[6]')",
+              "confidence": 50
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+            "page_url_pattern": "/cards/otp",
+            "suggested_page_class": "CardsOtpPage"
+          },
+          "method_context": {
+            "action_type": "interact",
+            "suggested_method_name": "fillOtpInput5",
+            "causes_navigation": false
+          }
+        },
+        {
+          "step_number": 12,
+          "action": "click",
+          "component": "OTP Input",
+          "description": "Click the 'Continue' button to submit the entered OTP for verification.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/details",
+          "verification_point": "Page navigates to the card details display screen upon successful verification.",
+          "business_impact": "Validates the user's identity and grants access to sensitive information.",
+          "selector": "page.getByTestId('verify-otp-button')",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('verify-otp-button')",
+              "confidence": 100
+            },
+            {
+              "selector": "page.getByRole('button', { name: 'המשך' })",
+              "confidence": 95
+            },
+            {
+              "selector": "page.getByText('המשך')",
+              "confidence": 88
+            },
+            {
+              "selector": "page.locator('#root').getByRole('button', { name: 'המשך' })",
+              "confidence": 82
+            },
+            {
+              "selector": "page.locator('button.btn.btn-primary')",
+              "confidence": 80
+            },
+            {
+              "selector": "page.locator('button.btn')",
+              "confidence": 78
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[5]/button[1]')",
+              "confidence": 50
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/otp",
+            "page_url_pattern": "/cards/otp",
+            "suggested_page_class": "CardsOtpPage"
+          },
+          "method_context": {
+            "action_type": "click",
+            "suggested_method_name": "clickVerifyOtpButton",
+            "causes_navigation": true
+          }
+        },
+        {
+          "step_number": 13,
+          "action": "click",
+          "component": "Card Details View",
+          "description": "Click the 'Finish' button after viewing the card details to complete the workflow.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/success",
+          "verification_point": "Page navigates to a success or confirmation screen.",
+          "business_impact": "Securely concludes the user session and navigates them away from the sensitive data screen.",
+          "selector": "page.getByRole('button', { name: 'סיום' })",
+          "all_selectors": [
+            {
+              "selector": "page.getByRole('button', { name: 'סיום' })",
+              "confidence": 95
+            },
+            {
+              "selector": "page.getByText('סיום')",
+              "confidence": 88
+            },
+            {
+              "selector": "page.locator('#root').getByRole('button', { name: 'סיום' })",
+              "confidence": 82
+            },
+            {
+              "selector": "page.locator('button.btn.btn-secondary')",
+              "confidence": 80
+            },
+            {
+              "selector": "page.locator('button.btn')",
+              "confidence": 78
+            },
+            {
+              "selector": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^סיום$/ })",
+              "confidence": 75
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[3]/button[2]')",
+              "confidence": 50
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/cards/details",
+            "page_url_pattern": "/cards/details",
+            "suggested_page_class": "CardsDetailsPage"
+          },
+          "method_context": {
+            "action_type": "click",
+            "suggested_method_name": "clickFinishButton",
+            "causes_navigation": true
+          }
+        }
+      ],
+      "expected_results": [
+        "User successfully navigates through the entire card viewing workflow.",
+        "The correct OTP is accepted, and the user is granted access to the card details page.",
+        "The user is successfully redirected to a confirmation/success page after finishing the process.",
+        "The system handles the multi-step authentication process without errors."
+      ],
+      "edge_cases_to_test": [
+        "Entering an incorrect OTP.",
+        "Session timeout during the OTP entry step.",
+        "Attempting to navigate back to the details page after finishing the flow.",
+        "Network interruption after submitting the OTP."
+      ],
+      "data_requirements": [
+        "A valid test user account with at least one credit card.",
+        "A known, valid OTP for the test session (e.g., '122074')."
+      ],
+      "prerequisites": [
+        "The website is accessible and functional.",
+        "The user authentication and OTP generation services are operational.",
+        "The test user account is properly configured in the system."
+      ],
+      "auth_required": true,
+      "starting_url": "https://mutual-buy-bird-marketing.trycloudflare.com/"
+    }
+  ],
+  "login_completion_state": "successful",
+  "analysis_timestamp": "2026-01-22T11:08:04.524362",
+  "confidence_score": 0.5,
+  "auth_required": true,
+  "starting_url": "https://mutual-buy-bird-marketing.trycloudflare.com/"
+}

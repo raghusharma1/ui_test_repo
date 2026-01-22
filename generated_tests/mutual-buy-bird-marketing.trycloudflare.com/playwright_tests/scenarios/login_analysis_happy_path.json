@@ -1,0 +1,326 @@
+{
+  "site_url": "https://mutual-buy-bird-marketing.trycloudflare.com/",
+  "site_type": "login_workflow",
+  "site_category": "authentication",
+  "test_name": "login_analysis_happy_path",
+  "login_mechanisms": [
+    "form_login"
+  ],
+  "user_journeys": [],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "login_analysis_happy_path",
+      "test_name": "login_analysis_happy_path",
+      "test_type": "e2e_authentication_workflow",
+      "auth_required": false,
+      "description": "Tests the complete successful login flow using valid credentials, from entering user information to landing on the authenticated home page.",
+      "priority": "critical",
+      "business_goal": "Verify that registered users can successfully authenticate and access the application.",
+      "user_story": "As a registered user, I want to log in with my credentials so that I can access my account.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "input_text",
+          "description": "Enter username into the username field.",
+          "selector": "page.getByTestId('username-input')",
+          "value": "<secret>UI_SITE_USERNAME</secret>",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('username-input')",
+              "strategy": "roost_primary",
+              "confidence": 99,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique",
+              "source": "roost-primary-selector"
+            },
+            {
+              "selector": "page.getByTestId('username-input')",
+              "strategy": "testid",
+              "confidence": 100,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.getByPlaceholder('הזן קוד משתמש')",
+              "strategy": "placeholder",
+              "confidence": 85,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.getByRole('heading', { name: 'כניסה לחשבונך' }).locator('..').getByPlaceholder('הזן קוד משתמש')",
+              "strategy": "heading_context_placeholder",
+              "confidence": 84,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('input.form-input')",
+              "strategy": "css_stable_class",
+              "confidence": 78,
+              "element_count": 2,
+              "is_unique": false,
+              "target_index": 0,
+              "tier": "near_unique",
+              "warning": "Matches 2 elements",
+              "selector_with_index": "page.locator('input.form-input') >> nth=0"
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div/div/div[2]/div[2]/form/div[1]/input')",
+              "strategy": "xpath",
+              "confidence": 50,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            }
+          ],
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+          "confidence": 99,
+          "based_on_interaction": true,
+          "component": "Username Field",
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+            "page_url_pattern": "/",
+            "suggested_page_class": "HomePage"
+          },
+          "method_context": {
+            "action_type": "interact",
+            "suggested_method_name": "performInput",
+            "causes_navigation": false
+          }
+        },
+        {
+          "step_number": 2,
+          "action": "input_text",
+          "description": "Enter password into the password field.",
+          "selector": "page.getByTestId('password-input')",
+          "value": "<secret>UI_SITE_PASSWORD</secret>",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('password-input')",
+              "strategy": "roost_primary",
+              "confidence": 99,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique",
+              "source": "roost-primary-selector"
+            },
+            {
+              "selector": "page.getByTestId('password-input')",
+              "strategy": "testid",
+              "confidence": 100,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('input[type=\"password\"]')",
+              "strategy": "input_type",
+              "confidence": 88,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.getByPlaceholder('הזן סיסמה')",
+              "strategy": "placeholder",
+              "confidence": 85,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.getByRole('heading', { name: 'כניסה לחשבונך' }).locator('..').getByPlaceholder('הזן סיסמה')",
+              "strategy": "heading_context_placeholder",
+              "confidence": 84,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('input.form-input')",
+              "strategy": "css_stable_class",
+              "confidence": 78,
+              "element_count": 2,
+              "is_unique": false,
+              "target_index": 1,
+              "tier": "near_unique",
+              "warning": "Matches 2 elements",
+              "selector_with_index": "page.locator('input.form-input') >> nth=1"
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[2]/form/div[2]/input')",
+              "strategy": "xpath",
+              "confidence": 50,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            }
+          ],
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+          "confidence": 99,
+          "based_on_interaction": true,
+          "component": null,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+            "page_url_pattern": "/",
+            "suggested_page_class": "HomePage"
+          },
+          "method_context": {
+            "action_type": "interact",
+            "suggested_method_name": "performInput",
+            "causes_navigation": false
+          }
+        },
+        {
+          "step_number": 3,
+          "action": "click",
+          "description": "Click the login button to submit credentials.",
+          "selector": "page.getByTestId('login-button')",
+          "all_selectors": [
+            {
+              "selector": "page.getByTestId('login-button')",
+              "strategy": "roost_primary",
+              "confidence": 99,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique",
+              "source": "roost-primary-selector"
+            },
+            {
+              "selector": "page.getByTestId('login-button')",
+              "strategy": "testid",
+              "confidence": 100,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.getByRole('button', { name: 'כניסה' })",
+              "strategy": "role_name",
+              "confidence": 95,
+              "element_count": 2,
+              "is_unique": false,
+              "target_index": 0,
+              "tier": "near_unique",
+              "warning": "Matches 2 elements",
+              "selector_with_index": "page.getByRole('button', { name: 'כניסה' }) >> nth=0"
+            },
+            {
+              "selector": "page.getByText('כניסה')",
+              "strategy": "text",
+              "confidence": 78,
+              "element_count": 4,
+              "is_unique": false,
+              "target_index": 2,
+              "tier": "semantic_fallback",
+              "warning": "Matches 4 elements (use .nth(2) for disambiguation)",
+              "selector_with_index": "page.getByText('כניסה') >> nth=2"
+            },
+            {
+              "selector": "page.locator('#root').getByRole('button', { name: 'כניסה' })",
+              "strategy": "parent_id_role",
+              "confidence": 82,
+              "element_count": 2,
+              "is_unique": false,
+              "target_index": 0,
+              "tier": "near_unique",
+              "warning": "Matches 2 elements",
+              "selector_with_index": "page.locator('#root').getByRole('button', { name: 'כניסה' }) >> nth=0"
+            },
+            {
+              "selector": "page.locator('button.login-btn')",
+              "strategy": "css_stable_class",
+              "confidence": 78,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('button, input[type=\"submit\"], input[type=\"button\"]').filter({ hasText: /^כניסה$/ })",
+              "strategy": "button_filter_exact",
+              "confidence": 75,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            },
+            {
+              "selector": "page.locator('xpath=html/body/div[1]/div/div[2]/div[2]/form/button')",
+              "strategy": "xpath",
+              "confidence": 50,
+              "element_count": 1,
+              "is_unique": true,
+              "target_index": 0,
+              "tier": "unique"
+            }
+          ],
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+          "confidence": 99,
+          "based_on_interaction": true,
+          "component": null,
+          "page_context": {
+            "page_title": "בנק הפועלים - צפייה בפרטי כרטיס",
+            "page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/login",
+            "page_url_pattern": "/",
+            "suggested_page_class": "HomePage"
+          },
+          "method_context": {
+            "action_type": "click",
+            "suggested_method_name": "performClick",
+            "causes_navigation": true
+          }
+        },
+        {
+          "step_number": 4,
+          "action": "verify_url",
+          "description": "Verify successful login by confirming navigation to the home page.",
+          "expected_page_url": "https://mutual-buy-bird-marketing.trycloudflare.com/#/home",
+          "verification_point": "Page URL is the authenticated home page URL.",
+          "business_impact": "Confirms that the user has been successfully authenticated and granted access to the application."
+        }
+      ],
+      "expected_results": [
+        "User successfully authenticates with valid credentials.",
+        "User is redirected to the authenticated home page after login.",
+        "No authentication errors are displayed."
+      ],
+      "data_requirements": [
+        "A valid, registered user account with a known username and password."
+      ],
+      "prerequisites": [
+        "The target website is accessible.",
+        "The login functionality is operational."
+      ]
+    }
+  ],
+  "login_completion_state": "successful",
+  "analysis_timestamp": "2026-01-22T10:58:38.586494",
+  "confidence_score": 1.0,
+  "flow_type": "happy_path_only",
+  "excluded_scenarios": [],
+  "scenario_count": 1,
+  "focus": "successful_authentication_only",
+  "generated_from": "login_analysis.json",
+  "generation_timestamp": "2026-01-22T10:58:38.587761"
+}
