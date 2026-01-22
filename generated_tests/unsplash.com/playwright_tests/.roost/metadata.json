@@ -1,0 +1,80 @@
+{
+  "metadata_version": "1.0",
+  "created_at": "2026-01-22T09:52:10.248048",
+  "last_updated": "2026-01-22T10:02:38.837035",
+  "urls_to_pom_map": {
+    "https://unsplash.com/login": "LoginPage.js",
+    "https://unsplash.com/": "HomePage.js",
+    "https://unsplash.com/t/wallpapers": "WallpapersPage.js",
+    "https://unsplash.com/photos/abstract-pink-and-purple-marbled-texture-ghYgiyVb9N4": "PhotoDetailsPage.js"
+  },
+  "Login_File": {
+    "name": "standard",
+    "path": null,
+    "hash": "18c14d9e29449a98b0d9687acd9544ee274a2449bd4f0d2fc478841160669f62",
+    "agent_workflow_completed": true,
+    "agent_workflow_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\unsplash_user_scenario_auth_state\\1769055649\\temp_info\\unsplash.com\\extracted_data\\login_result_18c14d9e29449a98b0d9687acd9544ee274a2449bd4f0d2fc478841160669f62.json",
+    "agent_interaction_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\unsplash_user_scenario_auth_state\\1769055649\\temp_info\\unsplash.com\\extracted_data\\login_data_03ff75e27afad44d0a2d07dbc0bdf2457b15f6d5a60ca3008f19574813155679.json",
+    "scenario_name": "login_analysis_happy_path",
+    "scenario_file_path": "scenarios\\login_analysis_happy_path.json",
+    "test_generated": true,
+    "test_name": "login_analysis_happy_path.spec.js",
+    "test_file_path": "tests\\login_analysis_happy_path.spec.js",
+    "test_executed_success": true,
+    "pom_test_name": "login_analysis_happy_path_pom.spec.js",
+    "pom_test_file_path": "tests\\login_analysis_happy_path_pom.spec.js",
+    "pom_test_executed_success": true,
+    "pom_test_execution_error": null,
+    "agent_activity_summary": [
+      "The agent initiated the test by navigating to the Unsplash login page. It successfully identified and interacted with the email and password input fields, populating them with the provided credentials. The agent then located and clicked the 'Login' button, resulting in a successful redirection to the Unsplash homepage. The authentication state was captured and saved before the workflow concluded."
+    ],
+    "agent_activity_error": [
+      "No issues or errors were encountered during the execution. The process was completed without the need for recovery actions."
+    ],
+    "agent_activity_outcome": [
+      "The execution was successful. The agent logged into the application as per the user scenario and confirmed landing on the homepage. No 2FA or CAPTCHA challenges were presented."
+    ],
+    "agent_recommendation": "The test case passed. The generated selectors are stable and the saved authentication state can be reliably used for subsequent authenticated test scenarios.",
+    "urls_to_pom_map": {
+      "https://unsplash.com/login": "LoginPage.js"
+    }
+  },
+  "User_Scenarios_File": [
+    {
+      "name": "unsplash_wallpaper_click.pdf",
+      "path": "C:\\Users\\ZB\\Downloads\\unsplash_wallpaper_click.pdf",
+      "hash": "f208dffb01890a544743570e23f79136c4f4102de4998fb5c7a66c26aaa8d604",
+      "agent_workflow_completed": true,
+      "agent_workflow_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\unsplash_user_scenario_auth_state\\1769055649\\temp_info\\unsplash.com\\extracted_data\\interaction_data_790028aa850e0d009fc77b8b71519d8639a8e4c3f3e7a2ee1c3254c55b18f30b.json",
+      "agent_activity_summary": [
+        "The agent initiated the test on the Unsplash homepage. It successfully located and clicked the 'Wallpapers' navigation link as required by step 1. Upon landing on the wallpapers gallery page, the agent selected and clicked on a wallpaper image, successfully navigating to its detail page, fulfilling step 2. The test concluded after completing all user-defined actions."
+      ],
+      "agent_activity_error": [
+        "No errors or recovery actions were observed during the execution. The agent proceeded through all steps without issue."
+      ],
+      "agent_activity_outcome": [
+        "The execution successfully fulfilled the Original User Scenario. All required steps to view a wallpaper were completed in the correct sequence, achieving the desired goal."
+      ],
+      "agent_recommendation": "The test case passed successfully. No further action is required.",
+      "scenario_analysis_result_file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\unsplash_user_scenario_auth_state\\1769055649\\temp_info\\unsplash.com\\extracted_data\\user_scenario_790028aa850e0d009fc77b8b71519d8639a8e4c3f3e7a2ee1c3254c55b18f30b.json",
+      "scenario_name": "view_a_wallpaper_from_the_gallery",
+      "scenario_file_path": "scenarios\\view_a_wallpaper_from_the_gallery.json",
+      "feature_file_path": null,
+      "test_generated": true,
+      "test_generation_error": null,
+      "test_name": "view_a_wallpaper_from_the_gallery_pom.auth.spec.js",
+      "test_file_path": "tests\\view_a_wallpaper_from_the_gallery_pom.auth.spec.js",
+      "test_execution_error": null,
+      "test_executed_success": true,
+      "pom_test_name": "view_a_wallpaper_from_the_gallery_pom.auth.spec.js",
+      "pom_test_file_path": "tests\\view_a_wallpaper_from_the_gallery_pom.auth.spec.js",
+      "pom_test_executed_success": true,
+      "pom_test_execution_error": null,
+      "urls_to_pom_map": {
+        "https://unsplash.com/": "HomePage.js",
+        "https://unsplash.com/t/wallpapers": "WallpapersPage.js",
+        "https://unsplash.com/photos/abstract-pink-and-purple-marbled-texture-ghYgiyVb9N4": "PhotoDetailsPage.js"
+      }
+    }
+  ]
+}
