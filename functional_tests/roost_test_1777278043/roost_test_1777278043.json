@@ -1,0 +1,167 @@
+[
+  {
+    "type": "Regulatory",
+    "title": "Guarantor Classification Logic and Guarantee Law Compliance",
+    "description": "Validate the system's ability to correctly classify a guarantor as 'Protected', 'Single', or 'Other' based on ID type, relationship, and loan amount thresholds (L026.1).",
+    "testId": "TC-MORT-001",
+    "prerequisites": "Application is in 'In Setup' status; Main purpose is 'Housing'.",
+    "stepsToPerform": "1. Navigate to the Participant Details tab.\n2. Add a new participant and set the Role (L001) to 'Guarantor'.\n3. Set ID Type (L002) to 'Company' and verify the classification is 'Other Guarantor'.\n4. Change ID Type to 'Identity' and set Family Relationship (L020) to 'Cohabiting Spouse' and verify classification is 'Other Guarantor'.\n5. Change Family Relationship to 'Brother' (Non-controlling/Non-spouse).\n6. Enter a Requested Amount (C15) that is exactly 100 NIS below the 'Determining Guarantee Amount' for Housing.\n7. Save the application and verify the classification is 'Protected Guarantor'.\n8. Update the Requested Amount (C15) to exceed the 'Determining Guarantee Amount' by 100 NIS and verify the classification updates to 'Single Guarantor'.",
+    "expectedResult": "The system must dynamically update the Guarantor Type (L026.1) according to the Guarantee Law logic: 'Other' for companies/spouses, 'Protected' for amounts below the threshold, and 'Single' for amounts above the threshold.",
+    "businessRuleRef": "L026.1, Guarantee Law, NBOT 329",
+    "severity": "High"
+  },
+  {
+    "type": "Boundary",
+    "title": "Asset Value Calculation for Regulated Price Purchases (Israel Limit)",
+    "description": "Verify the complex A02 calculation for 'Regulated Price' purchases, specifically testing the 1,800,000 NIS 'Israel Limit' boundary.",
+    "testId": "TC-MORT-002",
+    "prerequisites": "Application initialized with Main Purpose: 'Purchase' and Sub-Purpose: 'Regulated Price'.",
+    "stepsToPerform": "1. Navigate to the Asset and Transaction Details tab.\n2. Manually enter a new asset and set the Locality (A01).\n3. Enter a Contract Value (A03) of 1,500,000 NIS.\n4. Enter an Appraisal Value (A07) of 2,000,000 NIS.\n5. Trigger the calculation and verify A02 equals 1,800,000 NIS (Higher of 1.5M and [Lower of 2M and 1.8M]).\n6. Update the Contract Value (A03) to 1,900,000 NIS.\n7. Trigger the calculation and verify A02 equals 1,900,000 NIS (Higher of 1.9M and 1.8M).\n8. Enter a Requested Amount (C15) that results in a financing percentage (C09) exceeding the regulatory limit and verify the 'Exceeding Financing Rate' alert is triggered.",
+    "expectedResult": "The Calculated Asset Value (A02) must strictly follow the formula: Higher of Contract Value and [Lower of Appraisal and 1,800,000]. Regulatory alerts must fire if C09 exceeds limits.",
+    "businessRuleRef": "A02 Logic, Appendix B, C09/C09.1",
+    "severity": "High"
+  },
+  {
+    "type": "E2E",
+    "title": "Workflow Gating, Consent Enforcement, and Data Refresh Logic",
+    "description": "Validate the end-to-end workflow gating from initialization to submission, including the mandatory consent check and the 24-hour data refresh rule.",
+    "testId": "TC-MORT-003",
+    "prerequisites": "User logged in as a Banker; No existing application for the test ID.",
+    "stepsToPerform": "1. Create a 'New Application' and select 'For Housing' -> 'Purchase' -> 'Contractor'.\n2. Navigate to Participant Details and enter ID details without checking the 'Approval for data import' box.\n3. Attempt to click 'Import Data' and verify the button is disabled or blocked with a mandatory message.\n4. Check the consent box and click 'Import Data'; verify data is pulled from Core Systems.\n5. Attempt to skip to the 'Financial Data' tab without filling required Asset fields and verify the 'Cannot proceed' blocking message.\n6. Complete all required fields until the status changes to 'Ready for Submission'.\n7. Wait for 24 hours (or simulate via system clock) and re-enter the application.\n8. Verify that the system automatically triggers a 'Data Refresh' call to interfaces and updates the 'Alerts' section.",
+    "expectedResult": "System must enforce hard-stop gating for consent and tab progression. The 1-day refresh rule must trigger an automatic interface call upon re-entry.",
+    "businessRuleRef": "Consent Workflow, Tab-to-tab blocking, 1-Day Refresh Rule",
+    "severity": "High"
+  },
+  {
+    "type": "Functional",
+    "title": "Financial Data Integrity and Disposable Income Calculation",
+    "description": "Verify the accuracy of the Disposable Income (IF007) calculation involving individual borrower income, joint income, and existing mortgage expenses.",
+    "testId": "TC-MORT-004",
+    "prerequisites": "Application with at least two Borrowers and one Paying Guarantor.",
+    "stepsToPerform": "1. Navigate to the Financial Data tab.\n2. Add 'Individual Income' for Borrower 1 (5,000 NIS) and Borrower 2 (5,000 NIS).\n3. Add 'Joint Income' of 2,000 NIS and verify it is correctly associated with both borrowers.\n4. Import an 'Existing Mortgage' from the Asset tab with a monthly payment of 3,000 NIS.\n5. Add a 'Guarantor Income' of 4,000 NIS and 'Guarantor Expenses' of 1,000 NIS.\n6. Manually add an 'Other Bank Loan' expense for Borrower 1 of 500 NIS.\n7. Click 'Save' to trigger the IF007 calculation.\n8. Verify the Total Disposable Income = (5k+5k+2k) + (4k) - (3k+500) - (1k) = 11,500 NIS.",
+    "expectedResult": "The Disposable Income (IF007) must accurately aggregate all income sources and subtract all validated expenses across borrowers and guarantors.",
+    "businessRuleRef": "IF007, IF001-IF004, Financial Data Screen Logic",
+    "severity": "High"
+  },
+  {
+    "type": "Regulatory",
+    "title": "Alert Management and Authorized Submission Overrides",
+    "description": "Validate the handling of Blocking, Inquiry, and Information alerts during the 'Sent for Approval' transition.",
+    "testId": "TC-MORT-005",
+    "prerequisites": "Application status is 'Ready for Submission'.",
+    "stepsToPerform": "1. Trigger a 'Blocking' alert (e.g., via a severe credit hit in the interface).\n2. Attempt to send the application for approval and verify the 'Submission Blocked' message.\n3. Log in as an 'Authorized User' and locate the 'Alert Exception Approval (L047.2)' field.\n4. Enter a valid justification and attempt to submit again.\n5. Trigger an 'Inquiry' alert and verify the system prompts for an 'Alert Justification (L047-1)'.\n6. Enter the justification and click 'Submit'.\n7. Verify the application status transitions to 'Sent for Approval'.\n8. Check the Application Header to ensure the 'Alerts' symbol (RLA97) reflects the highest severity correctly.",
+    "expectedResult": "Blocking alerts must prevent submission unless overridden by an authorized user with a reason. Inquiry alerts must require a justification before status transition.",
+    "businessRuleRef": "L047, L047.1, L047.2, Status Transition Logic",
+    "severity": "High"
+  },
+  {
+    "type": "Functional",
+    "title": "Impact of Purpose Modification on Data Integrity and Calculations",
+    "description": "Verify that changing or deleting a loan purpose mid-workflow correctly wipes associated data and re-triggers calculation logic to prevent stale data in the application.",
+    "testId": "TC-MORT-006",
+    "prerequisites": "Application is in 'In Setup' status with 'Housing' -> 'Purchase' -> 'Contractor' purpose selected and asset data filled.",
+    "stepsToPerform": "1. Navigate to the 'Application Setup' screen and click the 'Edit Purposes' button.\n2. Observe the existing data in the 'Asset and Transaction Details' tab (specifically Contract Value A03 and Appraisal Value A07).\n3. Change the Main Purpose from 'Purchase' to 'Self-Construction'.\n4. Confirm the system warning regarding data removal upon purpose change.\n5. Navigate back to the 'Asset and Transaction Details' tab.\n6. Verify that fields specific to 'Purchase' (like A03) are cleared or hidden based on Appendix B.\n7. Enter values for Land Value (A08) and Construction Costs (A12).\n8. Click 'Save' and verify that the Calculated Asset Value (A02) now uses the Self-Construction formula (A08 + A12) instead of the Purchase formula.",
+    "expectedResult": "Fields associated with the deleted purpose must be removed and excluded from calculations. The system must dynamically update the UI and calculation logic (A02) to match the new purpose.",
+    "businessRuleRef": "Editing Purposes (33, 34), Appendix B",
+    "severity": "High"
+  },
+  {
+    "type": "Regulatory",
+    "title": "Duplicate Application Detection and Participant Gating",
+    "description": "Ensure the system identifies duplicate mortgage applications for the same participant and prevents progression until the conflict is resolved.",
+    "testId": "TC-MORT-007",
+    "prerequisites": "An existing active application exists in the system for Borrower ID '123456789'.",
+    "stepsToPerform": "1. Start a 'New Application' process.\n2. Navigate to the 'Participant Details' tab.\n3. Enter ID '123456789' for the first participant.\n4. Check the mandatory consent box for data import.\n5. Click the 'Import Data' button.\n6. Observe the system triggering the interface call to the core systems.\n7. Verify that a 'Duplicate Application Detected' warning or blocking message appears.\n8. Attempt to navigate to the 'Asset Details' tab without resolving the duplicate and verify the navigation is blocked.",
+    "expectedResult": "The system must trigger a duplicate check upon 'Import Data'. If a duplicate is found, the user must be forced to handle it before proceeding to subsequent tabs.",
+    "businessRuleRef": "Duplicate Application Check (49, 50)",
+    "severity": "High"
+  },
+  {
+    "type": "Boundary",
+    "title": "Asset Value Calculation for Self-Construction and Estimated Value Fallback",
+    "description": "Validate the A02 calculation for Self-Construction, including the logic where it falls back to Estimated Value if primary fields are empty.",
+    "testId": "TC-MORT-008",
+    "prerequisites": "Application initialized with Main Purpose: 'Self-Construction'.",
+    "stepsToPerform": "1. Navigate to the 'Asset and Transaction Details' tab.\n2. Leave 'Land Value' (A08) and 'Total Construction Costs' (A12) empty.\n3. Enter an 'Estimated Value' (A01-1) of 2,000,000 NIS.\n4. Click 'Save' and verify that Calculated Asset Value (A02) equals 2,000,000 NIS.\n5. Now, enter 1,000,000 NIS in 'Land Value' (A08).\n6. Enter 1,500,000 NIS in 'Total Construction Costs' (A12).\n7. Click 'Save' and verify that A02 updates to 2,500,000 NIS (A08 + A12).\n8. Delete the value in A12, save, and verify A02 updates based on the remaining component (A08) rather than falling back to A01-1.",
+    "expectedResult": "A02 must equal A08 + A12. If both are empty, it must fall back to A01-1. The calculation must refresh immediately upon saving.",
+    "businessRuleRef": "A02 Logic - Self-Construction (119, 120)",
+    "severity": "Medium"
+  },
+  {
+    "type": "Functional",
+    "title": "Joint Account Data Import and Contact Info Overwrite Logic",
+    "description": "Verify that importing data from a joint account correctly overwrites transaction contact info while requiring manual selection of the primary contact person.",
+    "testId": "TC-MORT-009",
+    "prerequisites": "Application with two borrowers whose IDs match an existing joint account in the bank's core system.",
+    "stepsToPerform": "1. Navigate to the 'Participant Details' tab and add both borrowers.\n2. Navigate to the 'Asset and Transaction Details' tab and observe the default 'Transaction Contact Details' (inherited from the first participant).\n3. Go back to 'Participant Details' and locate the joint account row in the imported data section.\n4. Click 'Import Data' specifically for the joint account row.\n5. Return to the 'Asset and Transaction Details' tab.\n6. Verify that the 'Contact Information' (Phone/Email) has been overwritten by the joint account's data and is now 'View Only'.\n7. Verify that the 'Contact Person' field is now empty or requires manual selection.\n8. Select a contact person from the dropdown and save the application.",
+    "expectedResult": "Joint account import must overwrite transaction contact info and set it to View Only. The Contact Person must remain a manual selection to ensure accuracy.",
+    "businessRuleRef": "Transaction Contact Details (100, 101)",
+    "severity": "Medium"
+  },
+  {
+    "type": "Functional",
+    "title": "Tab Completion Indication and Dynamic Validation Reset",
+    "description": "Validate the UI 'Completion Indication' logic, ensuring it appears when required fields are met and disappears if the data state becomes incomplete.",
+    "testId": "TC-MORT-010",
+    "prerequisites": "Application is in 'In Setup' status.",
+    "stepsToPerform": "1. Navigate to the 'Participant Details' tab and fill all mandatory fields for the existing borrower.\n2. Click 'Save' and verify that a 'Completion Indication' (e.g., a checkmark) appears on the tab header.\n3. Navigate to the 'Asset and Transaction Details' tab and fill all mandatory fields.\n4. Click 'Save' and verify the indication appears for this tab as well.\n5. Return to the 'Participant Details' tab and add a second participant (Borrower).\n6. Observe the 'Completion Indication' on the 'Participant Details' tab.\n7. Verify that the indication is immediately removed because the new participant's mandatory fields are not yet filled.\n8. Clear a mandatory field for the first participant and verify the indication remains absent.",
+    "expectedResult": "The completion indication must be dynamic; it should appear only when 100% of required fields for all current participants/assets are filled and disappear if new entities are added or data is cleared.",
+    "businessRuleRef": "Completion Indication (17, 18)",
+    "severity": "Low"
+  },
+  {
+    "type": "Functional",
+    "title": "Partial Mortgage Repayment Logic and Financial Data Integration",
+    "description": "Validate the handling of existing mortgage loans on the encumbered asset when the borrower commits to partial repayment (L037), ensuring LAL44 and LAL45 are enforced and reflected.",
+    "testId": "TC-MORT-011",
+    "prerequisites": "Application in 'In Setup' status; Existing mortgage data retrieved from Kashmamit interface.",
+    "stepsToPerform": "1. Navigate to the 'Asset and Transaction Details' tab.\n2. Select an existing mortgage from the 'Existing Mortgage Loans on the Asset' table.\n3. Locate the 'Borrower Commitment to Repay' (L037) field.\n4. Select the value 'Partial' from the dropdown.\n5. Attempt to save the application without filling LAL44 or LAL45.\n6. Verify that the system triggers a validation error for 'Total Repaid Amount' and 'Remaining Monthly Payment'.\n7. Enter 500,000 NIS in 'Total Repaid Amount' (LAL44) and 2,500 NIS in 'Remaining Monthly Payment' (LAL45).\n8. Navigate to the 'Financial Data' tab and verify that the 'Borrower Expenses' section reflects the updated 2,500 NIS payment instead of the original Kashmamit value.",
+    "expectedResult": "The system must enforce LAL44 and LAL45 as mandatory when L037 is 'Partial'. The updated 'Remaining Monthly Payment' must flow correctly into the IF007 Disposable Income calculation.",
+    "businessRuleRef": "L037, LAL44, LAL45, Rule 90, Rule 91",
+    "severity": "High"
+  },
+  {
+    "type": "Regulatory",
+    "title": "Non-Bank Participant Identity Update and Alert Triggering",
+    "description": "Verify that for participants not found in the bank's core systems, updating key identity fields triggers a mandatory interface call for alerts.",
+    "testId": "TC-MORT-012",
+    "prerequisites": "New application; Participant added with an ID that does not exist in the bank's core system.",
+    "stepsToPerform": "1. Navigate to the 'Participant Details' tab.\n2. Enter an ID number (L002) that returns 'No customer in bank systems'.\n3. Manually enter the First Name, Last Name, and English Name fields.\n4. Click 'Save' and observe the 'Alerts' table (RLA97).\n5. Modify the 'First Name' (L003) to a different value.\n6. Observe the system status bar or network logs to confirm a renewed call to the alert interface.\n7. Verify that any new alerts returned by the interface are populated in the Alerts table.\n8. Change the 'Last Name in English' and verify the alert refresh triggers again as per the 4-key-identity-field rule.",
+    "expectedResult": "The system must automatically trigger an alert interface call whenever any of the four key identity fields (First/Last Name in Hebrew/English) are updated for non-bank customers.",
+    "businessRuleRef": "Rule 54, Alert Data Import Logic",
+    "severity": "Medium"
+  },
+  {
+    "type": "Boundary",
+    "title": "Financing Rate Alert Logic with Dynamic Value Injection",
+    "description": "Validate the 'Exceeding Financing Rate' alert (Rule 94) when the requested loan amount exceeds the regulatory maximum based on the calculated asset value.",
+    "testId": "TC-MORT-013",
+    "prerequisites": "Asset details and Calculated Asset Value (A02) are established.",
+    "stepsToPerform": "1. Navigate to the 'Asset and Transaction Details' tab.\n2. Ensure A02 (Calculated Asset Value) is set to 2,000,000 NIS.\n3. Navigate to the 'Transaction Details' section.\n4. Enter a 'Requested Amount' (C15) of 1,600,000 NIS (80% financing).\n5. Assume the regulatory limit for this purpose is 75%.\n6. Click 'Save' to trigger the C09 (Financing Percentage) calculation.\n7. Verify that an alert is triggered with the specific text: 'The mortgage amount in the application exceeds the maximum allowed amount...'.\n8. Confirm the alert message dynamically displays the correct Financing Percentage (80%) and the Maximum Amount (1,500,000 NIS) based on A02.",
+    "expectedResult": "The system must trigger a specific alert when C09 > C09.1. The alert message must contain the actual calculated percentage and the maximum allowed currency value.",
+    "businessRuleRef": "Rule 94, C09, C09.1",
+    "severity": "High"
+  },
+  {
+    "type": "Functional",
+    "title": "Application Header Data Aggregation and Performance Model Display",
+    "description": "Verify the application header correctly concatenates multiple borrower names and displays the dual-output Performance Prediction Model (RLA96).",
+    "testId": "TC-MORT-014",
+    "prerequisites": "Application with at least three borrowers added.",
+    "stepsToPerform": "1. Navigate to the 'Participant Details' tab.\n2. Add Borrower 1: 'Israel Israeli', Borrower 2: 'Sarah Levi', and Borrower 3: 'Moshe Cohen'.\n3. Click 'Save' and observe the Application Header.\n4. Verify field RLA98 displays 'Israel Israeli, Sarah Levi, Moshe Cohen' (up to 203 characters).\n5. Check the 'Performance Prediction Model' (RLA96) field in the header.\n6. Verify that RLA96 displays outputs from both required models as per the specification.\n7. Change the status of the application to 'Ready for Submission'.\n8. Verify the 'Application Submission Date' (RLA99) in the header updates to the current system date.",
+    "expectedResult": "The header must correctly aggregate all borrower names and display the results of both performance models. RLA99 must capture the timestamp of the first 'Ready' state.",
+    "businessRuleRef": "RLA98, RLA96, RLA99, Rule 37, Rule 40",
+    "severity": "Low"
+  },
+  {
+    "type": "Functional",
+    "title": "Joint Income Auto-Association for Late-Added Participants",
+    "description": "Verify that 'Joint Income' added in the Financial Data tab automatically associates with all borrowers, including those added to the application after the income was recorded.",
+    "testId": "TC-MORT-015",
+    "prerequisites": "Application with one initial Borrower.",
+    "stepsToPerform": "1. Navigate to the 'Financial Data' tab.\n2. Add a 'Joint Income' source of 10,000 NIS.\n3. Verify the income is associated with Borrower 1.\n4. Navigate back to the 'Participant Details' tab.\n5. Add a second participant with the role 'Borrower'.\n6. Return to the 'Financial Data' tab.\n7. Verify that the 10,000 NIS Joint Income is now automatically displayed and associated with both Borrower 1 and Borrower 2.\n8. Add a 'Guarantor' (not a Paying Guarantor) and verify the Joint Income is NOT associated with the Guarantor.",
+    "expectedResult": "Joint Income must dynamically associate with every participant assigned the 'Borrower' role, regardless of when they were added, but must exclude non-paying guarantors.",
+    "businessRuleRef": "Rule 105, Joint Income Logic",
+    "severity": "Medium"
+  }
+]
