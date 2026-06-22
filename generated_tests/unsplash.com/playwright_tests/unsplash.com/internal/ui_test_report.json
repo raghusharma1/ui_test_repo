@@ -1,0 +1,134 @@
+{
+  "login_scenario": "Skipped",
+  "workflow_completed": false,
+  "workflow_result": "FAIL",
+  "workflow_error": "",
+  "login_agent_activity_summary": "Not available",
+  "user_scenario_agent_activity_summary": "Not available",
+  "generated_files": {
+    "feature_files": [],
+    "json_files": []
+  },
+  "scenarios": {
+    "w01_unsplash_wallpaper_click_1": {
+      "test_name": "w01_unsplash_wallpaper_click_1",
+      "description": "Scenario run is working",
+      "testFilePath": "",
+      "extracted_data": "unsplash.com/extracted_data/captured_ui_data.json"
+    }
+  },
+  "token_usage": {
+    "total": {
+      "input": 80982,
+      "output": 3825,
+      "total": 84807,
+      "cost": 0.029194740000000004,
+      "cached_input": 17268
+    },
+    "sessions": {
+      "main_execution": {
+        "type": "root",
+        "input": 0,
+        "output": 0,
+        "total": 0,
+        "cost": 0.0,
+        "cached_input": 0,
+        "call_count": 0,
+        "start_time": 1782113833.6718533,
+        "end_time": 1782113908.5279114,
+        "duration": 74.85605812072754
+      },
+      "worker_supervisor_WF001": {
+        "type": "worker_supervisor",
+        "input": 2502,
+        "output": 170,
+        "total": 2672,
+        "cost": 0.0011756,
+        "cached_input": 0,
+        "call_count": 2,
+        "start_time": 1782113833.7131894,
+        "end_time": 1782113854.0773327,
+        "duration": 20.36414337158203
+      },
+      "explore_worker_WF001_a1": {
+        "type": "auto_created",
+        "input": 8873,
+        "output": 389,
+        "total": 9262,
+        "cost": 0.0036344000000000003,
+        "cached_input": 0,
+        "call_count": 1,
+        "start_time": 1782113846.7441006,
+        "end_time": null,
+        "duration": null
+      },
+      "explore_synthesize_single_workflow": {
+        "type": "auto_created",
+        "input": 2128,
+        "output": 727,
+        "total": 2855,
+        "cost": 0.0024559,
+        "cached_input": 0,
+        "call_count": 1,
+        "start_time": 1782113867.110391,
+        "end_time": null,
+        "duration": null
+      },
+      "report_curation_WF001": {
+        "type": "auto_created",
+        "input": 829,
+        "output": 168,
+        "total": 997,
+        "cost": 0.0006686999999999999,
+        "cached_input": 0,
+        "call_count": 1,
+        "start_time": 1782113872.131817,
+        "end_time": null,
+        "duration": null
+      },
+      "post_explore_testgen": {
+        "type": "root",
+        "input": 0,
+        "output": 0,
+        "total": 0,
+        "cost": 0.0,
+        "cached_input": 0,
+        "call_count": 0,
+        "start_time": 1782113872.416685,
+        "end_time": 1782113908.5270257,
+        "duration": 36.11034059524536
+      },
+      "pom_gen_w01_unsplash_wallpaper_click_1": {
+        "type": "test_generation",
+        "input": 27830,
+        "output": 1358,
+        "total": 29188,
+        "cost": 0.009003770000000001,
+        "cached_input": 10149,
+        "call_count": 5,
+        "start_time": 1782113872.4201622,
+        "end_time": null,
+        "duration": null
+      },
+      "test_gen_pom_w01_unsplash_wallpaper_click_1": {
+        "type": "test_generation",
+        "input": 38820,
+        "output": 1013,
+        "total": 39833,
+        "cost": 0.01225637,
+        "cached_input": 7119,
+        "call_count": 5,
+        "start_time": 1782113885.6980662,
+        "end_time": null,
+        "duration": null
+      }
+    },
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "timestamp": "2026-06-22T07:38:28.528383",
+    "cache_statistics": {
+      "total_cached_tokens": 17268,
+      "cache_hit_rate_percent": 21.3
+    }
+  }
+}
