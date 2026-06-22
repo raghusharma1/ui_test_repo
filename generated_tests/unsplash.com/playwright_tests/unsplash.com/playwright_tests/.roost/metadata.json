@@ -1,0 +1,171 @@
+{
+  "metadata_version": "1.0",
+  "created_at": "2026-06-22T07:21:13.392600",
+  "last_updated": "2026-06-22T07:22:25.277422",
+  "output_dir": "RoostGPT/ui_gemini_unsp_api_test/93a48db5-57da-4006-b823-f6bdddaab151/source/ui_test_repo/generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests",
+  "site_url": "https://unsplash.com",
+  "pom_files": [
+    {
+      "url": "",
+      "file_name": "HomePage.js",
+      "file_path": "pom_tests/pom/HomePage.js"
+    }
+  ],
+  "Login_File": {
+    "name": null,
+    "path": null,
+    "hash": null,
+    "agent_workflow_completed": false,
+    "agent_workflow_file_path": null,
+    "agent_interaction_file_path": null,
+    "agent_activity_summary": null,
+    "agent_activity_error": null,
+    "agent_activity_outcome": null,
+    "agent_recommendation": null,
+    "agent_completion_level": null,
+    "agent_steps_completed": null,
+    "execution_flow_file_path": null,
+    "systematic_selectors_file_path": null,
+    "scenario_name": null,
+    "scenario_file_path": null,
+    "test_generated": false,
+    "test_generation_error": null,
+    "test_file_path": null,
+    "test_executed_success": null,
+    "test_execution_error": null,
+    "pom_test_name": null,
+    "pom_test_file_path": null,
+    "pom_test_executed_success": null,
+    "pom_test_execution_error": null,
+    "pom_files": null
+  },
+  "Workflows": [
+    {
+      "workflow_id": "WF001",
+      "title": "Unsplash Wallpaper Click",
+      "goal": "Verify initial access to the Unsplash homepage.",
+      "feature_area": "Image sharing and stock photography",
+      "priority": "high",
+      "starting_hint": "# TASK: Open Wallpaper\n\n## STEPS:\n1. Use click on link \"Wallpapers\"\n2. Use click on image \"wallpaper\"\n\n## SUCCESS: Complete the steps above",
+      "discovery_source": "user_scenario",
+      "source_file": "/var/tmp/Roost/RoostGPT/ui_gemini_unsp_api_test/93a48db5-57da-4006-b823-f6bdddaab151/unsplash_wallpaper_click (1).md",
+      "source_file_hash": "ab968edef45f8f197293a44bf9456c7fa6e812d4e27883340ebd3edf90f82d22",
+      "worker_completed": true,
+      "worker_result": "success",
+      "linked_scenario_name": "w01_unsplash_wallpaper_click_1",
+      "error": null,
+      "scenario_name": "w01_unsplash_wallpaper_click_1",
+      "scenario_file_path": "generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests/scenarios/WF001_unsplash_wallpaper_click_1.json",
+      "scenario_summary_file_path": "generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests/scenarios/summaries/WF001_unsplash_wallpaper_click_1.md",
+      "report_pdf_file_path": "generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests/scenarios/reports/WF001_unsplash_wallpaper_click_1.pdf",
+      "feature_file_path": null,
+      "feature_file_name": null,
+      "agent_workflow_file_path": "/var/tmp/Roost/RoostGPT/ui_gemini_unsp_api_test/93a48db5-57da-4006-b823-f6bdddaab151/temp_info/unsplash.com/extracted_data/execution_flow_WF001_unsplash_wallpaper_click_1.json",
+      "agent_workflow_completed": false,
+      "scenario_analysis_result_file_path": null,
+      "agent_activity_summary": [
+        "The agent initiated the task by successfully navigating to the Unsplash homepage. However, after the initial navigation, the task was terminated due to an encountered 'hard blocker', preventing any further progress towards the scenario goal of clicking a wallpaper."
+      ],
+      "agent_activity_error": [
+        "After successfully navigating to https://unsplash.com, the agent encountered a 'hard blocker' that prevented the continuation of the workflow. No recovery actions were performed as the task was explicitly terminated due to this unresolvable issue."
+      ],
+      "agent_activity_outcome": [
+        "The agent was unable to complete the 'Unsplash Wallpaper Click' scenario. Only the initial navigation step was performed before a critical blocking issue led to the termination of the task, failing to achieve the objective of clicking a wallpaper."
+      ],
+      "agent_recommendation": "Investigate the nature of the 'hard blocker' encountered immediately after initial navigation to https://unsplash.com. This investigation should aim to identify the root cause preventing the agent from proceeding with the scenario steps, such as locating and clicking the 'Wallpapers' link or the subsequent image.",
+      "agent_completion_level": "failed",
+      "agent_steps_completed": 2,
+      "visited_urls": [
+        "https://unsplash.com",
+        "https://unsplash.com/"
+      ],
+      "execution_flow_file_path": null,
+      "test_generated": true,
+      "test_generation_error": null,
+      "test_name": "w01_unsplash_wallpaper_click_1",
+      "test_file_path": "generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests/pom_tests/w01_unsplash_wallpaper_click_1_pom.noauth.spec.js",
+      "test_executed_success": true,
+      "test_execution_error": null,
+      "pom_test_name": "w01_unsplash_wallpaper_click_1_pom.noauth.spec.js",
+      "pom_test_file_path": "generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests/pom_tests/w01_unsplash_wallpaper_click_1_pom.noauth.spec.js",
+      "pom_test_executed_success": true,
+      "pom_test_execution_error": null,
+      "pom_files": [
+        {
+          "url": "",
+          "file_name": "HomePage.js",
+          "file_path": "pom_tests/pom/HomePage.js"
+        }
+      ],
+      "test_steps": [
+        "Load the Unsplash homepage."
+      ],
+      "video_recording_path": "/var/tmp/Roost/RoostGPT/ui_gemini_unsp_api_test/93a48db5-57da-4006-b823-f6bdddaab151/temp_info/unsplash.com/extracted_data/recordings/WF001_a1/06a38e26-df6f-71ac-8000-3703bde5e780.mp4"
+    }
+  ],
+  "explore_focus_areas": [],
+  "Imported_Test_Coverage": null,
+  "Token_Usage": {
+    "cumulative": {
+      "input_tokens": 79976,
+      "output_tokens": 3580,
+      "cached_input_tokens": 0,
+      "total_tokens": 83556,
+      "total_cost_usd": 0.028556
+    },
+    "runs": [
+      {
+        "run_type": "generate",
+        "timestamp": "2026-06-22T07:22:25.274991",
+        "provider": "gemini",
+        "model": "gemini-2.5-flash",
+        "input_tokens": 79976,
+        "output_tokens": 3580,
+        "total_tokens": 83556,
+        "cost_usd": 0.028556,
+        "sessions": {
+          "main_execution": {
+            "input": 0,
+            "output": 0,
+            "cost": 0.0
+          },
+          "worker_supervisor_WF001": {
+            "input": 2512,
+            "output": 179,
+            "cost": 0.001201
+          },
+          "explore_worker_WF001_a1": {
+            "input": 8877,
+            "output": 421,
+            "cost": 0.003716
+          },
+          "explore_synthesize_single_workflow": {
+            "input": 2131,
+            "output": 663,
+            "cost": 0.002297
+          },
+          "report_curation_WF001": {
+            "input": 833,
+            "output": 160,
+            "cost": 0.00065
+          },
+          "post_explore_testgen": {
+            "input": 0,
+            "output": 0,
+            "cost": 0.0
+          },
+          "pom_gen_w01_unsplash_wallpaper_click_1": {
+            "input": 26857,
+            "output": 935,
+            "cost": 0.00793
+          },
+          "test_gen_pom_w01_unsplash_wallpaper_click_1": {
+            "input": 38766,
+            "output": 1222,
+            "cost": 0.012762
+          }
+        }
+      }
+    ]
+  }
+}
