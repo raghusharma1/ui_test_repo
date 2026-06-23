@@ -1,0 +1,250 @@
+{
+  "metadata_version": "1.0",
+  "created_at": "2026-06-23T13:33:44.251829",
+  "last_updated": "2026-06-23T14:05:28.323047",
+  "output_dir": "RoostGPT/ui_gemini_devroost_api_scenario/a72e278e-b4ac-4cdd-bb50-a0c37404c643/source/ui_test_repo/generated_tests/dev.roost.ai/playwright_tests/dev.roost.ai/playwright_tests",
+  "site_url": "https://dev.roost.ai",
+  "pom_files": [
+    {
+      "url": "",
+      "file_name": "HomePage.js",
+      "file_path": "pom_tests/pom/HomePage.js"
+    },
+    {
+      "url": "",
+      "file_name": "ConnectorsPage.js",
+      "file_path": "pom_tests/pom/ConnectorsPage.js"
+    }
+  ],
+  "Login_File": {
+    "name": null,
+    "path": null,
+    "hash": null,
+    "agent_workflow_completed": false,
+    "agent_workflow_file_path": null,
+    "agent_interaction_file_path": null,
+    "agent_activity_summary": null,
+    "agent_activity_error": null,
+    "agent_activity_outcome": null,
+    "agent_recommendation": null,
+    "agent_completion_level": null,
+    "agent_steps_completed": null,
+    "execution_flow_file_path": null,
+    "systematic_selectors_file_path": null,
+    "scenario_name": null,
+    "scenario_file_path": null,
+    "test_generated": false,
+    "test_generation_error": null,
+    "test_file_path": null,
+    "test_executed_success": null,
+    "test_execution_error": null,
+    "pom_test_name": null,
+    "pom_test_file_path": null,
+    "pom_test_executed_success": null,
+    "pom_test_execution_error": null,
+    "pom_files": null
+  },
+  "Workflows": [
+    {
+      "workflow_id": "WF001",
+      "title": "Gemini Connector Creation",
+      "goal": "Verify users can successfully create a Gemini AI connector.",
+      "feature_area": "AI/ML Platform Management",
+      "priority": "high",
+      "starting_hint": "# Create Gemini AI Connector + Out-of-Band API Verification\n\nCreate an AI connector (Gemini AI) through the Connectors UI on dev.roost.ai,\nthen independently verify — via Playwright's `request` fixture, NOT the browser —\nthat the connector was actually persisted by the backend with the correct\nattributes, and that the supplied API key was stored **encrypted at rest**\n(never returned in plaintext).\n\nThe session is already authenticated, so the app loads directly.\n\nStep 1: Open https://dev.roost.ai — confirm the logged-in RoostGPT shell is visible (no Sign In prompt).\nStep 2: Navigate to the Connectors tab. Wait for the connectors list to render.\nStep 3: Click \"Add Connector\".\nStep 4: Under \"AI Models\", select \"Gemini AI\".\nStep 5: Fill out the connector field values:\n  - Name: gemini_demo_connector  (if the planned name already exists, append 1, 2, 3, … to get a unique name, e.g. gemini_demo_connector1)\n  - API Key: AIzaSyBg4hZdSdWfzEUtRP077ZTQyPCzDvgYCHo\nStep 6: Submit the form and confirm the connector is created (success toast / the new connector appears in the list).",
+      "discovery_source": "user_scenario",
+      "source_file": "/var/tmp/Roost/RoostGPT/ui_gemini_devroost_api_scenario/a72e278e-b4ac-4cdd-bb50-a0c37404c643/gemini_connector_api_check.md",
+      "source_file_hash": "12a6b7ddf88006caf3ecda8210ed8142e54c1abe85ed3e1f283192ffbbc4828b",
+      "worker_completed": true,
+      "worker_result": "success",
+      "linked_scenario_name": "w01_gemini_connector_api_check",
+      "error": null,
+      "scenario_name": "w01_gemini_connector_api_check",
+      "scenario_file_path": "generated_tests/dev.roost.ai/playwright_tests/dev.roost.ai/playwright_tests/scenarios/WF001_gemini_connector_api_check.json",
+      "scenario_summary_file_path": "generated_tests/dev.roost.ai/playwright_tests/dev.roost.ai/playwright_tests/scenarios/summaries/WF001_gemini_connector_api_check.md",
+      "report_pdf_file_path": "generated_tests/dev.roost.ai/playwright_tests/dev.roost.ai/playwright_tests/scenarios/reports/WF001_gemini_connector_api_check.pdf",
+      "feature_file_path": null,
+      "feature_file_name": null,
+      "agent_workflow_file_path": "/var/tmp/Roost/RoostGPT/ui_gemini_devroost_api_scenario/a72e278e-b4ac-4cdd-bb50-a0c37404c643/temp_info/dev.roost.ai/extracted_data/execution_flow_WF001_gemini_connector_api_check.json",
+      "agent_workflow_completed": true,
+      "scenario_analysis_result_file_path": null,
+      "agent_activity_summary": [
+        "The agent successfully navigated to the Roost AI platform, proceeded to the Connectors tab, and initiated the process to add a new AI connector. It selected 'Gemini AI' and attempted to create a connector named 'gemini_demo_connector'. Upon encountering an existing connector with that name, it iteratively adjusted the name to 'gemini_demo_connector1' and then 'gemini_demo_connector2', successfully creating the connector with the unique name and provided API key. The workflow concluded with the confirmation of the connector's creation."
+      ],
+      "agent_activity_error": [
+        "The agent encountered an 'Connector with the same name already exists' error twice. Initially, it attempted to create 'gemini_demo_connector' (Steps 5-7), which failed. The agent recovered by closing the error toast (Step 8) and retrying the creation with 'gemini_demo_connector1' (Steps 9-11). This second attempt also failed due to an existing connector. The agent again recovered by closing the error toast (Step 12) and successfully created the connector using the name 'gemini_demo_connector2' (Steps 13-14), demonstrating robust error handling and adherence to the scenario's naming conflict resolution strategy."
+      ],
+      "agent_activity_outcome": [
+        "The agent successfully achieved the goal of submitting the form and creating a Gemini AI connector. Despite initial attempts failing due to existing connector names, the agent successfully recovered by incrementing the connector name and ultimately created 'gemini_demo_connector2' with the specified API key."
+      ],
+      "agent_recommendation": "Implement a pre-check mechanism to verify connector name uniqueness before form submission, or automatically generate a unique suffix for the connector name to prevent 'already exists' errors and streamline the creation process. This would reduce the number of submission attempts required.",
+      "agent_completion_level": "complete",
+      "agent_steps_completed": 15,
+      "visited_urls": [
+        "https://dev.roost.ai",
+        "https://dev.roost.ai/connectors",
+        "https://dev.roost.ai/roostgpt/tests"
+      ],
+      "execution_flow_file_path": null,
+      "test_generated": true,
+      "test_generation_error": null,
+      "test_name": "w01_gemini_connector_api_check",
+      "test_file_path": "generated_tests/dev.roost.ai/playwright_tests/dev.roost.ai/playwright_tests/pom_tests/w01_gemini_connector_api_check_pom.auth.spec.js",
+      "test_executed_success": false,
+      "test_execution_error": [
+        "Test: Discovered Workflow: Gemini Connector Api Check - Complete User Journey",
+        "======================================================================",
+        "Main Error:",
+        "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.",
+        "Call log:",
+        "\u001b[2m  - waiting for getByRole('button', { name: 'Save' }) to be visible\u001b[22m",
+        "",
+        "",
+        "Detailed Errors:",
+        "",
+        "Error 1:",
+        "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.",
+        "Call log:",
+        "\u001b[2m  - waiting for getByRole('button', { name: 'Save' }) to be visible\u001b[22m",
+        "",
+        "",
+        "   at pom/ConnectorsPage.js:78",
+        "",
+        "  76 |   async clickSaveButton() {",
+        "  77 |     const saveButtonByRole = this.page.getByRole('button', { name: 'Save' });",
+        "> 78 |     await saveButtonByRole.waitFor({ state: 'visible', timeout: 10000 }); // Wait for button to be visible",
+        "     |                            ^",
+        "  79 |     await this.page.waitForTimeout(500); // Small delay to ensure UI is ready",
+        "  80 |     await saveButtonByRole.click({ timeout: 30000, force: true }); // Force click if element is covered",
+        "  81 |     return this"
+      ],
+      "pom_test_name": "w01_gemini_connector_api_check_pom.auth.spec.js",
+      "pom_test_file_path": "generated_tests/dev.roost.ai/playwright_tests/dev.roost.ai/playwright_tests/pom_tests/w01_gemini_connector_api_check_pom.auth.spec.js",
+      "pom_test_executed_success": false,
+      "pom_test_execution_error": [
+        "Test: Discovered Workflow: Gemini Connector Api Check - Complete User Journey",
+        "======================================================================",
+        "Main Error:",
+        "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.",
+        "Call log:",
+        "\u001b[2m  - waiting for getByRole('button', { name: 'Save' }) to be visible\u001b[22m",
+        "",
+        "",
+        "Detailed Errors:",
+        "",
+        "Error 1:",
+        "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.",
+        "Call log:",
+        "\u001b[2m  - waiting for getByRole('button', { name: 'Save' }) to be visible\u001b[22m",
+        "",
+        "",
+        "   at pom/ConnectorsPage.js:78",
+        "",
+        "  76 |   async clickSaveButton() {",
+        "  77 |     const saveButtonByRole = this.page.getByRole('button', { name: 'Save' });",
+        "> 78 |     await saveButtonByRole.waitFor({ state: 'visible', timeout: 10000 }); // Wait for button to be visible",
+        "     |                            ^",
+        "  79 |     await this.page.waitForTimeout(500); // Small delay to ensure UI is ready",
+        "  80 |     await saveButtonByRole.click({ timeout: 30000, force: true }); // Force click if element is covered",
+        "  81 |     return this"
+      ],
+      "pom_files": [
+        {
+          "url": "",
+          "file_name": "HomePage.js",
+          "file_path": "pom_tests/pom/HomePage.js"
+        },
+        {
+          "url": "",
+          "file_name": "ConnectorsPage.js",
+          "file_path": "pom_tests/pom/ConnectorsPage.js"
+        }
+      ],
+      "test_steps": [
+        "Load the RoostGPT shell homepage.",
+        "Click on the 'Connectors' tab to navigate to the connectors management page.",
+        "Click the 'Add Connector' button to open the connector creation form.",
+        "Select 'Gemini AI' as the type of connector to add.",
+        "Enter the name for the new Gemini AI connector.",
+        "Enter the API Key for the Gemini AI connector.",
+        "Click the 'Save' button to submit the connector creation form."
+      ],
+      "video_recording_path": "/var/tmp/Roost/RoostGPT/ui_gemini_devroost_api_scenario/a72e278e-b4ac-4cdd-bb50-a0c37404c643/temp_info/dev.roost.ai/extracted_data/recordings/WF001_a1/06a3a8b7-72c5-7ce1-8000-dd6fd9ea39ba.mp4"
+    }
+  ],
+  "explore_focus_areas": [],
+  "Imported_Test_Coverage": null,
+  "Token_Usage": {
+    "cumulative": {
+      "input_tokens": 3568755,
+      "output_tokens": 183796,
+      "cached_input_tokens": 0,
+      "total_tokens": 3752551,
+      "total_cost_usd": 1.118388
+    },
+    "runs": [
+      {
+        "run_type": "generate",
+        "timestamp": "2026-06-23T14:05:28.319152",
+        "provider": "gemini",
+        "model": "gemini-2.5-flash",
+        "input_tokens": 3568755,
+        "output_tokens": 183796,
+        "total_tokens": 3752551,
+        "cost_usd": 1.118388,
+        "sessions": {
+          "main_execution": {
+            "input": 0,
+            "output": 0,
+            "cost": 0.0
+          },
+          "llm_call": {
+            "input": 3497,
+            "output": 1354,
+            "cost": 0.004434
+          },
+          "worker_supervisor_WF001": {
+            "input": 2976,
+            "output": 146,
+            "cost": 0.001258
+          },
+          "explore_worker_WF001_a1": {
+            "input": 184780,
+            "output": 8620,
+            "cost": 0.060343
+          },
+          "explore_synthesize_single_workflow": {
+            "input": 5576,
+            "output": 2916,
+            "cost": 0.008963
+          },
+          "report_curation_WF001": {
+            "input": 4854,
+            "output": 759,
+            "cost": 0.003354
+          },
+          "post_explore_testgen": {
+            "input": 0,
+            "output": 0,
+            "cost": 0.0
+          },
+          "pom_gen_w01_gemini_connector_api_check": {
+            "input": 52996,
+            "output": 2408,
+            "cost": 0.01972
+          },
+          "test_gen_pom_w01_gemini_connector_api_check": {
+            "input": 114038,
+            "output": 3891,
+            "cost": 0.031817
+          },
+          "code_repair_w01_gemini_connector_api_check_pom.auth.spec.js": {
+            "input": 3200038,
+            "output": 163702,
+            "cost": 0.988499
+          }
+        }
+      }
+    ]
+  }
+}

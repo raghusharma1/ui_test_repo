@@ -1,0 +1,336 @@
+{
+  "site_type": "saas",
+  "site_category": "AI/ML Platform Management",
+  "confidence_score": 0.95,
+  "user_journeys": [
+    {
+      "journey_name": "Gemini Connector Creation",
+      "description": "User creates a new Gemini AI connector within the platform.",
+      "business_value": "Enables users to integrate external AI services, expanding platform capabilities.",
+      "user_persona": "Administrator / Developer",
+      "frequency": "weekly",
+      "complexity": "medium"
+    }
+  ],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "Discovered Workflow: Gemini Connector Api Check - Complete User Journey",
+      "description": "Verifies the end-to-end process of creating a Gemini AI connector, including navigation, form filling, and submission.",
+      "workflow_narrative": "The user navigates to the Connectors section, initiates the 'Add Connector' process, selects 'Gemini AI', fills in the connector name and API key, and successfully saves the new connector.",
+      "playwright_implementation_guidance": [
+        "Ensure proper waiting for page navigation after clicking 'Connectors' tab.",
+        "Verify the success toast message or the presence of the new connector in the list after submission."
+      ],
+      "test_type": "e2e_business_workflow",
+      "priority": "high",
+      "business_goal": "Verify users can successfully create a Gemini AI connector.",
+      "user_story": "As an administrator, I want to create a Gemini AI connector so that I can integrate Gemini AI services with the platform.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "Navigate to homepage",
+          "component": "Navigation",
+          "description": "Load the RoostGPT shell homepage.",
+          "expected_page_url": "https://dev.roost.ai",
+          "verification_point": "RoostGPT shell is loaded.",
+          "business_impact": "Site accessibility",
+          "selector": "page.goto('https://dev.roost.ai', { waitUntil: 'domcontentloaded' })",
+          "confidence": 100,
+          "based_on_interaction": true,
+          "all_selectors": [],
+          "page_context": {
+            "suggested_page_class": "HomePage",
+            "page_url_pattern": "/"
+          },
+          "method_context": {
+            "suggested_method_name": "navigateToHomepage",
+            "action_type": "navigate"
+          }
+        },
+        {
+          "step_number": 2,
+          "action": "Click",
+          "component": "Connectors Tab",
+          "description": "Click on the 'Connectors' tab to navigate to the connectors management page.",
+          "expected_page_url": "https://dev.roost.ai/connectors",
+          "verification_point": "Connectors page is displayed.",
+          "business_impact": "Access to connector management features.",
+          "selector": "page.getByTestId('connectors-tab')",
+          "all_selectors": [
+            {
+              "selector": "page.getByRole('link', { name: 'Connectors' })",
+              "strategy": "role_name",
+              "confidence": 95,
+              "is_unique": true
+            },
+            {
+              "selector": "page.getByText('Connectors')",
+              "strategy": "text",
+              "confidence": 88,
+              "is_unique": true
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "web_component_parent": null,
+          "page_context": {
+            "suggested_page_class": "ConnectorsPage",
+            "page_url_pattern": "/connectors"
+          },
+          "method_context": {
+            "suggested_method_name": "clickConnectorsTab",
+            "action_type": "click"
+          }
+        },
+        {
+          "step_number": 3,
+          "action": "Click",
+          "component": "Add Connector Button",
+          "description": "Click the 'Add Connector' button to open the connector creation form.",
+          "expected_page_url": "https://dev.roost.ai/connectors",
+          "verification_point": "Add Connector form is displayed.",
+          "business_impact": "Initiates the process of adding a new connector.",
+          "selector": "page.getByTestId('add-connector-button')",
+          "all_selectors": [
+            {
+              "selector": "page.getByText('Add Connector')",
+              "strategy": "text",
+              "confidence": 88,
+              "is_unique": true
+            },
+            {
+              "selector": "page.locator('div').filter({ hasText: /^Add Connector$/ })",
+              "strategy": "div_filter_exact",
+              "confidence": 68,
+              "is_unique": true
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "web_component_parent": null,
+          "page_context": {
+            "suggested_page_class": "ConnectorsPage",
+            "page_url_pattern": "/connectors"
+          },
+          "method_context": {
+            "suggested_method_name": "clickAddConnectorButton",
+            "action_type": "click"
+          }
+        },
+        {
+          "step_number": 4,
+          "action": "Click",
+          "component": "Gemini AI Option",
+          "description": "Select 'Gemini AI' as the type of connector to add.",
+          "expected_page_url": "https://dev.roost.ai/connectors",
+          "verification_point": "'Gemini AI' connector type is highlighted or selected.",
+          "business_impact": "Specifies the AI service for integration.",
+          "selector": "page.getByText('Gemini AI')",
+          "all_selectors": [
+            {
+              "selector": "page.getByText('Gemini')",
+              "strategy": "text_phrase",
+              "confidence": 80,
+              "is_unique": true
+            },
+            {
+              "selector": "page.locator('div').filter({ hasText: /^Gemini AI$/ })",
+              "strategy": "div_filter_exact",
+              "confidence": 68,
+              "is_unique": false
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "web_component_parent": null,
+          "page_context": {
+            "suggested_page_class": "ConnectorsPage",
+            "page_url_pattern": "/connectors"
+          },
+          "method_context": {
+            "suggested_method_name": "selectGeminiAIConnector",
+            "action_type": "click"
+          }
+        },
+        {
+          "step_number": 5,
+          "action": "Fill",
+          "component": "Connector Name Input",
+          "description": "Enter the name for the new Gemini AI connector.",
+          "expected_page_url": "https://dev.roost.ai/connectors",
+          "verification_point": "Connector name input field is populated.",
+          "business_impact": "Provides a unique identifier for the connector.",
+          "selector": "page.getByTestId('connector-name-input')",
+          "input_value": "gemini_demo_connector2",
+          "all_selectors": [
+            {
+              "selector": "page.getByPlaceholder('Gemini_AI_Connector')",
+              "strategy": "placeholder",
+              "confidence": 85,
+              "is_unique": true
+            },
+            {
+              "selector": "page.getByRole('heading', { name: 'Gemini AI Connector' }).locator('..').getByPlaceholder('Gemini_AI_Connector')",
+              "strategy": "heading_context_placeholder",
+              "confidence": 84,
+              "is_unique": true
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "web_component_parent": null,
+          "page_context": {
+            "suggested_page_class": "ConnectorsPage",
+            "page_url_pattern": "/connectors"
+          },
+          "method_context": {
+            "suggested_method_name": "fillConnectorName",
+            "action_type": "fill"
+          }
+        },
+        {
+          "step_number": 6,
+          "action": "Fill",
+          "component": "API Key Input",
+          "description": "Enter the API Key for the Gemini AI connector.",
+          "expected_page_url": "https://dev.roost.ai/connectors",
+          "verification_point": "API Key input field is populated.",
+          "business_impact": "Authenticates the connector with the Gemini AI service.",
+          "selector": "page.getByTestId('ai-access-token')",
+          "input_value": "AIzaSyBg4hZdSdWfzEUtRP077ZTQyPCzDvgYCHo",
+          "all_selectors": [
+            {
+              "selector": "page.locator('input[type=\"password\"]')",
+              "strategy": "input_type",
+              "confidence": 88,
+              "is_unique": true
+            },
+            {
+              "selector": "page.getByPlaceholder('Access Token')",
+              "strategy": "placeholder",
+              "confidence": 85,
+              "is_unique": true
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "web_component_parent": null,
+          "page_context": {
+            "suggested_page_class": "ConnectorsPage",
+            "page_url_pattern": "/connectors"
+          },
+          "method_context": {
+            "suggested_method_name": "fillApiKey",
+            "action_type": "fill"
+          }
+        },
+        {
+          "step_number": 7,
+          "action": "Click",
+          "component": "Save Button",
+          "description": "Click the 'Save' button to submit the connector creation form.",
+          "expected_page_url": "https://dev.roost.ai/connectors",
+          "verification_point": "Gemini AI connector is successfully created and a success notification is displayed.",
+          "business_impact": "Finalizes the connector creation process.",
+          "selector": "page.getByTestId('connector-save-button')",
+          "all_selectors": [
+            {
+              "selector": "page.getByText('Save')",
+              "strategy": "text",
+              "confidence": 88,
+              "is_unique": true
+            },
+            {
+              "selector": "page.locator('div').filter({ hasText: /^Save$/ })",
+              "strategy": "div_filter_exact",
+              "confidence": 68,
+              "is_unique": true
+            }
+          ],
+          "confidence": 99,
+          "based_on_interaction": true,
+          "web_component_parent": null,
+          "page_context": {
+            "suggested_page_class": "ConnectorsPage",
+            "page_url_pattern": "/connectors"
+          },
+          "method_context": {
+            "suggested_method_name": "clickSaveButton",
+            "action_type": "click"
+          }
+        }
+      ],
+      "expected_results": [
+        "The Gemini AI connector 'gemini_demo_connector2' is successfully created.",
+        "A success toast message is displayed.",
+        "The new connector appears in the list of available connectors."
+      ],
+      "edge_cases_to_test": [
+        "Invalid API key submission.",
+        "Duplicate connector name submission.",
+        "Network interruption during submission."
+      ],
+      "data_requirements": [
+        "Valid Gemini AI API Key (test key if available, otherwise a placeholder for manual input).",
+        "Unique connector name."
+      ],
+      "prerequisites": [
+        "User is logged in and has permissions to create connectors.",
+        "Site is accessible."
+      ]
+    }
+  ],
+  "site_url": "https://dev.roost.ai",
+  "test_name": "w01_gemini_connector_api_check",
+  "login_mechanisms": [
+    "general_interaction"
+  ],
+  "login_completion_state": "successful",
+  "analysis_timestamp": "2026-06-23T13:38:19.364141",
+  "auth_required": true,
+  "starting_url": "https://dev.roost.ai",
+  "workflow_id": "WF001",
+  "api_assertions": [
+    {
+      "after_step": 6,
+      "method": "GET",
+      "url": "https://dev.roost.ai/api/connector?app_id=zbio",
+      "auth": "bearer ${UI_API_TOKEN}",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null,
+      "expect": {
+        "status": 200,
+        "body.app_id": "zbio",
+        "body.connector_type": "ai",
+        "body.connector_scope": "owner",
+        "body.connector": "Gemini AI",
+        "body.attributes.connector": "Gemini AI",
+        "body.connector_name": {
+          "type": "string",
+          "matches": "^gemini_demo_connector\\d*$"
+        }
+      },
+      "description": "Fetch connectors for app_id=zbio and locate the connector created above by name (matches gemini_demo_connector with an optional numeric suffix from the uniqueness rule). Assert its core attributes round-tripped correctly.\n"
+    },
+    {
+      "after_step": 6,
+      "method": "GET",
+      "url": "https://dev.roost.ai/api/connector?app_id=zbio",
+      "auth": "bearer ${UI_API_TOKEN}",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null,
+      "expect": {
+        "status": 200,
+        "body.values": {
+          "type": "string",
+          "matches": "^[0-9a-f]+$"
+        }
+      },
+      "description": "Verify the stored credential is the encrypted hex blob and that the raw Google API key (AIzaSy...) is not leaked back through the API.\n"
+    }
+  ]
+}
