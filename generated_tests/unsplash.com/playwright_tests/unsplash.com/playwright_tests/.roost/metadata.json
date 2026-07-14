@@ -1,0 +1,183 @@
+{
+  "metadata_version": "1.0",
+  "created_at": "2026-07-14T10:48:52.483677",
+  "last_updated": "2026-07-14T10:53:26.154835",
+  "output_dir": "RoostGPT/ui_gemini_unsplash_login/d49623a4-1eed-4e04-b685-36644a0589dd/source/ui_test_repo/generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests",
+  "site_url": "https://unsplash.com",
+  "pom_files": [
+    {
+      "url": "",
+      "file_name": "HomePage.js",
+      "file_path": "pom_tests/pom/HomePage.js"
+    },
+    {
+      "url": "",
+      "file_name": "WallpapersPage.js",
+      "file_path": "pom_tests/pom/WallpapersPage.js"
+    }
+  ],
+  "Login_File": {
+    "name": null,
+    "path": null,
+    "hash": null,
+    "agent_workflow_completed": false,
+    "agent_workflow_file_path": null,
+    "agent_interaction_file_path": null,
+    "agent_activity_summary": null,
+    "agent_activity_error": null,
+    "agent_activity_outcome": null,
+    "agent_recommendation": null,
+    "agent_completion_level": null,
+    "agent_steps_completed": null,
+    "execution_flow_file_path": null,
+    "systematic_selectors_file_path": null,
+    "scenario_name": null,
+    "scenario_file_path": null,
+    "test_generated": false,
+    "test_generation_error": null,
+    "test_file_path": null,
+    "test_executed_success": null,
+    "test_execution_error": null,
+    "pom_test_name": null,
+    "pom_test_file_path": null,
+    "pom_test_executed_success": null,
+    "pom_test_execution_error": null,
+    "pom_files": null
+  },
+  "Workflows": [
+    {
+      "workflow_id": "WF001",
+      "title": "Browse Wallpapers",
+      "goal": "Verify users can access the Wallpapers category page.",
+      "feature_area": "Stock Photography Platform",
+      "priority": "high",
+      "starting_hint": "# TASK: Open Wallpaper\n\n## STEPS:\n1. Use click on link \"Wallpapers\"\n2. Use click on image \"wallpaper\"\n\n## SUCCESS: Complete the steps above",
+      "discovery_source": "user_scenario",
+      "source_file": "/var/tmp/Roost/RoostGPT/ui_gemini_unsplash_login/d49623a4-1eed-4e04-b685-36644a0589dd/unsplash_wallpaper_click (1).md",
+      "source_file_hash": "ab968edef45f8f197293a44bf9456c7fa6e812d4e27883340ebd3edf90f82d22",
+      "worker_completed": true,
+      "worker_result": "success",
+      "linked_scenario_name": "w01_unsplash_wallpaper_click_1",
+      "error": null,
+      "scenario_name": "w01_unsplash_wallpaper_click_1",
+      "scenario_file_path": "generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests/scenarios/WF001_unsplash_wallpaper_click_1.json",
+      "scenario_summary_file_path": "generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests/scenarios/summaries/WF001_unsplash_wallpaper_click_1.md",
+      "report_pdf_file_path": "generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests/scenarios/reports/WF001_unsplash_wallpaper_click_1.pdf",
+      "feature_file_path": null,
+      "feature_file_name": null,
+      "agent_workflow_file_path": "/var/tmp/Roost/RoostGPT/ui_gemini_unsplash_login/d49623a4-1eed-4e04-b685-36644a0589dd/temp_info/unsplash.com/extracted_data/execution_flow_WF001_unsplash_wallpaper_click_1.json",
+      "agent_workflow_completed": false,
+      "scenario_analysis_result_file_path": null,
+      "agent_activity_summary": [
+        "The agent initiated the workflow by navigating to the Unsplash homepage. Following initial navigation, the agent performed redundant clicks on the 'Go home' link before attempting to recover by navigating directly to the Wallpapers topic page. Although the agent successfully reached the Wallpapers section, it failed to perform the final required action of clicking an image, instead reporting a hard blocker and terminating the task."
+      ],
+      "agent_activity_error": [
+        "In Steps 2 and 3, the agent performed redundant clicks on the 'Go home' link, failing to progress toward the 'Wallpapers' link. The agent attempted recovery in Step 5 by navigating directly to 'https://unsplash.com/t/wallpapers' to bypass the homepage. However, at Step 6, the agent encountered an unspecified 'hard blocker' and terminated the session without completing the final step of the scenario."
+      ],
+      "agent_activity_outcome": [
+        "The agent reached the Wallpapers page but failed to click on an image as specified in the Original User Scenario. The goal was not fully achieved."
+      ],
+      "agent_recommendation": "Investigate the 'hard blocker' reported at Step 6. It is likely the agent failed to identify a valid selector for the images on the Wallpapers page. Ensure the agent is configured to handle dynamic image grids or provide a more specific selector for the target image.",
+      "agent_completion_level": "partial",
+      "agent_steps_completed": 6,
+      "visited_urls": [
+        "https://unsplash.com",
+        "https://unsplash.com/t/wallpapers",
+        "https://unsplash.com/"
+      ],
+      "execution_flow_file_path": null,
+      "test_generated": true,
+      "test_generation_error": null,
+      "test_name": "w01_unsplash_wallpaper_click_1",
+      "test_file_path": "generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests/pom_tests/w01_unsplash_wallpaper_click_1_pom.noauth.spec.js",
+      "test_executed_success": true,
+      "test_execution_error": null,
+      "pom_test_name": "w01_unsplash_wallpaper_click_1_pom.noauth.spec.js",
+      "pom_test_file_path": "generated_tests/unsplash.com/playwright_tests/unsplash.com/playwright_tests/pom_tests/w01_unsplash_wallpaper_click_1_pom.noauth.spec.js",
+      "pom_test_executed_success": true,
+      "pom_test_execution_error": null,
+      "pom_files": [
+        {
+          "url": "",
+          "file_name": "HomePage.js",
+          "file_path": "pom_tests/pom/HomePage.js"
+        },
+        {
+          "url": "",
+          "file_name": "WallpapersPage.js",
+          "file_path": "pom_tests/pom/WallpapersPage.js"
+        }
+      ],
+      "test_steps": [
+        "Load the Unsplash homepage",
+        "Navigate to the Wallpapers category page"
+      ],
+      "video_recording_path": "/var/tmp/Roost/RoostGPT/ui_gemini_unsplash_login/d49623a4-1eed-4e04-b685-36644a0589dd/temp_info/unsplash.com/extracted_data/recordings/WF001_a1/06a56141-9e60-79bd-8000-a138402d999e.mp4"
+    }
+  ],
+  "explore_focus_areas": [],
+  "Imported_Test_Coverage": null,
+  "Token_Usage": {
+    "cumulative": {
+      "input_tokens": 166305,
+      "output_tokens": 14282,
+      "cached_input_tokens": 0,
+      "total_tokens": 180587,
+      "total_cost_usd": 0.088209
+    },
+    "runs": [
+      {
+        "run_type": "generate",
+        "timestamp": "2026-07-14T10:53:26.152343",
+        "provider": "gemini",
+        "model": "gemini-3-flash-preview",
+        "input_tokens": 166305,
+        "output_tokens": 14282,
+        "total_tokens": 180587,
+        "cost_usd": 0.088209,
+        "sessions": {
+          "main_execution": {
+            "input": 0,
+            "output": 0,
+            "cost": 0.0
+          },
+          "worker_supervisor_WF001": {
+            "input": 2540,
+            "output": 325,
+            "cost": 0.002245
+          },
+          "explore_worker_WF001_a1": {
+            "input": 52438,
+            "output": 5111,
+            "cost": 0.030217
+          },
+          "explore_synthesize_single_workflow": {
+            "input": 2639,
+            "output": 2573,
+            "cost": 0.009038
+          },
+          "report_curation_WF001": {
+            "input": 6187,
+            "output": 1096,
+            "cost": 0.006382
+          },
+          "post_explore_testgen": {
+            "input": 0,
+            "output": 0,
+            "cost": 0.0
+          },
+          "pom_gen_w01_unsplash_wallpaper_click_1": {
+            "input": 39200,
+            "output": 2240,
+            "cost": 0.018131
+          },
+          "test_gen_pom_w01_unsplash_wallpaper_click_1": {
+            "input": 63301,
+            "output": 2937,
+            "cost": 0.022196
+          }
+        }
+      }
+    ]
+  }
+}
