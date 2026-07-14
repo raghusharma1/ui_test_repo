@@ -1,0 +1,146 @@
+{
+  "login_scenario": "Skipped",
+  "workflow_completed": false,
+  "workflow_result": "FAIL",
+  "workflow_error": "",
+  "login_agent_activity_summary": "Not available",
+  "user_scenario_agent_activity_summary": "Not available",
+  "generated_files": {
+    "feature_files": [],
+    "json_files": []
+  },
+  "scenarios": {
+    "w01_unsplash_wallpaper_click": {
+      "test_name": "w01_unsplash_wallpaper_click",
+      "description": "Scenario run is working",
+      "testFilePath": "",
+      "extracted_data": "unsplash.com\\extracted_data\\captured_ui_data.json"
+    }
+  },
+  "token_usage": {
+    "total": {
+      "input": 213707,
+      "output": 11879,
+      "total": 225586,
+      "cost": 0.08314405000000001,
+      "cached_input": 131881
+    },
+    "sessions": {
+      "main_execution": {
+        "type": "root",
+        "input": 0,
+        "output": 0,
+        "total": 0,
+        "cost": 0.0,
+        "cached_input": 0,
+        "call_count": 0,
+        "start_time": 1784026411.0741568,
+        "end_time": 1784026612.2136476,
+        "duration": 201.1394908428192
+      },
+      "worker_supervisor_WF001": {
+        "type": "worker_supervisor",
+        "input": 3917,
+        "output": 155,
+        "total": 4072,
+        "cost": 0.0024235,
+        "cached_input": 0,
+        "call_count": 3,
+        "start_time": 1784026411.1442451,
+        "end_time": 1784026470.9864366,
+        "duration": 59.84219145774841
+      },
+      "explore_worker_WF001_a1": {
+        "type": "auto_created",
+        "input": 33100,
+        "output": 2848,
+        "total": 35948,
+        "cost": 0.01804115,
+        "cached_input": 15673,
+        "call_count": 3,
+        "start_time": 1784026434.790927,
+        "end_time": null,
+        "duration": null
+      },
+      "explore_synthesize_single_workflow": {
+        "type": "auto_created",
+        "input": 2640,
+        "output": 1454,
+        "total": 4094,
+        "cost": 0.0056819999999999996,
+        "cached_input": 0,
+        "call_count": 1,
+        "start_time": 1784026492.7761443,
+        "end_time": null,
+        "duration": null
+      },
+      "report_curation_WF001": {
+        "type": "auto_created",
+        "input": 3864,
+        "output": 269,
+        "total": 4133,
+        "cost": 0.002739,
+        "cached_input": 0,
+        "call_count": 1,
+        "start_time": 1784026498.870779,
+        "end_time": null,
+        "duration": null
+      },
+      "post_explore_testgen": {
+        "type": "root",
+        "input": 0,
+        "output": 0,
+        "total": 0,
+        "cost": 0.0,
+        "cached_input": 0,
+        "call_count": 0,
+        "start_time": 1784026500.0730877,
+        "end_time": 1784026612.2128675,
+        "duration": 112.13977980613708
+      },
+      "pom_gen_w01_unsplash_wallpaper_click": {
+        "type": "test_generation",
+        "input": 37811,
+        "output": 1221,
+        "total": 39032,
+        "cost": 0.010682650000000002,
+        "cached_input": 26413,
+        "call_count": 6,
+        "start_time": 1784026500.075951,
+        "end_time": null,
+        "duration": null
+      },
+      "test_gen_pom_w01_unsplash_wallpaper_click": {
+        "type": "test_generation",
+        "input": 76415,
+        "output": 3911,
+        "total": 80326,
+        "cost": 0.027925600000000002,
+        "cached_input": 48922,
+        "call_count": 7,
+        "start_time": 1784026514.9039185,
+        "end_time": null,
+        "duration": null
+      },
+      "code_repair_w01_unsplash_wallpaper_click_pom.noauth.spec.js": {
+        "type": "code_repair",
+        "input": 55960,
+        "output": 2021,
+        "total": 57981,
+        "cost": 0.01565015,
+        "cached_input": 40873,
+        "call_count": 7,
+        "start_time": 1784026570.127826,
+        "end_time": 1784026612.078522,
+        "duration": 41.95069599151611
+      }
+    },
+    "provider": "gemini",
+    "model": "gemini-3-flash-preview",
+    "timestamp": "2026-07-14T16:26:52.214022",
+    "cache_statistics": {
+      "total_cached_tokens": 131881,
+      "cache_hit_rate_percent": 61.7
+    }
+  }
+}
