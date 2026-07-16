@@ -1,0 +1,6 @@
+{
+  "username": "demo.user",
+  "password": "Demo1234",
+  "expected_dashboard_greeting_fragment": "Welcome, Demo User!",
+  "expected_agreement_text_fragment": "I accept the demo agreement"
+}
