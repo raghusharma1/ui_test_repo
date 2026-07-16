@@ -1,0 +1,1007 @@
+{
+  "app_package": "com.demo.serviceflow",
+  "platform": "android",
+  "app_type": "native",
+  "app_category": "mobile app",
+  "test_name": "Happy Path - Partial Credit Limit Increase Flow",
+  "user_journeys": [],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "Discovered Workflow: Happy Path - Partial Credit Limit Increase Flow",
+      "description": "Tests the user's ability to log in, dismiss initial popups, navigate to the 'Increase Demo Limit' feature, accept the agreement, and submit the request. Note: The trajectory data provided does not include the card selection, limit value entry, or the final confirmation/result screens as described in the user's full scenario.",
+      "workflow_narrative": "The user launches the app, bypasses the version check, logs in with demo credentials, completes OTP verification, and dismisses legal and reminder popups. From the dashboard, they navigate to the 'Increase Demo Limit' feature, accept the demo agreement, and submit the request.",
+      "appium_implementation_guidance": [
+        "Use WebDriverWait for element presence and visibility before interaction.",
+        "Handle OTP input by reading from an environment variable.",
+        "Consider adding explicit waits for screen transitions after taps."
+      ],
+      "test_type": "e2e_business_workflow",
+      "priority": "critical",
+      "business_goal": "Verify the core path of logging in and initiating a credit limit increase request up to the submission point.",
+      "user_story": "As a demo user, I want to log in and submit a request to increase my credit limit so that I can see the process.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "launch_app",
+          "component": "App Launch",
+          "description": "Launch the application.",
+          "expected_activity": "com.demo.serviceflow/.MainActivity",
+          "verification_point": "App launched successfully, splash screen visible (splash_title_text).",
+          "business_impact": "App accessibility",
+          "selector": "driver.activate_app('com.demo.serviceflow')",
+          "confidence": 100,
+          "based_on_interaction": true,
+          "all_selectors": [],
+          "page_context": {
+            "suggested_page_class": "MainScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "launchApp",
+            "action_type": "launch"
+          }
+        },
+        {
+          "step_number": 2,
+          "action": "tap",
+          "component": "Version Check Next Time Button",
+          "description": "Tap 'NEXT TIME' button to bypass the version check and proceed to login.",
+          "expected_activity": "com.demo.serviceflow/.LoginActivity",
+          "verification_point": "Login screen is displayed.",
+          "business_impact": "Allows user to proceed past initial checks.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/version_check_next_time_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/version_check_next_time_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/version_check_next_time_button"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"NEXT TIME\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"NEXT TIME\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"NEXT TIME\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"NEXT TIME\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/version_check_next_time_button\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/version_check_next_time_button\"]"
+            },
+            {
+              "selector": "driver.tap([(540, 2158)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "540,2158"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "VersionCheckScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapNextTimeButton",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 3,
+          "action": "input_text",
+          "component": "Login Username Input",
+          "description": "Enter username 'demo.user' into the username field.",
+          "expected_activity": "com.demo.serviceflow/.LoginActivity",
+          "verification_point": "Username field contains 'demo.user'.",
+          "business_impact": "Enables user authentication.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/login_username_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/login_username_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/login_username_input"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"Username\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"Username\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"Username\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"Username\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/login_username_input\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/login_username_input\"]"
+            },
+            {
+              "selector": "driver.tap([(540, 738)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "540,738"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "input_value": "demo.user",
+          "page_context": {
+            "suggested_page_class": "LoginScreen",
+            "screen_activity_pattern": ".LoginActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "inputUsername",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 4,
+          "action": "input_text",
+          "component": "Login Password Input",
+          "description": "Enter password 'Demo1234' into the password field.",
+          "expected_activity": "com.demo.serviceflow/.LoginActivity",
+          "verification_point": "Password field contains 'Demo1234'.",
+          "business_impact": "Enables user authentication.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/login_password_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/login_password_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/login_password_input"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"Password\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"Password\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"Password\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"Password\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/login_password_input\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/login_password_input\"]"
+            },
+            {
+              "selector": "driver.tap([(571, 926)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "571,926"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "input_value": "Demo1234",
+          "page_context": {
+            "suggested_page_class": "LoginScreen",
+            "screen_activity_pattern": ".LoginActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "inputPassword",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 5,
+          "action": "tap",
+          "component": "Login Submit Button",
+          "description": "Tap the 'LOG IN' button to submit credentials.",
+          "expected_activity": "com.demo.serviceflow/.OtpActivity",
+          "verification_point": "OTP verification screen is displayed.",
+          "business_impact": "Initiates login process.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/login_submit_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/login_submit_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/login_submit_button"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"LOG IN\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"LOG IN\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"LOG IN\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"LOG IN\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/login_submit_button\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/login_submit_button\"]"
+            },
+            {
+              "selector": "driver.tap([(571, 1156)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "571,1156"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "LoginScreen",
+            "screen_activity_pattern": ".LoginActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapLoginButton",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 6,
+          "action": "input_text",
+          "component": "OTP Digit 1 Input",
+          "description": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime. Enter the first digit of the OTP.",
+          "expected_activity": "com.demo.serviceflow/.OtpActivity",
+          "verification_point": "First OTP digit field is populated.",
+          "business_impact": "Advances multi-factor authentication.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_1_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_1_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_digit_1_input"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/otp_digit_1_input\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/otp_digit_1_input\"]"
+            },
+            {
+              "selector": "driver.tap([(210, 693)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "210,693"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "input_value": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime.",
+          "page_context": {
+            "suggested_page_class": "OtpScreen",
+            "screen_activity_pattern": ".OtpActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "inputOtpDigit1",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 7,
+          "action": "input_text",
+          "component": "OTP Digit 2 Input",
+          "description": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime. Enter the second digit of the OTP.",
+          "expected_activity": "com.demo.serviceflow/.OtpActivity",
+          "verification_point": "Second OTP digit field is populated.",
+          "business_impact": "Advances multi-factor authentication.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_2_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_2_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_digit_2_input"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/otp_digit_2_input\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/otp_digit_2_input\"]"
+            },
+            {
+              "selector": "driver.tap([(342, 693)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "342,693"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "input_value": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime.",
+          "page_context": {
+            "suggested_page_class": "OtpScreen",
+            "screen_activity_pattern": ".OtpActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "inputOtpDigit2",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 8,
+          "action": "input_text",
+          "component": "OTP Digit 3 Input",
+          "description": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime. Enter the third digit of the OTP.",
+          "expected_activity": "com.demo.serviceflow/.OtpActivity",
+          "verification_point": "Third OTP digit field is populated.",
+          "business_impact": "Advances multi-factor authentication.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_3_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_3_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_digit_3_input"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/otp_digit_3_input\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/otp_digit_3_input\"]"
+            },
+            {
+              "selector": "driver.tap([(474, 693)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "474,693"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "input_value": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime.",
+          "page_context": {
+            "suggested_page_class": "OtpScreen",
+            "screen_activity_pattern": ".OtpActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "inputOtpDigit3",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 9,
+          "action": "input_text",
+          "component": "OTP Digit 4 Input",
+          "description": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime. Enter the fourth digit of the OTP.",
+          "expected_activity": "com.demo.serviceflow/.OtpActivity",
+          "verification_point": "Fourth OTP digit field is populated.",
+          "business_impact": "Advances multi-factor authentication.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_4_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_4_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_digit_4_input"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/otp_digit_4_input\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/otp_digit_4_input\"]"
+            },
+            {
+              "selector": "driver.tap([(606, 693)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "606,693"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "input_value": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime.",
+          "page_context": {
+            "suggested_page_class": "OtpScreen",
+            "screen_activity_pattern": ".OtpActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "inputOtpDigit4",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 10,
+          "action": "input_text",
+          "component": "OTP Digit 5 Input",
+          "description": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime. Enter the fifth digit of the OTP.",
+          "expected_activity": "com.demo.serviceflow/.OtpActivity",
+          "verification_point": "Fifth OTP digit field is populated.",
+          "business_impact": "Advances multi-factor authentication.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_5_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_5_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_digit_5_input"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/otp_digit_5_input\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/otp_digit_5_input\"]"
+            },
+            {
+              "selector": "driver.tap([(738, 693)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "738,693"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "input_value": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime.",
+          "page_context": {
+            "suggested_page_class": "OtpScreen",
+            "screen_activity_pattern": ".OtpActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "inputOtpDigit5",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 11,
+          "action": "input_text",
+          "component": "OTP Digit 6 Input",
+          "description": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime. Enter the sixth digit of the OTP.",
+          "expected_activity": "com.demo.serviceflow/.OtpActivity",
+          "verification_point": "Sixth OTP digit field is populated.",
+          "business_impact": "Advances multi-factor authentication.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_6_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_6_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_digit_6_input"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/otp_digit_6_input\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/otp_digit_6_input\"]"
+            },
+            {
+              "selector": "driver.tap([(870, 693)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "870,693"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "input_value": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime.",
+          "page_context": {
+            "suggested_page_class": "OtpScreen",
+            "screen_activity_pattern": ".OtpActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "inputOtpDigit6",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 12,
+          "action": "tap",
+          "component": "OTP Verify Button",
+          "description": "Tap the 'VERIFY' button to submit the OTP.",
+          "expected_activity": "com.demo.serviceflow/.DashboardActivity",
+          "verification_point": "Legal popup or Dashboard is displayed.",
+          "business_impact": "Completes multi-factor authentication.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_verify_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_verify_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_verify_button"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"VERIFY\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"VERIFY\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"VERIFY\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"VERIFY\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/otp_verify_button\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/otp_verify_button\"]"
+            },
+            {
+              "selector": "driver.tap([(540, 924)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "540,924"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "OtpScreen",
+            "screen_activity_pattern": ".OtpActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapVerifyOtpButton",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 13,
+          "action": "tap",
+          "component": "Legal Popup Accept Button",
+          "description": "Tap 'ACCEPT' on the legal terms popup.",
+          "expected_activity": "com.demo.serviceflow/.DashboardActivity",
+          "verification_point": "Reminder popup or Dashboard is displayed.",
+          "business_impact": "Acknowledges legal terms, allows access to app features.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/popup_legal_accept_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/popup_legal_accept_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/popup_legal_accept_button"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"ACCEPT\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"ACCEPT\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"ACCEPT\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"ACCEPT\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/popup_legal_accept_button\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/popup_legal_accept_button\"]"
+            },
+            {
+              "selector": "driver.tap([(876, 1369)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "876,1369"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "LegalPopup",
+            "screen_activity_pattern": ".DashboardActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapAcceptLegalButton",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 14,
+          "action": "tap",
+          "component": "Reminder Popup Later Button",
+          "description": "Tap 'LATER' on the reminder popup.",
+          "expected_activity": "com.demo.serviceflow/.DashboardActivity",
+          "verification_point": "Dashboard Home screen is displayed. (dashboard_greeting_text visible).",
+          "business_impact": "Dismisses non-critical reminder, allows user to proceed.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/popup_reminder_later_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/popup_reminder_later_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/popup_reminder_later_button"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"LATER\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"LATER\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"LATER\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"LATER\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/popup_reminder_later_button\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/popup_reminder_later_button\"]"
+            },
+            {
+              "selector": "driver.tap([(893, 1369)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "893,1369"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "ReminderPopup",
+            "screen_activity_pattern": ".DashboardActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapLaterReminderButton",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 15,
+          "action": "tap",
+          "component": "Dashboard Menu Button",
+          "description": "Tap the hamburger menu button on the dashboard.",
+          "expected_activity": "com.demo.serviceflow/.DashboardActivity",
+          "verification_point": "Menu screen is displayed. (menu_action_increase_limit_button visible).",
+          "business_impact": "Navigates to main application menu.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/dashboard_menu_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/dashboard_menu_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/dashboard_menu_button"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/dashboard_menu_button\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/dashboard_menu_button\"]"
+            },
+            {
+              "selector": "driver.tap([(94, 209)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "94,209"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "DashboardScreen",
+            "screen_activity_pattern": ".DashboardActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapMenuButton",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 16,
+          "action": "tap",
+          "component": "Increase Limit Menu Action",
+          "description": "Tap 'Increase Demo Limit' from the menu.",
+          "expected_activity": "com.demo.serviceflow/.AgreementActivity",
+          "verification_point": "Agreement screen is displayed. (agreement_checkbox visible).",
+          "business_impact": "Initiates the credit limit increase flow.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/menu_action_increase_limit_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/menu_action_increase_limit_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/menu_action_increase_limit_button"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"Increase Demo Limit\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"Increase Demo Limit\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"Increase Demo Limit\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"Increase Demo Limit\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/menu_action_increase_limit_button\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/menu_action_increase_limit_button\"]"
+            },
+            {
+              "selector": "driver.tap([(540, 932)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "540,932"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "MenuScreen",
+            "screen_activity_pattern": ".DashboardActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapIncreaseLimitButton",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 17,
+          "action": "tap",
+          "component": "Agreement Checkbox",
+          "description": "Tap the 'I accept the demo agreement' checkbox.",
+          "expected_activity": "com.demo.serviceflow/.AgreementActivity",
+          "verification_point": "Agreement checkbox is checked.",
+          "business_impact": "Accepts terms required to proceed with the request.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/agreement_checkbox\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/agreement_checkbox\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/agreement_checkbox"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"I accept the demo agreement\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"I accept the demo agreement\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"I accept the demo agreement\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"I accept the demo agreement\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/agreement_checkbox\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/agreement_checkbox\"]"
+            },
+            {
+              "selector": "driver.tap([(540, 588)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "540,588"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "AgreementScreen",
+            "screen_activity_pattern": ".AgreementActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapAgreementCheckbox",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 18,
+          "action": "tap",
+          "component": "Agreement Continue Button",
+          "description": "Tap 'CONTINUE' on the agreement screen.",
+          "expected_activity": "com.demo.serviceflow/.ReviewActivity",
+          "verification_point": "Review screen is displayed. (review_submit_button visible).",
+          "business_impact": "Proceeds to the review stage of the request.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/agreement_continue_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/agreement_continue_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/agreement_continue_button"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"CONTINUE\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"CONTINUE\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"CONTINUE\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"CONTINUE\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/agreement_continue_button\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/agreement_continue_button\"]"
+            },
+            {
+              "selector": "driver.tap([(799, 856)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "799,856"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "AgreementScreen",
+            "screen_activity_pattern": ".AgreementActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapAgreementContinueButton",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 19,
+          "action": "tap",
+          "component": "Review Submit Button",
+          "description": "Tap 'SUBMIT' on the review screen.",
+          "expected_activity": "com.demo.serviceflow/.ResultActivity",
+          "verification_point": "Request submitted. (Trajectory ends here, further steps not recorded).",
+          "business_impact": "Submits the credit limit increase request.",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/review_submit_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/review_submit_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/review_submit_button"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"SUBMIT\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"SUBMIT\")"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@text=\"SUBMIT\"]')",
+              "strategy": "xpath_text",
+              "confidence": 75,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@text=\"SUBMIT\"]"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.XPATH, '//*[@resource-id=\"com.demo.serviceflow:id/review_submit_button\"]')",
+              "strategy": "xpath_resource_id",
+              "confidence": 70,
+              "locator_type": "AppiumBy.XPATH",
+              "locator_value": "//*[@resource-id=\"com.demo.serviceflow:id/review_submit_button\"]"
+            },
+            {
+              "selector": "driver.tap([(810, 889)])",
+              "strategy": "coordinates",
+              "confidence": 30,
+              "locator_type": "coordinates",
+              "locator_value": "810,889"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "ReviewScreen",
+            "screen_activity_pattern": ".ReviewActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapReviewSubmitButton",
+            "action_type": "tap"
+          }
+        }
+      ],
+      "expected_results": [
+        "User successfully logs in and navigates to the dashboard.",
+        "User successfully initiates the credit limit increase flow.",
+        "User accepts the agreement and submits the request.",
+        "No errors or unexpected popups are displayed during the recorded flow."
+      ],
+      "edge_cases_to_test": [
+        "Network interruptions during login or submission.",
+        "App backgrounding/foregrounding at critical steps.",
+        "Invalid OTP entry (negative test)."
+      ],
+      "data_requirements": [
+        "Valid demo user credentials (username: demo.user, password: Demo1234).",
+        "Configured OTP mechanism for the demo user."
+      ],
+      "prerequisites": [
+        "App 'com.demo.serviceflow' installed on the Android device.",
+        "Device connected and accessible via Appium."
+      ],
+      "platform": "android"
+    }
+  ],
+  "analysis_timestamp": "2026-07-16T18:30:14.206231",
+  "confidence_score": 0.5,
+  "agent_success": true,
+  "trajectory_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784205135\\temp_info\\com.demo.serviceflow\\extracted_data\\mobile_agent_data\\trajectories\\traces\\credit_card_limit_1_FAIL_2026-07-16T18-02-53\\tool_calls.json"
+}
