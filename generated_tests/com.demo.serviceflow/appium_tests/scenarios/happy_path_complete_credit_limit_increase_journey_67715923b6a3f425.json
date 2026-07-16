@@ -1,0 +1,794 @@
+{
+  "app_package": "com.demo.serviceflow",
+  "platform": "android",
+  "app_type": "native",
+  "app_category": "mobile app",
+  "test_name": "Happy Path - Complete Credit Limit Increase Journey",
+  "user_journeys": [],
+  "proposed_scenarios": [
+    {
+      "scenario_name": "Discovered Workflow: Happy Path - Complete Credit Limit Increase Journey",
+      "description": "Comprehensive test covering splash screen, version check, login, OTP verification, multiple mandatory popups, and the full credit limit increase request flow.",
+      "workflow_narrative": "The user launches the app, bypasses a version check, and logs in with demo credentials. After entering a 6-digit OTP and dismissing legal, reminder, and notification popups, the user navigates from the dashboard to the 'Increase Limit' section. They select a specific card ending in 1234, request a new limit of 7500, accept the agreement, and confirm their submission. Finally, they verify the success message and return to the home dashboard.",
+      "appium_implementation_guidance": [
+        "Use WebDriverWait for the splash screen and version check button to handle app initialization time.",
+        "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime and distribute digits across the 6 input fields.",
+        "The dashboard loading state (~400ms) requires a short explicit wait before interacting with the menu button.",
+        "Ensure the agreement checkbox is scrolled into view if necessary before tapping."
+      ],
+      "test_type": "e2e_business_workflow",
+      "priority": "critical",
+      "business_goal": "Verify that authenticated users can successfully navigate the complex multi-step limit increase flow without errors.",
+      "user_story": "As a demo user, I want to increase my credit limit so that I have more purchasing power for my upcoming expenses.",
+      "detailed_steps": [
+        {
+          "step_number": 1,
+          "action": "launch_app",
+          "component": "App Launch",
+          "description": "Launch the application and wait for the splash screen to transition.",
+          "expected_activity": "com.demo.serviceflow/.MainActivity",
+          "verification_point": "App launched successfully",
+          "business_impact": "App accessibility",
+          "selector": "driver.activate_app('com.demo.serviceflow')",
+          "confidence": 100,
+          "based_on_interaction": true,
+          "all_selectors": [],
+          "page_context": {
+            "suggested_page_class": "SplashScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "launchApp",
+            "action_type": "launch"
+          }
+        },
+        {
+          "step_number": 2,
+          "action": "tap",
+          "component": "Version Check Next Time",
+          "description": "Tap the 'NEXT TIME' button on the version check screen.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Login screen is displayed",
+          "business_impact": "User can bypass non-mandatory updates",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/version_check_next_time_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/version_check_next_time_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/version_check_next_time_button"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"NEXT TIME\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"NEXT TIME\")"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "VersionCheckScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "skipUpdate",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 3,
+          "action": "input_text",
+          "component": "Username Input",
+          "description": "Enter the username into the login field.",
+          "input_value": "demo.user",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Username field contains 'demo.user'",
+          "business_impact": "Authentication progress",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/login_username_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/login_username_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/login_username_input"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "LoginScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "enterUsername",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 4,
+          "action": "input_text",
+          "component": "Password Input",
+          "description": "Enter the password into the login field.",
+          "input_value": "Demo1234",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Password field is populated",
+          "business_impact": "Authentication progress",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/login_password_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/login_password_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/login_password_input"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "LoginScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "enterPassword",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 5,
+          "action": "tap",
+          "component": "Login Button",
+          "description": "Tap the 'LOG IN' button to proceed to OTP.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "OTP screen is displayed",
+          "business_impact": "Authentication progress",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/login_submit_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/login_submit_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/login_submit_button"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "LoginScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapLogin",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 6,
+          "action": "input_text",
+          "component": "OTP Digit 1",
+          "description": "OTP DETECTED: Read the code from the MOBILE_OTP environment variable at runtime. Enter the first digit of the OTP.",
+          "input_value": "1",
+          "expected_activity": ".MainActivity",
+          "verification_point": "First OTP field populated",
+          "business_impact": "Security verification",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_1_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_1_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_digit_1_input"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "OTPScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "enterOtpDigit1",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 7,
+          "action": "input_text",
+          "component": "OTP Digit 2",
+          "description": "Enter the second digit of the OTP.",
+          "input_value": "2",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Second OTP field populated",
+          "business_impact": "Security verification",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_2_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_2_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_digit_2_input"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "OTPScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "enterOtpDigit2",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 8,
+          "action": "input_text",
+          "component": "OTP Digit 3",
+          "description": "Enter the third digit of the OTP.",
+          "input_value": "3",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Third OTP field populated",
+          "business_impact": "Security verification",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_3_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_3_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_digit_3_input"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "OTPScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "enterOtpDigit3",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 9,
+          "action": "input_text",
+          "component": "OTP Digit 4",
+          "description": "Enter the fourth digit of the OTP.",
+          "input_value": "4",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Fourth OTP field populated",
+          "business_impact": "Security verification",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_4_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_4_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_digit_4_input"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "OTPScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "enterOtpDigit4",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 10,
+          "action": "input_text",
+          "component": "OTP Digit 5",
+          "description": "Enter the fifth digit of the OTP.",
+          "input_value": "5",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Fifth OTP field populated",
+          "business_impact": "Security verification",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_5_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_5_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_digit_5_input"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "OTPScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "enterOtpDigit5",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 11,
+          "action": "input_text",
+          "component": "OTP Digit 6",
+          "description": "Enter the sixth digit of the OTP.",
+          "input_value": "6",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Sixth OTP field populated",
+          "business_impact": "Security verification",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_6_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_digit_6_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_digit_6_input"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "OTPScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "enterOtpDigit6",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 12,
+          "action": "tap",
+          "component": "OTP Verify Button",
+          "description": "Tap the 'VERIFY' button to complete MFA.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Legal popup appears",
+          "business_impact": "Security verification",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_verify_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/otp_verify_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/otp_verify_button"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "OTPScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "verifyOtp",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 13,
+          "action": "tap",
+          "component": "Legal Accept Button",
+          "description": "Tap 'ACCEPT' on the legal terms popup.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Reminder popup appears",
+          "business_impact": "Compliance",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/popup_legal_accept_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/popup_legal_accept_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/popup_legal_accept_button"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "LegalPopup",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "acceptLegal",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 14,
+          "action": "tap",
+          "component": "Reminder Later Button",
+          "description": "Tap 'LATER' on the reminder popup.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Notifications popup appears",
+          "business_impact": "User experience",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/popup_reminder_later_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/popup_reminder_later_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/popup_reminder_later_button"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "ReminderPopup",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "dismissReminder",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 15,
+          "action": "tap",
+          "component": "Notifications Not Now Button",
+          "description": "Tap 'NOT NOW' on the notifications enablement popup.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Dashboard is visible",
+          "business_impact": "User experience",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/popup_notifications_not_now_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/popup_notifications_not_now_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/popup_notifications_not_now_button"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "NotificationsPopup",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "dismissNotifications",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 16,
+          "action": "tap",
+          "component": "Dashboard Menu Button",
+          "description": "Tap the hamburger menu button on the dashboard.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Side menu is opened",
+          "business_impact": "Navigation",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/dashboard_menu_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/dashboard_menu_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/dashboard_menu_button"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "DashboardScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "openMenu",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 17,
+          "action": "tap",
+          "component": "Increase Limit Button",
+          "description": "Tap the 'Increase Limit' option in the menu.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Card selector screen is displayed",
+          "business_impact": "Workflow progress",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/menu_action_increase_limit_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/menu_action_increase_limit_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/menu_action_increase_limit_button"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "MenuScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "selectIncreaseLimit",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 18,
+          "action": "tap",
+          "component": "Card Masked Number",
+          "description": "Select the card ending in '**** 1234' from the list.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Limit entry screen is displayed for the selected card",
+          "business_impact": "Workflow progress",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/card_selector_card_masked_number_text\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/card_selector_card_masked_number_text\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/card_selector_card_masked_number_text"
+            },
+            {
+              "selector": "driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text(\"**** 1234\")')",
+              "strategy": "uiautomator",
+              "confidence": 80,
+              "locator_type": "AppiumBy.ANDROID_UIAUTOMATOR",
+              "locator_value": "new UiSelector().text(\"**** 1234\")"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "CardSelectorScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "selectCard",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 19,
+          "action": "input_text",
+          "component": "Requested Limit Input",
+          "description": "Enter the requested limit value of 7500.",
+          "input_value": "7500",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Input field contains '7500'",
+          "business_impact": "Workflow progress",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/limit_entry_value_input\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/limit_entry_value_input\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/limit_entry_value_input"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "LimitEntryScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "enterRequestedLimit",
+            "action_type": "input_text"
+          }
+        },
+        {
+          "step_number": 20,
+          "action": "tap",
+          "component": "Limit Entry Continue Button",
+          "description": "Tap 'CONTINUE' to proceed to the agreement screen.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Agreement screen is displayed",
+          "business_impact": "Workflow progress",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/limit_entry_continue_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/limit_entry_continue_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/limit_entry_continue_button"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "LimitEntryScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapContinue",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 21,
+          "action": "tap",
+          "component": "Agreement Checkbox",
+          "description": "Tap the checkbox to accept the demo agreement.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Checkbox is checked",
+          "business_impact": "Compliance",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/agreement_checkbox\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/agreement_checkbox\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/agreement_checkbox"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "AgreementScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "acceptAgreement",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 22,
+          "action": "tap",
+          "component": "Agreement Continue Button",
+          "description": "Tap 'CONTINUE' to proceed to the review screen.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Review screen is displayed",
+          "business_impact": "Workflow progress",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/agreement_continue_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/agreement_continue_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/agreement_continue_button"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "AgreementScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapContinue",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 23,
+          "action": "tap",
+          "component": "Review Submit Button",
+          "description": "Tap 'SUBMIT' on the review screen.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Confirmation dialog appears",
+          "business_impact": "Workflow progress",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/review_submit_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/review_submit_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/review_submit_button"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "ReviewScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "tapSubmit",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 24,
+          "action": "tap",
+          "component": "Review Confirm Submit Button",
+          "description": "Tap 'SUBMIT' on the confirmation dialog.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Result screen with success message is displayed",
+          "business_impact": "Workflow completion",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/review_confirm_submit_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/review_confirm_submit_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/review_confirm_submit_button"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "ConfirmDialog",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "confirmSubmit",
+            "action_type": "tap"
+          }
+        },
+        {
+          "step_number": 25,
+          "action": "tap",
+          "component": "Result Back Home Button",
+          "description": "Tap 'BACK TO HOME' to return to the dashboard.",
+          "expected_activity": ".MainActivity",
+          "verification_point": "Dashboard Home is shown again",
+          "business_impact": "User experience",
+          "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/result_back_home_button\")",
+          "all_selectors": [
+            {
+              "selector": "driver.find_element(AppiumBy.ID, \"com.demo.serviceflow:id/result_back_home_button\")",
+              "strategy": "resource_id",
+              "confidence": 90,
+              "locator_type": "AppiumBy.ID",
+              "locator_value": "com.demo.serviceflow:id/result_back_home_button"
+            }
+          ],
+          "confidence": 90,
+          "based_on_interaction": true,
+          "page_context": {
+            "suggested_page_class": "ResultScreen",
+            "screen_activity_pattern": ".MainActivity"
+          },
+          "method_context": {
+            "suggested_method_name": "goBackHome",
+            "action_type": "tap"
+          }
+        }
+      ],
+      "expected_results": [
+        "User successfully authenticates with MFA",
+        "User navigates through all mandatory popups",
+        "User submits a credit limit increase request for card **** 1234",
+        "Success message 'Demo Limit Request Submitted' is displayed",
+        "User returns to the dashboard home screen"
+      ],
+      "edge_cases_to_test": [
+        "Invalid OTP entry",
+        "Declining legal terms",
+        "Entering a limit lower than the current limit",
+        "Network timeout during submission"
+      ],
+      "data_requirements": [
+        "Valid demo username and password",
+        "Runtime OTP code",
+        "Active credit card in the account"
+      ],
+      "prerequisites": [
+        "App is installed on an Android device",
+        "Device has internet connectivity"
+      ],
+      "platform": "android"
+    }
+  ],
+  "analysis_timestamp": "2026-07-16T17:38:33.232229",
+  "confidence_score": 0.5,
+  "agent_success": true,
+  "trajectory_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784202662\\temp_info\\com.demo.serviceflow\\extracted_data\\mobile_agent_data\\trajectories\\traces\\credit_card_limit_1_PASS_2026-07-16T17-22-11\\tool_calls.json"
+}
