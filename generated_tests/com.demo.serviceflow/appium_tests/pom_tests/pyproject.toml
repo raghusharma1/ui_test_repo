@@ -1,0 +1,13 @@
+# Auto-generated project file for mobile Appium tests
+[project]
+name = "pom-tests"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "adbutils>=2.0.0,<3.0.0",
+    "Appium-Python-Client>=4.0.0",
+    "pytest-html>=4.1.0",
+    "pytest>=8.0.0",
+    "python-dotenv>=1.0.0",
+    "selenium>=4.25.0",
+]
