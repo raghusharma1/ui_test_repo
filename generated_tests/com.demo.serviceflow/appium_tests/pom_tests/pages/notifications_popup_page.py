@@ -11,3 +11,7 @@ class NotificationsPopupPage(BasePage):
     def tap_not_now_button(self):
         self.tap(self._NOT_NOW_BUTTON)
         return self
+
+    def tap_notifications_not_now_button_if_visible(self, timeout=10):
+        """Taps the 'NOT NOW' button if it's visible."""
+        return self.tap_if_visible(self._NOT_NOW_BUTTON, timeout)

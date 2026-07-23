@@ -11,3 +11,7 @@ class LegalPopupPage(BasePage):
     def tap_accept_button(self):
         self.tap(self._ACCEPT_BUTTON)
         return self
+
+    def tap_legal_accept_button_if_visible(self, timeout=10):
+        """Taps the 'ACCEPT' button if it's visible."""
+        return self.tap_if_visible(self._ACCEPT_BUTTON, timeout)

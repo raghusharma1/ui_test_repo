@@ -1,0 +1,14 @@
+{
+  "username": "demo.user",
+  "password": "Demo1234",
+  "expected_dashboard_greeting": "Hello, Alex",
+  "first_card_used_text": "2500 demo",
+  "first_card_available_text": "2500 demo",
+  "second_card_used_text": "2100 demo",
+  "second_card_available_text": "900 demo",
+  "first_transaction_name": "Coffee Shop Demo",
+  "first_transaction_merchant": "Coffee Shop Demo",
+  "first_transaction_amount": "24.90",
+  "first_transaction_date": "2026-06-18",
+  "first_transaction_reference": "TXN-DEMO-0001"
+}
