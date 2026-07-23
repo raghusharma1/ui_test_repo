@@ -1,4 +1,5 @@
 from .base_page import BasePage
+from .splash_screen_page import SplashScreenPage
 from .version_check_page import VersionCheckPage
 from .login_page import LoginPage
 from .otp_page import OTPPage
@@ -13,10 +14,13 @@ from .agreement_page import AgreementPage
 from .review_page import ReviewPage
 from .review_confirm_dialog_page import ReviewConfirmDialogPage
 from .result_page import ResultPage
+from .card_details_page import CardDetailsPage
+from .transaction_detail_bottom_sheet_page import TransactionDetailBottomSheetPage
 
 
 __all__ = [
     "AppScreens",
+    "SplashScreenPage",
     "VersionCheckPage",
     "LoginPage",
     "OTPPage",
@@ -31,6 +35,8 @@ __all__ = [
     "ReviewPage",
     "ReviewConfirmDialogPage",
     "ResultPage",
+    "CardDetailsPage",
+    "TransactionDetailBottomSheetPage",
 ]
 
 
@@ -43,6 +49,10 @@ class AppScreens:
 
     def __init__(self, driver):
         self._driver = driver
+
+    @property
+    def splash_screen(self):
+        return SplashScreenPage(self._driver)
 
     @property
     def version_check(self):
@@ -99,3 +109,11 @@ class AppScreens:
     @property
     def result(self):
         return ResultPage(self._driver)
+
+    @property
+    def card_details(self):
+        return CardDetailsPage(self._driver)
+
+    @property
+    def transaction_detail_bottom_sheet(self):
+        return TransactionDetailBottomSheetPage(self._driver)
