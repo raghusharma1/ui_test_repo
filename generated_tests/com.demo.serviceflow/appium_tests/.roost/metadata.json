@@ -1,0 +1,229 @@
+{
+  "metadata_version": "1.0",
+  "test_type": "mobile",
+  "created_at": "2026-07-23T13:55:05.692587",
+  "last_updated": "2026-07-23T14:19:31.585781",
+  "output_dir": "RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests",
+  "mobile_app_package": "com.demo.serviceflow",
+  "platform": "android",
+  "pom_files": [
+    {
+      "screen": "version_check_page",
+      "file_name": "version_check_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\version_check_page.py"
+    },
+    {
+      "screen": "login_page",
+      "file_name": "login_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\login_page.py"
+    },
+    {
+      "screen": "otp_page",
+      "file_name": "otp_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\otp_page.py"
+    },
+    {
+      "screen": "legal_popup_page",
+      "file_name": "legal_popup_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\legal_popup_page.py"
+    },
+    {
+      "screen": "reminder_popup_page",
+      "file_name": "reminder_popup_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\reminder_popup_page.py"
+    },
+    {
+      "screen": "notifications_popup_page",
+      "file_name": "notifications_popup_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\notifications_popup_page.py"
+    },
+    {
+      "screen": "dashboard_page",
+      "file_name": "dashboard_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\dashboard_page.py"
+    },
+    {
+      "screen": "menu_page",
+      "file_name": "menu_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\menu_page.py"
+    },
+    {
+      "screen": "card_selector_page",
+      "file_name": "card_selector_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\card_selector_page.py"
+    },
+    {
+      "screen": "limit_entry_page",
+      "file_name": "limit_entry_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\limit_entry_page.py"
+    },
+    {
+      "screen": "agreement_page",
+      "file_name": "agreement_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\agreement_page.py"
+    },
+    {
+      "screen": "review_page",
+      "file_name": "review_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\review_page.py"
+    },
+    {
+      "screen": "review_confirm_dialog_page",
+      "file_name": "review_confirm_dialog_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\review_confirm_dialog_page.py"
+    },
+    {
+      "screen": "result_page",
+      "file_name": "result_page.py",
+      "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\result_page.py"
+    }
+  ],
+  "Workflows": [
+    {
+      "workflow_id": "WF001",
+      "title": "credit_card_limit_1",
+      "goal": "Use these values\n\nField\tValue\nUsername\tdemo.user\nPassword\tDemo1234\nOTP code\t123456\nDemo card\tDemo Credit Card **** 1234\nRequested limit\t7500\nPending trigger\t9999 (forces pending result)\n\n\nScenario Description:\n\n\n## H1 — Happy path: full auth chain + credit-limit-style flow + success\n\n**Goal:** Splash → version check → login → OTP → 3 popups → Dashboard → menu → flow → submit → success → home.\n\n1. Launch app. Wait for `splash_title_text` to be visible.\n2. Wait for Version Check: `version_check_next_time_button` visible.\n3. Tap `version_check_next_time_button` (or `version_check_update_now_button` — both navigate to Login).\n4. On Login: type `demo.user` into `login_username_input`, type `Demo1234` into `login_password_input`, tap `login_submit_button`.\n5. On OTP: type `1` into `otp_digit_1_input`, `2` into `otp_digit_2_input`, …, `6` into `otp_digit_6_input`. Tap `otp_verify_button`.\n6. Legal popup appears (title text `Demo Terms`). Tap `popup_legal_accept_button`.\n7. Reminder popup appears (title text `Reminder`). Tap `popup_reminder_later_button`.\n8. Notifications popup appears (title text `Enable Notifications`). Tap `popup_notifications_not_now_button`.\n9. Verify Dashboard Home: `dashboard_greeting_text` text equals `Hello, Alex`.\n10. Verify `dashboard_recent_list` is visible and contains 3 rows after the ~400 ms loading state.\n11. Tap `dashboard_menu_button` (hamburger).\n12. Verify Menu screen: `menu_action_increase_limit_button` visible.\n13. Tap `menu_action_increase_limit_button`.\n14. Verify Card Selector: `card_selector_recycler` visible with 3 rows.\n15. Tap the row whose `card_selector_card_masked_number_text` equals `**** 1234`.\n16. Verify Limit Value Entry: `limit_entry_selected_card_text` contains `**** 1234`. `limit_entry_current_limit_text` shows `5000 demo`. `limit_entry_available_limit_text` shows `2500 demo`.\n17. Type `7500` into `limit_entry_value_input`. Tap `limit_entry_continue_button`.\n18. Verify Agreement: `agreement_checkbox` visible and unchecked.\n19. Tap `agreement_checkbox`. Tap `agreement_continue_button`.\n20. Verify Review: `review_selected_card_value_text` contains `**** 1234`, `review_requested_limit_value_text` equals `7500`, `review_agreement_status_text` equals `Accepted`.\n21. Tap `review_submit_button`. Verify the confirm dialog: `review_confirm_dialog` visible.\n22. Tap `review_confirm_submit_button`.\n23. Wait for Result: `result_title_text` equals `Demo Limit Request Submitted`. `result_message_text` equals `Your demo request was submitted successfully`. `result_retry_button` is **not** visible. `result_icon_image` content-desc = `Success`.\n24. Tap `result_back_home_button`. Verify Dashboard Home is shown again.",
+      "feature_area": "",
+      "priority": "medium",
+      "discovery_source": "mobile_user_scenario",
+      "source_file": "C:/Users/ZB/Downloads/credit-card-limit (1).txt",
+      "source_file_hash": "e1a409f9688b22b7f2aab604063af955740ed29c489db04eb415841b3f4e9264",
+      "input_hash": "67715923b6a3f425",
+      "app_package": "com.demo.serviceflow",
+      "platform": "android",
+      "app_type": "native",
+      "worker_completed": true,
+      "worker_result": "success",
+      "linked_scenario_name": "Happy Path - Full Auth Chain + Credit Limit Increase Flow + Success",
+      "error": null,
+      "agent_workflow_file_path": "C:/var/tmp/Roost/RoostGPT/ui_gemini_unsplash_login/1784795082/temp_info/com.demo.serviceflow/extracted_data/mobile_agent_data/trajectories/traces/credit_card_limit_1_PASS_2026-07-23T13-55-25/tool_calls.json",
+      "agent_workflow_completed": true,
+      "agent_activity_summary": null,
+      "agent_activity_error": null,
+      "agent_activity_outcome": null,
+      "agent_recommendation": null,
+      "agent_completion_level": null,
+      "agent_steps_completed": null,
+      "selectors_file_path": "C:/var/tmp/Roost/RoostGPT/ui_gemini_unsplash_login/1784795082/temp_info/com.demo.serviceflow/extracted_data/mobile_agent_data/selectors/systematic_selectors_67715923b6a3f425.json",
+      "visited_activities": null,
+      "execution_flow_file_path": null,
+      "scenario_name": "Happy Path - Full Auth Chain + Credit Limit Increase Flow + Success",
+      "scenario_file_path": "generated_tests/com.demo.serviceflow/appium_tests/scenarios/happy_path_full_auth_chain_credit_limit_increase_flow_success_67715923b6a3f425.json",
+      "scenario_summary_file_path": null,
+      "feature_file_path": "generated_tests/com.demo.serviceflow/appium_tests/scenarios/features/happy_path_full_auth_chain_credit_limit_increase_flow_success_67715923b6a3f425.feature",
+      "feature_file_name": "happy_path_full_auth_chain_credit_limit_increase_flow_success_67715923b6a3f425.feature",
+      "test_steps": [
+        "Launch the application.",
+        "Tap 'NEXT TIME' on the version check screen to proceed to login.",
+        "Clear any pre-filled text in the username input field. (Agent observed action)",
+        "Type the username 'demo.user' into the username input field.",
+        "Type the password 'Demo1234' into the password input field.",
+        "Tap the 'LOG IN' button to submit credentials.",
+        "Input the first digit of the OTP code.",
+        "Input the second digit of the OTP code.",
+        "Input the third digit of the OTP code.",
+        "Input the fourth digit of the OTP code.",
+        "Input the fifth digit of the OTP code.",
+        "Input the sixth digit of the OTP code.",
+        "Tap the 'VERIFY' button to submit the OTP code.",
+        "Tap 'ACCEPT' on the Legal Terms popup.",
+        "Tap 'LATER' on the Reminder popup.",
+        "Tap 'NOT NOW' on the Enable Notifications popup.",
+        "Tap the hamburger menu icon on the dashboard.",
+        "Tap the 'Increase Limit' option in the menu.",
+        "Tap the first card item in the selector list, corresponding to 'Demo Credit Card **** 1234'.",
+        "Type '7500' into the requested limit input field.",
+        "Tap 'CONTINUE' to proceed from the limit entry screen.",
+        "Tap the 'I accept the demo agreement' checkbox.",
+        "Tap 'CONTINUE' to proceed from the agreement screen.",
+        "Tap 'SUBMIT' on the review screen.",
+        "Tap 'SUBMIT' on the confirmation dialog.",
+        "Tap 'BACK TO HOME' to return to the dashboard."
+      ],
+      "test_generated": true,
+      "test_generation_error": null,
+      "test_name": null,
+      "test_file_path": null,
+      "test_executed_success": null,
+      "test_execution_error": null,
+      "pom_test_name": "credit_card_limit_1",
+      "pom_test_file_path": "generated_tests/com.demo.serviceflow/appium_tests/pom_tests/tests/credit_limit_increase/test_credit_card_limit_1.py",
+      "pom_test_executed_success": true,
+      "pom_test_execution_error": null,
+      "pom_files": [
+        {
+          "screen": "version_check_page",
+          "file_name": "version_check_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\version_check_page.py"
+        },
+        {
+          "screen": "login_page",
+          "file_name": "login_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\login_page.py"
+        },
+        {
+          "screen": "otp_page",
+          "file_name": "otp_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\otp_page.py"
+        },
+        {
+          "screen": "legal_popup_page",
+          "file_name": "legal_popup_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\legal_popup_page.py"
+        },
+        {
+          "screen": "reminder_popup_page",
+          "file_name": "reminder_popup_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\reminder_popup_page.py"
+        },
+        {
+          "screen": "notifications_popup_page",
+          "file_name": "notifications_popup_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\notifications_popup_page.py"
+        },
+        {
+          "screen": "dashboard_page",
+          "file_name": "dashboard_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\dashboard_page.py"
+        },
+        {
+          "screen": "menu_page",
+          "file_name": "menu_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\menu_page.py"
+        },
+        {
+          "screen": "card_selector_page",
+          "file_name": "card_selector_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\card_selector_page.py"
+        },
+        {
+          "screen": "limit_entry_page",
+          "file_name": "limit_entry_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\limit_entry_page.py"
+        },
+        {
+          "screen": "agreement_page",
+          "file_name": "agreement_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\agreement_page.py"
+        },
+        {
+          "screen": "review_page",
+          "file_name": "review_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\review_page.py"
+        },
+        {
+          "screen": "review_confirm_dialog_page",
+          "file_name": "review_confirm_dialog_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\review_confirm_dialog_page.py"
+        },
+        {
+          "screen": "result_page",
+          "file_name": "result_page.py",
+          "file_path": "C:\\var\\tmp\\Roost\\RoostGPT\\ui_gemini_unsplash_login\\1784795082\\source\\ui_test_repo\\generated_tests\\com.demo.serviceflow\\appium_tests\\pom_tests\\pages\\result_page.py"
+        }
+      ]
+    }
+  ],
+  "Imported_Test_Coverage": null,
+  "Token_Usage": null
+}

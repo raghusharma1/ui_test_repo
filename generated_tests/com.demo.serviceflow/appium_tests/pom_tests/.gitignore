@@ -1,0 +1,19 @@
+# Runtime artifacts for the generated Appium suite — regenerated on every run,
+# never committed. The suite's SOURCE (conftest.py, pytest.ini, utils/, pages/,
+# tests/, data/, .env.template, pyproject.toml, RUNNING.md) is NOT ignored and
+# is what gets pushed to the PR.
+
+# Runtime credentials (created from .env.template at run time)
+.env
+
+# Local uv virtual environment
+.venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Test outputs (screenshots, failure hierarchies, HTML report, screen recordings)
+reports/
+recordings/

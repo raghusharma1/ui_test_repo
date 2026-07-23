@@ -1,0 +1,17 @@
+{
+  "username": "demo.user",
+  "password": "Demo1234",
+  "expected_dashboard_greeting": "Hello, Alex",
+  "expected_dashboard_recent_list_rows": 3,
+  "expected_card_selector_rows": 3,
+  "expected_limit_entry_selected_card_fragment": "**** 1234",
+  "expected_limit_entry_current_limit_fragment": "5000 demo",
+  "expected_limit_entry_available_limit_fragment": "2500 demo",
+  "requested_limit": "7500",
+  "expected_review_selected_card_fragment": "**** 1234",
+  "expected_review_requested_limit": "7500",
+  "expected_review_agreement_status": "Accepted",
+  "expected_result_title_fragment": "Demo Limit Request Submitted",
+  "expected_result_message_fragment": "Your demo request was submitted successfully",
+  "expected_result_icon_content_desc": "Success"
+}
