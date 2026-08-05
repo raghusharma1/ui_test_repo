@@ -1,0 +1,15 @@
+API - Submit job preferences for an anonymous session
+API - Upload a resume for an anonymous session
+API - Registering an account persists anonymous session preferences and resume
+API - A registered user manages their preferences
+A new anonymous user can complete the questionnaire and see personalized job results
+A user can partially complete the questionnaire and see results
+The questionnaire validates numeric inputs for salary and experience
+The questionnaire enforces a maximum limit for job titles
+A user attempts to upload a resume with various file types and sizes
+Job preferences persist throughout an anonymous user's session
+A user can widen a preference on the results page to see more jobs
+The system suggests which preference is narrowing the search results
+An anonymous user's data is persisted after registering an account
+A registered user can edit their preferences without repeating the questionnaire
+A registered user can clear all their preferences and remove their resume
