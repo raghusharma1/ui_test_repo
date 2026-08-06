@@ -1,0 +1,16 @@
+A new visitor is offered the guided questionnaire on their first visit
+A new visitor provides various preferences in the questionnaire and sees filtered results
+Submit job preferences for an anonymous seeker via API
+A seeker is prevented from entering more than the maximum of 5 job titles
+A seeker uploads a resume with various file types and sizes
+Upload a resume for an anonymous session via API
+Captured preferences persist for subsequent searches within an anonymous session
+A seeker can clear an individual preference filter from the job results page
+System provides feedback when a search is too restrictive
+Fetch personalized job listings based on saved preferences for a registered user
+Registration is required for high-intent actions
+Preferences and resume from an anonymous session carry over after registration
+Associate anonymous session data with a new user account upon registration
+A registered user can update a single preference without repeating the questionnaire
+A registered user can remove their resume and clear all preferences
+A registered user manages their data via API
