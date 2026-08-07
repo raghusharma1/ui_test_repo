@@ -1,0 +1,1284 @@
+[
+  {
+    "type": "functional",
+    "title": "Verify an anonymous user can complete the entire preference questionnaire and submit it successfully",
+    "description": "This test verifies the primary happy path for a new, anonymous user. It ensures that a user can fill out all fields in the guided questionnaire, submit their preferences, and receive a personalized set of job listings, which is the core value proposition before requiring registration.",
+    "testId": "TC-PREF-01",
+    "testDescription": "As a new job seeker visiting the site for the first time, I want to provide my complete job preferences through a guided questionnaire so that I can immediately see relevant job listings and evaluate the platform's effectiveness without creating an account.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1. User is a new visitor with no existing session cookies or account.\n2. The preference questionnaire feature is enabled on the home page.\n3. The backend job matching service is available.",
+    "stepsToPerform": "1. Open a new incognito browser window and navigate to the application's home page.\n2. Observe the prompt for the guided questionnaire and click the 'Get Started' button.\n3. On the 'Working Arrangement' step, select the 'Fully Remote' option and click 'Next'.\n4. On the 'Salary' step, enter '85000' into the target annual salary field and click 'Next'.\n5. On the 'Job Titles' step, enter 'Product Manager' and 'Project Coordinator' and click 'Next'.\n6. On the 'Location' step, select 'United States' from the country dropdown and click 'Next'.\n7. Continue through all remaining steps of the questionnaire, providing valid data for each preference (motivation, experience, education, etc.).\n8. On the final step, review the summary of preferences and click the 'Submit' or 'See My Matches' button.\n9. Observe that the page navigates away from the questionnaire.\n10. Verify that a job results page is displayed.",
+    "expectedResult": "1. Upon submission, the user is successfully redirected to a personalized job results page.\n2. The job listings displayed are filtered and ranked based on all the preferences provided in the questionnaire.\n3. No registration, login, or payment is required to view these initial results.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "e2e",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L22-L24",
+      "excerpt": "Collect the seeker's requirements through a short guided questionnaire offered from the home page on a first visit, before any account exists."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the system records which preferences were provided and which were left unanswered when a user partially completes the questionnaire",
+    "description": "This test ensures that the system correctly handles incomplete questionnaires, using only the provided data for matching. This is crucial for users who may not have an answer for every question but still want to see relevant results.",
+    "testId": "TC-PREF-02",
+    "testDescription": "As a new job seeker, I may not want to answer every question in the onboarding questionnaire. I expect the system to use the preferences I do provide to find job matches and to remember my answers if I decide to complete the rest later.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1. User is a new visitor with no existing session cookies or account.\n2. The preference questionnaire allows for optional fields or a 'skip' option.",
+    "stepsToPerform": "1. Open a new incognito browser window and navigate to the application's home page.\n2. Start the guided questionnaire.\n3. On the 'Working Arrangement' step, select 'Hybrid' and click 'Next'.\n4. On the 'Salary' step, leave the field blank and click 'Next' or 'Skip'.\n5. On the 'Job Titles' step, enter 'Business Analyst' and click 'Next'.\n6. On the 'Location' step, leave the field blank and click 'Next' or 'Skip'.\n7. Submit the partially completed questionnaire.\n8. Observe the job results page and verify that listings are filtered by 'Hybrid' and 'Business Analyst'.\n9. Navigate back to the preference questionnaire.\n10. Verify that the 'Working Arrangement' field is still set to 'Hybrid' and 'Job Titles' still contains 'Business Analyst'.\n11. Verify that the 'Salary' and 'Location' fields are empty.",
+    "expectedResult": "1. The job matching results are based only on the preferences that were provided ('Hybrid', 'Business Analyst').\n2. Unanswered preferences (Salary, Location) are not used as filters and do not prevent results from being shown.\n3. When revisiting the questionnaire within the same session, the previously provided answers are preserved, and the unanswered fields remain empty.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L39-L40",
+      "excerpt": "Record which preferences were provided and which were left unanswered."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify an anonymous user can select 'fully remote' as their working arrangement preference",
+    "description": "This test validates that a user can select the 'fully remote' work arrangement and that this preference is correctly applied to filter the job search results. This is a core feature for a platform specializing in remote work.",
+    "testId": "TC-PREF-03",
+    "testDescription": "As a job seeker specifically looking for a fully remote position, I want to select this preference in the initial questionnaire and see only job listings that match this criterion.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1. User is a new visitor with no existing session cookies or account.\n2. There are active job listings in the database tagged as 'fully remote'.",
+    "stepsToPerform": "1. Open a new incognito browser window and navigate to the application's home page.\n2. Start the guided questionnaire.\n3. In the 'Working Arrangement' section, select the radio button or option for 'fully remote'.\n4. Proceed through the rest of the questionnaire, filling in other details or skipping them.\n5. Submit the questionnaire to view job matches.\n6. Observe the job results page.\n7. Inspect the first 5-10 job listings displayed.\n8. Check if a 'fully remote' filter is shown as active on the results page.",
+    "expectedResult": "1. The user is successfully redirected to the job results page.\n2. All job listings displayed on the first page are explicitly marked as 'fully remote'.\n3. The active filters UI element correctly indicates that 'Working Arrangement: fully remote' is applied.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L26-L27",
+      "excerpt": "the working arrangement sought (fully remote, hybrid, or no preference)"
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify an anonymous user can input a valid numeric value for the target annual salary",
+    "description": "This test ensures that the salary preference field accepts valid numerical input and that this preference is correctly captured. This is a critical data point for job matching.",
+    "testId": "TC-PREF-06",
+    "testDescription": "As a job seeker, I want to specify my target annual salary as a number in the questionnaire so that the system can show me jobs that meet my income requirements.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1. User is a new visitor with no existing session cookies or account.\n2. The questionnaire is available on the home page.",
+    "stepsToPerform": "1. Open a new incognito browser window and navigate to the application's home page.\n2. Start the guided questionnaire.\n3. Navigate to the step that asks for the target annual salary.\n4. Enter a valid, positive integer into the salary field, e.g., '95000'.\n5. Observe that no validation error message is displayed.\n6. Proceed to the next step of the questionnaire.\n7. Complete and submit the questionnaire.\n8. On the results page, check if a salary filter is active (e.g., 'Salary: $95,000+').",
+    "expectedResult": "1. The system accepts the numeric value '95000' without error.\n2. The user is able to successfully submit the questionnaire.\n3. The resulting job matches are filtered to include roles that align with the specified target salary.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L29-L30",
+      "excerpt": "the annual salary the seeker is targeting"
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "negative",
+    "title": "Verify the system rejects non-numeric input for the target annual salary field",
+    "description": "This negative test ensures proper input validation on the salary field by rejecting non-numeric characters. This prevents data corruption and ensures the matching algorithm receives clean, usable data. This test covers the 'wrong type' invalid equivalence partition.",
+    "testId": "TC-PREF-07",
+    "testDescription": "As a user, if I accidentally type text instead of numbers into the salary field, I expect the system to show me an error message and prevent me from continuing until I provide a valid number.",
+    "severity": "High",
+    "priority": "P0",
+    "prerequisites": "1. User is a new visitor with no existing session cookies or account.\n2. The questionnaire includes a field for target annual salary.",
+    "stepsToPerform": "1. Open a new incognito browser window and navigate to the application's home page.\n2. Start the guided questionnaire.\n3. Navigate to the step that asks for the target annual salary.\n4. Enter a non-numeric string into the salary field, e.g., 'one hundred thousand'.\n5. Attempt to click the 'Next' button or click outside the input field to trigger validation.\n6. Observe the UI for an error message next to the salary field.\n7. Verify that the 'Next' button is disabled or that clicking it does not advance the questionnaire.",
+    "expectedResult": "1. A clear, user-friendly validation error message is displayed (e.g., 'Please enter a valid number.').\n2. The user is prevented from submitting the form or proceeding to the next step.\n3. The input field may be highlighted in red to indicate the error.",
+    "tags": [
+      "ui",
+      "negative",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L29-L30",
+      "excerpt": "the annual salary the seeker is targeting"
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "boundary",
+    "title": "Verify an anonymous user can input up to the defined maximum number of job titles",
+    "description": "This boundary test verifies that the system correctly accepts the maximum allowed number of job titles. This ensures the system behaves as expected at the edge of its defined limits. ASSUMPTION: The maximum number of job titles is 5.",
+    "testId": "TC-PREF-08",
+    "testDescription": "As a job seeker with multiple target roles, I want to be able to enter all of my desired job titles, up to the maximum limit set by the platform, to get the widest possible set of relevant results.",
+    "severity": "High",
+    "priority": "P0",
+    "prerequisites": "1. User is a new visitor with no existing session cookies or account.\n2. The system defines a maximum number of target job titles (assumed to be 5 for this test).",
+    "stepsToPerform": "1. Open a new incognito browser window and navigate to the application's home page.\n2. Start the guided questionnaire.\n3. Navigate to the step for entering target job titles.\n4. Enter the first job title: 'Senior Developer'.\n5. Enter the second job title: 'Software Architect'.\n6. Enter the third job title: 'Lead Engineer'.\n7. Enter the fourth job title: 'DevOps Specialist'.\n8. Enter the fifth (maximum) job title: 'Cloud Engineer'.\n9. Verify that all 5 titles are accepted and displayed correctly.\n10. Attempt to proceed to the next step.\n11. Submit the questionnaire.",
+    "expectedResult": "1. The user is able to successfully add exactly 5 job titles.\n2. No error message is displayed.\n3. The user can successfully submit the questionnaire with 5 job titles, and the resulting job matches reflect this wide range of roles.",
+    "tags": [
+      "ui",
+      "boundary",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L33-L34",
+      "excerpt": "the job titles the seeker is targeting, up to a defined maximum"
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "boundary",
+    "title": "Verify the system prevents an anonymous user from inputting more than the defined maximum number of job titles",
+    "description": "This boundary test ensures the system enforces the maximum limit on job titles by preventing the user from adding one more than the allowed number. This protects against system errors and ensures adherence to business rules. ASSUMPTION: The maximum number of job titles is 5.",
+    "testId": "TC-PREF-09",
+    "testDescription": "As a user, if I try to enter more job titles than the system allows, I expect to be clearly notified of the limit and prevented from adding more, ensuring a smooth and predictable user experience.",
+    "severity": "High",
+    "priority": "P0",
+    "prerequisites": "1. User is a new visitor with no existing session cookies or account.\n2. The system defines a maximum number of target job titles (assumed to be 5 for this test).",
+    "stepsToPerform": "1. Open a new incognito browser window and navigate to the application's home page.\n2. Start the guided questionnaire.\n3. Navigate to the step for entering target job titles.\n4. Enter 5 distinct job titles (e.g., 'Title 1', 'Title 2', 'Title 3', 'Title 4', 'Title 5').\n5. Verify that all 5 titles are accepted.\n6. Attempt to enter a sixth job title: 'Title 6'.\n7. Observe the behavior of the input field or 'Add' button.\n8. Look for a UI message indicating the limit has been reached.",
+    "expectedResult": "1. The system prevents the user from adding the 6th job title.\n2. The UI should either disable the input field/add button or display a clear error message (e.g., 'You have reached the maximum of 5 job titles.').\n3. The 5 previously entered titles should remain unaffected.",
+    "tags": [
+      "ui",
+      "boundary",
+      "negative",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L33-L34",
+      "excerpt": "the job titles the seeker is targeting, up to a defined maximum"
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify all captured preferences persist for the duration of an anonymous visit, including across page reloads",
+    "description": "This test verifies the persistence of an anonymous user's session data. It ensures that if a user reloads the page or navigates away and back, their entered preferences are not lost, providing a seamless and non-frustrating user experience.",
+    "testId": "TC-PREF-10",
+    "testDescription": "As a new user, after I've spent time filling out my preferences, I expect the site to remember them for my entire visit. If I accidentally reload the page, I shouldn't have to start over from scratch.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1. User is a new visitor with no existing session cookies or account.\n2. The system uses a session management mechanism (e.g., cookies, local storage) for anonymous users.",
+    "stepsToPerform": "1. Open a new incognito browser window and navigate to the application's home page.\n2. Start the guided questionnaire.\n3. Select 'Fully Remote' for working arrangement.\n4. Enter '110000' for target salary.\n5. Enter 'Senior QA Lead' for job title.\n6. Submit the questionnaire to view the matched results.\n7. Confirm that the results are filtered according to the entered preferences.\n8. Reload the browser page (using F5 or the reload button).\n9. Observe the reloaded job results page.\n10. Navigate back to the preference questionnaire/settings page.\n11. Verify the values in the working arrangement, salary, and job title fields.",
+    "expectedResult": "1. After the page reload, the job results page still shows listings filtered by the original preferences ('Fully Remote', '$110000', 'Senior QA Lead').\n2. When navigating back to the questionnaire, the previously entered preferences are pre-populated in the correct fields.\n3. The user's session data persists correctly throughout the anonymous visit.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional",
+      "regression"
+    ],
+    "sourceCitation": {
+      "location": "L72-L73",
+      "excerpt": "Hold preferences and uploaded documents against the seeker for the duration of an anonymous visit"
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the questionnaire is offered from the home page for a first visit before any account exists",
+    "description": "This test ensures that a new, anonymous user is presented with the preference capture questionnaire upon their initial visit to the homepage. This is the critical first step in the personalized onboarding flow designed to increase engagement.",
+    "testId": "TC-PREF-11",
+    "testDescription": "A first-time visitor to the platform should be immediately and prominently offered a guided questionnaire to capture their job preferences. This allows the platform to demonstrate value by providing personalized results before requiring any commitment like registration or payment.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1. Tester is using a browser with cleared cache, cookies, and session storage to simulate a first-time visit.\n2. The user does not have an existing account.\n3. The application's backend services are running and the home page is accessible.",
+    "stepsToPerform": "1. Open a new browser in incognito or private mode.\n2. Navigate to the application's home page URL.\n3. Observe the main content area of the page upon loading.\n4. Verify that a prominent element, such as a banner, modal, or a clear call-to-action button, is displayed offering to start the preference questionnaire.\n5. Confirm that no login or registration form is presented at this stage.\n6. Click the call-to-action to begin the questionnaire.\n7. Verify that the user is navigated to the first step of the questionnaire interface.\n8. Inspect browser developer tools (Application tab) to confirm no authentication tokens or account-related identifiers have been set.",
+    "expectedResult": "1. A prompt to start the 'short guided questionnaire' is clearly visible on the home page.\n2. The user can successfully start the questionnaire without being asked to log in or create an account.\n3. The system correctly identifies the session as an anonymous first-time visit.",
+    "sourceCitation": {
+      "location": "L22-L24",
+      "excerpt": "Collect the seeker's requirements through a short guided questionnaire offered from the home page on a first visit, before any account exists."
+    },
+    "tags": [
+      "ui",
+      "happy-path",
+      "e2e",
+      "functional"
+    ],
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify a user can select a motivation for their search from the available options",
+    "description": "This test confirms that a user can successfully interact with the questionnaire to select their primary motivation for a job search. Capturing this data point is essential for the job matching algorithm.",
+    "testId": "TC-PREF-12",
+    "testDescription": "As a job seeker using the guided questionnaire, I need to specify what is driving my job search (e.g., career progression, better income). This test validates that the UI presents the specified options and correctly records my selection to help tailor job results.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1. The user is a new, anonymous visitor.\n2. The user has started the preference questionnaire from the home page and has navigated to the 'motivation' step.",
+    "stepsToPerform": "1. In a clean browser session, navigate to the home page.\n2. Click the prompt to begin the guided questionnaire.\n3. Proceed through the questionnaire to the step that asks 'what is motivating the search'.\n4. Observe the list of available options, verifying it includes 'career progression', 'income', 'flexibility', and 'returning to work'.\n5. Click to select the 'income' option.\n6. Verify that the 'income' option is visually highlighted or marked as selected.\n7. Click the 'Next' or 'Continue' button to proceed to the subsequent step.\n8. Click the 'Back' button to return to the motivation selection step.\n9. Confirm that 'income' is still the selected option, verifying the choice was persisted within the anonymous session.",
+    "expectedResult": "1. The user can view the list of predefined search motivations.\n2. The user can select one of the options (e.g., 'income').\n3. The system correctly registers and retains the user's selection for the duration of the anonymous session.",
+    "sourceCitation": {
+      "location": "L27-L29",
+      "excerpt": "what is motivating the search (career progression, income, flexibility, returning to work, and similar)"
+    },
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify a user can upload a resume in a common document format that is under the defined size limit",
+    "description": "This test validates the primary happy path for the resume upload feature, ensuring that a standard, correctly sized document is accepted by the system. This is crucial for populating the user's profile for future job applications.",
+    "testId": "TC-RESUME-01",
+    "testDescription": "As a job seeker, I need to upload my resume to my profile so it can be used for job matching and applications. This test ensures that a valid file (e.g., a .pdf or .docx) that is smaller than the maximum allowed size can be successfully uploaded without issues.",
+    "severity": "High",
+    "priority": "P1",
+    "prerequisites": "1. User is on the resume upload step of the onboarding questionnaire or profile page.\n2. A test resume file in a supported format (e.g., 'resume.pdf') exists on the local machine.\n3. The test file size is known to be under the maximum limit (e.g., 2MB, assuming a 5MB limit).",
+    "stepsToPerform": "1. Navigate to the page or modal containing the resume upload functionality.\n2. Click the 'Upload Resume' button or interact with the drag-and-drop area.\n3. From the file selection dialog, choose a valid test file (e.g., 'test_resume.pdf' with a size of 2MB).\n4. Confirm the selection to initiate the upload.\n5. Observe the UI for an upload progress indicator to confirm the process has started.\n6. Wait for the upload process to complete.\n7. Verify that a success message is displayed confirming the document was received.\n8. Check that the UI updates to show the name of the uploaded file (e.g., 'test_resume.pdf') and may present an option to replace it.",
+    "expectedResult": "1. The system accepts the resume file without errors.\n2. A confirmation message is displayed to the user upon successful upload.\n3. The UI state changes to reflect that a resume has been successfully uploaded.",
+    "sourceCitation": {
+      "location": "L44-L46",
+      "excerpt": "Accept a resume upload in the common document formats, up to a defined size limit."
+    },
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the system provides a confirmation after a resume document has been successfully received",
+    "description": "This test ensures that the user receives explicit and clear feedback that their resume upload was successful. This confirmation is critical for user confidence and to prevent confusion or duplicate uploads.",
+    "testId": "TC-RESUME-02",
+    "testDescription": "After a user takes the action to upload their resume, they need unambiguous confirmation that the file was successfully received by the system and is ready to be used. This test verifies the presence and clarity of this confirmation feedback.",
+    "severity": "High",
+    "priority": "P1",
+    "prerequisites": "1. User is on the resume upload interface.\n2. A valid test resume file (e.g., 'my_cv.docx', under the size limit) is available on the local machine for upload.",
+    "stepsToPerform": "1. Navigate to the resume upload step in the user flow.\n2. Click the 'Upload' button to open the system's file selector.\n3. Choose the valid test resume file ('my_cv.docx').\n4. Confirm the selection to begin the upload.\n5. Monitor the UI as the file is transmitted to the server.\n6. Once the upload completes, observe the screen for a new message or status change.\n7. Verify that a clear and positive confirmation message is displayed, such as \"Success! Your resume has been uploaded.\"\n8. Verify the UI state updates to reflect the successful upload, for example, by displaying the filename and an option to delete or replace the file.",
+    "expectedResult": "1. Upon successful completion of the file upload, a clear confirmation message is displayed to the user.\n2. The message explicitly confirms that the document has been received.\n3. The UI state updates to reflect the presence of the newly uploaded file.",
+    "sourceCitation": {
+      "location": "L47-L49",
+      "excerpt": "Confirm that an uploaded document has been received before it is treated as part of the seeker's profile."
+    },
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "negative",
+    "title": "Verify the system rejects an uploaded resume document that is oversized and provides a clear reason",
+    "description": "This negative test ensures the system correctly enforces the file size limit for resume uploads and provides helpful feedback to the user when the limit is exceeded. This prevents server resource exhaustion and guides the user to a successful upload.",
+    "testId": "TC-RESUME-03",
+    "testDescription": "A user attempts to upload a resume file that is larger than the maximum allowed size (e.g., 5MB). The system should prevent the upload from completing and immediately inform the user why it failed, specifying the size limit rule.",
+    "severity": "High",
+    "priority": "P1",
+    "prerequisites": "1. The maximum file size for resume uploads is defined and known (e.g., 5MB).\n2. A test file that exceeds this limit is available (e.g., 'large_portfolio.pdf' of 7MB).\n3. User is on the resume upload page.",
+    "stepsToPerform": "1. Navigate to the resume upload interface.\n2. If the UI displays the file size limit, note the value (e.g., 'Max 5MB').\n3. Click the 'Upload Resume' button.\n4. Select the oversized test file ('large_portfolio.pdf', 7MB) from the local file system.\n5. Attempt to initiate the upload.\n6. Observe the system's response immediately after the upload attempt.\n7. Verify that the upload fails and a user-facing error message is displayed.\n8. Confirm the error message explicitly states that the file is too large and mentions the specific size limit (e.g., \"Upload failed: File size exceeds the 5MB limit.\").",
+    "expectedResult": "1. The file upload is rejected by the system.\n2. A clear, user-friendly error message is displayed.\n3. The error message explicitly states that the reason for rejection is that the file is oversized and provides the size limit.",
+    "sourceCitation": {
+      "location": "L49-L50",
+      "excerpt": "Reject unsupported formats and oversized documents with a clear reason."
+    },
+    "tags": [
+      "ui",
+      "negative",
+      "functional"
+    ],
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "boundary",
+    "title": "Verify a user can upload a resume file that is exactly at the defined size limit",
+    "description": "This boundary value analysis test case verifies that the system correctly handles files that are exactly at the maximum allowed size limit. This ensures the boundary condition (e.g., size <= limit) is implemented correctly and not as size < limit.",
+    "testId": "TC-RESUME-05",
+    "testDescription": "A user uploads a resume file whose size is exactly the maximum permitted size (e.g., 5,242,880 bytes for a 5MB limit). The system should accept this file, as it is within the 'up to' limit specified in the requirements.",
+    "severity": "High",
+    "priority": "P1",
+    "prerequisites": "1. The maximum file size limit is known precisely (e.g., 5,242,880 bytes for 5MB).\n2. A test resume file with this exact size has been created.\n3. User is on the resume upload page.",
+    "stepsToPerform": "1. Navigate to the resume upload interface.\n2. Click the 'Upload Resume' button.\n3. Select the test file that is exactly at the size limit (e.g., 'exact_5MB_resume.pdf' of 5,242,880 bytes).\n4. Initiate the upload.\n5. Observe the upload progress indicator.\n6. Wait for the upload to complete successfully.\n7. Verify that no 'file too large' error is displayed.\n8. Confirm that a success message is displayed and the UI updates to show the uploaded file's name.",
+    "expectedResult": "1. The file upload is successful.\n2. The system accepts the file that is exactly at the size limit without any errors.\n3. A confirmation message is displayed to the user.",
+    "sourceCitation": {
+      "location": "L44-L46",
+      "excerpt": "Accept a resume upload in the common document formats, up to a defined size limit."
+    },
+    "tags": [
+      "ui",
+      "boundary",
+      "functional"
+    ],
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "boundary",
+    "title": "Verify the system rejects a resume file that is just over the defined size limit",
+    "description": "This boundary value analysis test case verifies that the system correctly rejects files that are just above the maximum allowed size limit. This confirms the lower boundary of the invalid (oversized) partition is correctly implemented.",
+    "testId": "TC-RESUME-07",
+    "testDescription": "A user attempts to upload a resume file whose size is minimally larger than the maximum permitted size (e.g., limit + 1 byte). The system must reject this file and provide a clear error message about the size violation.",
+    "severity": "High",
+    "priority": "P1",
+    "prerequisites": "1. The maximum file size limit is known precisely (e.g., 5,242,880 bytes).\n2. A test resume file with a size just over this limit (e.g., 5,242,881 bytes) has been created.\n3. User is on the resume upload page.",
+    "stepsToPerform": "1. Navigate to the resume upload interface.\n2. Click the 'Upload Resume' button.\n3. Select the test file that is just over the size limit (e.g., 'limit_plus_1B_resume.pdf' of 5,242,881 bytes).\n4. Initiate the upload.\n5. Observe the system's response.\n6. Verify that the upload process fails.\n7. Confirm that a specific error message is displayed to the user.\n8. Check that the error message clearly indicates the file is too large and states the size limit.",
+    "expectedResult": "1. The file upload is rejected by the system.\n2. A clear error message is displayed stating the file exceeds the size limit.\n3. The UI does not show the file as having been uploaded.",
+    "sourceCitation": {
+      "location": "L49-L50",
+      "excerpt": "Reject unsupported formats and oversized documents with a clear reason."
+    },
+    "tags": [
+      "ui",
+      "boundary",
+      "negative",
+      "functional"
+    ],
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify a user can indicate their resume state is 'up to date'",
+    "description": "This test verifies that the system correctly captures the user's self-reported status of their resume. This data point is valuable for understanding the user's job search readiness and for potential future features.",
+    "testId": "TC-RESUME-08",
+    "testDescription": "As part of the profile building or onboarding process, a user is asked about the current state of their resume. This test ensures they can select the 'up to date' option and that the system correctly records this choice.",
+    "severity": "High",
+    "priority": "P1",
+    "prerequisites": "1. User is on a page or step in a workflow where they are prompted for the status of their resume.\n2. The UI for this selection is rendered and interactive.",
+    "stepsToPerform": "1. Navigate to the start of the onboarding questionnaire or relevant profile section.\n2. Proceed to the 'Resume Handling' step.\n3. Locate the question asking for the current state of the user's resume.\n4. Observe the available options, which must include 'up to date', 'needs work', and 'not written yet'.\n5. Click the radio button or dropdown item corresponding to 'up to date'.\n6. Verify the UI visually confirms the selection (e.g., the radio button is checked).\n7. Proceed to the next step of the process to ensure the value is submitted.\n8. Navigate back to the resume state selection step.\n9. Confirm that 'up to date' remains the selected option, indicating the choice was persisted correctly within the user's session.",
+    "expectedResult": "1. The user can successfully select 'up to date' from the list of resume state options.\n2. The selection is visually confirmed in the UI.\n3. The system captures and persists this selection within the user's session data.",
+    "sourceCitation": {
+      "location": "L42-L44",
+      "excerpt": "Capture the current state of the seeker's resume (up to date, needs work, not written yet)."
+    },
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify a user can indicate their resume state is 'not written yet'",
+    "description": "This test validates that a job seeker who does not have a resume can select the 'not written yet' option. This is a key data point for identifying users who may require different guidance or services. Automation feasibility: HIGH.",
+    "testId": "TC-RESUME-10",
+    "testDescription": "As a job seeker who is new to the workforce or returning after a long break, I may not have a resume. I want to be able to indicate this by selecting 'not written yet' so I am not blocked from using the platform.",
+    "severity": "Medium",
+    "priority": "P1",
+    "prerequisites": "User is a new visitor to the platform.\nThe home page presents the option to start the guided questionnaire.",
+    "stepsToPerform": "1. Open a new browser session and navigate to the home page.\n2. Click the button to start the preference questionnaire.\n3. Answer the initial preference questions to proceed through the flow.\n4. When presented with the 'Resume Handling' section, locate the resume status options.\n5. Click the radio button or option for 'not written yet'.\n6. Confirm that the UI does not require a file upload after this selection.\n7. Complete and submit the rest of the questionnaire.\n8. Check the anonymous session data to confirm the 'not written yet' status was saved.",
+    "expectedResult": "1. The system correctly records the resume state as 'not written yet'.\n2. The user is not prompted or required to upload a resume file.\n3. The user can successfully complete the questionnaire and proceed to view job matches.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional",
+      "regression"
+    ],
+    "sourceCitation": {
+      "location": "L42-L44",
+      "excerpt": "Capture the current state of the seeker's resume (up to date, needs work, not written yet)."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify an uploaded resume is retained against the seeker for use in matching during the anonymous session",
+    "description": "This test ensures that a resume uploaded by an anonymous user is correctly associated with their session and used for job matching. This is critical for demonstrating the platform's value before requiring registration. Automation feasibility: HIGH (requires backend/API validation).",
+    "testId": "TC-RESUME-11",
+    "testDescription": "As a new, anonymous job seeker, after I upload my resume, I expect the system to immediately use its contents to improve my job matches for the rest of my visit, even before I create an account.",
+    "severity": "Critical",
+    "priority": "P1",
+    "prerequisites": "User is an anonymous visitor with a clean session.\nA valid test resume file (e.g., 'test_resume_pm.pdf' containing the keyword 'scrum') is available for upload.\nBackend test jobs exist, some of which contain the keyword 'scrum'.",
+    "stepsToPerform": "1. Navigate to the home page and start the questionnaire.\n2. Proceed to the 'Resume Handling' step.\n3. Select the option to upload a resume and choose the 'test_resume_pm.pdf' file.\n4. Wait for the UI to show a confirmation that the upload was successful.\n5. Complete the questionnaire, leaving other fields neutral.\n6. Submit the questionnaire and view the matched job listings.\n7. Observe that jobs containing the keyword 'scrum' are ranked highly or are present in the results.\n8. Refresh the job results page.\n9. Verify that the results are still personalized based on the resume content, confirming session persistence.",
+    "expectedResult": "1. The uploaded resume is successfully associated with the anonymous user's session.\n2. The job matching algorithm uses content from the resume to filter and rank the results.\n3. The resume and its influence on matching persist across page loads for the duration of the anonymous visit.",
+    "tags": [
+      "ui",
+      "api",
+      "happy-path",
+      "functional",
+      "e2e"
+    ],
+    "sourceCitation": {
+      "location": "L51-L53",
+      "excerpt": "Retain the resume against the seeker for use in matching and in any applications they go on to make."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify a personalised set of job listings is produced once the seeker's preferences have been captured",
+    "description": "This test verifies the core happy path of the feature: an anonymous user completes the questionnaire and receives a personalized, relevant list of jobs, demonstrating the platform's value upfront. Automation feasibility: HIGH.",
+    "testId": "TC-MATCH-01",
+    "testDescription": "As a new job seeker, after I provide my specific job preferences through the questionnaire, I expect to see a list of jobs that are filtered and ranked according to those preferences, not a generic, unsorted list.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "User is a new, anonymous visitor.\nA diverse set of job listings exists in the database to allow for meaningful filtering.",
+    "stepsToPerform": "1. Navigate to the home page and begin the guided questionnaire.\n2. For 'working arrangement', select 'fully remote'.\n3. For 'annual salary', enter '120000'.\n4. For 'location', select 'United States'.\n5. For 'job titles', enter 'Senior Software Engineer'.\n6. For 'category or field', select 'Information Technology'.\n7. For 'years of relevant experience', enter '7'.\n8. Submit the completed questionnaire.\n9. Observe the job results page that loads.\n10. Inspect the first 10 job listings displayed.\n11. Verify that the listings match the criteria entered (e.g., are remote, titles are relevant, etc.).",
+    "expectedResult": "1. Upon submitting the questionnaire, the user is directed to a job results page.\n2. The job listings are filtered based on the preferences provided (remote, salary, title, etc.).\n3. The results are ranked with the most relevant matches appearing first.\n4. No registration or payment is required to view these personalized results.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional",
+      "e2e"
+    ],
+    "sourceCitation": {
+      "location": "L54-L56",
+      "excerpt": "Produce a personalised set of listings once the seeker's preferences have been captured, filtered and ranked against those preferences."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the job listings are correctly filtered based on the 'working arrangement' preference",
+    "description": "This test isolates the 'working arrangement' filter to confirm it correctly narrows down job results, which is a primary feature for a remote/hybrid job platform. Automation feasibility: HIGH.",
+    "testId": "TC-MATCH-02",
+    "testDescription": "As a job seeker who is only interested in 'hybrid' roles, I want to select this preference and be shown only jobs that are classified as hybrid, so I don't waste time on fully remote or fully in-office positions.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "The job database contains a mix of listings clearly tagged as 'fully remote', 'hybrid', and on-site.\nUser is a new, anonymous visitor.",
+    "stepsToPerform": "1. Navigate to the home page and start the questionnaire.\n2. In the 'working arrangement' step, select the 'hybrid' option.\n3. Skip all other preference fields or select 'no preference' to isolate the filter's effect.\n4. Submit the questionnaire.\n5. Land on the job results page.\n6. Examine the details of the first 10-15 job listings.\n7. For each listing, verify that its working arrangement is explicitly stated as 'hybrid'.",
+    "expectedResult": "1. All job listings displayed on the results page are exclusively those with a 'hybrid' working arrangement.\n2. No 'fully remote' or other types of jobs appear in the results.\n3. The filter controls on the results page show 'hybrid' as the active selection for 'working arrangement'.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional",
+      "regression"
+    ],
+    "sourceCitation": {
+      "location": "L54-L56",
+      "excerpt": "filtered and ranked against those preferences."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the job listings are correctly filtered based on the 'annual salary' preference",
+    "description": "This test validates that the annual salary preference correctly filters job listings, showing only those that meet the seeker's target income. This is a critical factor in job searching. Automation feasibility: HIGH.",
+    "testId": "TC-MATCH-03",
+    "testDescription": "As a job seeker targeting a minimum salary of $95,000, I want to input this preference and have the system filter out all jobs that pay less, making my search more efficient.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "The job database contains listings with a variety of salary ranges, both above and below $95,000.\nUser is a new, anonymous visitor.",
+    "stepsToPerform": "1. Navigate to the home page and start the questionnaire.\n2. In the 'annual salary' step, enter '95000'.\n3. Leave all other preference fields blank to isolate the salary filter.\n4. Submit the questionnaire.\n5. On the job results page, inspect the salary details for the top 10 listings.\n6. Verify that each job's stated salary or salary range includes or exceeds $95,000.",
+    "expectedResult": "1. All job listings displayed have a salary that meets or exceeds the target of $95,000.\n2. Jobs with a maximum salary below $95,000 are excluded from the results.\n3. The salary filter on the results page accurately reflects the entered value.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional",
+      "regression"
+    ],
+    "sourceCitation": {
+      "location": "L54-L56",
+      "excerpt": "filtered and ranked against those preferences."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the job listings are correctly filtered based on the 'category or field' preference",
+    "description": "This test ensures that filtering by a broad job category correctly returns jobs within that field, serving users who are exploring different roles within a specific industry. Automation feasibility: HIGH.",
+    "testId": "TC-MATCH-06",
+    "testDescription": "As a job seeker interested in the 'Healthcare' field, I want to select this category and see a variety of relevant roles, such as 'Medical Biller', 'Nurse Practitioner', and 'Healthcare Administrator'.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "The job database is correctly categorized, with multiple distinct job titles falling under the 'Healthcare' category.\nUser is a new, anonymous visitor.",
+    "stepsToPerform": "1. Navigate to the home page and start the questionnaire.\n2. In the 'category or field' step, select 'Healthcare' from the provided list.\n3. Leave other preference fields blank to isolate the category filter.\n4. Submit the questionnaire.\n5. On the job results page, inspect the category or details of the top 10 listings.\n6. Verify that each job belongs to the 'Healthcare' field.",
+    "expectedResult": "1. All job listings displayed fall under the 'Healthcare' category.\n2. Jobs from other categories like 'Sales' or 'Engineering' are excluded.\n3. The category filter on the results page shows 'Healthcare' as the active selection.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional",
+      "regression"
+    ],
+    "sourceCitation": {
+      "location": "L54-L56",
+      "excerpt": "filtered and ranked against those preferences."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the job listings are correctly filtered based on the 'years of relevant experience' preference",
+    "description": "This test validates that the experience level filter correctly matches the seeker's input to appropriate job listings, preventing mismatches between junior and senior candidates. Automation feasibility: HIGH.",
+    "testId": "TC-MATCH-07",
+    "testDescription": "As an early-career professional with 2 years of experience, I want to specify my experience level to filter out senior or lead roles that require 10+ years of experience, focusing my search on appropriate opportunities.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "The job database includes listings with specified experience requirements (e.g., '1-3 years', '5+ years', '10+ years').\nUser is a new, anonymous visitor.",
+    "stepsToPerform": "1. Navigate to the home page and start the questionnaire.\n2. In the 'years of relevant experience' step, select or enter '2'.\n3. Leave other preference fields blank to isolate this filter.\n4. Submit the questionnaire.\n5. On the job results page, inspect the experience requirements for the top 10 listings.\n6. Verify that the required experience for each job is appropriate for a candidate with 2 years of experience (e.g., '1-3 years', 'Entry-Level', '2+ years').",
+    "expectedResult": "1. The job listings displayed are appropriate for the selected experience level.\n2. Senior, lead, or principal roles requiring significantly more experience (e.g., '8+ years') are filtered out.\n3. The experience level filter on the results page reflects the '2 years' selection.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional",
+      "regression"
+    ],
+    "sourceCitation": {
+      "location": "L54-L56",
+      "excerpt": "filtered and ranked against those preferences."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the job listings are correctly filtered based on the 'highest level of education' preference",
+    "description": "This test ensures that the job matching algorithm correctly filters job listings based on the seeker's specified 'highest level of education', a key preference for matching candidates to suitable roles. Automation: HIGH.",
+    "testId": "TC-MATCH-08",
+    "testDescription": "As a job seeker with a specific educational background, I want the platform to show me only jobs for which I am qualified based on my education level, so I don't waste time on roles with higher requirements.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "The job database contains a mix of roles with various educational requirements, including 'High School Diploma', 'Bachelor's Degree', and 'Master's Degree'. The test environment is configured to serve these specific jobs.",
+    "stepsToPerform": "1. As an anonymous user, navigate to the platform's home page.\n2. Click the prompt to begin the guided questionnaire for job preferences.\n3. Proceed through the questionnaire, providing valid data for all fields.\n4. When prompted for 'highest level of education completed', select 'Bachelor's Degree'.\n5. Submit the completed questionnaire.\n6. Observe the job results page that loads.\n7. Systematically inspect the details of the first 10 job listings displayed.\n8. For each listing, verify that the required education level is 'Bachelor's Degree' or a lower level (e.g., 'High School Diploma').\n9. Confirm that no jobs requiring a 'Master's Degree' or higher are present in the results.",
+    "expectedResult": "1. The job results page loads successfully after questionnaire submission.\n2. All displayed job listings have an education requirement of 'Bachelor's Degree' or less.\n3. Job listings that explicitly require a 'Master's Degree' or 'PhD' are correctly filtered out and not displayed.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "e2e",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L54-L56",
+      "excerpt": "filtered and ranked against those preferences."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the system indicates which constraint is narrowing the result set when a combination of preferences returns very few listings",
+    "description": "This test verifies that the system provides helpful feedback to the user when their search criteria are too specific, correctly identifying the preference that is causing the small result set. This enhances usability and helps users refine their search effectively. Automation: HIGH.",
+    "testId": "TC-MATCH-09",
+    "testDescription": "As a job seeker, if my combination of preferences results in only a handful of jobs, I want the system to tell me which specific preference is the most restrictive so I can consider adjusting it to see more opportunities.",
+    "severity": "High",
+    "priority": "P0",
+    "prerequisites": "The job database is populated with listings such that a combination of a common job category (e.g., 'Marketing') and a very high, rare salary (e.g., '$400,000') will return 1-3 results.",
+    "stepsToPerform": "1. As an anonymous user, navigate to the platform's home page.\n2. Initiate the guided preference questionnaire.\n3. For 'the category or field', select 'Marketing'.\n4. For 'the annual salary the seeker is targeting', enter a highly restrictive value of '400000'.\n5. For 'location', select a common region like 'USA'.\n6. Complete and submit the questionnaire.\n7. Observe the job results page, which should display a very small number of listings.\n8. Scan the page for a notification or message related to the search results.\n9. Read the content of the notification.",
+    "expectedResult": "1. The job results page loads and displays 1-3 job listings.\n2. A prominent, user-friendly message is displayed on the page.\n3. The message explicitly states that the 'annual salary' preference is the primary constraint narrowing the job results.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L61-L63",
+      "excerpt": "Where a combination of preferences returns very few listings, indicate which constraint is narrowing the set."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify job matching still produces results when some preferences are left unanswered",
+    "description": "This test ensures the matching algorithm is robust and can handle incomplete data, providing relevant results even when a seeker chooses not to answer every question in the questionnaire. This is crucial for initial engagement. Automation: HIGH.",
+    "testId": "TC-MATCH-10",
+    "testDescription": "As a new job seeker, I may not want to provide all my preferences at once. I expect the system to work with the information I do provide and show me relevant jobs, rather than blocking me for skipping some questions.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "The job database contains a wide variety of listings across different categories, salary ranges, and education levels.",
+    "stepsToPerform": "1. As an anonymous user, navigate to the home page.\n2. Start the guided preference questionnaire.\n3. For 'the category or field', select 'Software Development'.\n4. For 'years of relevant experience', select '5-7 years'.\n5. Deliberately skip the questions for 'annual salary' and 'highest level of education'.\n6. Submit the partially completed questionnaire.\n7. Observe the job results page.\n8. Inspect the first few job listings to confirm they match the provided preferences.\n9. Verify that the results include jobs with a wide variety of salary ranges and education requirements.",
+    "expectedResult": "1. The system successfully processes the questionnaire without errors.\n2. A job results page is displayed with a list of available positions.\n3. All displayed jobs are in the 'Software Development' category and are appropriate for someone with '5-7 years' of experience.\n4. The results are not filtered by salary or education, demonstrating that the unanswered preferences were correctly ignored.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L39-L40",
+      "excerpt": "Record which preferences were provided and which were left unanswered."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the results are ranked according to the provided preferences",
+    "description": "This test validates the core ranking functionality of the job matching algorithm, ensuring that jobs that are a closer match to the seeker's full set of preferences are prioritized and displayed higher in the results. Automation: MEDIUM (may require manual inspection or a complex automated check of result order).",
+    "testId": "TC-MATCH-11",
+    "testDescription": "As a job seeker, after providing my detailed preferences, I expect the most relevant jobs to be at the top of the list to save me time and effort in my search.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "The job database contains a curated set of listings with varying degrees of relevance to a specific profile: a perfect match, several partial matches (e.g., correct title but wrong location), and some low-relevance matches.",
+    "stepsToPerform": "1. As an anonymous user, navigate to the home page.\n2. Start the guided preference questionnaire.\n3. Enter a specific set of preferences: Job Title: 'Senior Marketing Manager', Location: 'USA', Working Arrangement: 'Fully Remote'.\n4. Submit the questionnaire.\n5. Observe the job results page.\n6. Verify that the job listing that is a perfect match for all three preferences appears as the first result.\n7. Verify that jobs matching two of the three preferences (e.g., 'Senior Marketing Manager', 'Fully Remote' but in 'Canada') appear next.\n8. Verify that jobs matching only one preference appear lower in the ranking.",
+    "expectedResult": "1. The job results are displayed in a ranked order of relevance.\n2. The top results are the listings that match the highest number of seeker preferences.\n3. Listings with fewer matching attributes are ranked progressively lower.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L54-L56",
+      "excerpt": "filtered and ranked against those preferences."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify captured preferences are applied to subsequent searches for the remainder of the anonymous visit",
+    "description": "This test ensures that seeker preferences are persistent throughout an anonymous user's session, providing a consistent, personalized experience across different interactions on the site. Automation: HIGH.",
+    "testId": "TC-MATCH-12",
+    "testDescription": "As a new visitor, after I've gone through the questionnaire, I expect the site to remember my choices for my entire visit, so that any other searches I perform are automatically tailored to my needs without me having to re-enter filters.",
+    "severity": "High",
+    "priority": "P0",
+    "prerequisites": "The system is configured to maintain session state for anonymous users. The job database contains jobs in multiple categories, including 'Human Resources'.",
+    "stepsToPerform": "1. As a new anonymous user, navigate to the home page.\n2. Complete the guided questionnaire, setting the 'category or field' to 'Human Resources' and submitting.\n3. Verify that the initial results page shows only 'Human Resources' jobs.\n4. Navigate back to the home page.\n5. Use the main search bar to perform a generic keyword search for 'Coordinator'.\n6. Observe the new search results page.\n7. Inspect the job listings returned by the keyword search.\n8. Confirm that the results are for roles like 'HR Coordinator' or 'Recruiting Coordinator' and not for roles like 'Marketing Coordinator' or 'Event Coordinator'.",
+    "expectedResult": "1. The initial results after the questionnaire are correctly filtered by 'Human Resources'.\n2. The subsequent keyword search for 'Coordinator' is also implicitly filtered by the 'Human Resources' preference captured earlier in the session.\n3. The session-level preferences persist across navigation and new searches.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "e2e",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L57-L59",
+      "excerpt": "Apply the captured preferences to subsequent searches for the remainder of the visit"
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "negative",
+    "title": "Verify a combination of preferences that returns zero results is handled gracefully",
+    "description": "This negative test case ensures the system provides a clear and helpful response when a user's search criteria are so restrictive that no matching jobs can be found, preventing user confusion and abandonment. Automation: HIGH.",
+    "testId": "TC-MATCH-13",
+    "testDescription": "As a job seeker, if my search is too specific and yields no results, I expect the system to inform me clearly and perhaps suggest how I can broaden my search, rather than showing a blank page or an error.",
+    "severity": "High",
+    "priority": "P0",
+    "prerequisites": "The job database is in a known state where a specific, unrealistic combination of preferences (e.g., job title 'Space Elevator Operator' in 'Kansas') is guaranteed to return zero results.",
+    "stepsToPerform": "1. As an anonymous user, navigate to the home page.\n2. Start the guided preference questionnaire.\n3. For 'job titles', enter 'Space Elevator Operator'.\n4. For 'location', select 'Kansas, USA'.\n5. For 'annual salary', enter '1000000'.\n6. Complete and submit the questionnaire.\n7. Observe the resulting page.\n8. Check for any error messages or notifications.",
+    "expectedResult": "1. The system does not crash or display a technical error (e.g., 500 error, stack trace).\n2. A user-friendly page or message is displayed, clearly stating that no jobs were found matching the criteria.\n3. The page may also include the 'narrowing constraint' indicator, highlighting the likely restrictive preferences.",
+    "tags": [
+      "ui",
+      "negative",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L61-L63",
+      "excerpt": "Where a combination of preferences returns very few listings, indicate which constraint is narrowing the set."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the 'narrowing constraint' indicator correctly identifies a single, highly restrictive preference",
+    "description": "This test validates the accuracy of the 'narrowing constraint' feature by creating a scenario where one preference is uniquely restrictive, ensuring the system correctly points it out to the user. Automation: HIGH.",
+    "testId": "TC-MATCH-14",
+    "testDescription": "As a job seeker, if my search for a common job is returning few results, I want the system to accurately pinpoint the one unusual preference I selected (e.g., a rare benefit) so I know exactly what to change.",
+    "severity": "High",
+    "priority": "P0",
+    "prerequisites": "The job database contains many 'Software Engineer' roles, but only 1-2 of them list '4-day work week' as a workplace benefit.",
+    "stepsToPerform": "1. As an anonymous user, navigate to the home page.\n2. Start the guided preference questionnaire.\n3. For 'job titles', enter 'Software Engineer' (a common preference).\n4. For 'location', select 'USA' (a common preference).\n5. For 'the workplace benefit the seeker values most', select '4-day work week' (a highly restrictive preference).\n6. Submit the questionnaire.\n7. Observe the results page, which should show 1-2 listings.\n8. Locate and read the 'narrowing constraint' notification.",
+    "expectedResult": "1. The results page loads with a very small number of jobs.\n2. A message is displayed indicating the results are limited.\n3. The message correctly and exclusively identifies 'workplace benefit' as the preference that is narrowing the result set.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L61-L63",
+      "excerpt": "Where a combination of preferences returns very few listings, indicate which constraint is narrowing the set."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the 'narrowing constraint' indicator correctly identifies multiple restrictive preferences",
+    "description": "This test validates that the 'narrowing constraint' feature can correctly identify a combination of two or more preferences that, together, are highly restrictive, even if each one individually is not. Automation: HIGH.",
+    "testId": "TC-MATCH-15",
+    "testDescription": "As a job seeker, if my search returns few results, I want the system to tell me if it's the *combination* of my desired location and job field that is rare, so I can decide which of the two I'm more flexible on.",
+    "severity": "High",
+    "priority": "P0",
+    "prerequisites": "The job database has many jobs in 'Finance' and many jobs in 'Germany', but only 1-2 jobs that are in 'Finance' AND in 'Germany'.",
+    "stepsToPerform": "1. As an anonymous user, navigate to the home page.\n2. Start the guided preference questionnaire.\n3. For 'the category or field', select 'Finance'.\n4. For 'the location', select 'Germany'.\n5. Fill in other preferences with common values (e.g., salary, experience).\n6. Submit the questionnaire.\n7. Observe the results page, which should show very few listings.\n8. Locate and read the 'narrowing constraint' notification.",
+    "expectedResult": "1. The results page loads with a very small number of jobs.\n2. A message is displayed indicating the results are limited.\n3. The message correctly identifies both 'category' and 'location' as the combination of preferences that is narrowing the result set.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L61-L63",
+      "excerpt": "Where a combination of preferences returns very few listings, indicate which constraint is narrowing the set."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify a seeker can widen an individual preference from the results page to see more listings",
+    "description": "This test ensures that users can dynamically interact with their filters on the results page, specifically by 'widening' a preference to increase the number of visible job opportunities. Automation: HIGH.",
+    "testId": "TC-REFINE-01",
+    "testDescription": "As a job seeker viewing my results, if I feel my initial choices were too narrow, I want to be able to easily change a filter (e.g., from 'Fully Remote' to include 'Hybrid' as well) directly on the results page and see more jobs immediately.",
+    "severity": "High",
+    "priority": "P1",
+    "prerequisites": "The job database contains a significant number of both 'Fully Remote' and 'Hybrid' jobs.",
+    "stepsToPerform": "1. As an anonymous user, navigate to the home page.\n2. Complete the questionnaire, selecting 'Fully Remote' for 'working arrangement'.\n3. Submit the questionnaire and land on the results page.\n4. Note the total number of job listings displayed (e.g., 'Showing 150 jobs').\n5. Locate the filter controls on the results page.\n6. Find the 'Working Arrangement' filter, which is currently set to 'Fully Remote'.\n7. Modify the filter to a wider setting, such as 'No Preference' or by also checking 'Hybrid'.\n8. Observe the results list as it updates.\n9. Note the new total number of job listings.",
+    "expectedResult": "1. The job list on the page refreshes without a full page reload.\n2. The new list contains jobs that are both 'Fully Remote' and 'Hybrid'.\n3. The total number of job listings shown is now greater than the initial count (e.g., '> 150 jobs').",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L59-L61",
+      "excerpt": "Allow the seeker to widen, narrow or clear any individual preference from the results."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify a seeker can clear an individual preference from the results page, and the results update accordingly",
+    "description": "This test ensures that a user can remove a single filter from their search on the results page, which should widen the search criteria and update the job listings to reflect this change. This validates the core refinement functionality.",
+    "testId": "TC-REFINE-03",
+    "testDescription": "A job seeker has completed the initial questionnaire and is viewing their matched results. They decide that one of their preferences, such as target salary, is too restrictive. They should be able to easily remove just that one preference, and the system should immediately show them a new, broader set of results.",
+    "severity": "High",
+    "priority": "P1",
+    "prerequisites": "The user is on the job results page as an anonymous seeker. At least two preferences (e.g., 'Annual Salary' and 'Location') have been applied, resulting in a filtered list of jobs.",
+    "stepsToPerform": "1. As an anonymous user, complete the preference questionnaire with 'Annual Salary' set to '$150,000' and 'Location' set to 'USA'.\n2. Submit the questionnaire and land on the job results page.\n3. Observe the initial list of jobs and note the total number of results displayed (e.g., 'Showing 50 jobs').\n4. Locate the active filter for 'Annual Salary: $150,000'.\n5. Click the 'clear' or 'X' icon associated with the 'Annual Salary' filter.\n6. Observe the job listings area, which should show a brief loading state and then refresh.\n7. Verify the 'Annual Salary' filter is no longer shown as an active preference.\n8. Verify the 'Location: USA' filter remains active.\n9. Confirm that the new total number of results is greater than or equal to the initial count of 50.",
+    "expectedResult": "1. The job results list updates to show jobs matching the remaining preferences.\n2. The cleared preference ('Annual Salary') is removed from the active filters list.\n3. The total number of job results increases or stays the same, reflecting the broader search criteria.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "regression",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L59-L61",
+      "excerpt": "Allow the seeker to widen, narrow or clear any individual preference from the results."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify that dynamically refining a preference updates the job results without a full page reload",
+    "description": "This test verifies that modifying a search filter on the results page provides a modern, seamless user experience by updating the content asynchronously (e.g., via AJAX/Fetch) rather than forcing a disruptive full page refresh. Automation: HIGH.",
+    "testId": "TC-REFINE-04",
+    "testDescription": "A job seeker is on the results page and wants to quickly experiment with different filter values to see how they affect the job listings. The system should update the results in place, providing immediate feedback without the delay and visual disruption of a full page reload, enhancing usability.",
+    "severity": "High",
+    "priority": "P1",
+    "prerequisites": "The user is on the job results page with an active set of filters. The browser's developer tools are available to monitor network traffic.",
+    "stepsToPerform": "1. As an anonymous user, complete the questionnaire and arrive at the job results page with filters applied.\n2. Open the browser's developer tools and select the 'Network' tab.\n3. Locate a preference filter on the page, for example, 'Years of relevant experience' set to '5+'.\n4. Change the value of this filter to '10+'.\n5. Observe the main content area of the page. A loading indicator should appear briefly over the job listings.\n6. Verify the job listings update to reflect the new '10+' experience preference.\n7. Examine the Network tab in the developer tools.\n8. Confirm that a new network request (e.g., XHR or Fetch) was initiated to retrieve the updated job data.\n9. Confirm that the main page document itself was not reloaded (i.e., no new request for the base HTML page).",
+    "expectedResult": "1. The job results list updates in-place to reflect the new preference.\n2. A background API call is made to fetch the new results.\n3. The browser does not perform a full page navigation or reload.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "integration",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L59-L61",
+      "excerpt": "Allow the seeker to widen, narrow or clear any individual preference from the results."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify the 'narrowing constraint' indicator updates correctly when a user refines preferences on the results page",
+    "description": "This test ensures the system provides helpful feedback to the user by highlighting which specific filter is causing a very small number of results, guiding them on how to widen their search effectively.",
+    "testId": "TC-REFINE-05",
+    "testDescription": "A job seeker applies a combination of filters that is too specific, resulting in only one or two job matches. To avoid confusion or the impression that the platform has few jobs, the system should visually indicate which of their chosen preferences is the primary reason for the narrow results, for example, by highlighting the 'Job Title' filter.",
+    "severity": "High",
+    "priority": "P1",
+    "prerequisites": "Test data exists where a specific combination of preferences is known to return very few (e.g., < 5) results, while removing one specific preference will return many results.",
+    "stepsToPerform": "1. As an anonymous user, complete the questionnaire with a broad preference, such as 'Location: USA', and land on the results page.\n2. Observe a large number of job listings and confirm no 'narrowing constraint' indicator is displayed.\n3. On the results page, use the filter controls to add a very specific preference, such as 'Job Title: Senior Lunar Geologist'.\n4. Observe the job results update to show a very small number of listings.\n5. Verify that a visual indicator (e.g., an icon, a message, or highlighting) appears next to the 'Job Title' filter.\n6. The indicator should clearly identify this filter as the one narrowing the result set.\n7. Now, clear the 'Job Title' filter.\n8. Verify the job listings update and the result count increases significantly.\n9. Verify the 'narrowing constraint' indicator is no longer visible.",
+    "expectedResult": "1. When a filter combination yields very few results, a visual indicator correctly identifies the most restrictive preference.\n2. The indicator appears dynamically when the results are narrowed.\n3. The indicator disappears when the restrictive preference is cleared.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "regression",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L61-L63",
+      "excerpt": "Where a combination of preferences returns very few listings, indicate which constraint is narrowing the set."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify clearing a preference on the results page correctly widens the search and does not act as a null filter",
+    "description": "This test ensures that clearing a filter correctly removes the constraint from the search logic, rather than incorrectly searching for items where that attribute is null or empty. This prevents a common bug where clearing a filter results in zero matches.",
+    "testId": "TC-REFINE-06",
+    "testDescription": "A seeker has filtered for jobs with a 'Fully Remote' working arrangement. They then clear this filter, expecting to see all jobs, including 'Hybrid' and office-based roles. The system must interpret this as 'ignore working arrangement', not 'show jobs where working arrangement is not specified', which would be incorrect.",
+    "severity": "High",
+    "priority": "P1",
+    "prerequisites": "The user is on the job results page with a specific, non-mandatory preference applied, such as 'Working Arrangement'.",
+    "stepsToPerform": "1. As an anonymous user, complete the questionnaire, setting the 'Working Arrangement' preference to 'Fully Remote'.\n2. Submit and land on the job results page.\n3. Observe the initial results. All jobs displayed should be 'Fully Remote'. Note the total number of results (Count A).\n4. Locate the active 'Working Arrangement' filter.\n5. Click the 'clear' or 'X' button to remove this filter.\n6. Observe the job listings update.\n7. Inspect the new set of results and verify that it now contains jobs with different working arrangements (e.g., 'Hybrid').\n8. Note the new total number of results (Count B).\n9. Verify that Count B is greater than or equal to Count A.\n10. Verify the system did not return zero results, which would indicate it was incorrectly filtering for a null value.",
+    "expectedResult": "1. Clearing a preference removes that specific filter from the search query.\n2. The updated results list is broader and includes items that were previously excluded by the cleared filter.\n3. The action of clearing a filter correctly widens the search, it does not filter for a null or empty value.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "regression",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L59-L61",
+      "excerpt": "Allow the seeker to widen, narrow or clear any individual preference from the results."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify preferences captured before registration carry over into the account when the seeker signs up after clicking 'apply'",
+    "description": "This end-to-end test validates the critical state transition from an anonymous user to a registered user, ensuring all captured preference data is preserved when registration is triggered by an application attempt.",
+    "testId": "TC-TRANS-01",
+    "testDescription": "A new visitor invests time in completing the preference questionnaire. When they find a job they like and click 'Apply', they are prompted to register. To provide a seamless experience and respect the user's effort, all the preferences they just entered must be automatically saved to their new account without requiring re-entry.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "User has a valid, unused email address for registration. The system is accessible, and the user has no existing session cookies.",
+    "stepsToPerform": "1. In a new incognito browser session, navigate to the application's home page.\n2. Start and complete the seeker preference questionnaire with a unique set of values (e.g., Salary: $123,456, Motivation: 'Career progression', Location: 'Germany').\n3. Submit the questionnaire and land on the personalized job results page.\n4. From the results, click on any job listing to view its details.\n5. Click the 'Apply' button for that job.\n6. Observe that a registration form or modal is presented.\n7. Complete the registration process using the new email address (e.g., `test+apply1@example.com`) and a password.\n8. After successful registration, navigate to the user's account profile or settings page.\n9. Locate the section for saved job preferences.\n10. Verify that the 'Salary' preference is saved as '$123,456'.\n11. Verify that the 'Motivation' preference is saved as 'Career progression' and 'Location' is 'Germany'.",
+    "expectedResult": "1. All preferences entered during the anonymous session are correctly and completely associated with the new user account.\n2. The user is not required to re-enter their preferences after registration.\n3. The user's profile is pre-populated with the data from their anonymous session.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "e2e",
+      "state-transition"
+    ],
+    "sourceCitation": {
+      "location": "L68-L71",
+      "excerpt": "Preferences captured before registration carry over into the account when the seeker signs up."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify an uploaded resume from an anonymous session is correctly carried over to the new account upon registration",
+    "description": "This test verifies that binary file data, specifically a user's resume, persists correctly through the anonymous-to-registered user state transition, ensuring data integrity for critical documents.",
+    "testId": "TC-TRANS-04",
+    "testDescription": "A new user uploads their resume as part of the initial onboarding questionnaire. When they later decide to register for an account, it is critical that this uploaded document is not lost. The system must seamlessly link the temporarily stored resume to their permanent new account.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "User has a valid, unused email address for registration. A sample resume file (e.g., 'JohnDoe_Resume.pdf') is available for upload.",
+    "stepsToPerform": "1. In a new incognito browser session, navigate to the application's home page.\n2. Begin the seeker preference questionnaire.\n3. At the resume step, choose the 'Upload Resume' option.\n4. Select and upload the file 'JohnDoe_Resume.pdf'.\n5. Observe a confirmation message indicating the resume was successfully received.\n6. Complete the questionnaire and view the job results.\n7. Click 'Apply' on any job listing to trigger the registration prompt.\n8. Complete the registration process with a new email address.\n9. After registration, navigate to the 'My Profile' or 'My Documents' section of the user account.\n10. Verify that 'JohnDoe_Resume.pdf' is listed as the user's current resume.\n11. If possible, use a 'download' or 'view' feature to confirm the integrity of the stored file.",
+    "expectedResult": "1. The resume file uploaded during the anonymous session is correctly associated with the newly created user account.\n2. The user can see their uploaded resume in their profile without needing to upload it again.\n3. The stored document is the exact same file that was originally uploaded.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "e2e",
+      "state-transition"
+    ],
+    "sourceCitation": {
+      "location": "L72-L74",
+      "excerpt": "Hold preferences and uploaded documents against the seeker for the duration of an anonymous visit, and against the account thereafter."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify browsing listings, completing the questionnaire, and viewing matched results do not require an account",
+    "description": "This test confirms that the core value proposition of the platform is accessible to new users without forcing them to register, which is a key business requirement to reduce first-visit abandonment.",
+    "testId": "TC-TRANS-05",
+    "testDescription": "A potential new user wants to evaluate the quality of the job listings and the platform's matching capabilities before committing to creating an account. They should be able to browse jobs, fill out the entire preference questionnaire, and see their personalized results without encountering any registration or payment walls.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "The user must be in an anonymous state (e.g., using an incognito browser window with no active login session).",
+    "stepsToPerform": "1. Open a new incognito/private browser window.\n2. Navigate to the application's home page.\n3. Click on a general 'Browse Jobs' link. Verify that a page with job listings loads successfully.\n4. Navigate back to the home page.\n5. Locate and begin the 'short guided questionnaire'.\n6. Proceed through all steps of the questionnaire, providing valid preferences.\n7. Submit the completed questionnaire.\n8. Verify that the page redirects to a job results page displaying listings matched to the provided preferences.\n9. Confirm that at no point during steps 2-8 was a login or registration screen mandatorily presented.",
+    "expectedResult": "1. The user can successfully browse job listings without an account.\n2. The user can complete the entire preference questionnaire without an account.\n3. The user can view their personalized, matched job results without an account.\n4. No registration or payment is required for these core discovery actions.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "regression",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L64-L66",
+      "excerpt": "Browsing listings, completing the questionnaire and viewing matched results require no account and no payment."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify registration is requested only when the seeker acts on a listing",
+    "description": "This test confirms that the registration gate is placed at the correct point in the user journey, allowing for maximum exploration before requiring commitment, as specified by the requirements.",
+    "testId": "TC-TRANS-06",
+    "testDescription": "An anonymous user is exploring the site. They should be able to browse, search, filter, and view job details freely. The system should only ask them to create an account when they try to perform an action that requires a persistent profile, such as saving a job for later, applying, or setting up an email alert.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "The user is anonymous and has successfully received a list of matched jobs after completing the questionnaire.",
+    "stepsToPerform": "1. As an anonymous user, be on the job results page.\n2. Scroll down the page of results. Verify no registration is prompted.\n3. Click on a job title to navigate to its detailed view page. Verify the page loads and no registration is prompted.\n4. Navigate back to the results list.\n5. Use a filter control to refine the search. Verify the results update and no registration is prompted.\n6. Find a listing and click the 'Save' button.\n7. Verify that a registration modal or page is now displayed.\n8. Navigate back, find another listing, and click 'Apply'.\n9. Verify that the registration modal or page is displayed again.\n10. Navigate back and click the 'Set up alerts' button.\n11. Verify that the registration modal or page is displayed a final time.",
+    "expectedResult": "1. Passive actions like browsing, viewing details, and filtering do not trigger a registration request.\n2. The registration prompt is correctly and consistently triggered by the specific actions of 'applying', 'saving it', or 'setting up alerts'.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "regression",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L66-L68",
+      "excerpt": "Registration is requested only when the seeker acts on a listing — applying, saving it, or setting up alerts."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify a registered user can revisit and change their preferences later without having to repeat the whole questionnaire",
+    "description": "This test ensures that a registered user can modify their saved job preferences directly, which is crucial for long-term user engagement and adapting to changing career goals. It validates that the system provides a targeted editing experience rather than forcing the user to restart the entire onboarding process.",
+    "testId": "TC-MGMT-01",
+    "testDescription": "A user who has previously completed the questionnaire and created an account wants to update their target salary. The user should be able to log in, navigate to their profile or preferences section, change only the salary field, and save the update without being required to re-answer all other questions.",
+    "severity": "Critical",
+    "priority": "P1",
+    "prerequisites": "1. A registered user account exists with the email 'test.user.mgmt01@example.com'.\n2. The user has previously completed the questionnaire, and their preferences are saved.\n3. The saved preferences include a target annual salary of '$80,000'.",
+    "stepsToPerform": "1. Navigate to the application's login page.\n2. Enter the username 'test.user.mgmt01@example.com' and the corresponding password, then click 'Log In'. The user is successfully authenticated and redirected to the dashboard.\n3. Navigate to the 'Account Settings' or 'My Profile' section. The user's current preferences are displayed.\n4. Locate the 'Target Annual Salary' preference, which shows '$80,000'.\n5. Click the 'Edit Preferences' button or an equivalent control. The preference fields become editable.\n6. Change the value in the 'Target Annual Salary' field from '$80,000' to '$95,000'.\n7. Click the 'Save Changes' button. A confirmation message 'Your preferences have been updated' is displayed.\n8. Log out of the application.\n9. Log back in with the same user credentials. The user is successfully authenticated.\n10. Navigate back to the 'Account Settings' or 'My Profile' section.\n11. Verify that the 'Target Annual Salary' preference now displays the new value of '$95,000'.",
+    "expectedResult": "1. The user can access an interface to edit individual preferences without re-taking the entire questionnaire.\n2. The change to a single preference (Target Annual Salary) is successfully saved and persists across sessions.\n3. All other previously saved preferences remain unchanged.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional",
+      "regression"
+    ],
+    "sourceCitation": {
+      "location": "L40-L42",
+      "excerpt": "Allow preferences to be revisited and changed later without the seeker having to repeat the whole questionnaire."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify a registered user's saved preferences are applied to searches on later visits once an account exists",
+    "description": "This test validates a core personalization feature: the automatic application of a registered user's saved preferences to job searches. This ensures a consistent and relevant experience across multiple sessions, directly supporting user retention.",
+    "testId": "TC-MGMT-02",
+    "testDescription": "A registered user with saved preferences for 'fully remote' work and a target salary of '$100,000' logs into the platform after a previous session. Upon navigating to the job listings, the search results should be automatically filtered based on these saved preferences without the user needing to re-apply them manually.",
+    "severity": "Critical",
+    "priority": "P1",
+    "prerequisites": "1. A registered user account exists with the email 'test.user.mgmt02@example.com'.\n2. The account has saved preferences including 'Working Arrangement: Fully Remote' and 'Target Annual Salary: $100,000'.\n3. The user is currently logged out.",
+    "stepsToPerform": "1. Navigate to the application's login page.\n2. Enter the username 'test.user.mgmt02@example.com' and the corresponding password, then click 'Log In'. The user is successfully authenticated.\n3. Navigate to the main job search or listings page. The page loads with a list of jobs.\n4. Observe the active search filters displayed on the page. The 'Working Arrangement' filter is set to 'Fully Remote'.\n5. Observe the active search filters for salary. The salary filter is set to reflect the '$100,000' target.\n6. Review the first page of job listings. All displayed jobs are marked as 'Fully Remote'.\n7. Inspect the details of the top 3 job listings. Their salary ranges are consistent with the user's target.\n8. Log out of the application and close the browser.\n9. Re-open the browser, navigate to the login page, and log in again. The user is authenticated.\n10. Navigate to the job listings page again. The same 'Fully Remote' and salary filters are still applied automatically.",
+    "expectedResult": "1. Upon logging in and visiting the job search page, the user's saved preferences are automatically applied as active filters.\n2. The job listings shown are correctly filtered according to these saved preferences.\n3. This behavior is consistent across multiple login sessions.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional",
+      "regression"
+    ],
+    "sourceCitation": {
+      "location": "L57-L59",
+      "excerpt": "Apply the captured preferences... to later visits once an account exists."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify a registered seeker can remove their resume from their account",
+    "description": "This test verifies the user's ability to control their personal data by removing their resume. This is a critical data privacy function and ensures compliance with data protection principles.",
+    "testId": "TC-MGMT-03",
+    "testDescription": "A registered user who previously uploaded a resume decides they want to remove it from their profile. The user should be able to navigate to their account settings, find the option to delete their resume, and confirm its removal. The system should then show that no resume is on file.",
+    "severity": "Critical",
+    "priority": "P1",
+    "prerequisites": "1. A registered user account exists with the email 'test.user.mgmt03@example.com'.\n2. The user has previously uploaded a resume file named 'MyOldResume.pdf'.\n3. The user is logged into the application.",
+    "stepsToPerform": "1. Navigate to the 'Account Settings' or 'My Profile' page. The page displays user details.\n2. Locate the 'Resume' section. It shows the currently uploaded file 'MyOldResume.pdf' with a 'Remove' or 'Delete' option.\n3. Click the 'Remove' button next to the resume file name. A confirmation dialog appears: 'Are you sure you want to remove your resume?'.\n4. Click 'Confirm' or 'Yes' in the dialog. The system processes the request.\n5. Observe the 'Resume' section on the page after it refreshes. The file name 'MyOldResume.pdf' is gone.\n6. The section now displays a message like 'No resume uploaded' and shows an 'Upload Resume' button.\n7. Log out of the application.\n8. Log back in with the same user credentials.\n9. Navigate back to the 'Account Settings' page.\n10. Verify that the 'Resume' section still shows 'No resume uploaded'.",
+    "expectedResult": "1. The user is able to successfully initiate and confirm the removal of their resume.\n2. After removal, the user interface correctly reflects that no resume is associated with the account.\n3. The removal action is persistent across user sessions.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional",
+      "data-privacy"
+    ],
+    "sourceCitation": {
+      "location": "L74-L75",
+      "excerpt": "Allow the seeker to remove their resume and clear their preferences."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify a registered seeker can clear their preferences from their account",
+    "description": "This test validates the user's right to data control by allowing them to clear all their saved job preferences. This function is important for users who want to start their job search over with a clean slate or for data privacy reasons.",
+    "testId": "TC-MGMT-04",
+    "testDescription": "A registered user with a full set of saved preferences decides they want to reset their search criteria completely. The user should find an option in their account settings to clear all preferences, and upon confirmation, all saved criteria (like salary, location, job titles) should be removed from their profile.",
+    "severity": "Critical",
+    "priority": "P1",
+    "prerequisites": "1. A registered user account exists with the email 'test.user.mgmt04@example.com'.\n2. The account has multiple saved preferences (e.g., 'Working Arrangement: Hybrid', 'Target Salary: $120,000', 'Location: Canada').\n3. The user is logged into the application.",
+    "stepsToPerform": "1. Navigate to the 'Account Settings' or 'Preferences' page. The page displays the user's saved preferences.\n2. Locate and click the 'Clear All Preferences' or 'Reset Preferences' button. A confirmation dialog appears: 'Are you sure you want to clear all your preferences? This cannot be undone.'.\n3. Click 'Confirm' or 'Yes' in the dialog. The system processes the request.\n4. Observe the preferences section on the page after it refreshes. All previously set values are now empty or reset to their default state.\n5. Navigate to the main job search page. No filters are pre-applied.\n6. Log out of the application.\n7. Log back in with the same user credentials.\n8. Navigate back to the 'Account Settings' page.\n9. Verify that all preferences are still cleared.\n10. Navigate to the job search page again and confirm no filters are automatically applied.",
+    "expectedResult": "1. The user can successfully initiate and confirm the clearing of all their job preferences.\n2. After the action, the UI shows that no preferences are saved for the user.\n3. Subsequent job searches are not filtered by any previous preferences, confirming the reset was successful and persistent.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "functional",
+      "data-privacy"
+    ],
+    "sourceCitation": {
+      "location": "L74-L75",
+      "excerpt": "Allow the seeker to remove their resume and clear their preferences."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Verify that after a resume is removed, it is no longer used in matching or applications",
+    "description": "This test is a critical follow-up to resume removal, ensuring that the deletion is not just cosmetic. It verifies that once a resume is removed, the system's backend processes (like job matching and application pre-filling) no longer have access to or use the deleted data.",
+    "testId": "TC-MGMT-05",
+    "testDescription": "A user first removes their resume from their account. They then perform a job search and attempt to apply for a job. The system should not use any data from the old resume for matching, and the application process should prompt the user to upload a new resume instead of using the deleted one.",
+    "severity": "Critical",
+    "priority": "P1",
+    "prerequisites": "1. A registered user account exists with the email 'test.user.mgmt05@example.com'.\n2. The user has previously uploaded a resume containing the unique keyword 'XYZ_SKILL_TOKEN'.\n3. There is a job listing that specifically matches the keyword 'XYZ_SKILL_TOKEN'.",
+    "stepsToPerform": "1. Log in as 'test.user.mgmt05@example.com'.\n2. Navigate to 'Account Settings' and confirm the resume is present.\n3. Follow the steps to remove the resume (as in TC-MGMT-03). The UI confirms the resume is removed.\n4. Navigate to the job search page.\n5. Perform a keyword search for jobs. Observe that any 'resume-based matching' features do not highlight the job with 'XYZ_SKILL_TOKEN'.\n6. Find a generic job listing and click the 'Apply' button.\n7. Observe the application form. The system does not pre-fill any fields from the old resume.\n8. The application form explicitly prompts the user with 'Please upload your resume to apply'.\n9. Verify there is no option to use a previously saved (and now deleted) resume.",
+    "expectedResult": "1. After resume removal, job matching algorithms no longer use the content of the deleted resume.\n2. Attempting to apply for a job triggers a prompt to upload a new resume.\n3. The system does not retain or use the deleted resume data in any part of the application workflow.",
+    "tags": [
+      "ui",
+      "negative-path",
+      "functional",
+      "data-privacy",
+      "regression"
+    ],
+    "sourceCitation": {
+      "location": "L74-L75",
+      "excerpt": "Allow the seeker to remove their resume and clear their preferences."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "e2e",
+    "title": "Verify an anonymous user can complete the questionnaire, view results, register by saving a job, and find all preferences saved in their new account",
+    "description": "This end-to-end test covers the primary user acquisition funnel: an anonymous visitor sees value via personalized results, then registers, with a seamless transition of their data. Success here is critical for converting new visitors into registered users.",
+    "testId": "TC-E2E-01",
+    "testDescription": "A new, anonymous visitor lands on the homepage, completes the onboarding questionnaire, and views the matched job listings. They find a job they like and click 'Save Job'. This action prompts them to register for an account. After completing registration, they check their new account profile and find that all the preferences they entered as an anonymous user have been successfully carried over.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1. The user is a new visitor with no existing account or session cookies.\n2. The test is performed in a clean browser session (e.g., incognito mode).",
+    "stepsToPerform": "1. Navigate to the application's home page. The questionnaire prompt is displayed.\n2. Start the questionnaire and enter a specific set of preferences: 'Working Arrangement: Fully Remote', 'Target Salary: $150,000', 'Location: Germany', 'Job Title: Product Manager'.\n3. Complete and submit the questionnaire. The user is redirected to a personalized job results page.\n4. Verify that the active filters on the results page match the preferences entered in step 2.\n5. Browse the listings and click the 'Save' icon or button on a specific job listing.\n6. A registration modal or page appears, prompting the user to create an account to save the job.\n7. Complete the registration form with a new email 'test.user.e2e01@example.com' and a password, then submit.\n8. After successful registration, the user is logged in and a confirmation 'Job Saved' is shown.\n9. Navigate to the 'Account Settings' or 'My Preferences' page.\n10. Verify that 'Working Arrangement' is set to 'Fully Remote'.\n11. Verify that 'Target Salary' is set to '$150,000'.\n12. Verify that 'Location' is set to 'Germany' and 'Job Title' is 'Product Manager'.",
+    "expectedResult": "1. The anonymous user can complete the questionnaire and view matched results without registering.\n2. The act of saving a job correctly triggers the registration flow.\n3. All preferences captured during the anonymous session are correctly and completely transferred to the newly created user account.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "e2e",
+      "functional",
+      "smoke"
+    ],
+    "sourceCitation": {
+      "location": "L69-L71",
+      "excerpt": "Preferences captured before registration carry over into the account when the seeker signs up."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "e2e",
+    "title": "Verify an anonymous user can complete the questionnaire, upload a resume, view results, register, and find both preferences and resume in their new account",
+    "description": "This test expands on the core registration flow to include resume handling. It ensures that both user-inputted preferences and uploaded documents from an anonymous session are correctly associated with the new account, which is vital for a comprehensive user profile.",
+    "testId": "TC-E2E-02",
+    "testDescription": "A new visitor completes the questionnaire, and also uploads their resume as part of the initial onboarding. After viewing matched results, they decide to register. Upon creating their account, they should find that not only are their preferences saved, but their uploaded resume is also present and correct in their profile.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1. The user is a new visitor with no existing account or session cookies.\n2. A test resume file named 'E2E_Resume_02.pdf' is available for upload.",
+    "stepsToPerform": "1. Navigate to the application's home page in a clean browser session.\n2. Start and complete the questionnaire with a unique set of preferences (e.g., 'Motivation: Flexibility').\n3. In the resume step of the questionnaire, select the option to upload a resume.\n4. Upload the file 'E2E_Resume_02.pdf'. A confirmation message 'Resume uploaded successfully' is displayed.\n5. Submit the questionnaire and view the job results page.\n6. Click the 'Save' button on any job listing to trigger the registration flow.\n7. Complete the registration form with a new email 'test.user.e2e02@example.com' and submit.\n8. After successful registration, navigate to the 'Account Settings' or 'My Profile' page.\n9. Verify that the preferences entered in step 2 (e.g., 'Motivation: Flexibility') are correctly displayed.\n10. Locate the 'Resume' section of the profile.\n11. Verify that the file 'E2E_Resume_02.pdf' is listed as the current resume on file.",
+    "expectedResult": "1. An anonymous user can successfully upload a resume during the initial onboarding flow.\n2. Upon registration, both the questionnaire preferences and the uploaded resume document are seamlessly carried over to the new account.\n3. The user's profile is complete with all data provided during the anonymous session.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "e2e",
+      "functional",
+      "smoke"
+    ],
+    "sourceCitation": {
+      "location": "L72-L74",
+      "excerpt": "Hold preferences and uploaded documents against the seeker for the duration of an anonymous visit, and against the account thereafter."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  },
+  {
+    "type": "e2e",
+    "title": "Verify a user can complete the questionnaire, view results, refine a preference on the results page, register, and find the final refined preferences in their account",
+    "description": "This test validates that the system correctly handles state changes within an anonymous session and persists the *final* state upon registration. It ensures that user refinements are not lost, providing an accurate and responsive user experience.",
+    "testId": "TC-E2E-03",
+    "testDescription": "A new visitor completes the questionnaire with an initial target salary. After seeing the results, they use the on-page filters to change their target salary. They then register for an account. The preferences saved to their new account should reflect the updated, refined salary, not the original one entered in the questionnaire.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1. The user is a new visitor with no existing account or session cookies.\n2. The test is performed in a clean browser session.",
+    "stepsToPerform": "1. Navigate to the application's home page.\n2. Start the questionnaire and enter 'Target Annual Salary: $100,000' along with other preferences.\n3. Submit the questionnaire. The user is taken to the job results page, which is filtered for a $100,000 salary.\n4. On the results page, locate the 'Salary' filter control.\n5. Change the salary filter to a new value, '$125,000'. The job listings on the page update to reflect this new filter.\n6. Now, click the 'Save' button on a job listing to trigger registration.\n7. Complete the registration form with a new email 'test.user.e2e03@example.com' and submit.\n8. After successful registration, navigate to the 'Account Settings' or 'My Preferences' page.\n9. Locate the 'Target Annual Salary' preference.\n10. Verify that the saved salary is the refined value, '$125,000'.\n11. Verify that the saved salary is NOT the original value of '$100,000'.",
+    "expectedResult": "1. The user can modify their preferences on the results page after completing the initial questionnaire.\n2. When the user registers, the system saves the most recent, refined set of preferences from the anonymous session.\n3. The original preferences from the questionnaire are correctly overwritten by the user's subsequent refinements.",
+    "tags": [
+      "ui",
+      "happy-path",
+      "e2e",
+      "functional"
+    ],
+    "sourceCitation": {
+      "location": "L59-L71",
+      "excerpt": "Allow the seeker to widen, narrow or clear any individual preference from the results... Preferences captured before registration carry over into the account when the seeker signs up."
+    },
+    "roles": "",
+    "filesInvolved": "",
+    "orderStateTransitions": "",
+    "reconStatus": "",
+    "maskingNotes": ""
+  }
+]
