@@ -1,0 +1,15 @@
+API - Submit job preferences for an anonymous session
+API - Validate numeric fields in the preference submission
+API - Validate the number of job titles in the preference submission
+API - Preferences and resume from an anonymous session are carried over upon registration
+API - A registered user can clear their preferences and remove their resume
+A new anonymous user completes the entire preference questionnaire successfully
+A user submits a partially completed questionnaire and gets relevant matches
+The system provides clear validation for non-numeric inputs in the questionnaire
+A user attempts to upload a resume with various file types and sizes
+The system indicates which preference is narrowing the job search results
+Captured preferences are applied to subsequent searches during the same anonymous visit
+An anonymous user is prompted to register when performing a key action
+A user's preferences and resume persist from anonymous session to registered account
+A registered user can clear all their preferences from their account
+Analytics events are fired for key user actions during a first visit
