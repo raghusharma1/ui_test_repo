@@ -1,0 +1,17 @@
+TC-PREF-01 - First-time anonymous user is presented with the guided questionnaire
+TC-PREF-02, TC-PREF-03 - Anonymous user completes the questionnaire with various inputs
+TC-PREF-03 - API correctly records partially completed preferences
+TC-PREF-04 - Anonymous user can revisit and change a submitted preference
+TC-PREF-05, TC-PREF-06 - User enters job titles up to the defined maximum limit of 5
+TC-RESUME-01, TC-RESUME-03, TC-RESUME-04, TC-RESUME-05 - Uploading a resume with various file types and sizes
+API validation for resume uploads
+TC-RESUME-06 - User selects their current resume state
+TC-MATCH-01 - Personalized job listings are produced based on captured preferences
+TC-MATCH-02, TC-MATCH-03 - User can widen or narrow search results by modifying a preference
+TC-MATCH-04 - System indicates which constraint is narrowing the search results
+TC-MATCH-05 - Captured preferences are automatically applied to subsequent searches during the visit
+TC-CONV-01, TC-DATA-02 - Anonymous user's preferences and resume are carried over upon registration
+Registration is prompted for account-required actions
+TC-CONV-04 - Anonymous user can browse and get matches without registration
+TC-REMOVE-01, TC-REMOVE-02 - Registered user can remove their data
+TC-REMOVE-03 - Clearing preferences correctly updates subsequent job searches
